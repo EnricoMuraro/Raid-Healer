@@ -7,7 +7,7 @@ public class Raid : MonoBehaviour
 {
 
     public Raider[,] raiders;
-    public Enemy[] enemies;
+    public Enemy enemy;
 
     private float prevTime;
 
@@ -15,6 +15,7 @@ public class Raid : MonoBehaviour
     {   
         prevTime = Time.time;
         Debug.Log("started");
+        enemy = new Enemy(10000, 20, 3.0f, 0.0f);
         raiders = new Raider[3,3];
         for(int i=0; i<raiders.GetLength(0); i++)
             for(int j=0; j<raiders.GetLength(1); j++)
@@ -31,10 +32,10 @@ public class Raid : MonoBehaviour
             raider.Cooldown -= Time.time - prevTime;
             if(raider.Cooldown <= 0) {
                 raider.Cooldown = raider.AttackFrequency;
-                Debug.Log(Time.time + "raider attacked");
+                enemy = raider.Attack(enemy) as Enemy;
             }
         }
-
+        Debug.Log(enemy.Health);
         prevTime = Time.time;
     }
 

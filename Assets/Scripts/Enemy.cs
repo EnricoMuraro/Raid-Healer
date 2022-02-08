@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy
+public class Enemy : Unit
 {
-    public int Health;
-    public int Damage;
-    public int AttackFrequency;
+    public Enemy(int health, int damage, float attackfrequency, float cooldown)
+              : base(health, damage, attackfrequency, cooldown) { }
 }
