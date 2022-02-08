@@ -26,7 +26,7 @@ public class Raid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         foreach (Raider raider in raiders) {
             raider.Cooldown -= Time.time - prevTime;
             if(raider.Cooldown <= 0) {
