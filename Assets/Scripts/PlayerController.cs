@@ -7,10 +7,17 @@ public class PlayerController : MonoBehaviour
 
     public HealthBar castBar;
     public int targetRaiderIndex;
+    public Raid raid;
+
+    public AbilitySlot[] abilitySlots;
 
     public void SetTargetPlayerIndex(int index) {
         Debug.Log(index);
         targetRaiderIndex = index;
+        foreach(AbilitySlot ability in abilitySlots) 
+        {
+            ability.target = raid.raiders[index];
+        }
     }
 
 
@@ -18,6 +25,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         targetRaiderIndex=0;
+        abilitySlots = GetComponents<AbilitySlot>();
     }
 
     void Cast()

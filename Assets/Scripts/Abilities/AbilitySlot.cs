@@ -5,6 +5,7 @@ using UnityEngine;
 public class AbilitySlot : MonoBehaviour
 {
     public Ability ability;
+    public Raider target;
 
     private float currentCooldown;
     private float currentCastTime;
@@ -26,7 +27,7 @@ public class AbilitySlot : MonoBehaviour
             case AbilityState.ready: 
                 if (Input.GetKeyDown(key))
                 {
-                    ability.Activate();
+                    ability.Activate(target.unit);
                     state = AbilityState.casting;
                     currentCastTime = 0;
                 }

@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit
+
+[CreateAssetMenu]
+public class Unit : ScriptableObject 
 {
-    private int maxHealth;
-    private int health;
-    private int damage;
-    private float attackFrequency;
-    private float cooldown;
+    
+    [SerializeField] private int maxHealth;
+    [SerializeField] private int health;
+    [SerializeField] private int damage;
+    [SerializeField] private float attackFrequency;
+    [SerializeField] private float cooldown;
     
     public int MaxHealth { get => health; set => health = value; }
     public int Health 
@@ -42,12 +45,6 @@ public class Unit
         Damage = damage;
         AttackFrequency = attackfrequency;
         Cooldown = cooldown;
-    }
-
-    public Unit Attack(Unit attacked)
-    {
-        attacked.Health -= this.Damage;
-        return attacked;
     }
 
 }

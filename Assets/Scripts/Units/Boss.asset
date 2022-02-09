@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8e5b37d02364c344ba1ee1f31631c7a, type: 3}
-  m_Name: Light Heal
+  m_Script: {fileID: 11500000, guid: 4765b9e123b50f845912aeb20671a1d9, type: 3}
+  m_Name: Boss
   m_EditorClassIdentifier: 
-  name: Light Heal
-  cooldown: 1
-  castTime: 2.5
-  baseHeal: 75
+  maxHealth: 10000
+  health: 10000
+  damage: 50
+  attackFrequency: 2
+  cooldown: 0

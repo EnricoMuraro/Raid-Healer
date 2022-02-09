@@ -6,6 +6,19 @@ using UnityEngine;
 public class Raid : MonoBehaviour
 {
 
+    [SerializeField] public Raider[] raiders;
+    public Enemy Boss;
+
+    private void Update() 
+    {
+        foreach (Raider raider in raiders) {
+            raider.attack(Boss);
+        }
+
+        Boss.attack(raiders[0]);
+    }
+
+    /*
     public Raider[,] raiders;
     [SerializeField]
     public HealthBar[] raiderHealthBars;
@@ -84,4 +97,5 @@ public class Raid : MonoBehaviour
     {   
 
     }
+    */
 }

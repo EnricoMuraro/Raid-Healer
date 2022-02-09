@@ -849,6 +849,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0.0000076294, y: -215.2}
   m_SizeDelta: {x: 250, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &263190473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 263190475}
+  - component: {fileID: 263190474}
+  m_Layer: 0
+  m_Name: Raider0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &263190474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263190473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 11400000, guid: 00ca80e0d0173c17b9031256750d54aa, type: 2}
+  healthBar: {fileID: 1115739565}
+--- !u!4 &263190475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263190473}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 886765862}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &284141259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,17 +1676,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b5ca14a31f6b7319eb09ef7cb2009d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raiderHealthBars:
-  - {fileID: 1115739565}
-  - {fileID: 1974288642}
-  - {fileID: 1237956081}
-  - {fileID: 178195100}
-  - {fileID: 314936387}
-  - {fileID: 1591946689}
-  - {fileID: 1242249480}
-  - {fileID: 498195266}
-  - {fileID: 1426409265}
-  enemyHealthBar: {fileID: 679611597}
+  raiders:
+  - {fileID: 263190474}
+  Boss: {fileID: 964010022}
 --- !u!4 &886765862
 Transform:
   m_ObjectHideFlags: 0
@@ -1652,10 +1689,57 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 722.8431, y: 391.27, z: 0.0046496503}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 964010021}
+  - {fileID: 263190475}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &964010020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 964010021}
+  - component: {fileID: 964010022}
+  m_Layer: 0
+  m_Name: Boss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &964010021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964010020}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 886765862}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &964010022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964010020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f57883c537312205b26b3719da8464f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 11400000, guid: 82f92fb69c92063e8a7bcd8710e0b8e3, type: 2}
+  healthBar: {fileID: 679611597}
 --- !u!1 &1009400116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,6 +2169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castBar: {fileID: 209050877}
   targetRaiderIndex: 0
+  raid: {fileID: 886765861}
+  abilitySlots: []
 --- !u!4 &1117777415
 Transform:
   m_ObjectHideFlags: 0
@@ -2097,7 +2183,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1117777416
 MonoBehaviour:
@@ -2112,6 +2198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ability: {fileID: 11400000, guid: 81f00a1dc3a58af4894bde16775a639d, type: 2}
+  target: {fileID: 0}
   key: 49
 --- !u!1 &1135597388
 GameObject:
