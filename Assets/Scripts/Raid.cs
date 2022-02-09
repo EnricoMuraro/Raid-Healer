@@ -39,7 +39,21 @@ public class Raid : MonoBehaviour
     {
         RaidAttack();
         BossAttack();
+        updateHealthBars();
         prevTime = Time.time;
+    }
+
+    void updateHealthBars()
+    {
+        for (int i = 0; i < raiders.GetLength(0); i++)
+            for (int j = 0; j < raiders.GetLength(1); j++)
+            {
+                int arrayIndex = i + (j * raiders.GetLength(0));
+                raiderHealthBars[arrayIndex].SetHealth(raiders[i, j].Health);
+            }
+
+        enemyHealthBar.SetHealth(enemy.Health);
+            
     }
 
     void RaidAttack() {
@@ -49,7 +63,6 @@ public class Raid : MonoBehaviour
             if(raider.Cooldown <= 0) {
                 raider.Cooldown = raider.AttackFrequency;
                 enemy.Health -= raider.Damage;
-                enemyHealthBar.SetHealth(enemy.Health);
             }
         }
     }
@@ -62,8 +75,6 @@ public class Raid : MonoBehaviour
             for (int i=0; i<raiders.GetLength(0); i++) {
                 for (int j=0; j<raiders.GetLength(1); j++) {
                     raiders[i,j].Health -= enemy.Damage;
-                    int arrayIndex = i + (j*raiders.GetLength(0));
-                    raiderHealthBars[arrayIndex].SetHealth(raiders[i,j].Health);
                 }
             }
         }
