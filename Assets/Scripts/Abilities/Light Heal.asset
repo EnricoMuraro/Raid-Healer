@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Light Heal
   m_EditorClassIdentifier: 
   name: Light Heal
-  cooldown: 1
-  castTime: 2.5
-  baseHeal: 75
+  cooldown: 0
+  castTime: 1.5
+  baseHeal: 100

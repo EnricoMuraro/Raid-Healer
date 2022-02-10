@@ -417,6 +417,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85492234}
   m_CullTransparentMesh: 1
+--- !u!1 &90776383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 90776384}
+  - component: {fileID: 90776385}
+  m_Layer: 0
+  m_Name: Raider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &90776384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90776383}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 886765862}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &90776385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90776383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 11400000, guid: 00ca80e0d0173c17b9031256750d54aa, type: 2}
+  health: 0
+  cooldown: 0
+  dead: 0
+  healthBar: {fileID: 1974288642}
 --- !u!1 &178195097
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +908,7 @@ GameObject:
   - component: {fileID: 263190475}
   - component: {fileID: 263190474}
   m_Layer: 0
-  m_Name: Raider0
+  m_Name: Raider (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -879,6 +927,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: 00ca80e0d0173c17b9031256750d54aa, type: 2}
+  health: 0
+  cooldown: 0
+  dead: 0
   healthBar: {fileID: 1115739565}
 --- !u!4 &263190475
 Transform:
@@ -1469,6 +1520,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604663084}
   m_CullTransparentMesh: 1
+--- !u!1 &636637400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 636637401}
+  - component: {fileID: 636637402}
+  m_Layer: 0
+  m_Name: Raider (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &636637401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636637400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 886765862}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &636637402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636637400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
+  health: 0
+  cooldown: 0
+  dead: 0
+  healthBar: {fileID: 1591946689}
 --- !u!1 &679611594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1671,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 679611596}
+--- !u!1 &767852577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 767852578}
+  - component: {fileID: 767852579}
+  m_Layer: 0
+  m_Name: Raider (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &767852578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767852577}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 886765862}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &767852579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767852577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 11400000, guid: 00ca80e0d0173c17b9031256750d54aa, type: 2}
+  health: 0
+  cooldown: 0
+  dead: 0
+  healthBar: {fileID: 1237956081}
 --- !u!1 &821081602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,6 +1794,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821081602}
   m_CullTransparentMesh: 1
+--- !u!1 &853711349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 853711350}
+  - component: {fileID: 853711351}
+  m_Layer: 0
+  m_Name: Raider (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &853711350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853711349}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 886765862}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &853711351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853711349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
+  health: 0
+  cooldown: 0
+  dead: 0
+  healthBar: {fileID: 1242249480}
 --- !u!1 &886765860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,6 +1873,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raiders:
   - {fileID: 263190474}
+  - {fileID: 90776385}
+  - {fileID: 767852579}
+  - {fileID: 1405716532}
+  - {fileID: 944513964}
+  - {fileID: 636637402}
+  - {fileID: 853711351}
+  - {fileID: 1910209840}
+  - {fileID: 1336087979}
   Boss: {fileID: 964010022}
 --- !u!4 &886765862
 Transform:
@@ -1692,9 +1895,65 @@ Transform:
   m_Children:
   - {fileID: 964010021}
   - {fileID: 263190475}
+  - {fileID: 90776384}
+  - {fileID: 767852578}
+  - {fileID: 1405716531}
+  - {fileID: 944513963}
+  - {fileID: 636637401}
+  - {fileID: 853711350}
+  - {fileID: 1910209839}
+  - {fileID: 1336087978}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &944513962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 944513963}
+  - component: {fileID: 944513964}
+  m_Layer: 0
+  m_Name: Raider (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &944513963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944513962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 886765862}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &944513964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944513962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
+  health: 0
+  cooldown: 0
+  dead: 0
+  healthBar: {fileID: 314936387}
 --- !u!1 &964010020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,10 +1994,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 964010020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f57883c537312205b26b3719da8464f, type: 3}
+  m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: 82f92fb69c92063e8a7bcd8710e0b8e3, type: 2}
+  health: 0
+  cooldown: 0
+  dead: 0
   healthBar: {fileID: 679611597}
 --- !u!1 &1009400116
 GameObject:
@@ -2148,6 +2410,7 @@ GameObject:
   - component: {fileID: 1117777415}
   - component: {fileID: 1117777414}
   - component: {fileID: 1117777416}
+  - component: {fileID: 1117777417}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2199,7 +2462,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ability: {fileID: 11400000, guid: 81f00a1dc3a58af4894bde16775a639d, type: 2}
   target: {fileID: 0}
+  caster: {fileID: 0}
   key: 49
+--- !u!114 &1117777417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117777413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 0}
+  health: 0
+  cooldown: 0
+  dead: 0
+  healthBar: {fileID: 0}
 --- !u!1 &1135597388
 GameObject:
   m_ObjectHideFlags: 0
@@ -2838,6 +3119,102 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1336087977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1336087978}
+  - component: {fileID: 1336087979}
+  m_Layer: 0
+  m_Name: Raider (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1336087978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336087977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 886765862}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1336087979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336087977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
+  health: 0
+  cooldown: 0
+  dead: 0
+  healthBar: {fileID: 1426409265}
+--- !u!1 &1405716530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1405716531}
+  - component: {fileID: 1405716532}
+  m_Layer: 0
+  m_Name: Raider (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1405716531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405716530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 886765862}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1405716532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405716530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
+  health: 0
+  cooldown: 0
+  dead: 0
+  healthBar: {fileID: 178195100}
 --- !u!1 &1409526377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3571,6 +3948,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863733010}
   m_CullTransparentMesh: 1
+--- !u!1 &1910209838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1910209839}
+  - component: {fileID: 1910209840}
+  m_Layer: 0
+  m_Name: Raider (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1910209839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910209838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 886765862}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1910209840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910209838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
+  health: 0
+  cooldown: 0
+  dead: 0
+  healthBar: {fileID: 498195266}
 --- !u!1 &1970111607
 GameObject:
   m_ObjectHideFlags: 0

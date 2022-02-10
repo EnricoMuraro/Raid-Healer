@@ -7,7 +7,7 @@ public class Ability : ScriptableObject
     public new string name;
     public float cooldown;
     public float castTime;
-   
+    public int manaCost;
 
-    public virtual void Activate(Unit target) { }
+    public virtual void Activate(GameUnit caster, GameUnit target) { }
 }

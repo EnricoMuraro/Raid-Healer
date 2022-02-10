@@ -6,12 +6,12 @@ using UnityEngine;
 public class Raid : MonoBehaviour
 {
 
-    [SerializeField] public Raider[] raiders;
-    public Enemy Boss;
+    [SerializeField] public GameUnit[] raiders;
+    public GameUnit Boss;
 
     private void Update() 
     {
-        foreach (Raider raider in raiders) {
+        foreach (GameUnit raider in raiders) {
             raider.attack(Boss);
         }
 

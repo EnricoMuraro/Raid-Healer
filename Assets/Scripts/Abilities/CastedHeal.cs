@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Light Heal")]
-public class LightHeal : Ability
+[CreateAssetMenu(menuName = "Casted Heal")]
+public class CastedHeal : Ability
 {
     public int baseHeal;
 
@@ -18,7 +18,7 @@ public class LightHeal : Ability
         
     }
 
-    public override void Activate(Unit target)
+    public override void Activate(GameUnit caster, GameUnit target)
     {
         target.Health += baseHeal;
     }
