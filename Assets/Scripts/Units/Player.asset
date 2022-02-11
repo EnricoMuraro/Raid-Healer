@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 0
   maxMana: 1000
-  manaRegenRate: 5
+  manaRegenRate: 2
   damage: 0
   attackFrequency: 0

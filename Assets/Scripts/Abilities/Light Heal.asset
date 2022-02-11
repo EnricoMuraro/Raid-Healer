@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Light Heal
   cooldown: 0
   castTime: 1.5
-  manaCost: 30
+  manaCost: 40
   baseHeal: 100
