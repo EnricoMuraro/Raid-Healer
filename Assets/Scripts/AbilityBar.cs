@@ -13,7 +13,7 @@ public class AbilityBar : MonoBehaviour
     }
 
 
-    public void Activate(int slotIndex, GameUnit caster, GameUnit target)
+    public void Activate(int slotIndex, GameUnit caster, GameUnit[] targets)
     {
         foreach(AbilitySlot slot in abilitySlots)
         {
@@ -21,7 +21,7 @@ public class AbilityBar : MonoBehaviour
                 return;
         }
 
-        abilitySlots[slotIndex].Activate(caster, target);
+        abilitySlots[slotIndex].Activate(caster, targets);
     }
 
     // Start is called before the first frame update

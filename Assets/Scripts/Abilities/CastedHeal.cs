@@ -7,20 +7,13 @@ public class CastedHeal : Ability
 {
     public int baseHeal;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
-    // Update is called once per frame
-    void Update()
+    public override void Activate(GameUnit caster, GameUnit[] targets)
     {
-        
-    }
-
-    public override void Activate(GameUnit caster, GameUnit target)
-    {
-        caster.Mana -= manaCost;
-        target.Health += baseHeal;
+        if(targets.Length > 0)
+        {
+            caster.Mana -= manaCost;
+            targets[0].Health += baseHeal;
+        }
     }
 }

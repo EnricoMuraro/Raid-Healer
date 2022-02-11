@@ -56,13 +56,12 @@ public class GameUnit : MonoBehaviour, IDamageable
 
     public void receiveDamage(int amount)
     {
-        if(!dead)
-            Health -= amount;
+        Health -= amount;
     }
 
     public void attack(GameUnit target)
     {
-        if (!dead)
+        if (!dead && target!=null)
         {
             if (Cooldown <= 0)
             {
@@ -70,6 +69,11 @@ public class GameUnit : MonoBehaviour, IDamageable
                 target.receiveDamage(unit.Damage);
             }
         }
+    }
+
+    public bool isDead() 
+    {
+        return dead;
     }
 
     private void Start()

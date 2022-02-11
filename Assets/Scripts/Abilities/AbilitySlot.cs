@@ -7,7 +7,7 @@ public class AbilitySlot : MonoBehaviour
     public Ability ability;
     public ProgressBar castBar;
 
-    GameUnit target;
+    GameUnit[] targets;
     GameUnit caster;
 
     private float currentCooldown;
@@ -27,15 +27,26 @@ public class AbilitySlot : MonoBehaviour
         return state == AbilityState.casting;
     }
 
-    public void Activate(GameUnit caster, GameUnit target)
+    public void Activate(GameUnit caster, GameUnit[] targets)
     {
-        if(state == AbilityState.ready && caster.Mana >= ability.manaCost)
+        if(state == AbilityState.ready && !caster.isDead() && caster.Mana >= ability.manaCost)
         {
             this.caster = caster;
-            this.target = target;
+            this.targets = targets;
             state = AbilityState.casting;
             currentCastTime = 0;
         }
+    }
+
+    public void InterruptCast()
+    {
+        if(state == AbilityState.casting)
+        {
+            state = AbilityState.ready;
+            if (castBar != null)
+                castBar.gameObject.SetActive(false);
+        }
+
     }
 
     private void Update()
@@ -46,18 +57,21 @@ public class AbilitySlot : MonoBehaviour
                 if (currentCastTime <= ability.castTime)
                 {
                     currentCastTime += Time.deltaTime;
-
-                    castBar.gameObject.SetActive(true);
-                    castBar.SetMaxValue(ability.castTime);
-                    castBar.SetValue(currentCastTime);
+                    if(castBar != null) 
+                    {
+                        castBar.gameObject.SetActive(true);
+                        castBar.SetMaxValue(ability.castTime);
+                        castBar.SetValue(currentCastTime);
+                    }
                 }
                 else
                 {
-                    ability.Activate(caster, target);
+                    ability.Activate(caster, targets);
                     state = AbilityState.cooldown;
                     currentCooldown = ability.cooldown;
 
-                    castBar.gameObject.SetActive(false);
+                    if (castBar != null)
+                        castBar.gameObject.SetActive(false);
                 }
                 break;
 

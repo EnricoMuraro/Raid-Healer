@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4765b9e123b50f845912aeb20671a1d9, type: 3}
   m_Name: Dps
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  health: 100
+  maxHealth: 150
+  maxMana: 0
+  manaRegenRate: 0
   damage: 20
   attackFrequency: 1
-  cooldown: 0

@@ -25,8 +25,9 @@ public class PlayerController : MonoBehaviour
 
 
     public void OnActionButton1()
-    {
-        abilityBar.Activate(0, playerUnit, targetUnit);
+    {   
+        GameUnit[] targets = {targetUnit};
+        abilityBar.Activate(0, playerUnit,targets);
     }
 
     // Start is called before the first frame update

@@ -14,8 +14,39 @@ public class Raid : MonoBehaviour
         foreach (GameUnit raider in raiders) {
             raider.attack(Boss);
         }
+    }
 
-        Boss.attack(raiders[0]);
+    public List<GameUnit> GetFirstRaiders(int numberOfRaiders, bool aliveOnly = true)
+    {
+        List<GameUnit> targets = new List<GameUnit>();
+        int count = 0;
+        for (int i = 0; i < raiders.Length && count < numberOfRaiders; i++)
+        {   
+            if (aliveOnly) 
+            {
+                if(!raiders[i].isDead())
+                {
+                    targets.Add(raiders[i]);
+                    count++;
+                }   
+            }
+            else
+            {
+                targets.Add(raiders[i]);
+                count++;
+            }
+        }
+
+        return targets;
+    }
+
+    public GameUnit GetFirstRaider(bool aliveOnly = true) 
+    {   
+        List<GameUnit> raiders = GetFirstRaiders(1,aliveOnly);
+        if (raiders.Count > 0)
+            return raiders.ToArray()[0];
+        else
+            return null;
     }
 
     /*
