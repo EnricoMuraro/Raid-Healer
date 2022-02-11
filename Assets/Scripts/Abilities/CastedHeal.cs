@@ -20,6 +20,7 @@ public class CastedHeal : Ability
 
     public override void Activate(GameUnit caster, GameUnit target)
     {
+        caster.Mana -= manaCost;
         target.Health += baseHeal;
     }
 }

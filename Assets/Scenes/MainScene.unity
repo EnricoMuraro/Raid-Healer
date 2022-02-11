@@ -462,6 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: 00ca80e0d0173c17b9031256750d54aa, type: 2}
   health: 0
+  mana: 0
   cooldown: 0
   dead: 0
   healthBar: {fileID: 1974288642}
@@ -567,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123bf710188fc505eaefcaed35ee3460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 178195099}
+  progressBar: {fileID: 0}
 --- !u!1 &181796997
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123bf710188fc505eaefcaed35ee3460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 209050878}
+  progressBar: {fileID: 0}
 --- !u!114 &209050878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,6 +929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: 00ca80e0d0173c17b9031256750d54aa, type: 2}
   health: 0
+  mana: 0
   cooldown: 0
   dead: 0
   healthBar: {fileID: 1115739565}
@@ -1122,7 +1124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123bf710188fc505eaefcaed35ee3460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 314936386}
+  progressBar: {fileID: 0}
 --- !u!1 &420855957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123bf710188fc505eaefcaed35ee3460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 498195265}
+  progressBar: {fileID: 0}
 --- !u!1 &535675810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
   health: 0
+  mana: 0
   cooldown: 0
   dead: 0
   healthBar: {fileID: 1591946689}
@@ -1670,7 +1673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123bf710188fc505eaefcaed35ee3460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 679611596}
+  progressBar: {fileID: 0}
 --- !u!1 &767852577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,6 +1719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: 00ca80e0d0173c17b9031256750d54aa, type: 2}
   health: 0
+  mana: 0
   cooldown: 0
   dead: 0
   healthBar: {fileID: 1237956081}
@@ -1839,6 +1843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
   health: 0
+  mana: 0
   cooldown: 0
   dead: 0
   healthBar: {fileID: 1242249480}
@@ -1951,6 +1956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
   health: 0
+  mana: 0
   cooldown: 0
   dead: 0
   healthBar: {fileID: 314936387}
@@ -1999,6 +2005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: 82f92fb69c92063e8a7bcd8710e0b8e3, type: 2}
   health: 0
+  mana: 0
   cooldown: 0
   dead: 0
   healthBar: {fileID: 679611597}
@@ -2180,8 +2187,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0, y: 0}
-  m_SizeDelta: {x: -19.0047, y: 0}
+  m_AnchoredPosition: {x: -0.00009918213, y: 0}
+  m_SizeDelta: {x: -11.6881, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1051852792
 CanvasRenderer:
@@ -2347,7 +2354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123bf710188fc505eaefcaed35ee3460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1115739566}
+  progressBar: {fileID: 0}
 --- !u!114 &1115739566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2408,9 +2415,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1117777415}
+  - component: {fileID: 1117777417}
   - component: {fileID: 1117777414}
   - component: {fileID: 1117777416}
-  - component: {fileID: 1117777417}
+  - component: {fileID: 1117777418}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2430,10 +2438,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9079ae64001878c6bb98ab43ba7a6317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castBar: {fileID: 209050877}
-  targetRaiderIndex: 0
+  playerUnit: {fileID: 1117777418}
+  targetUnit: {fileID: 0}
   raid: {fileID: 886765861}
-  abilitySlots: []
+  abilityBar: {fileID: 1285544614}
+  playerInput: {fileID: 0}
 --- !u!4 &1117777415
 Transform:
   m_ObjectHideFlags: 0
@@ -2444,7 +2453,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 628.25464, y: 266.02393, z: -263.14163}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1285544612}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2461,10 +2471,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ability: {fileID: 11400000, guid: 81f00a1dc3a58af4894bde16775a639d, type: 2}
-  target: {fileID: 0}
-  caster: {fileID: 0}
-  key: 49
+  castBar: {fileID: 0}
 --- !u!114 &1117777417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117777413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 05008f3f17d1bec42989b398cb40358c, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Combat
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1117777418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2476,8 +2514,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 0}
+  unit: {fileID: 11400000, guid: 8254f60a5cb252840a110f7e3dfb9749, type: 2}
   health: 0
+  mana: 0
   cooldown: 0
   dead: 0
   healthBar: {fileID: 0}
@@ -2727,7 +2766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123bf710188fc505eaefcaed35ee3460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1237956080}
+  progressBar: {fileID: 0}
 --- !u!1 &1242249477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,7 +2869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123bf710188fc505eaefcaed35ee3460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1242249479}
+  progressBar: {fileID: 0}
 --- !u!1 &1271946295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,6 +3014,64 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1285544611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1285544612}
+  - component: {fileID: 1285544614}
+  - component: {fileID: 1285544613}
+  m_Layer: 0
+  m_Name: AbilityBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1285544612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285544611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1117777415}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1285544613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285544611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf71b4004254c648a98c5b165cd47e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: 81f00a1dc3a58af4894bde16775a639d, type: 2}
+  castBar: {fileID: 209050877}
+--- !u!114 &1285544614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285544611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828ef6fe5722db949829849c3f478c2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1317458421
 GameObject:
   m_ObjectHideFlags: 0
@@ -3164,6 +3261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
   health: 0
+  mana: 0
   cooldown: 0
   dead: 0
   healthBar: {fileID: 1426409265}
@@ -3212,6 +3310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
   health: 0
+  mana: 0
   cooldown: 0
   dead: 0
   healthBar: {fileID: 178195100}
@@ -3392,7 +3491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123bf710188fc505eaefcaed35ee3460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1426409264}
+  progressBar: {fileID: 0}
 --- !u!1 &1559992809
 GameObject:
   m_ObjectHideFlags: 0
@@ -3653,7 +3752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123bf710188fc505eaefcaed35ee3460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1591946688}
+  progressBar: {fileID: 0}
 --- !u!1 &1737771082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3993,6 +4092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
   health: 0
+  mana: 0
   cooldown: 0
   dead: 0
   healthBar: {fileID: 498195266}
@@ -4122,7 +4222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123bf710188fc505eaefcaed35ee3460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1974288643}
+  progressBar: {fileID: 0}
 --- !u!114 &1974288643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4489,16 +4589,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 2106461192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!114 &2106461194
 MonoBehaviour:
   m_ObjectHideFlags: 0

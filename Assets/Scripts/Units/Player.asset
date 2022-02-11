@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8e5b37d02364c344ba1ee1f31631c7a, type: 3}
-  m_Name: Light Heal
+  m_Script: {fileID: 11500000, guid: 4765b9e123b50f845912aeb20671a1d9, type: 3}
+  m_Name: Player
   m_EditorClassIdentifier: 
-  name: Light Heal
-  cooldown: 0
-  castTime: 1.5
-  manaCost: 30
-  baseHeal: 100
+  maxHealth: 0
+  maxMana: 1000
+  manaRegenRate: 5
+  damage: 0
+  attackFrequency: 0

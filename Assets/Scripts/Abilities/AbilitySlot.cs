@@ -5,8 +5,10 @@ using UnityEngine;
 public class AbilitySlot : MonoBehaviour
 {
     public Ability ability;
-    public GameUnit target;
-    public GameUnit caster;
+    public ProgressBar castBar;
+
+    GameUnit target;
+    GameUnit caster;
 
     private float currentCooldown;
     private float currentCastTime;
@@ -19,30 +21,43 @@ public class AbilitySlot : MonoBehaviour
     }
 
     AbilityState state = AbilityState.ready;
-    public KeyCode key;
+
+    public bool IsCasting()
+    {
+        return state == AbilityState.casting;
+    }
+
+    public void Activate(GameUnit caster, GameUnit target)
+    {
+        if(state == AbilityState.ready && caster.Mana >= ability.manaCost)
+        {
+            this.caster = caster;
+            this.target = target;
+            state = AbilityState.casting;
+            currentCastTime = 0;
+        }
+    }
 
     private void Update()
     {
         switch (state)
         {
-            case AbilityState.ready: 
-                if (Input.GetKeyDown(key))
-                {
-                    state = AbilityState.casting;
-                    currentCastTime = 0;
-                }
-                break;
-
             case AbilityState.casting:
                 if (currentCastTime <= ability.castTime)
                 {
                     currentCastTime += Time.deltaTime;
+
+                    castBar.gameObject.SetActive(true);
+                    castBar.SetMaxValue(ability.castTime);
+                    castBar.SetValue(currentCastTime);
                 }
                 else
                 {
                     ability.Activate(caster, target);
                     state = AbilityState.cooldown;
                     currentCooldown = ability.cooldown;
+
+                    castBar.gameObject.SetActive(false);
                 }
                 break;
 

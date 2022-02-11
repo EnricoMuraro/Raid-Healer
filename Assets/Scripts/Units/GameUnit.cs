@@ -8,10 +8,12 @@ public class GameUnit : MonoBehaviour, IDamageable
     public Unit unit;
 
     [SerializeField] private int health;
+    [SerializeField] private float mana;
     [SerializeField] private float cooldown;
     [SerializeField] private bool dead;
 
-    public HealthBar healthBar;
+    public ProgressBar healthBar;
+    public ProgressBar manaBar;
 
     public int Health
     {
@@ -30,6 +32,17 @@ public class GameUnit : MonoBehaviour, IDamageable
             }
         }
     }
+
+    public int Mana
+    {
+        get => (int) mana;
+        set
+        {
+            mana = value;
+            Mathf.Clamp(mana, 0, unit.MaxMana);
+        }
+    }
+
     public float Cooldown
     {
         get => cooldown;
@@ -62,15 +75,28 @@ public class GameUnit : MonoBehaviour, IDamageable
     private void Start()
     {
         Health = unit.MaxHealth;
+        Mana = unit.MaxMana;
         Cooldown = 0;
         dead = false;
     }
 
     private void Update() {
 
-        healthBar.SetMaxHealth(unit.MaxHealth);
-        healthBar.SetHealth(Health);
         Cooldown -= Time.deltaTime;
+        mana += unit.ManaRegenRate*Time.deltaTime;
+        Mathf.Clamp(mana, 0, unit.MaxMana);
+
+        if(healthBar != null)
+        {
+            healthBar.SetMaxValue(unit.MaxHealth);
+            healthBar.SetValue(Health);
+        }
+
+        if (manaBar != null)
+        {
+            manaBar.SetMaxValue(unit.MaxMana);
+            manaBar.SetValue(Mana);
+        }
     }
 
 }
