@@ -8,6 +8,7 @@ public class ProgressBar : MonoBehaviour
 
     public Slider progressBar;
 
+
     void Start()
     {
         progressBar = GetComponent<Slider>();

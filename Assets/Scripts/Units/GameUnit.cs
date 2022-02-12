@@ -12,13 +12,17 @@ public class GameUnit : MonoBehaviour, IDamageable
     [SerializeField] private float cooldown;
     [SerializeField] private bool dead;
 
+    public delegate void ValueChange(int oldValue, int newValue);
+    public event ValueChange OnDamageReceived;
+    public event ValueChange OnHealingReceived;
+
     public ProgressBar healthBar;
     public ProgressBar manaBar;
 
     public int Health
     {
         get => health;
-        set
+        private set
         {
             health = value;
 
@@ -54,9 +58,19 @@ public class GameUnit : MonoBehaviour, IDamageable
         }
     }
 
-    public void receiveDamage(int amount)
+    public void ReceiveHeal(int amount)
     {
+
+        int oldHealth = Health;
+        Health += amount;
+        OnHealingReceived?.Invoke(oldHealth, Health);
+    }
+
+    public void ReceiveDamage(int amount)
+    {
+        int oldHealth = Health;
         Health -= amount;
+        OnDamageReceived?.Invoke(oldHealth, Health);
     }
 
     public void attack(GameUnit target)
@@ -66,7 +80,7 @@ public class GameUnit : MonoBehaviour, IDamageable
             if (Cooldown <= 0)
             {
                 Cooldown = unit.AttackFrequency;
-                target.receiveDamage(unit.Damage);
+                target.ReceiveDamage(unit.Damage);
             }
         }
     }

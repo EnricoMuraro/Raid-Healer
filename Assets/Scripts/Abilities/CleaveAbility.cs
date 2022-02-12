@@ -12,7 +12,7 @@ public class CleaveAbility : Ability
     {
         foreach(GameUnit target in targets) 
         {
-            target.receiveDamage(baseDamage);
+            target.ReceiveDamage(baseDamage);
         }
     }
 }
