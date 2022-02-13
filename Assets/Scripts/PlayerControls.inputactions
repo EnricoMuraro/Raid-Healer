@@ -56,6 +56,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a8022646-c4d0-4dec-9b8f-72793688cb31",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionButton1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3aab2cb4-cbb0-41b7-ad05-0c585dad9628",
                     "path": "<Keyboard>/2",
                     "interactions": "",

@@ -8,11 +8,9 @@ public class CleaveAbility : Ability
 {
     public int baseDamage;
 
-    public override void Activate(GameUnit caster, GameUnit[] targets)
+    public override void Activate(GameUnit caster, int targetIndex, GameUnit[] targets)
     {
-        foreach(GameUnit target in targets) 
-        {
-            target.ReceiveDamage(baseDamage);
-        }
+        caster.Mana -= manaCost;
+        target.ReceiveDamage(baseDamage);
     }
 }

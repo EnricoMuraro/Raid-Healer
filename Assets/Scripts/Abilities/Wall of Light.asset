@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8e5b37d02364c344ba1ee1f31631c7a, type: 3}
-  m_Name: Light Heal
+  m_Name: Wall of Light
   m_EditorClassIdentifier: 
-  ID: 1001
-  name: Light Heal
-  cooldown: 0
-  castTime: 1.5
-  manaCost: 40
-  baseHeal: 100
-  sprite: {fileID: 21300000, guid: 4a46d70dfcf45ebea9d09a624ae3d21a, type: 3}
+  ID: 1002
+  name: Wall of Light
+  cooldown: 12
+  castTime: 0
+  manaCost: 200
+  baseHeal: 80
+  sprite: {fileID: 21300000, guid: 78818ba08dc34ffa48112e5d629833bb, type: 3}

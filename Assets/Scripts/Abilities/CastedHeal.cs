@@ -6,14 +6,11 @@ using UnityEngine;
 public class CastedHeal : Ability
 {
     public int baseHeal;
+    public Sprite sprite;
 
-
-    public override void Activate(GameUnit caster, GameUnit[] targets)
+    public override void Activate(GameUnit caster, int targetIndex, GameUnit[] raiders)
     {
-        if(targets.Length > 0)
-        {
-            caster.Mana -= manaCost;
-            targets[0].Health += baseHeal;
-        }
+        caster.Mana -= manaCost;
+        raiders[i].ReceiveHeal(baseHeal);
     }
 }

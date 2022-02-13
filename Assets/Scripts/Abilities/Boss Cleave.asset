@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cee6182792b18f4c95f308656a398e2, type: 3}
   m_Name: Boss Cleave
   m_EditorClassIdentifier: 
+  ID: 2001
   name: Cleave
   cooldown: 8
   castTime: 0

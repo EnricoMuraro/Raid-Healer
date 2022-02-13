@@ -13,6 +13,8 @@ public class AbilitySlot : MonoBehaviour
     private float currentCooldown;
     private float currentCastTime;
 
+    public float CurrentCooldown {get => currentCooldown;}
+
     enum AbilityState
     {
         ready,
