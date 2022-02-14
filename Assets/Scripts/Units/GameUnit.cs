@@ -60,17 +60,22 @@ public class GameUnit : MonoBehaviour, IDamageable
 
     public void ReceiveHeal(int amount)
     {
-
-        int oldHealth = Health;
-        Health += amount;
-        OnHealingReceived?.Invoke(oldHealth, Health);
+        if(!dead)
+        {
+            int oldHealth = Health;
+            Health += amount;
+            OnHealingReceived?.Invoke(oldHealth, Health);
+        }
     }
 
     public void ReceiveDamage(int amount)
     {
-        int oldHealth = Health;
-        Health -= amount;
-        OnDamageReceived?.Invoke(oldHealth, Health);
+        if(!dead)
+        {
+            int oldHealth = Health;
+            Health -= amount;
+            OnDamageReceived?.Invoke(oldHealth, Health);
+        }
     }
 
     public void attack(GameUnit target)

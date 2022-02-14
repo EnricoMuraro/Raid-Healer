@@ -61,7 +61,7 @@ public class AbilitySlot : MonoBehaviour
                 if (currentCastTime <= ability.castTime)
                 {
                     currentCastTime += Time.deltaTime;
-                    if(castBar != null) 
+                    if(castBar != null && ability.castTime > 0) 
                     {
                         castBar.gameObject.SetActive(true);
                         castBar.SetMaxValue(ability.castTime);
