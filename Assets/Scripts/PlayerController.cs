@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public GameUnit playerUnit;
-    public GameUnit targetUnit;
+    public int targetIndex;
     public Raid raid;
     public AbilityBar abilityBar;
     public PlayerInput playerInput;
@@ -20,14 +20,23 @@ public class PlayerController : MonoBehaviour
 
     public void SetTargetPlayer(int index) {
         Debug.Log(index);
-        targetUnit = raid.raiders[index];
+        targetIndex = index;
     }
 
 
     public void OnActionButton1()
     {   
-        GameUnit[] targets = {targetUnit};
-        abilityBar.Activate(0, playerUnit,targets);
+        abilityBar.Activate(0, playerUnit, targetIndex, raid);
+    }
+
+    public void OnActionButton2()
+    {
+        abilityBar.Activate(1, playerUnit, targetIndex, raid);
+    }
+
+    public void OnActionButton3()
+    {
+        abilityBar.Activate(2, playerUnit, targetIndex, raid);
     }
 
     // Start is called before the first frame update

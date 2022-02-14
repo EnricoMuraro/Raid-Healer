@@ -7,8 +7,9 @@ public class AbilitySlot : MonoBehaviour
     public Ability ability;
     public ProgressBar castBar;
 
-    GameUnit[] targets;
-    GameUnit caster;
+    private GameUnit caster;
+    private int targetIndex;
+    private Raid raid;
 
     private float currentCooldown;
     private float currentCastTime;
@@ -29,12 +30,13 @@ public class AbilitySlot : MonoBehaviour
         return state == AbilityState.casting;
     }
 
-    public void Activate(GameUnit caster, GameUnit[] targets)
+    public void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
         if(state == AbilityState.ready && !caster.isDead() && caster.Mana >= ability.manaCost)
         {
             this.caster = caster;
-            this.targets = targets;
+            this.targetIndex = targetIndex;
+            this.raid = raid;
             state = AbilityState.casting;
             currentCastTime = 0;
         }
@@ -68,7 +70,7 @@ public class AbilitySlot : MonoBehaviour
                 }
                 else
                 {
-                    ability.Activate(caster, targets);
+                    ability.Activate(caster, targetIndex, raid);
                     state = AbilityState.cooldown;
                     currentCooldown = ability.cooldown;
 

@@ -17,5 +17,6 @@ MonoBehaviour:
   cooldown: 12
   castTime: 0
   manaCost: 200
+  icon: {fileID: 21300000, guid: 78818ba08dc34ffa48112e5d629833bb, type: 3}
   baseHeal: 80
-  sprite: {fileID: 21300000, guid: 78818ba08dc34ffa48112e5d629833bb, type: 3}
+  targetType: 1

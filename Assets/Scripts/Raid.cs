@@ -8,6 +8,8 @@ public class Raid : MonoBehaviour
 
     [SerializeField] public GameUnit[] raiders;
     public GameUnit Boss;
+    public int raidRows;
+    public int raidColumns;
 
     private void Update() 
     {
@@ -15,6 +17,43 @@ public class Raid : MonoBehaviour
             raider.attack(Boss);
         }
     }
+
+    public (int, int) ArrayIndexToMatrixCoords(int arrayIndex)
+    {
+        int row = arrayIndex/raidColumns;
+        int column = arrayIndex%raidColumns;
+        return(row, column);
+    }
+
+    public GameUnit[,] GetRaidersAsMatrix()
+    {
+        GameUnit[,] raidersMatrix = new GameUnit[raidRows,raidColumns];
+        for (int i = 0; i < raidRows; i++)
+            for (int j = 0; j < raidColumns; j++) 
+            {
+                raidersMatrix[i,j] = raiders[(j + (i*raidColumns))];
+            }
+        return raidersMatrix;
+    }
+
+    public List<GameUnit> GetRaidersByRow(int row)
+    {
+        GameUnit[,] raidersMatrix = GetRaidersAsMatrix();
+        List<GameUnit> targets = new List<GameUnit>();
+        for (int j = 0; j < raidersMatrix.GetLength(1); j++)
+            targets.Add(raidersMatrix[row, j]);
+        return targets;
+    }
+
+    public List<GameUnit> GetRaidersByColumn(int column)
+    {
+        GameUnit[,] raidersMatrix = GetRaidersAsMatrix();
+        List<GameUnit> targets = new List<GameUnit>();
+        for (int i = 0; i < raidersMatrix.GetLength(0); i++)
+            targets.Add(raidersMatrix[i, column]);
+        return targets;
+    }
+
 
     public List<GameUnit> GetFirstRaiders(int numberOfRaiders, bool aliveOnly = true)
     {
@@ -48,6 +87,8 @@ public class Raid : MonoBehaviour
         else
             return null;
     }
+
+
 
     /*
     public Raider[,] raiders;

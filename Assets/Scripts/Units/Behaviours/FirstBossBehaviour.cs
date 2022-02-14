@@ -26,7 +26,7 @@ public class FirstBossBehaviour : MonoBehaviour
         GameUnit target = raid.GetFirstRaider();
         raid.Boss.attack(target);
         List<GameUnit> targets = raid.GetFirstRaiders(3);
-        cleaveAbility.Activate(raid.Boss, targets.ToArray());
+        cleaveAbility.Activate(raid.Boss, 0, raid);
 
     }
 }

@@ -9,11 +9,10 @@ public class AbilityBar : MonoBehaviour
 
     private void Awake()
     {
-        abilitySlots = GetComponents<AbilitySlot>();
+        abilitySlots = GetComponentsInChildren<AbilitySlot>();
     }
 
-
-    public void Activate(int slotIndex, GameUnit caster, GameUnit[] targets)
+    public void Activate(int slotIndex, GameUnit caster, int targetIndex, Raid raid)
     {
         foreach(AbilitySlot slot in abilitySlots)
         {
@@ -21,7 +20,7 @@ public class AbilityBar : MonoBehaviour
                 return;
         }
 
-        abilitySlots[slotIndex].Activate(caster, targets);
+        abilitySlots[slotIndex].Activate(caster, targetIndex, raid);
     }
 
     // Start is called before the first frame update

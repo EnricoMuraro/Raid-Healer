@@ -16,26 +16,13 @@ public class AbilitySlotIcon : MonoBehaviour
     }
 
 
-    private Sprite GetAbilitySprite()
-    {
-        Sprite abilitySprite = null;
-        //move this logic somewhere else
-        switch(abilitySlot.ability.ID) {
-            case 1001: abilitySprite = ((CastedHeal)abilitySlot.ability).sprite;
-                break;
-        }
-        Debug.Log(abilitySlot.ability.ID);
-        Debug.Log(abilitySprite);
-        return abilitySprite;
-    }
-
 
     // Start is called before the first frame update
     void Start()
     {   
         if(abilitySlot != null) 
         {
-            Sprite abilitySprite = GetAbilitySprite();
+            Sprite abilitySprite = abilitySlot.ability.icon;
             cooldownImage.sprite = abilitySprite;
             abilityImage.sprite = abilitySprite;
         }
@@ -49,6 +36,7 @@ public class AbilitySlotIcon : MonoBehaviour
         {
             if (abilitySlot.ability.cooldown > 0 && abilitySlot.CurrentCooldown >= 0)
             {
+                Debug.Log("");
                 cooldownImage.fillAmount = (abilitySlot.CurrentCooldown/abilitySlot.ability.cooldown);
             }
         }
