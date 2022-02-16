@@ -27,10 +27,11 @@ public class RaidBorderChanger : MonoBehaviour
         List<Image> tmp = new List<Image>();
         foreach(Transform child in transform)
             foreach(Transform c in child)
-                if(c.name == "RaiderHealthBarBorder") 
+                if(c.name == "ProgressBarBorder") 
                     tmp.Add(c.GetComponent<Image>());
 
         raidBorders = tmp.ToArray();
+        raidBorders[0].sprite = selectedBorder;
     }
 
     // Update is called once per frame

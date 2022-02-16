@@ -36,7 +36,6 @@ public class AbilitySlotIcon : MonoBehaviour
         {
             if (abilitySlot.ability.cooldown > 0 && abilitySlot.CurrentCooldown >= 0)
             {
-                Debug.Log("");
                 cooldownImage.fillAmount = (abilitySlot.CurrentCooldown/abilitySlot.ability.cooldown);
             }
         }

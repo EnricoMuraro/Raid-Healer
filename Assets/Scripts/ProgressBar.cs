@@ -2,16 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ProgressBar : MonoBehaviour
 {
 
     public Slider progressBar;
+    public TextMeshProUGUI progressBarText;
 
+    public bool displayValues = true;
+
+    private void Awake() 
+    {
+        
+        progressBar = GetComponent<Slider>();
+        progressBarText = GetComponentInChildren<TextMeshProUGUI>();
+    }
 
     void Start()
     {
-        progressBar = GetComponent<Slider>();
         progressBar.maxValue = 100;
         progressBar.value = 0;
     }
@@ -26,9 +35,17 @@ public class ProgressBar : MonoBehaviour
         progressBar.value = value;
     }
 
+    public void SetText(string text)
+    {
+        progressBarText.text = text;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        if(displayValues)
+        {
+            progressBarText.text = progressBar.value + "/" + progressBar.maxValue;
+        }
     }
 }

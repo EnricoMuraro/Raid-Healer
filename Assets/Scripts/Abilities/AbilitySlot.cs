@@ -39,6 +39,12 @@ public class AbilitySlot : MonoBehaviour
             this.raid = raid;
             state = AbilityState.casting;
             currentCastTime = 0;
+
+            if(castBar != null)
+            {
+                castBar.displayValues = false;
+                castBar.SetText(ability.name);
+            }
         }
     }
 
