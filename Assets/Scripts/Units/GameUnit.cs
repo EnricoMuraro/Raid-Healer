@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,14 @@ using UnityEngine;
 
 public class GameUnit : MonoBehaviour, IDamageable
 {
-    public Unit unit;
+    [SerializeField] private Unit unit;
 
     [SerializeField] private int health;
     [SerializeField] private float mana;
     [SerializeField] private float cooldown;
     [SerializeField] private bool dead;
+
+    [SerializeField] private List<StatusEffectSlot> statusEffectSlots;
 
     public delegate void ValueChange(int oldValue, int newValue);
     public event ValueChange OnDamageReceived;
@@ -36,16 +39,19 @@ public class GameUnit : MonoBehaviour, IDamageable
             }
         }
     }
+    public int MaxHealth { get => unit.MaxHealth; }
 
     public int Mana
     {
-        get => (int) mana;
+        get => (int)mana;
         set
         {
             mana = value;
             Mathf.Clamp(mana, 0, unit.MaxMana);
         }
     }
+
+    public int MaxMana { get => unit.MaxMana; }
 
     public float Cooldown
     {
@@ -56,6 +62,28 @@ public class GameUnit : MonoBehaviour, IDamageable
             if (cooldown < 0)
                 cooldown = 0;
         }
+    }
+
+    public float ManaRegenRate { get => unit.ManaRegenRate; }
+
+
+    private void Awake()
+    {
+        statusEffectSlots = new List<StatusEffectSlot>();
+    }
+
+    public void AddStatusEffect(StatusEffect statusEffect)
+    {
+        StatusEffectSlot statusEffectSlot = gameObject.AddComponent<StatusEffectSlot>();
+        statusEffectSlot.InitStatusEffect(this, statusEffect);
+        statusEffectSlot.OnStatusEffectFinished.AddListener(RemoveStatusEffectSlot);
+        statusEffectSlots.Add(statusEffectSlot);
+    }
+
+    private void RemoveStatusEffectSlot(StatusEffectSlot statusEffectSlot)
+    {
+        statusEffectSlots.Remove(statusEffectSlot);
+        Destroy(statusEffectSlot);
     }
 
     public void ReceiveHeal(int amount)
@@ -97,8 +125,8 @@ public class GameUnit : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        Health = unit.MaxHealth;
-        Mana = unit.MaxMana;
+        Health = MaxHealth;
+        Mana = MaxMana;
         Cooldown = 0;
         dead = false;
     }
@@ -106,18 +134,18 @@ public class GameUnit : MonoBehaviour, IDamageable
     private void Update() {
 
         Cooldown -= Time.deltaTime;
-        mana += unit.ManaRegenRate*Time.deltaTime;
-        Mathf.Clamp(mana, 0, unit.MaxMana);
+        mana += ManaRegenRate*Time.deltaTime;
+        Mathf.Clamp(mana, 0, MaxMana);
 
         if(healthBar != null)
         {
-            healthBar.SetMaxValue(unit.MaxHealth);
+            healthBar.SetMaxValue(MaxHealth);
             healthBar.SetValue(Health);
         }
 
         if (manaBar != null)
         {
-            manaBar.SetMaxValue(unit.MaxMana);
+            manaBar.SetMaxValue(MaxMana);
             manaBar.SetValue(Mana);
         }
     }

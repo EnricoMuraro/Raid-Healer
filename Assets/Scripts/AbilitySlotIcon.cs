@@ -20,7 +20,7 @@ public class AbilitySlotIcon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        if(abilitySlot != null) 
+        if(abilitySlot != null && abilitySlot.ability != null) 
         {
             Sprite abilitySprite = abilitySlot.ability.icon;
             cooldownImage.sprite = abilitySprite;
@@ -32,7 +32,7 @@ public class AbilitySlotIcon : MonoBehaviour
     void Update()
     {
 
-        if(abilitySlot != null) 
+        if(abilitySlot != null && abilitySlot.ability != null) 
         {
             if (abilitySlot.ability.cooldown > 0 && abilitySlot.CurrentCooldown >= 0)
             {

@@ -6,6 +6,8 @@ using UnityEngine;
 public class CastedHeal : Ability
 {
     public int baseHeal;
+    public StatusEffect statusEffect;
+
     public enum TargetType
     {
         single,
@@ -23,20 +25,34 @@ public class CastedHeal : Ability
         switch(targetType)
         {
             case TargetType.single:
-                raid.raiders[targetIndex].ReceiveHeal(baseHeal);
-            break;
+                {
+                    raid.raiders[targetIndex].ReceiveHeal(baseHeal);
+                    if (statusEffect != null)
+                        raid.raiders[targetIndex].AddStatusEffect(statusEffect);
+                    break;
+                }
 
-            case TargetType.row: {
-                var targets = raid.GetRaidersByRow(row);
-                foreach (GameUnit target in targets)
-                    target.ReceiveHeal(baseHeal);
-            } break;
+            case TargetType.row: 
+                {
+                    var targets = raid.GetRaidersByRow(row);
+                    foreach (GameUnit target in targets)
+                    {
+                        target.ReceiveHeal(baseHeal);
+                        if (statusEffect != null)
+                            target.AddStatusEffect(statusEffect);
+                    }
+                } break;
 
-            case TargetType.column: {
-                var targets = raid.GetRaidersByColumn(column);
-                foreach (GameUnit target in targets)
-                    target.ReceiveHeal(baseHeal);
-            } break;
+            case TargetType.column: 
+                {
+                    var targets = raid.GetRaidersByColumn(column);
+                    foreach (GameUnit target in targets)
+                    {
+                        target.ReceiveHeal(baseHeal);
+                        if (statusEffect != null)
+                            target.AddStatusEffect(statusEffect);
+                    }
+                } break;
         }
 
     }
