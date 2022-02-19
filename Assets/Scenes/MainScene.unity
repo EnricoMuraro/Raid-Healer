@@ -171,6 +171,7 @@ MonoBehaviour:
   mana: 0
   cooldown: 0
   dead: 0
+  statusEffectSlots: []
   healthBar: {fileID: 709393837}
   manaBar: {fileID: 0}
 --- !u!1 &181796997
@@ -349,8 +350,8 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 1
-  m_MatchWidthOrHeight: 0
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -435,6 +436,7 @@ MonoBehaviour:
   mana: 0
   cooldown: 0
   dead: 0
+  statusEffectSlots: []
   healthBar: {fileID: 1115739565}
   manaBar: {fileID: 0}
 --- !u!4 &263190475
@@ -731,6 +733,7 @@ MonoBehaviour:
   mana: 0
   cooldown: 0
   dead: 0
+  statusEffectSlots: []
   healthBar: {fileID: 687694335}
   manaBar: {fileID: 0}
 --- !u!224 &651869921 stripped
@@ -1001,6 +1004,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AbilitySlotIcon (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6241761387769720022, guid: 8808b7c0fd4c8a274a3ddcbd00c7c1a1, type: 3}
+      propertyPath: abilitySlot
+      value: 
+      objectReference: {fileID: 2044446040}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8808b7c0fd4c8a274a3ddcbd00c7c1a1, type: 3}
 --- !u!224 &723605611 stripped
@@ -1056,6 +1063,7 @@ MonoBehaviour:
   mana: 0
   cooldown: 0
   dead: 0
+  statusEffectSlots: []
   healthBar: {fileID: 593742793}
   manaBar: {fileID: 0}
 --- !u!1 &853711349
@@ -1106,6 +1114,7 @@ MonoBehaviour:
   mana: 0
   cooldown: 0
   dead: 0
+  statusEffectSlots: []
   healthBar: {fileID: 1013781164}
   manaBar: {fileID: 0}
 --- !u!1 &872481691
@@ -1148,7 +1157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 45}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 280, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &872481693
@@ -1359,6 +1368,7 @@ MonoBehaviour:
   mana: 0
   cooldown: 0
   dead: 0
+  statusEffectSlots: []
   healthBar: {fileID: 614045720}
   manaBar: {fileID: 0}
 --- !u!1001 &949580136
@@ -1530,6 +1540,7 @@ MonoBehaviour:
   mana: 0
   cooldown: 0
   dead: 0
+  statusEffectSlots: []
   healthBar: {fileID: 1109696905}
   manaBar: {fileID: 0}
 --- !u!1001 &967528806
@@ -1915,6 +1926,7 @@ MonoBehaviour:
   mana: 0
   cooldown: 0
   dead: 0
+  statusEffectSlots: []
   healthBar: {fileID: 0}
   manaBar: {fileID: 1522305229}
 --- !u!224 &1117980569 stripped
@@ -2342,7 +2354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2350,7 +2362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2394,7 +2406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -180
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2458,6 +2470,7 @@ MonoBehaviour:
   mana: 0
   cooldown: 0
   dead: 0
+  statusEffectSlots: []
   healthBar: {fileID: 1117980570}
   manaBar: {fileID: 0}
 --- !u!1 &1405716530
@@ -2508,6 +2521,7 @@ MonoBehaviour:
   mana: 0
   cooldown: 0
   dead: 0
+  statusEffectSlots: []
   healthBar: {fileID: 651869922}
   manaBar: {fileID: 0}
 --- !u!1001 &1504988759
@@ -2708,7 +2722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2716,7 +2730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2760,7 +2774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -120
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3266,6 +3280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AbilitySlotIcon (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6241761387769720022, guid: 8808b7c0fd4c8a274a3ddcbd00c7c1a1, type: 3}
+      propertyPath: abilitySlot
+      value: 
+      objectReference: {fileID: 608934993}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8808b7c0fd4c8a274a3ddcbd00c7c1a1, type: 3}
 --- !u!224 &1790605888 stripped
@@ -3321,6 +3339,7 @@ MonoBehaviour:
   mana: 0
   cooldown: 0
   dead: 0
+  statusEffectSlots: []
   healthBar: {fileID: 1654284187}
   manaBar: {fileID: 0}
 --- !u!1001 &1950724253
@@ -3487,7 +3506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf71b4004254c648a98c5b165cd47e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 0}
+  ability: {fileID: 11400000, guid: 19e36aad1f1bdff42adfdc48994ee98d, type: 2}
   castBar: {fileID: 1534864684}
 --- !u!1 &2106461192
 GameObject:
