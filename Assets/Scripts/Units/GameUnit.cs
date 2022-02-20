@@ -2,24 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class GameUnit : MonoBehaviour, IDamageable
 {
     [SerializeField] private Unit unit;
 
-    [SerializeField] private int health;
-    [SerializeField] private float mana;
-    [SerializeField] private float cooldown;
-    [SerializeField] private bool dead;
+    [SerializeField] private int health = 1;
+    [SerializeField] private float mana = 0;
+    [SerializeField] private float cooldown = 0;
+    [SerializeField] private bool dead = false;
 
     [SerializeField] private List<StatusEffectSlot> statusEffectSlots;
 
-    public delegate void ValueChange(int oldValue, int newValue);
-    public event ValueChange OnDamageReceived;
-    public event ValueChange OnHealingReceived;
+    public UnityEvent<int> OnHealthChange;
+    public UnityEvent<int> OnManaChange;
+    public UnityEvent OnDeath;
 
-    public ProgressBar healthBar;
     public ProgressBar manaBar;
 
     public int Health
@@ -27,15 +27,18 @@ public class GameUnit : MonoBehaviour, IDamageable
         get => health;
         private set
         {
-            health = value;
-
-            if (health > unit.MaxHealth)
-                health = unit.MaxHealth;
-
-            if (health <= 0)
+            if (!dead)
             {
-                health = 0;
-                dead = true;
+                int oldHealth = health;
+                health = value;
+                Mathf.Clamp(health, 0, unit.MaxHealth);
+
+                OnHealthChange?.Invoke(health - oldHealth);
+
+                if (health == 0)
+                {
+                    dead = true;
+                }
             }
         }
     }
@@ -46,8 +49,10 @@ public class GameUnit : MonoBehaviour, IDamageable
         get => (int)mana;
         set
         {
+            int oldmana = (int)mana;
             mana = value;
             Mathf.Clamp(mana, 0, unit.MaxMana);
+            OnManaChange?.Invoke((int)mana - oldmana);
         }
     }
 
@@ -70,6 +75,11 @@ public class GameUnit : MonoBehaviour, IDamageable
     private void Awake()
     {
         statusEffectSlots = new List<StatusEffectSlot>();
+        OnHealthChange = new UnityEvent<int>();
+        OnManaChange = new UnityEvent<int>();
+
+        Health = MaxHealth;
+        Mana = MaxMana;
     }
 
     public void AddStatusEffect(StatusEffect statusEffect)
@@ -88,22 +98,12 @@ public class GameUnit : MonoBehaviour, IDamageable
 
     public void ReceiveHeal(int amount)
     {
-        if(!dead)
-        {
-            int oldHealth = Health;
-            Health += amount;
-            OnHealingReceived?.Invoke(oldHealth, Health);
-        }
+        Health += amount;       
     }
 
     public void ReceiveDamage(int amount)
     {
-        if(!dead)
-        {
-            int oldHealth = Health;
-            Health -= amount;
-            OnDamageReceived?.Invoke(oldHealth, Health);
-        }
+        Health -= amount;
     }
 
     public void attack(GameUnit target)
@@ -125,23 +125,15 @@ public class GameUnit : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        Health = MaxHealth;
-        Mana = MaxMana;
-        Cooldown = 0;
-        dead = false;
     }
 
     private void Update() {
 
         Cooldown -= Time.deltaTime;
-        mana += ManaRegenRate*Time.deltaTime;
-        Mathf.Clamp(mana, 0, MaxMana);
-
-        if(healthBar != null)
-        {
-            healthBar.SetMaxValue(MaxHealth);
-            healthBar.SetValue(Health);
-        }
+        float deltaMana = ManaRegenRate * Time.deltaTime;
+        mana += deltaMana;
+        OnManaChange?.Invoke((int)deltaMana);
+        Mathf.Clamp(mana, 0, unit.MaxMana);
 
         if (manaBar != null)
         {
