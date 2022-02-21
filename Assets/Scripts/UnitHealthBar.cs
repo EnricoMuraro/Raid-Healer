@@ -7,6 +7,7 @@ public class UnitHealthBar : MonoBehaviour
 {
 
     public GameUnit unit;
+    public bool showStatusEffects = false;
     private ProgressBar progressBar;
 
     private void Awake()

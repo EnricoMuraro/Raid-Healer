@@ -703,6 +703,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ability: {fileID: 11400000, guid: 7f3f558721006f5528f16925fd696bb1, type: 2}
   castBar: {fileID: 1534864684}
+--- !u!1 &534508133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 924378333590680729, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
+  m_PrefabInstance: {fileID: 1226570166}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &534508135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534508133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfa92cb4f02882419c78c8de3c0a1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 964010022}
 --- !u!224 &593742792 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}

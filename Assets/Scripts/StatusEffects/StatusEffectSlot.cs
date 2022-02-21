@@ -9,7 +9,7 @@ public class StatusEffectSlot : MonoBehaviour
     private StatusEffect statusEffect;
 
     private float currentTick = 0;
-    private float currentDuration = 0;
+    public float currentDuration = 0;
 
     public UnityEvent<StatusEffectSlot> OnStatusEffectFinished = new UnityEvent<StatusEffectSlot>();
 
@@ -24,6 +24,11 @@ public class StatusEffectSlot : MonoBehaviour
     {
         this.unit = unit;
         this.statusEffect = statusEffect;
+    }    
+
+    public StatusEffect GetStatusEffect()
+    {
+        return statusEffect;
     }    
 
     // Update is called once per frame

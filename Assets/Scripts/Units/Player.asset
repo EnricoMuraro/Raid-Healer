@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4765b9e123b50f845912aeb20671a1d9, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 1
   maxMana: 2000
   manaRegenRate: 5
   damage: 0

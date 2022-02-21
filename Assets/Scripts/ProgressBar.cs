@@ -9,6 +9,7 @@ public class ProgressBar : MonoBehaviour
 
     public Slider progressBar;
     public TextMeshProUGUI progressBarText;
+    public GameObject statusEffectsBar;
 
     public bool displayValues = true;
 
