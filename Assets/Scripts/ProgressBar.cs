@@ -7,9 +7,10 @@ using TMPro;
 public class ProgressBar : MonoBehaviour
 {
 
-    public Slider progressBar;
-    public TextMeshProUGUI progressBarText;
-    public GameObject statusEffectsBar;
+    private Slider progressBar;
+    private TextMeshProUGUI progressBarText;
+    private Transform statusEffectsBar;
+    private Object StatusEffectFrameIcon;
 
     public bool displayValues = true;
 
@@ -18,12 +19,20 @@ public class ProgressBar : MonoBehaviour
         
         progressBar = GetComponent<Slider>();
         progressBarText = GetComponentInChildren<TextMeshProUGUI>();
+        statusEffectsBar = transform.Find("StatusEffectBar");
+        StatusEffectFrameIcon = Resources.Load("StatusEffectFrameIcon");
     }
 
     void Start()
     {
         progressBar.maxValue = 100;
         progressBar.value = 0;
+    }
+    
+    public void AddStatusEffectFrameIcon(StatusEffectSlot statusEffectSlot)
+    {
+        GameObject icon = Instantiate(StatusEffectFrameIcon, statusEffectsBar) as GameObject;
+        icon.GetComponent<StatusEffectIcon>().statusEffectSlot = statusEffectSlot;
     }
 
     public void SetMaxValue(float maxValue) 

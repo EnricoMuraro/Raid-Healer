@@ -19,6 +19,7 @@ public class GameUnit : MonoBehaviour, IDamageable
     public UnityEvent<int> OnHealthChange;
     public UnityEvent<int> OnManaChange;
     public UnityEvent OnDeath;
+    public UnityEvent<StatusEffectSlot> OnStatusEffectAdded;
 
     public ProgressBar manaBar;
 
@@ -77,6 +78,7 @@ public class GameUnit : MonoBehaviour, IDamageable
         statusEffectSlots = new List<StatusEffectSlot>();
         OnHealthChange = new UnityEvent<int>();
         OnManaChange = new UnityEvent<int>();
+        OnStatusEffectAdded = new UnityEvent<StatusEffectSlot>();
 
         Health = MaxHealth;
         Mana = MaxMana;
@@ -88,6 +90,7 @@ public class GameUnit : MonoBehaviour, IDamageable
         statusEffectSlot.InitStatusEffect(this, statusEffect);
         statusEffectSlot.OnStatusEffectFinished.AddListener(RemoveStatusEffectSlot);
         statusEffectSlots.Add(statusEffectSlot);
+        OnStatusEffectAdded?.Invoke(statusEffectSlot);
     }
 
     private void RemoveStatusEffectSlot(StatusEffectSlot statusEffectSlot)

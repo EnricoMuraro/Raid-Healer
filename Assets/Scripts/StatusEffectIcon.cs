@@ -12,8 +12,8 @@ public class StatusEffectIcon : MonoBehaviour
 
     private void Awake()
     {
-        durationImage = transform.Find("StatusEffectIconDuration").GetComponent<Image>();
-        abilityImage = transform.Find("StatusEffectIcon").GetComponent<Image>();
+        durationImage = transform.Find("StatusEffectImageDuration").GetComponent<Image>();
+        abilityImage = transform.Find("StatusEffectImage").GetComponent<Image>();
     }
 
 
@@ -21,16 +21,10 @@ public class StatusEffectIcon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (statusEffectSlot != null)
-        {
-            StatusEffect statusEffect = statusEffectSlot.GetStatusEffect();
-            if (statusEffect != null)
-            {
-                Sprite abilitySprite = statusEffect.Icon;
-                durationImage.sprite = abilitySprite;
-                abilityImage.sprite = abilitySprite;
-            }
-        }
+        StatusEffect statusEffect = statusEffectSlot.GetStatusEffect();
+        Sprite abilitySprite = statusEffect.Icon;
+        durationImage.sprite = abilitySprite;
+        abilityImage.sprite = abilitySprite;
     }
 
     // Update is called once per frame
@@ -39,13 +33,14 @@ public class StatusEffectIcon : MonoBehaviour
         if (statusEffectSlot != null)
         {
             StatusEffect statusEffect = statusEffectSlot.GetStatusEffect();
-            if (statusEffect != null)
+            if (statusEffectSlot.currentDuration > 0)
             {
-                if (statusEffectSlot.currentDuration > 0)
-                {
-                    durationImage.fillAmount = (statusEffectSlot.currentDuration / statusEffect.Duration);
-                }
+                durationImage.fillAmount = (statusEffectSlot.currentDuration / statusEffect.Duration);
             }
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }
