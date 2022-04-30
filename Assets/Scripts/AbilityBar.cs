@@ -23,14 +23,8 @@ public class AbilityBar : MonoBehaviour
         abilitySlots[slotIndex].Activate(caster, targetIndex, raid);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public AbilitySlot[] GetAbilitySlots()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        return abilitySlots;
     }
 }

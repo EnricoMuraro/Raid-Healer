@@ -7,26 +7,18 @@ public class FirstBossBehaviour : MonoBehaviour
 {
 
     public Raid raid;
-    public AbilitySlot cleaveAbility;
-
-    private void Awake() {
-        raid = GetComponent<Raid>();
-        cleaveAbility = GetComponent<AbilitySlot>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AbilityBar bossAbilityBar;
+    
 
     // Update is called once per frame
     void Update()
     {   
-        GameUnit target = raid.GetFirstRaider();
-        raid.Boss.attack(target);
-        List<GameUnit> targets = raid.GetFirstRaiders(3);
-        cleaveAbility.Activate(raid.Boss, 0, raid);
+        if (raid.Boss.isDead() == false)
+        {
+            GameUnit target = raid.GetFirstRaider();
+            raid.Boss.attack(target);
+            bossAbilityBar.Activate(0, raid.Boss, 0, raid);
+        }
 
     }
 }
