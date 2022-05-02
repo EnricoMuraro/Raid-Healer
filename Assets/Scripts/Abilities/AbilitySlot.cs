@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AbilitySlot : MonoBehaviour
 {
     public Ability ability;
     public ProgressBar castBar;
+    public Event onStateChange;
 
     private GameUnit caster;
     private int targetIndex;
@@ -16,7 +18,7 @@ public class AbilitySlot : MonoBehaviour
 
     public float CurrentCooldown {get => currentCooldown;}
 
-    enum AbilityState
+    public enum AbilityState
     {
         ready,
         casting,
