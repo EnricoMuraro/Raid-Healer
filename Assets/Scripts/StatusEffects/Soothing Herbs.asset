@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Soothing Herbs
   Duration: 8
   TickRate: 1
-  Icon: {fileID: 21300000, guid: e211779fe53aa684eba351548dc8cf7c, type: 3}
+  Icon: {fileID: 21300000, guid: 3160131abfa3d6b49bbf9a36aed17322, type: 3}
   baseHeal: 20

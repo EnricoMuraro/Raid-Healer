@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ActionButton5",
+                    "type": "Button",
+                    "id": "6d008e7e-c2f8-4ae0-81a5-b38d01443683",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -95,6 +104,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ActionButton4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b853c3fe-b130-45d6-b9b0-2bb5d966adde",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionButton5",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

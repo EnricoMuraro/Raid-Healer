@@ -10,7 +10,7 @@ public class CleaveAbility : Ability
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
-        caster.Mana -= manaCost;
+        caster.Mana -= ManaCost;
         List<GameUnit> targets = raid.GetFirstRaiders(3);
         foreach (GameUnit target in targets)
         {

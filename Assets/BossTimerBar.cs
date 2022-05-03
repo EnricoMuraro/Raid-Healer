@@ -12,30 +12,53 @@ public class BossTimerBar : MonoBehaviour
     private AbilitySlot[] abilitySlots;
     private GameObject[] icons;
 
+    private float barWidth;
+    private Object AbilityIcon;
+
     void Awake()
     {
         abilitySlots = abilityBar.GetAbilitySlots();
         icons = new GameObject[abilitySlots.Length];
-        
+
+        barWidth = GetComponent<Image>().rectTransform.rect.width;
+        AbilityIcon = Resources.Load("AbilityIcon");
+
+        for (int i = 0; i < abilitySlots.Length; i++)
+        {
+            abilitySlots[i].onCooldownStart.AddListener(AbilityTimerAnimation);
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Object AbilityIcon = Resources.Load("AbilityIcon");
-        for(int i = 0; i < abilitySlots.Length; i++)
-        {
-            icons[i] = Instantiate(AbilityIcon) as GameObject;
-            icons[i].transform.SetParent(transform, false);
-            icons[i].GetComponent<Image>().sprite = abilitySlots[i].ability.icon;
-        }    
+
+    }
+
+    void AbilityTimerAnimation(AbilitySlot abilitySlot)
+    {
+
+        GameObject icon = Instantiate(AbilityIcon) as GameObject;
+        icon.transform.SetParent(transform, false);
+        icon.GetComponent<Image>().sprite = abilitySlot.ability.icon;
+        icon.transform.localPosition = new Vector3((abilitySlot.CurrentCooldown / MaxTime - 0.5f) * barWidth, 0, 0);
+
+        var seq = LeanTween.sequence();
+        //Fade in
+        seq.insert(LeanTween.scale(icon, new Vector3(1, 1, 1), 0.4f));
+
+        //Move icon 
+        seq.append(LeanTween.moveLocalX(icon, -0.5f * barWidth, abilitySlot.CurrentCooldown));
+
+        //Fade out and destroy the icon GameObject
+        seq.append(LeanTween.scale(icon, new Vector3(0, 0, 0), 0.1f).setDestroyOnComplete(true));
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        float barWidth = GetComponent<Image>().rectTransform.rect.width;
-        Debug.Log("bar width " + barWidth);
+        /*
 
         for (int i = 0; i < icons.Length; i++)
         {
@@ -47,7 +70,6 @@ public class BossTimerBar : MonoBehaviour
                 icon.SetActive(true);
                 float newPos = Mathf.Clamp((abilitySlot.CurrentCooldown / MaxTime) * barWidth, 0, barWidth);
                 Debug.Log(newPos);
-                icon.transform.localPosition = new Vector3(newPos-(barWidth/2), 0, 0);
                 Debug.Log(icon.transform.localPosition);
             }
             else
@@ -55,5 +77,6 @@ public class BossTimerBar : MonoBehaviour
                 icon.SetActive(false);
             }
         }    
+        */
     }
 }

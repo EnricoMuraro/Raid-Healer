@@ -19,7 +19,7 @@ public class CastedHeal : Ability
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
-        caster.Mana -= manaCost;
+        caster.Mana -= ManaCost;
         (int row, int column) = raid.ArrayIndexToMatrixCoords(targetIndex);
 
         switch(targetType)

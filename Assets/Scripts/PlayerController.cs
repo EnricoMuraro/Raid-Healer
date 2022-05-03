@@ -44,6 +44,11 @@ public class PlayerController : MonoBehaviour
         abilityBar.Activate(3, playerUnit, targetIndex, raid);
     }
 
+    public void OnActionButton5()
+    {
+        abilityBar.Activate(4, playerUnit, targetIndex, raid);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

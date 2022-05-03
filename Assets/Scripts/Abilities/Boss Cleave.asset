@@ -17,4 +17,5 @@ MonoBehaviour:
   cooldown: 8
   castTime: 0
   manaCost: 0
+  icon: {fileID: 21300000, guid: 50ff33c5312bed342a913f69ac9f35bb, type: 3}
   baseDamage: 100

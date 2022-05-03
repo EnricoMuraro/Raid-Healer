@@ -14,13 +14,16 @@ public class AbilityBar : MonoBehaviour
 
     public void Activate(int slotIndex, GameUnit caster, int targetIndex, Raid raid)
     {
-        foreach(AbilitySlot slot in abilitySlots)
+        if (slotIndex < abilitySlots.Length)
         {
-            if (slot.IsCasting())
-                return;
-        }
+            foreach (AbilitySlot slot in abilitySlots)
+            {
+                if (slot.IsCasting())
+                    return;
+            }
 
-        abilitySlots[slotIndex].Activate(caster, targetIndex, raid);
+            abilitySlots[slotIndex].Activate(caster, targetIndex, raid);
+        }
     }
 
     public AbilitySlot[] GetAbilitySlots()

@@ -34,9 +34,9 @@ public class AbilitySlotIcon : MonoBehaviour
 
         if(abilitySlot != null && abilitySlot.ability != null) 
         {
-            if (abilitySlot.ability.cooldown > 0 && abilitySlot.CurrentCooldown >= 0)
+            if (abilitySlot.ability.Cooldown > 0 && abilitySlot.CurrentCooldown >= 0)
             {
-                cooldownImage.fillAmount = (abilitySlot.CurrentCooldown/abilitySlot.ability.cooldown);
+                cooldownImage.fillAmount = (abilitySlot.CurrentCooldown/abilitySlot.ability.Cooldown);
             }
         }
     }

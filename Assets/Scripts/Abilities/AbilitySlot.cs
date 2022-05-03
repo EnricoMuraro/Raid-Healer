@@ -7,7 +7,9 @@ public class AbilitySlot : MonoBehaviour
 {
     public Ability ability;
     public ProgressBar castBar;
-    public Event onStateChange;
+    public float StartingCooldown;
+    public UnityEvent<AbilitySlot> onStateChange = new UnityEvent<AbilitySlot>();
+    public UnityEvent<AbilitySlot> onCooldownStart = new UnityEvent<AbilitySlot>();
 
     private GameUnit caster;
     private int targetIndex;
@@ -16,7 +18,28 @@ public class AbilitySlot : MonoBehaviour
     private float currentCooldown;
     private float currentCastTime;
 
+    private AbilityState state = AbilityState.ready;
+
+    private void Awake()
+    {
+        if(StartingCooldown > 0)
+        {
+            currentCooldown = StartingCooldown;
+            state = AbilityState.cooldown;
+            onCooldownStart.Invoke(this);
+        }
+    }
+
     public float CurrentCooldown {get => currentCooldown;}
+    public AbilityState State 
+    { 
+        get => state;
+        private set
+        {
+            state = value;
+            onStateChange?.Invoke(this);
+        }
+    }
 
     public enum AbilityState
     {
@@ -25,21 +48,20 @@ public class AbilitySlot : MonoBehaviour
         cooldown
     }
 
-    AbilityState state = AbilityState.ready;
 
     public bool IsCasting()
     {
-        return state == AbilityState.casting;
+        return State == AbilityState.casting;
     }
 
     public void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
-        if(state == AbilityState.ready && !caster.isDead() && caster.Mana >= ability.manaCost)
+        if(ability != null && State == AbilityState.ready && !caster.isDead() && caster.Mana >= ability.ManaCost)
         {
             this.caster = caster;
             this.targetIndex = targetIndex;
             this.raid = raid;
-            state = AbilityState.casting;
+            State = AbilityState.casting;
             currentCastTime = 0;
 
             if(castBar != null)
@@ -52,9 +74,9 @@ public class AbilitySlot : MonoBehaviour
 
     public void InterruptCast()
     {
-        if(state == AbilityState.casting)
+        if(State == AbilityState.casting)
         {
-            state = AbilityState.ready;
+            State = AbilityState.ready;
             if (castBar != null)
                 castBar.gameObject.SetActive(false);
         }
@@ -63,24 +85,25 @@ public class AbilitySlot : MonoBehaviour
 
     private void Update()
     {
-        switch (state)
+        switch (State)
         {
             case AbilityState.casting:
-                if (currentCastTime <= ability.castTime)
+                if (currentCastTime <= ability.CastTime)
                 {
                     currentCastTime += Time.deltaTime;
-                    if(castBar != null && ability.castTime > 0) 
+                    if(castBar != null && ability.CastTime > 0) 
                     {
                         castBar.gameObject.SetActive(true);
-                        castBar.SetMaxValue(ability.castTime);
+                        castBar.SetMaxValue(ability.CastTime);
                         castBar.SetValue(currentCastTime);
                     }
                 }
                 else
                 {
                     ability.Activate(caster, targetIndex, raid);
-                    state = AbilityState.cooldown;
-                    currentCooldown = ability.cooldown;
+                    State = AbilityState.cooldown;
+                    currentCooldown = ability.Cooldown;
+                    onCooldownStart.Invoke(this);
 
                     if (castBar != null)
                         castBar.gameObject.SetActive(false);
@@ -94,7 +117,7 @@ public class AbilitySlot : MonoBehaviour
                 }
                 else
                 {
-                    state = AbilityState.ready;
+                    State = AbilityState.ready;
                     currentCooldown = 0;
                 }
                 break;
