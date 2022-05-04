@@ -54,9 +54,14 @@ public class AbilitySlot : MonoBehaviour
         return State == AbilityState.casting;
     }
 
-    public void Activate(GameUnit caster, int targetIndex, Raid raid)
+    public string Activate(GameUnit caster, int targetIndex, Raid raid)
     {
-        if(ability != null && State == AbilityState.ready && !caster.isDead() && caster.Mana >= ability.ManaCost)
+        if (caster.Mana < ability.ManaCost)
+            return "Not enough mana";
+        if (raid.raiders[targetIndex].isDead())
+            return "You can't cast on a dead target";
+
+        if(ability != null && State == AbilityState.ready && !caster.isDead())
         {
             this.caster = caster;
             this.targetIndex = targetIndex;
@@ -70,6 +75,7 @@ public class AbilitySlot : MonoBehaviour
                 castBar.SetText(ability.name);
             }
         }
+        return "";
     }
 
     public void InterruptCast()

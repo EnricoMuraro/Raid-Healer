@@ -33,7 +33,7 @@ public class UnitHealthBar : MonoBehaviour
         if (unit.isDead())
         {
             progressBar.displayValues = false;
-
+            progressBar.SetText("DEAD");
         }
 
     }

@@ -26,27 +26,47 @@ public class PlayerController : MonoBehaviour
 
     public void OnActionButton1()
     {   
-        abilityBar.Activate(0, playerUnit, targetIndex, raid);
+        string err = abilityBar.Activate(0, playerUnit, targetIndex, raid);
+        if (err != "")
+        {
+            Debug.Log(err);
+        }
     }
 
     public void OnActionButton2()
     {
-        abilityBar.Activate(1, playerUnit, targetIndex, raid);
+        string err = abilityBar.Activate(1, playerUnit, targetIndex, raid);
+        if (err != "")
+        {
+            Debug.Log(err);
+        }
     }
 
     public void OnActionButton3()
     {
-        abilityBar.Activate(2, playerUnit, targetIndex, raid);
+        string err = abilityBar.Activate(2, playerUnit, targetIndex, raid);
+        if (err != "")
+        {
+            Debug.Log(err);
+        }
     }
 
     public void OnActionButton4()
     {
-        abilityBar.Activate(3, playerUnit, targetIndex, raid);
+        string err = abilityBar.Activate(3, playerUnit, targetIndex, raid);
+        if (err != "")
+        {
+            Debug.Log(err);
+        }
     }
 
     public void OnActionButton5()
     {
-        abilityBar.Activate(4, playerUnit, targetIndex, raid);
+        string err = abilityBar.Activate(4, playerUnit, targetIndex, raid);
+        if (err != "")
+        {
+            Debug.Log(err);
+        }
     }
 
     // Start is called before the first frame update

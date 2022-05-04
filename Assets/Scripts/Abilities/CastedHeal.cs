@@ -7,6 +7,7 @@ public class CastedHeal : Ability
 {
     public int baseHeal;
     public StatusEffect statusEffect;
+    public TargetType targetType;
 
     public enum TargetType
     {
@@ -15,45 +16,42 @@ public class CastedHeal : Ability
         column,
     }
 
-    public TargetType targetType;
+    public int HealValue
+    { get { return (int)ApplyModifiers(baseHeal, AbilityModifier.Stat.Heal); } }
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
         caster.Mana -= ManaCost;
         (int row, int column) = raid.ArrayIndexToMatrixCoords(targetIndex);
 
-        switch(targetType)
+        List<GameUnit> targets = new List<GameUnit>();
+
+        switch (targetType)
         {
             case TargetType.single:
                 {
-                    raid.raiders[targetIndex].ReceiveHeal(baseHeal);
-                    if (statusEffect != null)
-                        raid.raiders[targetIndex].AddStatusEffect(statusEffect);
-                    break;
+                    targets.Add(raid.raiders[targetIndex]);
                 }
+                break;
 
-            case TargetType.row: 
+            case TargetType.row:
                 {
-                    var targets = raid.GetRaidersByRow(row);
-                    foreach (GameUnit target in targets)
-                    {
-                        target.ReceiveHeal(baseHeal);
-                        if (statusEffect != null)
-                            target.AddStatusEffect(statusEffect);
-                    }
-                } break;
+                    targets = raid.GetRaidersByRow(row);
+                }
+                break;
 
-            case TargetType.column: 
+            case TargetType.column:
                 {
-                    var targets = raid.GetRaidersByColumn(column);
-                    foreach (GameUnit target in targets)
-                    {
-                        target.ReceiveHeal(baseHeal);
-                        if (statusEffect != null)
-                            target.AddStatusEffect(statusEffect);
-                    }
-                } break;
+                    targets = raid.GetRaidersByColumn(column);
+                }
+                break;
         }
 
+        foreach (GameUnit target in targets)
+        {
+            target.ReceiveHeal(HealValue);
+            if (statusEffect != null)
+                target.AddStatusEffect(statusEffect);
+        }
     }
 }

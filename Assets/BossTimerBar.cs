@@ -51,7 +51,7 @@ public class BossTimerBar : MonoBehaviour
         seq.append(LeanTween.moveLocalX(icon, -0.5f * barWidth, abilitySlot.CurrentCooldown));
 
         //Fade out and destroy the icon GameObject
-        seq.append(LeanTween.scale(icon, new Vector3(0, 0, 0), 0.1f).setDestroyOnComplete(true));
+        seq.append(LeanTween.alpha(icon.GetComponent<Image>().rectTransform, 0, 0.2f).setDestroyOnComplete(true));
 
     }
 

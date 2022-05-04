@@ -2,18 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[CreateAssetMenu(menuName = "Ability Modifier")]
 public class AbilityModifier : ScriptableObject
 {
 
-    public float cooldownMod;
-    public float castTimeMod;
-    public float manaCostMod;
-    public float damageMod;
-    public float healMod;
+    public Stat stat;
+    public Type type;
+    public float value;
 
-    public enum ModType
+    public enum Stat
     {
-        percentage,
-        flat
+        Cooldown,
+        CastTime,
+        ManaCost,
+        Damage,
+        Heal,
+    }
+
+    public enum Type
+    {
+        Percentage,
+        Flat,
     }
 }

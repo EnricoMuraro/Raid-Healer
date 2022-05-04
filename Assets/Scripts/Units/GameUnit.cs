@@ -31,12 +31,11 @@ public class GameUnit : MonoBehaviour, IDamageable
             if (!dead)
             {
                 int oldHealth = health;
-                health = value;
-                Mathf.Clamp(health, 0, unit.MaxHealth);
+                health = Mathf.Clamp(value, 0, unit.MaxHealth);
 
                 OnHealthChange?.Invoke(health - oldHealth);
 
-                if (health == 0)
+                if (health <= 0)
                 {
                     dead = true;
                 }
@@ -51,8 +50,7 @@ public class GameUnit : MonoBehaviour, IDamageable
         set
         {
             int oldmana = (int)mana;
-            mana = value;
-            Mathf.Clamp(mana, 0, unit.MaxMana);
+            mana = Mathf.Clamp(value, 0, unit.MaxMana);
             OnManaChange?.Invoke((int)mana - oldmana);
         }
     }
@@ -135,8 +133,7 @@ public class GameUnit : MonoBehaviour, IDamageable
         Cooldown -= Time.deltaTime;
         float deltaMana = ManaRegenRate * Time.deltaTime;
         mana += deltaMana;
-        OnManaChange?.Invoke((int)deltaMana);
-        Mathf.Clamp(mana, 0, unit.MaxMana);
+        mana = Mathf.Clamp(mana, 0, unit.MaxMana);
 
         if (manaBar != null)
         {
