@@ -18,6 +18,15 @@ public class Ability : ScriptableObject
     private int manaCost;
 
     public AbilityModifier[] modifiers;
+
+    public void AddModifiers(AbilityModifier[] abilityModifiers)
+    {
+        AbilityModifier[] newModifiers = new AbilityModifier[modifiers.Length + abilityModifiers.Length];
+        modifiers.CopyTo(newModifiers, 0);
+        abilityModifiers.CopyTo(newModifiers, modifiers.Length);
+        modifiers = newModifiers;
+    }
+
     protected float ApplyModifiers(float initialValue, AbilityModifier.Stat modStat)
     {
         float flatValuesSum = 0;

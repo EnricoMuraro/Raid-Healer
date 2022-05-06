@@ -3087,7 +3087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raid: {fileID: 886765861}
   bossAbilityBar: {fileID: 438033076}
-  waitTime: 3
+  waitTime: 1
 --- !u!1001 &967528806
 PrefabInstance:
   m_ObjectHideFlags: 0
