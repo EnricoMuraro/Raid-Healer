@@ -32,29 +32,19 @@ public class TalentSlot : MonoBehaviour
 
     public void Activate()
     {
-        if(previousTalentSlot == null || previousTalentSlot.IsActive())
-        {
-            isActive = true;
-            border.color = Color.green;
-            nextTalentArrow.color = Color.green;
-        }
+
+        isActive = true;
+        border.color = Color.green;
+        nextTalentArrow.color = Color.green;
     }
 
     public void Deactivate()
     {
-        if(nextTalentSlot == null || !nextTalentSlot.IsActive())
-        {
-            isActive = false;
-            border.color = Color.gray;
-            nextTalentArrow.color = Color.gray;
-        }
+
+        isActive = false;
+        border.color = Color.gray;
+        nextTalentArrow.color = Color.gray;
     }
 
-    public void toggleActivation()
-    {
-        if (isActive)
-            Deactivate();
-        else
-            Activate();
-    }
+
 }

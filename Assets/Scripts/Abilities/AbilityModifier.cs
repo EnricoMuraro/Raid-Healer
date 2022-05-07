@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "Ability Modifier")]
-public class AbilityModifier : ScriptableObject
+[System.Serializable]
+public class AbilityModifier
 {
 
     public Stat stat;

@@ -32,15 +32,16 @@ public class Ability : ScriptableObject
         float flatValuesSum = 0;
         float percentaceValuesSum = 1;
 
-        foreach (var modifier in modifiers)
-            if (modifier.stat == modStat)
-                switch (modifier.type)
-                {
-                    case AbilityModifier.Type.Flat:
-                        flatValuesSum += modifier.value; break;
-                    case AbilityModifier.Type.Percentage:
-                        percentaceValuesSum *= 1 + (modifier.value/100); break; 
-                }
+        if(modifiers != null)
+            foreach (var modifier in modifiers)
+                if (modifier.stat == modStat)
+                    switch (modifier.type)
+                    {
+                        case AbilityModifier.Type.Flat:
+                            flatValuesSum += modifier.value; break;
+                        case AbilityModifier.Type.Percentage:
+                            percentaceValuesSum *= 1 + (modifier.value/100); break; 
+                    }
 
         initialValue += flatValuesSum;
         initialValue *= percentaceValuesSum;
