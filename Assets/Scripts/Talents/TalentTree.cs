@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TalentTree : MonoBehaviour
+[CreateAssetMenu]
+public class TalentTree : ScriptableObject
 {
-    public int maximumPoints;
-    public int availablePoints;
-
-
-
-
+    public Talent[] ActiveTalents;
 }

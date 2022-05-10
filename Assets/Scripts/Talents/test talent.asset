@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4a5df12777e25468e3b0008572ab3d, type: 3}
   m_Name: test talent
   m_EditorClassIdentifier: 
+  ID: 6667
   name: GIGA HERM
   description: 'asd asd asd asd '
   sprite: {fileID: 21300000, guid: ac09e713067b30c4fa98bb51439d5aea, type: 3}
-  prevTalent: {fileID: 0}
   passiveEffects:
   - affectedAbilities:
     - {fileID: 11400000, guid: 19e36aad1f1bdff42adfdc48994ee98d, type: 2}
     abilityModifiers:
-    - {fileID: 11400000, guid: 00fe129fbfa31dc4f823b6fa7fc6da92, type: 2}
+    - stat: 0
+      type: 2
+      value: 0
