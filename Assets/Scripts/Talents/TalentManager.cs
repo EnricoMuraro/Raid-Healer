@@ -20,12 +20,10 @@ public class TalentManager : MonoBehaviour
 
     public void LoadTalents()
     {
-        TalentStorage talentStorage = Persistance.LoadTalents();
-        if (talentStorage != null)
-            for (int i = 0; i < talentPanels.Length; i++)
-            {
-                talentPanels[i].Load(talentStorage.activeTalentsIDs);
-            }
+        for (int i = 0; i < talentPanels.Length; i++)
+        {
+            talentPanels[i].SetActiveTalents(talentTree.ActiveTalents);
+        }
     }
 
     public void SaveTalents()
@@ -42,6 +40,6 @@ public class TalentManager : MonoBehaviour
         }
         
         talentTree.ActiveTalents = talents.ToArray();
-        Persistance.SaveTalents(new TalentStorage(talentIDs.ToArray()));
+        Persistance.SaveTalents(new IDStorage(talentIDs.ToArray()));
     }
 }

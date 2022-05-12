@@ -11,6 +11,7 @@ public class PassiveTalent : Talent
 
     public void ApplyPassiveEffects()
     {
+
         foreach (var effect in passiveEffects)
             foreach (var ability in effect.affectedAbilities)
                 ability.AddModifiers(effect.abilityModifiers);

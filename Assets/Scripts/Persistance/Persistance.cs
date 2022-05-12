@@ -4,39 +4,54 @@ using UnityEngine;
 
 public static class Persistance
 {
-    public static void Save(ScriptableObject scriptableObject, string filename)
+    private static void Save(IDStorage idstorage, string path)
     {
-        
+        string dataJson = JsonUtility.ToJson(idstorage);
+        Debug.Log("Saved data: " + dataJson);
+        PlayerPrefs.SetString(path, dataJson);
     }
 
-    public static ScriptableObject Load(string filename)
+    private static IDStorage Load(string path)
     {
-        return null;
+        string dataJson = PlayerPrefs.GetString(path);
+        Debug.Log("Loaded data: " + dataJson);
+        IDStorage idstorage = JsonUtility.FromJson<IDStorage>(dataJson);
+
+        if (idstorage != null)
+            return idstorage;
+        else
+            return new IDStorage(new int[0]);
     }
 
-    public static void SaveTalents(TalentStorage talentStorage)
+
+    public static void SaveTalents(IDStorage talentStorage)
     {
-        string talentJson = JsonUtility.ToJson(talentStorage);
-        Debug.Log("Saved talents: " + talentJson);
-        PlayerPrefs.SetString("Talents", talentJson);
+        Save(talentStorage, "Talents");
     }
 
-    public static TalentStorage LoadTalents()
+    public static IDStorage LoadTalents()
     {
-        string talentJson = PlayerPrefs.GetString("Talents");
-        Debug.Log("Loaded talents: " + talentJson);
-        TalentStorage talents = JsonUtility.FromJson<TalentStorage>(talentJson);
-        return talents;
+        return Load("Talents");
+    }
+
+    public static void SaveSelectedAbilities(IDStorage abilitiesStorage)
+    {
+        Save(abilitiesStorage, "SelectedAbilities");
+    }
+
+    public static IDStorage LoadSelectedAbilities()
+    {
+        return Load("SelectedAbilities");
     }
 }
 
 [System.Serializable]
-public class TalentStorage
+public class IDStorage
 {
-    public int[] activeTalentsIDs;
+    public int[] IDs;
 
-    public TalentStorage(int[] IDs)
+    public IDStorage(int[] IDs)
     {
-        activeTalentsIDs = IDs;
+        this.IDs = IDs;
     }
 }

@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270e80c49aa057f40a5f35295269c04f, type: 3}
   m_Name: Talent Tree
   m_EditorClassIdentifier: 
+  AllTalents:
+  - {fileID: 11400000, guid: a9e9d66ce0810704383e2428818d770a, type: 2}
+  - {fileID: 11400000, guid: 1ef015e65aca8bf40a9f20299f1a6d46, type: 2}
+  - {fileID: 11400000, guid: 00776cb7728870549b9ced21d2f7e565, type: 2}
   ActiveTalents: []

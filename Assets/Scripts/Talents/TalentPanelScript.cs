@@ -39,15 +39,15 @@ public class TalentPanelScript : MonoBehaviour
         return talents.ToArray();
     }
 
-    public void Load(int[] activeTalentsIDs)
+    public void SetActiveTalents(Talent[] activeTalents)
     {
         AvailableTalents = maximumTalents;
 
         foreach (TalentSlot talentSlot in talentSlots)
         {
-            for (int i = 0; i < activeTalentsIDs.Length; i++)
+            for (int i = 0; i < activeTalents.Length; i++)
             {
-                if (talentSlot.talent.ID == activeTalentsIDs[i])
+                if (talentSlot.talent.ID == activeTalents[i].ID)
                 {
                     talentSlot.Activate();
                     AvailableTalents -= 1;

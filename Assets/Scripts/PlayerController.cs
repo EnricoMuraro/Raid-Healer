@@ -9,13 +9,13 @@ public class PlayerController : MonoBehaviour
     public int targetIndex;
     public Raid raid;
     public AbilityBar abilityBar;
-    public PlayerInput playerInput;
-    
+    public TalentTree talentTree;
 
-    private void Awake()
+    private void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
-        
+        abilityBar.ClearAbilityModifiers();
+        talentTree.ActivatePassiveTalents();
+        SetTargetPlayer(0);
     }
 
     public void SetTargetPlayer(int index) {
@@ -69,15 +69,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        SetTargetPlayer(0);
-    }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }

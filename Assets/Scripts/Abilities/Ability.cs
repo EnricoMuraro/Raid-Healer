@@ -8,6 +8,7 @@ public class Ability : ScriptableObject
 {
     public int ID;
     public new string name;
+    public string description;
     public Sprite icon;
 
     [SerializeField]
@@ -18,6 +19,12 @@ public class Ability : ScriptableObject
     private int manaCost;
 
     public AbilityModifier[] modifiers;
+
+    public void RemoveAllModifiers()
+    {
+        modifiers = new AbilityModifier[0];
+    }
+       
 
     public void AddModifiers(AbilityModifier[] abilityModifiers)
     {

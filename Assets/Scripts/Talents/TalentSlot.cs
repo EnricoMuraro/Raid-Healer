@@ -35,7 +35,7 @@ public class TalentSlot : MonoBehaviour
 
         isActive = true;
         border.color = Color.green;
-        nextTalentArrow.color = Color.green;
+        nextTalentArrow.color = Color.cyan;
     }
 
     public void Deactivate()

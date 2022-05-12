@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,13 @@ public class AbilityBar : MonoBehaviour
             return abilitySlots[slotIndex].Activate(caster, targetIndex, raid);
         }
         return "";
+    }
+
+    public void ClearAbilityModifiers()
+    {
+        foreach(var abilitySlot in abilitySlots)
+            if(abilitySlot.ability != null)
+                abilitySlot.ability.RemoveAllModifiers();
     }
 
     public AbilitySlot[] GetAbilitySlots()
