@@ -712,6 +712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828ef6fe5722db949829849c3f478c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellBook: {fileID: 0}
 --- !u!1001 &474822354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -819,6 +820,10 @@ PrefabInstance:
       propertyPath: m_AspectRatio
       value: NaN
       objectReference: {fileID: 0}
+    - target: {fileID: 8529215408414116077, guid: 8808b7c0fd4c8a274a3ddcbd00c7c1a1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e55970c28113d564f865c9593ee5f6f9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8808b7c0fd4c8a274a3ddcbd00c7c1a1, type: 3}
 --- !u!224 &474822355 stripped
@@ -870,7 +875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf71b4004254c648a98c5b165cd47e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: 7f3f558721006f5528f16925fd696bb1, type: 2}
+  ability: {fileID: 0}
   castBar: {fileID: 1534864684}
   StartingCooldown: 0
   onStateChange:
@@ -2013,6 +2018,10 @@ PrefabInstance:
       propertyPath: m_AspectRatio
       value: NaN
       objectReference: {fileID: 0}
+    - target: {fileID: 8529215408414116077, guid: 8808b7c0fd4c8a274a3ddcbd00c7c1a1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e55970c28113d564f865c9593ee5f6f9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8808b7c0fd4c8a274a3ddcbd00c7c1a1, type: 3}
 --- !u!224 &723605611 stripped
@@ -5503,7 +5512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf71b4004254c648a98c5b165cd47e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: 81f00a1dc3a58af4894bde16775a639d, type: 2}
+  ability: {fileID: 0}
   castBar: {fileID: 1534864684}
   StartingCooldown: 0
   onStateChange:
@@ -5561,6 +5570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828ef6fe5722db949829849c3f478c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellBook: {fileID: 11400000, guid: 8a52d88a98b865743a35d2596b17c32d, type: 2}
 --- !u!1 &1314401884
 GameObject:
   m_ObjectHideFlags: 0
@@ -7048,6 +7058,10 @@ PrefabInstance:
       propertyPath: m_AspectRatio
       value: NaN
       objectReference: {fileID: 0}
+    - target: {fileID: 8529215408414116077, guid: 8808b7c0fd4c8a274a3ddcbd00c7c1a1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e55970c28113d564f865c9593ee5f6f9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8808b7c0fd4c8a274a3ddcbd00c7c1a1, type: 3}
 --- !u!224 &1601585801 stripped
@@ -7089,7 +7103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf71b4004254c648a98c5b165cd47e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: dade20bc9d156fbccafdb7fb84059f2a, type: 2}
+  ability: {fileID: 0}
   castBar: {fileID: 1534864684}
   StartingCooldown: 0
   onStateChange:
@@ -7813,6 +7827,10 @@ PrefabInstance:
       propertyPath: m_AspectRatio
       value: NaN
       objectReference: {fileID: 0}
+    - target: {fileID: 8529215408414116077, guid: 8808b7c0fd4c8a274a3ddcbd00c7c1a1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e55970c28113d564f865c9593ee5f6f9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8808b7c0fd4c8a274a3ddcbd00c7c1a1, type: 3}
 --- !u!224 &1790605888 stripped
@@ -8603,7 +8621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf71b4004254c648a98c5b165cd47e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: 19e36aad1f1bdff42adfdc48994ee98d, type: 2}
+  ability: {fileID: 0}
   castBar: {fileID: 1534864684}
   StartingCooldown: 0
   onStateChange:

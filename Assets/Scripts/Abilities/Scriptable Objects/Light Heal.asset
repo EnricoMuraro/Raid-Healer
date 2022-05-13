@@ -15,11 +15,14 @@ MonoBehaviour:
   ID: 1001
   name: Light Heal
   description: Fast and efficient single target heal
-  icon: {fileID: 21300000, guid: 80fa7bbb5d2edac449f16ff603f06100, type: 3}
+  icon: {fileID: 21300000, guid: 73efa50af578e5146b922313fe2a8b0f, type: 3}
   cooldown: 0
   castTime: 1.5
   manaCost: 50
-  modifiers: []
+  modifiers:
+  - stat: 4
+    type: 0
+    value: 15
   baseHeal: 100
   statusEffect: {fileID: 0}
   targetType: 0

@@ -5,12 +5,25 @@ using UnityEngine;
 
 public class AbilityBar : MonoBehaviour
 {
-
+    public SpellBook spellBook;
     private AbilitySlot[] abilitySlots;
 
     private void Awake()
     {
+        //TODO SEEK GOD
         abilitySlots = GetComponentsInChildren<AbilitySlot>();
+        if (spellBook != null)
+            for (int i = 0; i < abilitySlots.Length && i < spellBook.SelectedAbilities.Length; i++)
+            {
+                if(spellBook.SelectedAbilities[i] != null)
+                    spellBook.SelectedAbilities[i].RemoveModifiersBySource(AbilityModifier.Source.Talent);
+                abilitySlots[i].ability = spellBook.SelectedAbilities[i];
+            }
+    }
+
+    private void Start()
+    {
+
     }
 
     public string Activate(int slotIndex, GameUnit caster, int targetIndex, Raid raid)
@@ -26,13 +39,6 @@ public class AbilityBar : MonoBehaviour
             return abilitySlots[slotIndex].Activate(caster, targetIndex, raid);
         }
         return "";
-    }
-
-    public void ClearAbilityModifiers()
-    {
-        foreach(var abilitySlot in abilitySlots)
-            if(abilitySlot.ability != null)
-                abilitySlot.ability.RemoveAllModifiers();
     }
 
     public AbilitySlot[] GetAbilitySlots()

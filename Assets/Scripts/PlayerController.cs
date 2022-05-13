@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        abilityBar.ClearAbilityModifiers();
         talentTree.ActivatePassiveTalents();
         SetTargetPlayer(0);
     }
@@ -22,7 +21,6 @@ public class PlayerController : MonoBehaviour
         Debug.Log(index);
         targetIndex = index;
     }
-
 
     public void OnActionButton1()
     {   

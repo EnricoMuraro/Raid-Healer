@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Pillar of Light
   description: Instant cast spell that heals all the raiders in the same column of
     the target, fairly expensive
-  icon: {fileID: 21300000, guid: c078a233d60a63c44a9e6ae4a4b3986d, type: 3}
+  icon: {fileID: 21300000, guid: 8fe5efa8cdd999644a20bdc6b77d1d36, type: 3}
   cooldown: 12
   castTime: 0
   manaCost: 200

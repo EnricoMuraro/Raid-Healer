@@ -34,6 +34,15 @@ public class Ability : ScriptableObject
         modifiers = newModifiers;
     }
 
+    internal void RemoveModifiersBySource(AbilityModifier.Source sourceToRemove)
+    {
+        List<AbilityModifier> newModifiers = new ();
+        foreach (AbilityModifier modifier in modifiers)
+            if (modifier.source != sourceToRemove)
+                newModifiers.Add(modifier);
+        modifiers = newModifiers.ToArray();
+    }
+
     protected float ApplyModifiers(float initialValue, AbilityModifier.Stat modStat)
     {
         float flatValuesSum = 0;

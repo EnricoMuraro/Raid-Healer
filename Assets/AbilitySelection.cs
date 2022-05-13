@@ -15,19 +15,15 @@ public class AbilitySelection : MonoBehaviour
     
     private AbilityView AbilityViewPrefab;
     private Ability[] SelectedAbilities;
-    [SerializeField]
-    private Image[] SelectedAbilitiesIcons;
     private int SelectedAbilitySlot = 0;
 
     private void Awake()
     {
-        SelectedAbilitiesIcons = ActionBar.GetComponentsInChildren<Image>();
     }
 
     private void Start()
     {
         AbilityViewPrefab = Resources.Load<AbilityView>("AbilityView");
-        SelectedAbilities = new Ability[5];
 
         foreach (Ability ability in spellBook.AllAbilities)
         {
@@ -44,9 +40,7 @@ public class AbilitySelection : MonoBehaviour
 
     private void LoadSelection()
     {
-        Debug.Log("Load");
         SelectedAbilities = spellBook.SelectedAbilities;
-        DisplaySelectedAbilities();
     }
 
     private void OnDisable()
@@ -56,23 +50,19 @@ public class AbilitySelection : MonoBehaviour
 
     private void SaveSelection()
     {
-        int[] abilitiesIDs = new int[5];
-        for (int i = 0; i < abilitiesIDs.Length; i++)
-            if (SelectedAbilities[i] != null)
-                abilitiesIDs[i] = SelectedAbilities[i].ID;
-
-        spellBook.SetSelectedAbilities(abilitiesIDs);
-        Persistance.SaveSelectedAbilities(new IDStorage(abilitiesIDs));
+        spellBook.SelectedAbilities = SelectedAbilities;
+        Persistance.SaveSelectedAbilities(new IDStorage(spellBook.GetSelectedAbilitiesIDs()));
     }
 
     private void SetAbilitySlot(Ability ability)
     {
+        // remove the ability if it is duplicated in another part of the array
         for (int i = 0; i < SelectedAbilities.Length; i++)
             if (SelectedAbilities[i] != null && SelectedAbilities[i].ID == ability.ID)
                 SelectedAbilities[i] = null;
 
         SelectedAbilities[SelectedAbilitySlot] = ability;
-        DisplaySelectedAbilities();
+        spellBook.SelectedAbilities = SelectedAbilities;
     }    
 
     public void SetSelectedAbilitySlot(int n)
@@ -80,14 +70,4 @@ public class AbilitySelection : MonoBehaviour
         SelectedAbilitySlot = n;
     }
 
-    public void DisplaySelectedAbilities()
-    {
-        for(int i = 0; i<SelectedAbilities.Length; i++)
-        {
-            if (SelectedAbilities[i] != null)
-                SelectedAbilitiesIcons[i].sprite = SelectedAbilities[i].icon;
-            else
-                SelectedAbilitiesIcons[i].sprite = DefaultActionBarIcon;
-        }
-    }
 }

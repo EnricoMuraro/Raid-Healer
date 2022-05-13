@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Wall of Light
   description: Instant cast spell that heals all the raiders in the same row of the
     target, fairly expensive
-  icon: {fileID: 21300000, guid: 07412842ef818f340a86f9b87f2aac0c, type: 3}
+  icon: {fileID: 21300000, guid: e582ccc4139b9eb4ba696059e1f97d08, type: 3}
   cooldown: 12
   castTime: 0
   manaCost: 200

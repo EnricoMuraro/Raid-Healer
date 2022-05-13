@@ -9,6 +9,7 @@ public class AbilityModifier
 
     public Stat stat;
     public Type type;
+    public Source source;
     public float value;
 
     public enum Stat
@@ -24,5 +25,11 @@ public class AbilityModifier
     {
         Percentage,
         Flat,
+    }
+
+    public enum Source
+    {
+        Talent,
+        Aura,
     }
 }

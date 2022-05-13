@@ -56,7 +56,7 @@ public class AbilitySlot : MonoBehaviour
 
     public string Activate(GameUnit caster, int targetIndex, Raid raid)
     {
-        if (caster.Mana < ability.ManaCost)
+        if (ability != null && caster.Mana < ability.ManaCost)
             return "Not enough mana";
         if (raid.raiders[targetIndex].isDead())
             return "You can't cast on a dead target";

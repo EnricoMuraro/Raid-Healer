@@ -34,4 +34,5 @@ public class TalentTree : ScriptableObject
              if(talent is PassiveTalent passiveTalent)
                 passiveTalent.ApplyPassiveEffects();
     }
+
 }
