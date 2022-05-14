@@ -41,6 +41,15 @@ public class AbilitySelection : MonoBehaviour
     private void LoadSelection()
     {
         SelectedAbilities = spellBook.SelectedAbilities;
+        if(SelectedAbilities.Length < 5)
+        {
+            Ability[] tmp = new Ability[5];
+            for(int i = 0; i < SelectedAbilities.Length; i++)
+            {
+                tmp[i] = SelectedAbilities[i];
+            }
+            SelectedAbilities = tmp;
+        }    
     }
 
     private void OnDisable()
