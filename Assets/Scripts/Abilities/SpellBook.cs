@@ -6,7 +6,9 @@ using UnityEngine.Events;
 [CreateAssetMenu]
 public class SpellBook : ScriptableObject
 {
-    public Ability[] AllAbilities;
+    [SerializeField]
+    private List<Ability> defaultAbilities;
+    private List<Ability> talentAbilities;
     [SerializeField]
     private Ability[] selectedAbilities;
 
@@ -19,6 +21,19 @@ public class SpellBook : ScriptableObject
         {
             selectedAbilities = value;
             onSelectedChange.Invoke();
+        }
+    }
+
+    public List<Ability> TalentAbilities { get => talentAbilities; set => talentAbilities = value; }
+
+    public List<Ability> AllAbilities 
+    {
+        get
+        {
+            List<Ability> allAbilities = new ();
+            allAbilities.AddRange(defaultAbilities);
+            allAbilities.AddRange(talentAbilities);
+            return allAbilities;
         }
     }
 

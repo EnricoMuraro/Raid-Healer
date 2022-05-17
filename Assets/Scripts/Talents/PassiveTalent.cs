@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "Passive Talent")]
+[CreateAssetMenu(menuName = "Talent/Passive Talent")]
 public class PassiveTalent : Talent
 {
     [SerializeField]

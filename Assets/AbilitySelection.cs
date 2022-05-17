@@ -40,7 +40,10 @@ public class AbilitySelection : MonoBehaviour
 
     private void LoadSelection()
     {
+
         SelectedAbilities = spellBook.SelectedAbilities;
+
+        //make sure SelectedAbilities is at least 5 long 
         if(SelectedAbilities.Length < 5)
         {
             Ability[] tmp = new Ability[5];
@@ -49,7 +52,7 @@ public class AbilitySelection : MonoBehaviour
                 tmp[i] = SelectedAbilities[i];
             }
             SelectedAbilities = tmp;
-        }    
+        }
     }
 
     private void OnDisable()

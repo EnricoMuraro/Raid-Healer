@@ -13,7 +13,7 @@ public class TalentSlot : MonoBehaviour
 
     private bool isActive;
 
-    private void Start()
+    private void OnEnable()
     {
 
         border.color = Color.gray;
@@ -32,7 +32,6 @@ public class TalentSlot : MonoBehaviour
 
     public void Activate()
     {
-
         isActive = true;
         border.color = Color.green;
         nextTalentArrow.color = Color.cyan;
@@ -40,7 +39,6 @@ public class TalentSlot : MonoBehaviour
 
     public void Deactivate()
     {
-
         isActive = false;
         border.color = Color.gray;
         nextTalentArrow.color = Color.gray;
