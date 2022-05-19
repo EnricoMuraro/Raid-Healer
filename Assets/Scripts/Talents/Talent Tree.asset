@@ -16,7 +16,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a9e9d66ce0810704383e2428818d770a, type: 2}
   - {fileID: 11400000, guid: 1ef015e65aca8bf40a9f20299f1a6d46, type: 2}
   - {fileID: 11400000, guid: 00776cb7728870549b9ced21d2f7e565, type: 2}
+  - {fileID: 11400000, guid: 06185756100ac1341b0706721325fb2b, type: 2}
   ActiveTalents:
   - {fileID: 11400000, guid: 00776cb7728870549b9ced21d2f7e565, type: 2}
   - {fileID: 11400000, guid: a9e9d66ce0810704383e2428818d770a, type: 2}
   - {fileID: 11400000, guid: 1ef015e65aca8bf40a9f20299f1a6d46, type: 2}
+  - {fileID: 11400000, guid: 06185756100ac1341b0706721325fb2b, type: 2}

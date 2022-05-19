@@ -8,6 +8,7 @@ public class TalentTree : ScriptableObject
     public List<Talent> AllTalents;
     public List<Talent> ActiveTalents;
 
+    private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
     public Talent GetTalentByID(int ID)
     {
         foreach(Talent t in AllTalents)

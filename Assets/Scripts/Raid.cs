@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class Raid : MonoBehaviour
 {
@@ -11,12 +12,29 @@ public class Raid : MonoBehaviour
     public int raidRows;
     public int raidColumns;
 
+    //true for player victory, false for loss
+    public UnityEvent<bool> onGameEnd = new ();
+
     private void Update() 
     {
         foreach (GameUnit raider in raiders) {
             raider.attack(Boss);
         }
+
+        if (Boss.isDead())
+            onGameEnd.Invoke(true);
+
+        //if all raiders are dead finish the game
+        bool wipe = true;
+        foreach (GameUnit raider in raiders)
+            if (!raider.isDead())
+                wipe = false;
+
+        if (wipe)
+            onGameEnd.Invoke(false);
+
     }
+
 
     public (int, int) ArrayIndexToMatrixCoords(int arrayIndex)
     {
@@ -57,26 +75,44 @@ public class Raid : MonoBehaviour
 
     public List<GameUnit> GetFirstRaiders(int numberOfRaiders, bool aliveOnly = true)
     {
-        List<GameUnit> targets = new List<GameUnit>();
+        List<GameUnit> targets = new ();
+        List<int> indexes = GetFirstRaidersIndexes(numberOfRaiders, aliveOnly);
+        foreach (int i in indexes)
+            targets.Add(raiders[i]);
+        return targets;
+    }
+
+    public List<int> GetFirstRaidersIndexes(int numberOfRaiders, bool aliveOnly = true)
+    {
+        List<int> targets = new ();
         int count = 0;
         for (int i = 0; i < raiders.Length && count < numberOfRaiders; i++)
-        {   
-            if (aliveOnly) 
+        {
+            if (aliveOnly)
             {
-                if(!raiders[i].isDead())
+                if (!raiders[i].isDead())
                 {
-                    targets.Add(raiders[i]);
+                    targets.Add(i);
                     count++;
-                }   
+                }
             }
             else
             {
-                targets.Add(raiders[i]);
+                targets.Add(i);
                 count++;
             }
         }
 
         return targets;
+    }
+
+    public int GetFirstRaiderIndex(bool aliveOnly = true)
+    {
+        List<int> raiders = GetFirstRaidersIndexes(1, aliveOnly);
+        if (raiders.Count > 0)
+            return raiders.ToArray()[0];
+        else
+            return 0;
     }
 
     public GameUnit GetFirstRaider(bool aliveOnly = true) 

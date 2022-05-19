@@ -14,6 +14,8 @@ public class SpellBook : ScriptableObject
 
     public UnityEvent onSelectedChange = new();
 
+    private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
+
     public Ability[] SelectedAbilities 
     { 
         get => selectedAbilities;
@@ -32,7 +34,8 @@ public class SpellBook : ScriptableObject
         {
             List<Ability> allAbilities = new ();
             allAbilities.AddRange(defaultAbilities);
-            allAbilities.AddRange(talentAbilities);
+            if(talentAbilities != null)
+                allAbilities.AddRange(talentAbilities);
             return allAbilities;
         }
     }

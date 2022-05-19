@@ -19,7 +19,7 @@ public class FirstBossBehaviour : MonoBehaviour
             {
                 GameUnit target = raid.GetFirstRaider();
                 raid.Boss.attack(target);
-                bossAbilityBar.Activate(0, raid.Boss, 0, raid);
+                bossAbilityBar.Activate(0, raid.Boss, raid.GetFirstRaiderIndex(), raid);
             }
         }
         else

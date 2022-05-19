@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TalentsScene.unity
     guid: ffe5a3f07a84f0240b216fc7362dee2c
+  - enabled: 1
+    path: Assets/Scenes/EndScreenScene.unity
+    guid: 383edab5b860c23928ac287e5b212798
   m_configObjects: {}
