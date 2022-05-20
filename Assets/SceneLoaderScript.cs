@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SceneLoaderScript : MonoBehaviour
 {
     public CanvasGroup transitionImage;
+    public float transitionDuration;
     public bool inverted = false;
 
     private void Start()
@@ -14,13 +15,13 @@ public class SceneLoaderScript : MonoBehaviour
         transitionImage.alpha = 1;
         Application.targetFrameRate = 60;
         int position = inverted ? -Screen.height : Screen.height;
-        LeanTween.moveLocalY(transitionImage.gameObject, position, 0.5f).setEaseOutExpo();
+        LeanTween.moveLocalY(transitionImage.gameObject, position, transitionDuration).setEaseOutCubic();
     }
 
 
     public void LoadScene(int scene)
     {
-        LeanTween.moveLocalY(transitionImage.gameObject, 0, 0.5f).setEaseOutExpo()
+        LeanTween.moveLocalY(transitionImage.gameObject, 0, transitionDuration).setEaseOutCubic()
             .setOnComplete(() => SceneManager.LoadScene(scene));
         
     }

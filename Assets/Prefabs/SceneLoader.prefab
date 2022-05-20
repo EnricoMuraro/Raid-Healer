@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionImage: {fileID: 5837847760072133465}
+  transitionDuration: 0.3
+  inverted: 0
 --- !u!1 &5837847761362532198
 GameObject:
   m_ObjectHideFlags: 0

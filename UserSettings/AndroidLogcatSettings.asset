@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "5f80de50",
         "name": "com.DefaultCompany.RaidHealer",
-        "processId": 7157,
+        "processId": 14120,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -60,6 +60,24 @@
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
             "processId": 7157,
+            "exited": false
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 14118,
+            "exited": false
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 14119,
+            "exited": false
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 14120,
             "exited": false
         }
     ],
