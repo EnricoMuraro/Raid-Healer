@@ -40,6 +40,6 @@ public class TalentManager : MonoBehaviour
         }
         
         talentTree.ActiveTalents = talents;
-        Persistance.SaveTalents(new IDStorage(talentIDs.ToArray()));
+        Persistance.SaveTalents(talentIDs.ToArray());
     }
 }

@@ -10,29 +10,27 @@ public class BossTimerBar : MonoBehaviour
     
 
     private AbilitySlot[] abilitySlots;
-    private GameObject[] icons;
 
     private float barWidth;
     private Object AbilityIcon;
 
     void Awake()
     {
-        abilitySlots = abilityBar.GetAbilitySlots();
-        icons = new GameObject[abilitySlots.Length];
 
         barWidth = GetComponent<Image>().rectTransform.rect.width;
         AbilityIcon = Resources.Load("AbilityIcon");
 
-        for (int i = 0; i < abilitySlots.Length; i++)
-        {
-            abilitySlots[i].onCooldownStart.AddListener(AbilityTimerAnimation);
-        }
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        abilitySlots = abilityBar.GetAbilitySlots();
+        for (int i = 0; i < abilitySlots.Length; i++)
+        {
+            abilitySlots[i].onCooldownStart.AddListener(AbilityTimerAnimation);
+        }
     }
 
     void AbilityTimerAnimation(AbilitySlot abilitySlot)

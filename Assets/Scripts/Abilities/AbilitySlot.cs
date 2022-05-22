@@ -20,7 +20,7 @@ public class AbilitySlot : MonoBehaviour
 
     private AbilityState state = AbilityState.ready;
 
-    private void Awake()
+    private void Start()
     {
         if(StartingCooldown > 0)
         {

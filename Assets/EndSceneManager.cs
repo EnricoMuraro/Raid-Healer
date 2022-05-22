@@ -15,8 +15,11 @@ public class EndSceneManager : MonoBehaviour
     {
         Debug.Log("end scene data " + EndSceneData.result + " " + EndSceneData.previousSceneIndex);
 
-        if(EndSceneData.result)
+        if (EndSceneData.result)
+        {
+            Persistance.SaveBossWin(EndSceneData.bossFightID);
             resultSplashImage.sprite = winSprite;
+        }
         else
             resultSplashImage.sprite = lossSprite;
     }

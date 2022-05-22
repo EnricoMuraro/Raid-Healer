@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StartMenuManager : MonoBehaviour
 {
+    public static string[] CompletedFights;
     public int SelectedBoss;
 
     public void SetSelection(int boss)

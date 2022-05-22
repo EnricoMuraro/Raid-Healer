@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(GameUnit))]
 public class StatusEffectSlot : MonoBehaviour
 {
-    private GameUnit unit;
     private StatusEffect statusEffect;
 
     private float currentTick = 0;
@@ -20,9 +20,8 @@ public class StatusEffectSlot : MonoBehaviour
         currentDuration = 0;
     }
 
-    public void InitStatusEffect(GameUnit unit, StatusEffect statusEffect)
+    public void InitStatusEffect(StatusEffect statusEffect)
     {
-        this.unit = unit;
         this.statusEffect = statusEffect;
     }    
 
@@ -40,13 +39,14 @@ public class StatusEffectSlot : MonoBehaviour
         if (currentDuration >= statusEffect.Duration)
         {
             OnStatusEffectFinished.Invoke(this);
+            Destroy(this);
         }
 
         if (statusEffect.TickRate > 0)
         {
             if (currentTick >= statusEffect.TickRate)
             {
-                statusEffect.Activate(unit);
+                statusEffect.Activate(GetComponent<GameUnit>());
                 currentTick = 0;
             }
         }

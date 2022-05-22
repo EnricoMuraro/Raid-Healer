@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "Cleave Ability")]
+[CreateAssetMenu(menuName = "Ability/Cleave")]
 public class CleaveAbility : Ability
 {
     public int baseDamage;

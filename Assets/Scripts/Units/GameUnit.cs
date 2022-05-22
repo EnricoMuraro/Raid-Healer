@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class GameUnit : MonoBehaviour, IDamageable
+public class GameUnit : MonoBehaviour
 {
     [SerializeField] private Unit unit;
 
@@ -13,8 +13,6 @@ public class GameUnit : MonoBehaviour, IDamageable
     [SerializeField] private float mana = 0;
     [SerializeField] private float cooldown = 0;
     [SerializeField] private bool dead = false;
-
-    [SerializeField] private List<StatusEffectSlot> statusEffectSlots;
 
     public UnityEvent<int> OnHealthChange;
     public UnityEvent<int> OnManaChange;
@@ -38,6 +36,8 @@ public class GameUnit : MonoBehaviour, IDamageable
                 if (health <= 0)
                 {
                     dead = true;
+                    RemoveAllStatusEffects();
+                    OnDeath?.Invoke();
                 }
             }
         }
@@ -73,10 +73,8 @@ public class GameUnit : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        statusEffectSlots = new List<StatusEffectSlot>();
         OnHealthChange = new UnityEvent<int>();
         OnManaChange = new UnityEvent<int>();
-        OnStatusEffectAdded = new UnityEvent<StatusEffectSlot>();
 
         Health = MaxHealth;
         Mana = MaxMana;
@@ -84,17 +82,25 @@ public class GameUnit : MonoBehaviour, IDamageable
 
     public void AddStatusEffect(StatusEffect statusEffect)
     {
+        if(statusEffect.activationMode == StatusEffect.ActivationMode.replace)
+            RemoveStatusEffect(statusEffect);
+
         StatusEffectSlot statusEffectSlot = gameObject.AddComponent<StatusEffectSlot>();
-        statusEffectSlot.InitStatusEffect(this, statusEffect);
-        statusEffectSlot.OnStatusEffectFinished.AddListener(RemoveStatusEffectSlot);
-        statusEffectSlots.Add(statusEffectSlot);
+        statusEffectSlot.InitStatusEffect(statusEffect);
         OnStatusEffectAdded?.Invoke(statusEffectSlot);
     }
 
-    private void RemoveStatusEffectSlot(StatusEffectSlot statusEffectSlot)
+    public void RemoveStatusEffect(StatusEffect statusEffect)
     {
-        statusEffectSlots.Remove(statusEffectSlot);
-        Destroy(statusEffectSlot);
+        foreach(StatusEffectSlot statusEffectSlot in GetComponents<StatusEffectSlot>())
+            if (statusEffectSlot.GetStatusEffect().ID == statusEffect.ID)
+                Destroy(statusEffectSlot);
+    }
+
+    public void RemoveAllStatusEffects()
+    {
+        foreach (StatusEffectSlot statusEffectSlot in GetComponents<StatusEffectSlot>())
+            Destroy(statusEffectSlot);
     }
 
     public void ReceiveHeal(int amount)

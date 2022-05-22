@@ -23,7 +23,12 @@ public class SceneLoaderScript : MonoBehaviour
     {
         LeanTween.moveLocalY(transitionImage.gameObject, 0, transitionDuration).setEaseOutCubic()
             .setOnComplete(() => SceneManager.LoadScene(scene));
-        
+    }
+
+    public void LoadScene(string scene)
+    {
+        LeanTween.moveLocalY(transitionImage.gameObject, 0, transitionDuration).setEaseOutCubic()
+            .setOnComplete(() => SceneManager.LoadScene(scene));
     }
 
     public void ReloadScene()

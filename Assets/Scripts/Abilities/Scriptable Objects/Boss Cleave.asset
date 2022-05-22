@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2001
   name: Cleave
+  description: 
+  icon: {fileID: 21300000, guid: 50ff33c5312bed342a913f69ac9f35bb, type: 3}
   cooldown: 8
   castTime: 0
   manaCost: 0
-  icon: {fileID: 21300000, guid: 50ff33c5312bed342a913f69ac9f35bb, type: 3}
+  modifiers: []
   baseDamage: 100

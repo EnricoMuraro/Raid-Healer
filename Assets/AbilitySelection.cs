@@ -63,7 +63,7 @@ public class AbilitySelection : MonoBehaviour
     private void SaveSelection()
     {
         spellBook.SelectedAbilities = SelectedAbilities;
-        Persistance.SaveSelectedAbilities(new IDStorage(spellBook.GetSelectedAbilitiesIDs()));
+        Persistance.SaveSelectedAbilities(spellBook.GetSelectedAbilitiesIDs());
     }
 
     private void SetAbilitySlot(Ability ability)

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Casted Heal")]
+[CreateAssetMenu(menuName = "Ability/Casted Heal")]
 public class CastedHeal : Ability
 {
     public int baseHeal;

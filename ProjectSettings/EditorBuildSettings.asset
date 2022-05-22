@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndScreenScene.unity
     guid: 383edab5b860c23928ac287e5b212798
+  - enabled: 1
+    path: Assets/Scenes/BossFights/bossfight1.unity
+    guid: 1f85dd1de7eca934e897e59303cc40f7
+  - enabled: 1
+    path: Assets/Scenes/BossFights/bossfight2.unity
+    guid: d42bca0391e512c4cb059ff63dbf34b9
   m_configObjects: {}

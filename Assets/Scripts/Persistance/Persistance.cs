@@ -24,24 +24,44 @@ public static class Persistance
     }
 
 
-    public static void SaveTalents(IDStorage talentStorage)
+    public static void SaveTalents(int[] talentIDs)
     {
-        Save(talentStorage, "Talents");
+        Save(new IDStorage(talentIDs), "Talents");
     }
 
-    public static IDStorage LoadTalents()
+    public static int[] LoadTalents()
     {
-        return Load("Talents");
+        return Load("Talents").IDs;
     }
 
-    public static void SaveSelectedAbilities(IDStorage abilitiesStorage)
+    public static void SaveSelectedAbilities(int[] abilityIDs)
     {
-        Save(abilitiesStorage, "SelectedAbilities");
+        Save(new IDStorage(abilityIDs), "SelectedAbilities");
     }
 
-    public static IDStorage LoadSelectedAbilities()
+    public static int[] LoadSelectedAbilities()
     {
-        return Load("SelectedAbilities");
+        return Load("SelectedAbilities").IDs;
+    }
+
+    public static void SaveBossProgress(int[] bossFightIDs)
+    {
+        Save(new IDStorage(bossFightIDs), "BossProgress");
+    }
+
+    public static void SaveBossWin(int bossFightID)
+    {
+        List<int> newProgress = new(LoadBossProgress());
+        if (!newProgress.Contains(bossFightID))
+        {
+            newProgress.Add(bossFightID);
+            SaveBossProgress(newProgress.ToArray());
+        }
+    }
+
+    public static int[] LoadBossProgress()
+    {
+        return Load("BossProgress").IDs;
     }
 }
 

@@ -6,11 +6,12 @@ public class LoadPlayerPrefs : MonoBehaviour
 {
     public TalentTree talentTree;
     public SpellBook spellBook;
+    public BossFightProgress bossFightProgress;
 
     private void Awake()
     {
-        talentTree.SetActiveTalents(Persistance.LoadTalents().IDs);
-        spellBook.SetSelectedAbilities(Persistance.LoadSelectedAbilities().IDs);
+        talentTree.SetActiveTalents(Persistance.LoadTalents());
+        spellBook.SetSelectedAbilities(Persistance.LoadSelectedAbilities());
 
     }
 
@@ -26,6 +27,9 @@ public class LoadPlayerPrefs : MonoBehaviour
         for(int i = 0; i < spellBook.SelectedAbilities.Length; i++)
             if (!spellBook.AllAbilities.Contains(spellBook.SelectedAbilities[i]))
                 spellBook.SelectedAbilities[i] = null;
+
+        //Load boss fights progress
+        bossFightProgress.SetProgress(Persistance.LoadBossProgress());
 
     }
 
