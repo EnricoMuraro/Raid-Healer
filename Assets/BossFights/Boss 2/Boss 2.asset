@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -12,8 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4765b9e123b50f845912aeb20671a1d9, type: 3}
   m_Name: Boss 2
   m_EditorClassIdentifier: 
-  maxHealth: 10000
-  maxMana: 0
-  manaRegenRate: 0
-  damage: 50
-  attackFrequency: 1
+  maxHealth:
+    baseValue: 10000
+    modifiers: []
+  maxMana:
+    baseValue: 0
+    modifiers: []
+  manaRegenRate:
+    baseValue: 0
+    modifiers: []
+  damage:
+    baseValue: 30
+    modifiers: []
+  attackFrequency:
+    baseValue: 1
+    modifiers: []

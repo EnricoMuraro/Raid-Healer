@@ -5,10 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Status Effect/Damage Over Time")]
 public class DotStatusEffect : StatusEffect
 {
-    public int baseDamage;
+    public Stat damage;
 
     public override void Activate(GameUnit gameUnit)
     {
-        gameUnit.ReceiveDamage(baseDamage);
+        gameUnit.ReceiveDamage((int)damage.Value);
     }
 }

@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -16,13 +16,23 @@ MonoBehaviour:
   name: Light Heal
   description: Fast and efficient single target heal
   icon: {fileID: 21300000, guid: 73efa50af578e5146b922313fe2a8b0f, type: 3}
-  cooldown: 0
-  castTime: 1.5
-  manaCost: 50
-  modifiers:
-  - stat: 4
-    type: 0
-    value: 15
-  baseHeal: 100
+  cooldown:
+    baseValue: 0
+    modifiers: []
+  castTime:
+    baseValue: 2
+    modifiers: []
+  manaCost:
+    baseValue: 50
+    modifiers: []
+  heal:
+    baseValue: 100
+    modifiers:
+    - type: 0
+      source: 0
+      value: 15
+  damage:
+    baseValue: 0
+    modifiers: []
   statusEffect: {fileID: 0}
   targetType: 0

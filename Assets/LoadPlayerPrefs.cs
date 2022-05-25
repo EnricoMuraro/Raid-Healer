@@ -23,18 +23,18 @@ public class LoadPlayerPrefs : MonoBehaviour
             talentAbilities.Add(talent.ability);
         spellBook.TalentAbilities = talentAbilities;
 
+        //Reset modifiers
+        talentTree.DeactivateAllPassiveTalents();
+
+        //Activate passive talents
+        talentTree.ActivatePassiveTalents();
+
         //Remove any selected ability that is no longer in the spellbook 
-        for(int i = 0; i < spellBook.SelectedAbilities.Length; i++)
+        for (int i = 0; i < spellBook.SelectedAbilities.Length; i++)
             if (!spellBook.AllAbilities.Contains(spellBook.SelectedAbilities[i]))
                 spellBook.SelectedAbilities[i] = null;
 
         //Load boss fights progress
         bossFightProgress.SetProgress(Persistance.LoadBossProgress());
-
-    }
-
-    private void OnDisable()
-    {
-        talentTree.DeactivatePassiveTalents();
     }
 }

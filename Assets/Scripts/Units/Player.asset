@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -12,8 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4765b9e123b50f845912aeb20671a1d9, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  maxHealth: 1
-  maxMana: 2000
-  manaRegenRate: 5
-  damage: 0
-  attackFrequency: 0
+  maxHealth:
+    baseValue: 1
+    modifiers: []
+  maxMana:
+    baseValue: 2000
+    modifiers: []
+  manaRegenRate:
+    baseValue: 5
+    modifiers: []
+  damage:
+    baseValue: 0
+    modifiers: []
+  attackFrequency:
+    baseValue: 0
+    modifiers: []

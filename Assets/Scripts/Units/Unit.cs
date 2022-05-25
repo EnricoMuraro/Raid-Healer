@@ -7,20 +7,23 @@ using UnityEngine;
 public class Unit : ScriptableObject 
 {
     
-    [SerializeField] private int maxHealth;
-    [SerializeField] private int maxMana;  
-    [SerializeField] private float manaRegenRate;
-    [SerializeField] private int damage;
-    [SerializeField] private float attackFrequency;
-    
-    public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+    public Stat maxHealth;
+    public Stat maxMana;
+    public Stat manaRegenRate;
+    public Stat damage;
+    public Stat attackFrequency;
 
-    public int MaxMana { get => maxMana; set => maxMana = value; }
+    public enum Stats
+    {
+        maxHealth,
+        maxMana,
+        manaRegenRate,
+        damage,
+        attackFrequency,
+    }
+        
 
-    public int Damage { get => damage; set => damage = value; }
-    public float AttackFrequency { get => attackFrequency; set => attackFrequency = value; }
-
-    public float ManaRegenRate { get => manaRegenRate; set => manaRegenRate = value;}
+    private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
 
 
 }

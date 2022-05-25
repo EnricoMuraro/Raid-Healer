@@ -40,19 +40,46 @@ public class TalentTree : ScriptableObject
 
     public void ActivatePassiveTalents()
     {
-        foreach(var talent in ActiveTalents)
-             if(talent is PassiveTalent passiveTalent)
-                passiveTalent.ApplyPassiveEffects();
+        foreach (var talent in ActiveTalents)
+            if (talent is PassiveTalent passiveTalent)
+            {
+                foreach (var abilityModifier in passiveTalent.abilityModifiers)
+                    abilityModifier.ApplyModifier();
+
+                foreach (var unitStatModifier in passiveTalent.unitStatModifiers)
+                    unitStatModifier.ApplyModifier();
+
+                foreach (var statusEffectModifier in passiveTalent.statusEffectModifiers)
+                    statusEffectModifier.ApplyModifier();
+            }
+                
     }
 
     public void DeactivatePassiveTalents()
     {
         foreach(var talent in ActiveTalents)
             if (talent is PassiveTalent passiveTalent)
-                foreach (var passiveEffect in passiveTalent.passiveEffects)
-                    foreach (var ability in passiveEffect.affectedAbilities)
-                        ability.RemoveModifiersBySource(AbilityModifier.Source.Talent);
+            {
+                foreach (var abilityModifier in passiveTalent.abilityModifiers)
+                    abilityModifier.RemoveModifier();
 
+                foreach (var unitStatModifier in passiveTalent.unitStatModifiers)
+                    unitStatModifier.RemoveModifier();
+            }
+
+    }
+
+    public void DeactivateAllPassiveTalents()
+    {
+        foreach (var talent in AllTalents)
+            if (talent is PassiveTalent passiveTalent)
+            {
+                foreach (var abilityModifier in passiveTalent.abilityModifiers)
+                    abilityModifier.RemoveModifier();
+
+                foreach (var unitStatModifier in passiveTalent.unitStatModifiers)
+                    unitStatModifier.RemoveModifier();
+            }
     }
 
 }

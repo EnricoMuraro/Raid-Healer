@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   name: Mind Alacrity
-  description: Increases the casting speed of Light Heal by 1 second
-  sprite: {fileID: 21300000, guid: 705537b85ae611547986c9128e23bbfb, type: 3}
+  description: Reduces the cast time of Light Heal by 0.5 second
+  sprite: {fileID: 21300000, guid: db3a950dc3258854baddb51e0dce7b7a, type: 3}
   passiveEffects:
   - affectedAbilities:
     - {fileID: 11400000, guid: 81f00a1dc3a58af4894bde16775a639d, type: 2}
     abilityModifiers:
     - stat: 1
       type: 1
-      value: -1
+      source: 0
+      value: -0.5

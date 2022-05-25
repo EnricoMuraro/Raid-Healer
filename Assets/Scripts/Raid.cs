@@ -18,7 +18,7 @@ public class Raid : MonoBehaviour
     private void Update() 
     {
         foreach (GameUnit raider in raiders) {
-            raider.attack(Boss);
+            raider.Attack(Boss);
         }
 
         if (Boss.isDead())

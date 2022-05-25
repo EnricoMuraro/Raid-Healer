@@ -21,6 +21,18 @@ public class GameUnit : MonoBehaviour
 
     public ProgressBar manaBar;
 
+    public int MaxHealth { get => (int)unit.maxHealth.Value; }
+    public int MaxMana { get => (int)unit.maxMana.Value; }
+    public float ManaRegenRate { get => unit.manaRegenRate.Value; }
+    public int Damage { get => (int)unit.damage.Value; }
+    public float AttackFrequency { get => unit.attackFrequency.Value; }
+
+    public Stat MaxHealthStat { get => unit.maxHealth; }
+    public Stat MaxManaStat { get => unit.maxMana; }
+    public Stat ManaRegenRateStat { get => unit.manaRegenRate; }
+    public Stat DamageStat { get => unit.damage; }
+    public Stat AttackFrequencyStat { get => unit.attackFrequency; }
+
     public int Health
     {
         get => health;
@@ -29,7 +41,7 @@ public class GameUnit : MonoBehaviour
             if (!dead)
             {
                 int oldHealth = health;
-                health = Mathf.Clamp(value, 0, unit.MaxHealth);
+                health = Mathf.Clamp(value, 0, MaxHealth);
 
                 OnHealthChange?.Invoke(health - oldHealth);
 
@@ -42,7 +54,6 @@ public class GameUnit : MonoBehaviour
             }
         }
     }
-    public int MaxHealth { get => unit.MaxHealth; }
 
     public int Mana
     {
@@ -50,12 +61,11 @@ public class GameUnit : MonoBehaviour
         set
         {
             int oldmana = (int)mana;
-            mana = Mathf.Clamp(value, 0, unit.MaxMana);
+            mana = Mathf.Clamp(value, 0, MaxMana);
             OnManaChange?.Invoke((int)mana - oldmana);
         }
     }
 
-    public int MaxMana { get => unit.MaxMana; }
 
     public float Cooldown
     {
@@ -67,9 +77,6 @@ public class GameUnit : MonoBehaviour
                 cooldown = 0;
         }
     }
-
-    public float ManaRegenRate { get => unit.ManaRegenRate; }
-
 
     private void Awake()
     {
@@ -113,14 +120,14 @@ public class GameUnit : MonoBehaviour
         Health -= amount;
     }
 
-    public void attack(GameUnit target)
+    public void Attack(GameUnit target)
     {
         if (!dead && target!=null)
         {
             if (Cooldown <= 0)
             {
-                Cooldown = unit.AttackFrequency;
-                target.ReceiveDamage(unit.Damage);
+                Cooldown = AttackFrequency;
+                target.ReceiveDamage(Damage);
             }
         }
     }
@@ -139,7 +146,7 @@ public class GameUnit : MonoBehaviour
         Cooldown -= Time.deltaTime;
         float deltaMana = ManaRegenRate * Time.deltaTime;
         mana += deltaMana;
-        mana = Mathf.Clamp(mana, 0, unit.MaxMana);
+        mana = Mathf.Clamp(mana, 0, MaxMana);
 
         if (manaBar != null)
         {

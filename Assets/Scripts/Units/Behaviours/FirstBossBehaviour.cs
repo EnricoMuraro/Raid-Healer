@@ -18,7 +18,7 @@ public class FirstBossBehaviour : MonoBehaviour
             if (raid.Boss.isDead() == false)
             {
                 GameUnit target = raid.GetFirstRaider();
-                raid.Boss.attack(target);
+                raid.Boss.Attack(target);
                 bossAbilityBar.Activate(0, raid.Boss, raid.GetFirstRaiderIndex(), raid);
             }
         }

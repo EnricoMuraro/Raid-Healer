@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -16,13 +16,20 @@ MonoBehaviour:
   name: Soothing Herbs
   description: Applies a healing buff that heals over time
   icon: {fileID: 21300000, guid: 9cf4c8c3adfabc941a26d4be215280f2, type: 3}
-  cooldown: 2
-  castTime: 0
-  manaCost: 100
-  modifiers:
-  - stat: 0
-    type: 2
-    value: 0
-  baseHeal: 0
+  cooldown:
+    baseValue: 4
+    modifiers: []
+  castTime:
+    baseValue: 0
+    modifiers: []
+  manaCost:
+    baseValue: 100
+    modifiers: []
+  heal:
+    baseValue: 0
+    modifiers: []
+  damage:
+    baseValue: 0
+    modifiers: []
   statusEffect: {fileID: 11400000, guid: e305a919da056ed428492aee6b410783, type: 2}
   targetType: 0

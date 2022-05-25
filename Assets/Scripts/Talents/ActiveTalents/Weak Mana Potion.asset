@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f05c404480278f4f978379ccc73fc25, type: 3}
+  m_Name: Weak Mana Potion
+  m_EditorClassIdentifier: 
+  ID: 4
+  name: Weak Mana Potion
+  description: Grants the ability Weak Mana Potion
+  sprite: {fileID: 21300000, guid: c20a9901b5adbea418fd47a213acbc58, type: 3}
+  ability: {fileID: 11400000, guid: cfbdfd14bfde4aa428ee223afb116362, type: 2}

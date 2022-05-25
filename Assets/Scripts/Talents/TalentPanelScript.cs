@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class TalentPanelScript : MonoBehaviour
 {
-    [SerializeField]
     private TalentSlot[] talentSlots;
     private int availableTalents;
+    [SerializeField]
     private int maximumTalents;
     public TalentPointsIcons talentPointsIcons;
 
@@ -24,9 +24,7 @@ public class TalentPanelScript : MonoBehaviour
 
     private void Awake()
     {
-        AvailableTalents = 10;
-        maximumTalents = 10;
-
+        availableTalents = maximumTalents;
         talentSlots = GetComponentsInChildren<TalentSlot>();
     }
 

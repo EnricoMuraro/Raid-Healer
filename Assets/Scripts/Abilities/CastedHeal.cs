@@ -5,9 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Ability/Casted Heal")]
 public class CastedHeal : Ability
 {
-    public int baseHeal;
     public StatusEffect statusEffect;
     public TargetType targetType;
+    public Stat heal;
+
+    public int Heal => (int)heal.Value;
 
     public enum TargetType
     {
@@ -15,9 +17,6 @@ public class CastedHeal : Ability
         row,
         column,
     }
-
-    public int HealValue
-    { get { return (int)ApplyModifiers(baseHeal, AbilityModifier.Stat.Heal); } }
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
@@ -49,7 +48,7 @@ public class CastedHeal : Ability
 
         foreach (GameUnit target in targets)
         {
-            target.ReceiveHeal(HealValue);
+            target.ReceiveHeal(Heal);
             if (statusEffect != null)
                 target.AddStatusEffect(statusEffect);
         }

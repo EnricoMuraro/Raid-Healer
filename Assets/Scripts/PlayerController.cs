@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        talentTree.ActivatePassiveTalents();
         SetTargetPlayer(0);
     }
 

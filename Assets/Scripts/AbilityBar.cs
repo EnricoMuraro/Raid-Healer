@@ -15,8 +15,6 @@ public class AbilityBar : MonoBehaviour
         if (spellBook != null)
             for (int i = 0; i < abilitySlots.Length && i < spellBook.SelectedAbilities.Length; i++)
             {
-                if(spellBook.SelectedAbilities[i] != null)
-                    spellBook.SelectedAbilities[i].RemoveModifiersBySource(AbilityModifier.Source.Talent);
                 abilitySlots[i].ability = spellBook.SelectedAbilities[i];
             }
     }
