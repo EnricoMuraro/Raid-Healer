@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -18,13 +18,7 @@ MonoBehaviour:
   activationMode: 0
   duration:
     baseValue: 8
-    modifiers: []
   tickRate:
     baseValue: 1
-    modifiers: []
-  baseHeal:
-    baseValue: 0
-    modifiers:
-    - type: 1
-      source: 0
-      value: 1000
+  heal:
+    baseValue: 30

@@ -13,15 +13,19 @@ public class TalentManager : MonoBehaviour
         talentPanels = GetComponentsInChildren<TalentPanelScript>();
     }
 
-    public void Start()
+    public void OnEnable()
     {
         LoadTalents();
     }
 
     public void LoadTalents()
     {
+        int[] MaxPoints = new int[talentPanels.Length];
+        talentTree.MaximumPointsPerPanel.CopyTo(MaxPoints, 0);
+
         for (int i = 0; i < talentPanels.Length; i++)
         {
+            talentPanels[i].MaximumTalents = talentTree.MaximumPointsPerPanel[i];
             talentPanels[i].SetActiveTalents(talentTree.ActiveTalents);
         }
     }
@@ -40,6 +44,6 @@ public class TalentManager : MonoBehaviour
         }
         
         talentTree.ActiveTalents = talents;
-        Persistance.SaveTalents(talentIDs.ToArray());
+        Persistance.SaveTalents(talentIDs.ToArray(), talentTree.MaximumPointsPerPanel);
     }
 }

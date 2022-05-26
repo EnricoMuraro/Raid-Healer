@@ -16,6 +16,8 @@ public class SpellBook : ScriptableObject
 
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
 
+    public List<Ability> DefaultAbilities { get => defaultAbilities; set => defaultAbilities = value; }
+
     public Ability[] SelectedAbilities 
     { 
         get => selectedAbilities;

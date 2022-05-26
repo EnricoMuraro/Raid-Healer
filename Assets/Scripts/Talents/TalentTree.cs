@@ -7,6 +7,9 @@ public class TalentTree : ScriptableObject
 {
     public List<Talent> AllTalents;
     public List<Talent> ActiveTalents;
+    private int[] maximumPointsPerPanel;
+
+    public int[] MaximumPointsPerPanel { get => maximumPointsPerPanel; set => maximumPointsPerPanel = value; }
 
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
     public Talent GetTalentByID(int ID)
@@ -27,6 +30,25 @@ public class TalentTree : ScriptableObject
                 activeTalents.Add(GetTalentByID(ID));
 
         ActiveTalents = activeTalents;
+    }
+
+    public void AddMaximumPoints(int panel, int points)
+    {
+        if (panel > maximumPointsPerPanel.Length)
+            SetMaximumPoints(0, points);
+        else
+            SetMaximumPoints(0, maximumPointsPerPanel[panel] + points);
+    }
+
+    public void SetMaximumPoints(int panel, int points)
+    {
+        if(panel > maximumPointsPerPanel.Length)
+        {
+            int[] newArray = new int[panel];
+            maximumPointsPerPanel.CopyTo(newArray, 0);
+            maximumPointsPerPanel = newArray;
+        }
+        maximumPointsPerPanel[panel] = points;
     }
 
     public List<AbilityTalent> GetActiveAbilityTalents()

@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultAbilities:
   - {fileID: 11400000, guid: 81f00a1dc3a58af4894bde16775a639d, type: 2}
-  - {fileID: 11400000, guid: dade20bc9d156fbccafdb7fb84059f2a, type: 2}
   - {fileID: 11400000, guid: 7f3f558721006f5528f16925fd696bb1, type: 2}
+  - {fileID: 11400000, guid: dade20bc9d156fbccafdb7fb84059f2a, type: 2}
   selectedAbilities:
   - {fileID: 11400000, guid: 81f00a1dc3a58af4894bde16775a639d, type: 2}
   - {fileID: 11400000, guid: 7f3f558721006f5528f16925fd696bb1, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 11400000, guid: dade20bc9d156fbccafdb7fb84059f2a, type: 2}
+  - {fileID: 11400000, guid: cfbdfd14bfde4aa428ee223afb116362, type: 2}
+  - {fileID: 0}
   onSelectedChange:
     m_PersistentCalls:
       m_Calls: []

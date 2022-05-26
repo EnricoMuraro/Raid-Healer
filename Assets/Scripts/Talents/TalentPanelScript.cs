@@ -20,7 +20,7 @@ public class TalentPanelScript : MonoBehaviour
             talentPointsIcons.SetAvailableTalents(availableTalents);
         } 
     }
-    public int MaximumTalents { get => maximumTalents;}
+    public int MaximumTalents { get => maximumTalents; set => maximumTalents = value; }
 
     private void Awake()
     {

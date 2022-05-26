@@ -19,15 +19,9 @@ MonoBehaviour:
   unitStatModifiers: []
   abilityModifiers:
   - ability: {fileID: 11400000, guid: 81f00a1dc3a58af4894bde16775a639d, type: 2}
-    statName: 
+    statName: 3
     modifier:
       type: 0
       source: 0
       value: 15
-  statusEffectModifiers:
-  - statusEffect: {fileID: 11400000, guid: e305a919da056ed428492aee6b410783, type: 2}
-    statName: 
-    modifier:
-      type: 1
-      source: 0
-      value: 0
+  statusEffectModifiers: []

@@ -4,34 +4,34 @@ using UnityEngine;
 
 public static class Persistance
 {
-    private static void Save(IDStorage idstorage, string path)
+    private static void Save(object storage, string path)
     {
-        string dataJson = JsonUtility.ToJson(idstorage);
+        string dataJson = JsonUtility.ToJson(storage);
         Debug.Log("Saved data: " + dataJson);
         PlayerPrefs.SetString(path, dataJson);
     }
 
-    private static IDStorage Load(string path)
+    private static T Load<T>(string path) where T : new()
     {
         string dataJson = PlayerPrefs.GetString(path);
         Debug.Log("Loaded data: " + dataJson);
-        IDStorage idstorage = JsonUtility.FromJson<IDStorage>(dataJson);
+        T storage = JsonUtility.FromJson<T>(dataJson);
 
-        if (idstorage != null)
-            return idstorage;
+        if (storage != null)
+            return storage;
         else
-            return new IDStorage(new int[0]);
+            return new T();
     }
 
 
-    public static void SaveTalents(int[] talentIDs)
+    public static void SaveTalents(int[] talentIDs, int[] pointsPerPanel)
     {
-        Save(new IDStorage(talentIDs), "Talents");
+        Save(new TalentStorage(talentIDs, pointsPerPanel), "Talents");
     }
 
-    public static int[] LoadTalents()
+    public static TalentStorage LoadTalents()
     {
-        return Load("Talents").IDs;
+        return Load<TalentStorage>("Talents");
     }
 
     public static void SaveSelectedAbilities(int[] abilityIDs)
@@ -41,7 +41,7 @@ public static class Persistance
 
     public static int[] LoadSelectedAbilities()
     {
-        return Load("SelectedAbilities").IDs;
+        return Load<IDStorage>("SelectedAbilities").IDs;
     }
 
     public static void SaveBossProgress(int[] bossFightIDs)
@@ -61,7 +61,7 @@ public static class Persistance
 
     public static int[] LoadBossProgress()
     {
-        return Load("BossProgress").IDs;
+        return Load<IDStorage>("BossProgress").IDs;
     }
 }
 
@@ -70,8 +70,32 @@ public class IDStorage
 {
     public int[] IDs;
 
+    public IDStorage()
+    {
+        IDs = new int[0];
+    }
+
+
     public IDStorage(int[] IDs)
     {
         this.IDs = IDs;
+    }
+}
+
+public class TalentStorage
+{
+    public int[] IDs;
+    public int[] pointsPerPanel;
+
+    public TalentStorage()
+    {
+        IDs = new int[0];
+        pointsPerPanel = new int[0];
+    }
+
+    public TalentStorage(int[] IDs, int[] pointsPerPanel)
+    {
+        this.IDs = IDs;
+        this.pointsPerPanel = pointsPerPanel;
     }
 }

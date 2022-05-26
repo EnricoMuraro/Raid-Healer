@@ -17,4 +17,11 @@ MonoBehaviour:
   description: Reduces the cooldown of Soothing Herbs by 40%
   sprite: {fileID: 21300000, guid: d5812cab862504247a7fd8157997d848, type: 3}
   unitStatModifiers: []
-  abilityModifiers: []
+  abilityModifiers:
+  - ability: {fileID: 11400000, guid: 19e36aad1f1bdff42adfdc48994ee98d, type: 2}
+    statName: 0
+    modifier:
+      type: 0
+      source: 0
+      value: -40
+  statusEffectModifiers: []

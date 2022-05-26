@@ -14,6 +14,14 @@ public class BossFightProgress : MonoBehaviour
         fightSceneNames.TryAdd(2, "bossfight2");
     }
 
+    public static BossFightIcon GetBossFightByID(int fightID)
+    {
+        foreach (BossFightIcon bossFight in bossFightIcons)
+            if (bossFight.bossFightInfo.ID == fightID)
+                return bossFight;
+        return null;
+    }
+
     public static void SetFightCompleted(int fightID)
     {
         foreach (BossFightIcon bossFightIcon in bossFightIcons)
@@ -22,12 +30,24 @@ public class BossFightProgress : MonoBehaviour
         SaveProgress();
     }
 
+    public static BossFightInfo GetBossFightInfo(int fightID)
+    {
+        return GetBossFightByID(fightID).bossFightInfo;
+    }
+
     public void SetProgress(int[] completedFightIDs)
     {
+        foreach (int completedFightID in completedFightIDs)
+            GetBossFightByID(completedFightID).SetCompletedFlag(true);
+    }
+
+    public static List<BossReward> GetCompletedFightsRewards()
+    {
+        List<BossReward> result = new List<BossReward>();
         foreach (BossFightIcon bossFight in bossFightIcons)
-            foreach (int completedFightID in completedFightIDs)
-                if (bossFight.bossFightInfo.ID == completedFightID)
-                    bossFight.SetCompletedFlag(true);
+            if(bossFight.GetCompletedFlag())
+                result.Add(bossFight.bossFightInfo.Reward);
+        return result;
     }
 
     public static void SaveProgress()

@@ -15,3 +15,4 @@ MonoBehaviour:
   ID: 2
   Name: Angry Old Goblin
   Description: Now he has a torch!
+  Reward: {fileID: 11400000, guid: c1254988637c1734dbd3638620f6166d, type: 2}
