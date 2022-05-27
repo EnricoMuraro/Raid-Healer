@@ -10,10 +10,28 @@ public class LoadPlayerPrefs : MonoBehaviour
 
     private void Awake()
     {
-        TalentStorage savedTalents = Persistance.LoadTalents();
-        talentTree.SetActiveTalents(savedTalents.IDs);
-        talentTree.MaximumPointsPerPanel = savedTalents.pointsPerPanel;
-        spellBook.SetSelectedAbilities(Persistance.LoadSelectedAbilities());
+
+        //Load boss fights progress
+        int[] bossProgress = Persistance.LoadBossProgress();
+        bossFightProgress.SetProgress(bossProgress);
+        //Load boss rewards
+        List<BossReward> bossRewards = BossFightProgress.GetCompletedFightsRewards();
+        spellBook.RewardAbilities = new();
+        talentTree.MaximumPointsPerPanel = new int[0];
+        foreach (BossReward reward in bossRewards)
+        {
+            if (reward != null)
+            {
+                foreach (Ability ability in reward.abilityRewards)
+                    if (ability != null)
+                        spellBook.RewardAbilities.Add(ability);
+                foreach (BossReward.TalentReward talentReward in reward.talentPointRewards)
+                    talentTree.AddMaximumPoints(talentReward.talentPanel, talentReward.talentPoints);
+
+            }
+        }
+
+        talentTree.SetActiveTalents(Persistance.LoadTalents());
 
     }
 
@@ -31,25 +49,7 @@ public class LoadPlayerPrefs : MonoBehaviour
         //Activate passive talents
         talentTree.ActivatePassiveTalents();
 
-        //Load boss fights progress
-        int[] bossProgress = Persistance.LoadBossProgress();
-        bossFightProgress.SetProgress(bossProgress);
-        
-        List<BossReward> bossRewards = BossFightProgress.GetCompletedFightsRewards();
-        foreach(BossReward reward in bossRewards)
-        {
-            if (reward != null)
-            {
-                if (!reward.claimed)
-                {
-                    spellBook.DefaultAbilities.AddRange(reward.abilityRewards);
-                    foreach (BossReward.TalentReward talentReward in reward.talentPointRewards)
-                        talentTree.AddMaximumPoints(talentReward.talentPanel, talentReward.talentPoints);
-                }
-                reward.claimed = true;
-            }
-        }
-
+        spellBook.SetSelectedAbilities(Persistance.LoadSelectedAbilities());
         //Remove any selected ability that is no longer in the spellbook 
         for (int i = 0; i < spellBook.SelectedAbilities.Length; i++)
             if (!spellBook.AllAbilities.Contains(spellBook.SelectedAbilities[i]))

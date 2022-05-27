@@ -6,7 +6,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class BossReward : ScriptableObject
 {
-    public bool claimed;
     public List<TalentReward> talentPointRewards = new ();
     public List<Ability> abilityRewards = new ();
 
@@ -16,6 +15,5 @@ public class BossReward : ScriptableObject
         public int talentPanel;
         public int talentPoints;
     }
-    private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
 
 }

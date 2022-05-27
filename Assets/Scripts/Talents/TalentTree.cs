@@ -7,6 +7,7 @@ public class TalentTree : ScriptableObject
 {
     public List<Talent> AllTalents;
     public List<Talent> ActiveTalents;
+    [SerializeField]
     private int[] maximumPointsPerPanel;
 
     public int[] MaximumPointsPerPanel { get => maximumPointsPerPanel; set => maximumPointsPerPanel = value; }
@@ -34,7 +35,7 @@ public class TalentTree : ScriptableObject
 
     public void AddMaximumPoints(int panel, int points)
     {
-        if (panel > maximumPointsPerPanel.Length)
+        if (panel >= maximumPointsPerPanel.Length)
             SetMaximumPoints(0, points);
         else
             SetMaximumPoints(0, maximumPointsPerPanel[panel] + points);
@@ -42,9 +43,9 @@ public class TalentTree : ScriptableObject
 
     public void SetMaximumPoints(int panel, int points)
     {
-        if(panel > maximumPointsPerPanel.Length)
+        if(panel >= maximumPointsPerPanel.Length)
         {
-            int[] newArray = new int[panel];
+            int[] newArray = new int[panel+1];
             maximumPointsPerPanel.CopyTo(newArray, 0);
             maximumPointsPerPanel = newArray;
         }

@@ -18,21 +18,11 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 73efa50af578e5146b922313fe2a8b0f, type: 3}
   cooldown:
     baseValue: 0
-    modifiers: []
   castTime:
-    baseValue: 2
-    modifiers: []
+    baseValue: 1.5
   manaCost:
     baseValue: 50
-    modifiers: []
-  heal:
-    baseValue: 100
-    modifiers:
-    - type: 0
-      source: 0
-      value: 15
-  damage:
-    baseValue: 0
-    modifiers: []
   statusEffect: {fileID: 0}
   targetType: 0
+  heal:
+    baseValue: 100

@@ -7,8 +7,9 @@ public class TalentPanelScript : MonoBehaviour
 {
     private TalentSlot[] talentSlots;
     private int availableTalents;
-    [SerializeField]
     private int maximumTalents;
+    [SerializeField]
+    private int startingPoints;
     public TalentPointsIcons talentPointsIcons;
 
     public int AvailableTalents 
@@ -18,13 +19,22 @@ public class TalentPanelScript : MonoBehaviour
         {
             availableTalents = value;
             talentPointsIcons.SetAvailableTalents(availableTalents);
+            Debug.Log("available talents: " + availableTalents);
         } 
     }
-    public int MaximumTalents { get => maximumTalents; set => maximumTalents = value; }
+    public int MaximumTalents
+    {
+        get => maximumTalents;
+        set
+        {
+            maximumTalents = startingPoints + value;
+            AvailableTalents = maximumTalents;
+            Debug.Log("Maximum talents: " + maximumTalents);
+        }
+    }
 
     private void Awake()
     {
-        availableTalents = maximumTalents;
         talentSlots = GetComponentsInChildren<TalentSlot>();
     }
 
@@ -39,7 +49,7 @@ public class TalentPanelScript : MonoBehaviour
 
     public void SetActiveTalents(List<Talent> activeTalents)
     {
-        AvailableTalents = maximumTalents;
+        AvailableTalents = MaximumTalents;
         foreach (TalentSlot talentSlot in talentSlots)
             talentSlot.Deactivate();
 
@@ -61,7 +71,7 @@ public class TalentPanelScript : MonoBehaviour
     {
         foreach (var talentSlot in talentSlots)
             talentSlot.Deactivate();
-        AvailableTalents = maximumTalents;
+        AvailableTalents = MaximumTalents;
     }
 
     public void ActivateTalentSlot(TalentSlot talentSlot)

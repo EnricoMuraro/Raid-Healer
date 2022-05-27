@@ -25,7 +25,7 @@ public class TalentManager : MonoBehaviour
 
         for (int i = 0; i < talentPanels.Length; i++)
         {
-            talentPanels[i].MaximumTalents = talentTree.MaximumPointsPerPanel[i];
+            talentPanels[i].MaximumTalents = MaxPoints[i];
             talentPanels[i].SetActiveTalents(talentTree.ActiveTalents);
         }
     }
@@ -44,6 +44,6 @@ public class TalentManager : MonoBehaviour
         }
         
         talentTree.ActiveTalents = talents;
-        Persistance.SaveTalents(talentIDs.ToArray(), talentTree.MaximumPointsPerPanel);
+        Persistance.SaveTalents(talentIDs.ToArray());
     }
 }

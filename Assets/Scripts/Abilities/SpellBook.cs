@@ -8,6 +8,7 @@ public class SpellBook : ScriptableObject
 {
     [SerializeField]
     private List<Ability> defaultAbilities;
+    private List<Ability> rewardAbilities;
     private List<Ability> talentAbilities;
     [SerializeField]
     private Ability[] selectedAbilities;
@@ -16,7 +17,9 @@ public class SpellBook : ScriptableObject
 
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
 
-    public List<Ability> DefaultAbilities { get => defaultAbilities; set => defaultAbilities = value; }
+    public List<Ability> DefaultAbilities { get => defaultAbilities; }
+    public List<Ability> RewardAbilities { get => rewardAbilities; set => rewardAbilities = value; }
+    public List<Ability> TalentAbilities { get => talentAbilities; set => talentAbilities = value; }
 
     public Ability[] SelectedAbilities 
     { 
@@ -28,7 +31,6 @@ public class SpellBook : ScriptableObject
         }
     }
 
-    public List<Ability> TalentAbilities { get => talentAbilities; set => talentAbilities = value; }
 
     public List<Ability> AllAbilities 
     {
@@ -36,8 +38,13 @@ public class SpellBook : ScriptableObject
         {
             List<Ability> allAbilities = new ();
             allAbilities.AddRange(defaultAbilities);
-            if(talentAbilities != null)
+
+            if (rewardAbilities != null)
+                allAbilities.AddRange(rewardAbilities);
+
+            if (talentAbilities != null)
                 allAbilities.AddRange(talentAbilities);
+
             return allAbilities;
         }
     }
@@ -57,7 +64,6 @@ public class SpellBook : ScriptableObject
         for (int i = 0; i < selectedAbilitiesIDs.Length; i++)
             SelectedAbilities[i] = GetAbilityByID(selectedAbilitiesIDs[i]);
     }
-
 
     public int[] GetSelectedAbilitiesIDs()
     {

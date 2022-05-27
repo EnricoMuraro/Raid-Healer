@@ -89,12 +89,15 @@ public class GameUnit : MonoBehaviour
 
     public void AddStatusEffect(StatusEffect statusEffect)
     {
-        if(statusEffect.activationMode == StatusEffect.ActivationMode.replace)
-            RemoveStatusEffect(statusEffect);
+        if(!isDead())
+        {
+            if (statusEffect.activationMode == StatusEffect.ActivationMode.replace)
+                RemoveStatusEffect(statusEffect);
 
-        StatusEffectSlot statusEffectSlot = gameObject.AddComponent<StatusEffectSlot>();
-        statusEffectSlot.InitStatusEffect(statusEffect);
-        OnStatusEffectAdded?.Invoke(statusEffectSlot);
+            StatusEffectSlot statusEffectSlot = gameObject.AddComponent<StatusEffectSlot>();
+            statusEffectSlot.InitStatusEffect(statusEffect);
+            OnStatusEffectAdded?.Invoke(statusEffectSlot);
+        }
     }
 
     public void RemoveStatusEffect(StatusEffect statusEffect)

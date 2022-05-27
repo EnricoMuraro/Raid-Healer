@@ -13,12 +13,8 @@ public class TalentSlot : MonoBehaviour
 
     private bool isActive;
 
-    private void OnEnable()
+    private void Awake()
     {
-
-        border.color = Color.gray;
-        nextTalentArrow.color = Color.gray;
-        isActive = false;
         if (talent != null)
         {
             GetComponent<Image>().sprite = talent.sprite;
@@ -35,6 +31,8 @@ public class TalentSlot : MonoBehaviour
         isActive = true;
         border.color = Color.green;
         nextTalentArrow.color = Color.cyan;
+
+        Debug.Log("Talent slot activated");
     }
 
     public void Deactivate()
@@ -42,6 +40,8 @@ public class TalentSlot : MonoBehaviour
         isActive = false;
         border.color = Color.gray;
         nextTalentArrow.color = Color.gray;
+
+        Debug.Log("Talent slot deactivated");
     }
 
 

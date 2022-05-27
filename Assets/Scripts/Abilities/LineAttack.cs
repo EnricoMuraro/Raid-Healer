@@ -5,8 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Ability/Line Attack")]
 public class LineAttack : Ability
 {
+    public bool randomRow;
     [SerializeField]
     public int[] rows;
+
+    public bool randomColumn;
     [SerializeField]
     public int[] columns;
 
@@ -14,19 +17,17 @@ public class LineAttack : Ability
 
     public int Damage { get => (int)damage.Value; }
 
+    public StatusEffect appliedStatusEffect;
+
+
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
-        GameUnit[,] raiders = raid.GetRaidersAsMatrix();
-
-        foreach (int row in rows)
-            if (row < raiders.GetLength(0))
-                for (int i = 0; i < raiders.GetLength(1); i++)
-                    raiders[row, i].ReceiveDamage(Damage);
-
-        foreach (int col in columns)
-            if (col < raiders.GetLength(1))
-                for (int i = 0; i < raiders.GetLength(0); i++)
-                    raiders[i, col].ReceiveDamage(Damage);
-
+        List<GameUnit> targets = raid.GetRandomRow();
+        foreach (GameUnit target in targets)
+        {
+            target.ReceiveDamage(Damage);
+            if (appliedStatusEffect != null)
+                target.AddStatusEffect(appliedStatusEffect);
+        }
     }
 }

@@ -17,8 +17,9 @@ public class EndSceneManager : MonoBehaviour
 
         if (EndSceneData.result)
         {
-            GiveRewards();
-            Persistance.SaveBossWin(EndSceneData.bossFightID);
+            if(Persistance.SaveBossWin(EndSceneData.bossFightID))
+                GiveRewards();
+
             resultSplashImage.sprite = winSprite;
         }
         else
@@ -27,7 +28,7 @@ public class EndSceneManager : MonoBehaviour
 
     public void GiveRewards()
     {
-
+        
     }
 
     public void Retry()

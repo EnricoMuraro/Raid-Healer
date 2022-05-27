@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "5f80de50",
         "name": "com.DefaultCompany.RaidHealer",
-        "processId": 25681,
+        "processId": 4652,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,79 +11,37 @@
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
-            "processId": 29521,
-            "exited": false
+            "processId": 8144,
+            "exited": true
         },
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
-            "processId": 20291,
-            "exited": false
+            "processId": 8145,
+            "exited": true
         },
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
-            "processId": 20292,
-            "exited": false
+            "processId": 8147,
+            "exited": true
         },
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
-            "processId": 20294,
-            "exited": false
+            "processId": 8148,
+            "exited": true
         },
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
-            "processId": 20293,
-            "exited": false
+            "processId": 8149,
+            "exited": true
         },
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
-            "processId": 7155,
-            "exited": false
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 7156,
-            "exited": false
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 7158,
-            "exited": false
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 7157,
-            "exited": false
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 14118,
-            "exited": false
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 14119,
-            "exited": false
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 14120,
-            "exited": false
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 25681,
+            "processId": 4652,
             "exited": false
         }
     ],
@@ -137,7 +95,7 @@
         "MemoryGroup": 2,
         "Behavior": 0
     },
-    "m_Filter": "",
-    "m_FilterIsRegularExpression": true,
+    "m_Filter": "Talent",
+    "m_FilterIsRegularExpression": false,
     "m_SymbolPaths": []
 }

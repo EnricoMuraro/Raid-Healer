@@ -72,6 +72,41 @@ public class Raid : MonoBehaviour
         return targets;
     }
 
+    public List<GameUnit> GetRandomRow(bool atLeastOneAlive = true)
+    {
+        List<int> rows = new();
+        for (int i = 0; i < raidRows; i++)
+            rows.Add(i);
+
+        return GetRandomRow(rows, atLeastOneAlive);
+    }
+
+    public List<GameUnit> GetRandomRow(List<int> rows, bool atLeastOneAlive = true)
+    {
+        int row = UnityEngine.Random.Range(0, raidRows);
+        List<GameUnit> raiders = GetRaidersByRow(row);
+        if(atLeastOneAlive == false)
+            return raiders;
+        else
+        {
+            bool allDead = true;
+            do
+            {
+                int index = UnityEngine.Random.Range(0, rows.Count);
+                raiders = GetRaidersByRow(rows[index]);
+                rows.RemoveAt(index);
+
+                foreach (GameUnit raider in raiders)
+                    if(!raider.isDead())
+                        allDead = false;
+
+            } while (allDead && rows.Count > 0);
+            if (allDead)
+                return null;
+            else
+                return raiders;
+        }
+    }
 
     public List<GameUnit> GetFirstRaiders(int numberOfRaiders, bool aliveOnly = true)
     {
