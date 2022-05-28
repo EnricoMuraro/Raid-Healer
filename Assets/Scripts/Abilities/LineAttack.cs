@@ -7,11 +7,11 @@ public class LineAttack : Ability
 {
     public bool randomRow;
     [SerializeField]
-    public int[] rows;
+    public List<int> rows;
 
     public bool randomColumn;
     [SerializeField]
-    public int[] columns;
+    public List<int> columns;
 
     public Stat damage;
 
@@ -22,7 +22,20 @@ public class LineAttack : Ability
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
-        List<GameUnit> targets = raid.GetRandomRow();
+        List<GameUnit> targets = new();
+
+        if(randomRow)
+            targets.AddRange(raid.GetRandomRow(rows.ToArray()));
+        else
+            foreach (int row in rows)
+                targets.AddRange(raid.GetRaidersByRow(row));
+
+        if (randomColumn)
+            targets.AddRange(raid.GetRandomColumn(columns.ToArray()));
+        else
+            foreach (int column in columns)
+                targets.AddRange(raid.GetRaidersByColumn(column));
+
         foreach (GameUnit target in targets)
         {
             target.ReceiveDamage(Damage);

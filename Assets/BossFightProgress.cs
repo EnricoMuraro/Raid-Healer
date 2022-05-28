@@ -13,6 +13,7 @@ public class BossFightProgress : MonoBehaviour
         fightSceneNames.TryAdd(1, "bossfight1");
         fightSceneNames.TryAdd(2, "bossfight2");
         fightSceneNames.TryAdd(3, "BearBossFight");
+        fightSceneNames.TryAdd(4, "BigBearBossFight");
     }
 
     public static BossFightIcon GetBossFightByID(int fightID)

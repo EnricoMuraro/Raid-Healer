@@ -3,23 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "5f80de50",
         "name": "com.DefaultCompany.RaidHealer",
-        "processId": 4652,
+        "processId": 4651,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 8144,
-            "exited": true
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 8145,
-            "exited": true
-        },
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
@@ -42,6 +30,18 @@
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
             "processId": 4652,
+            "exited": true
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 4653,
+            "exited": true
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 4651,
             "exited": false
         }
     ],

@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 8
   name: Compassion
-  description: Increases your mana regeneration rate by 5%
+  description: Increases your mana regeneration rate by 10%
   sprite: {fileID: 21300000, guid: ac09e713067b30c4fa98bb51439d5aea, type: 3}
   unitStatModifiers:
   - unit: {fileID: 11400000, guid: 8254f60a5cb252840a110f7e3dfb9749, type: 2}
-    statName: 1
+    statName: 2
     modifier:
       type: 0
       source: 0
-      value: 5
+      value: 10
   abilityModifiers: []
   statusEffectModifiers: []

@@ -31,17 +31,14 @@ public class TalentSlot : MonoBehaviour
         isActive = true;
         border.color = Color.green;
         nextTalentArrow.color = Color.cyan;
-
-        Debug.Log("Talent slot activated");
     }
 
     public void Deactivate()
     {
         isActive = false;
-        border.color = Color.gray;
-        nextTalentArrow.color = Color.gray;
-
-        Debug.Log("Talent slot deactivated");
+        Color color = Color.gray;
+        border.color = color;
+        nextTalentArrow.color = color;
     }
 
 

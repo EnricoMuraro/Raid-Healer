@@ -78,13 +78,29 @@ public class Raid : MonoBehaviour
         for (int i = 0; i < raidRows; i++)
             rows.Add(i);
 
-        return GetRandomRow(rows, atLeastOneAlive);
+        return GetRandomRow(rows.ToArray(), atLeastOneAlive);
     }
 
-    public List<GameUnit> GetRandomRow(List<int> rows, bool atLeastOneAlive = true)
+    public List<GameUnit> GetRandomRow(int[] rows, bool atLeastOneAlive = true)
     {
-        int row = UnityEngine.Random.Range(0, raidRows);
-        List<GameUnit> raiders = GetRaidersByRow(row);
+        return GetRandomLine(rows, true, atLeastOneAlive);
+    }
+
+    public List<GameUnit> GetRandomColumn(int[] rows, bool atLeastOneAlive = true)
+    {
+        return GetRandomLine(rows, false, atLeastOneAlive);
+    }
+
+    private List<GameUnit> GetRandomLine(int[] lineSelection, bool row, bool atLeastOneAlive = true)
+    {
+        List<int> lines = new(lineSelection);
+        int line = UnityEngine.Random.Range(0, lines.Count);
+        List<GameUnit> raiders;
+        if (row)
+            raiders = GetRaidersByRow(line);
+        else
+            raiders = GetRaidersByColumn(line);
+
         if(atLeastOneAlive == false)
             return raiders;
         else
@@ -92,17 +108,20 @@ public class Raid : MonoBehaviour
             bool allDead = true;
             do
             {
-                int index = UnityEngine.Random.Range(0, rows.Count);
-                raiders = GetRaidersByRow(rows[index]);
-                rows.RemoveAt(index);
+                int index = UnityEngine.Random.Range(0, lines.Count);
+                if (row)
+                    raiders = GetRaidersByRow(line);
+                else
+                    raiders = GetRaidersByColumn(line);
+                lines.RemoveAt(index);
 
                 foreach (GameUnit raider in raiders)
                     if(!raider.isDead())
                         allDead = false;
 
-            } while (allDead && rows.Count > 0);
+            } while (allDead && lines.Count > 0);
             if (allDead)
-                return null;
+                return new();
             else
                 return raiders;
         }

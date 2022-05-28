@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int bossFightID;
+    public BossFightInfo bossFightInfo;
     public SceneLoaderScript SceneLoader;
     public void EndGame(bool result)
     {
         //Set end screen data
         EndSceneData.result = result;
         EndSceneData.previousSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        EndSceneData.bossFightID = bossFightID;
+        EndSceneData.bossFightInfo = bossFightInfo;
         SceneLoader.LoadScene(3);
     }
 }

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossFights/BearBossFight.unity
     guid: 1630ffcf6ca7d4d4ca4f78c4a038850b
+  - enabled: 1
+    path: Assets/Scenes/BossFights/BigBearBossFight.unity
+    guid: 373d74431f46d534e8b4cab68b2b5a7e
   m_configObjects: {}

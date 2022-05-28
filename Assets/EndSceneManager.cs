@@ -15,20 +15,17 @@ public class EndSceneManager : MonoBehaviour
     {
         Debug.Log("end scene data " + EndSceneData.result + " " + EndSceneData.previousSceneIndex);
 
+        RewardPanelScript.DisplayNoRewards();
+
         if (EndSceneData.result)
         {
-            if(Persistance.SaveBossWin(EndSceneData.bossFightID))
-                GiveRewards();
+            if (Persistance.SaveBossWin(EndSceneData.bossFightInfo.ID))
+                RewardPanelScript.DispalyRewards(EndSceneData.bossFightInfo.Reward);
 
             resultSplashImage.sprite = winSprite;
         }
         else
             resultSplashImage.sprite = lossSprite;
-    }
-
-    public void GiveRewards()
-    {
-        
     }
 
     public void Retry()

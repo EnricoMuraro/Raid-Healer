@@ -6,5 +6,5 @@ public class EndSceneData : MonoBehaviour
 {
     public static bool result;
     public static int previousSceneIndex;
-    public static int bossFightID;
+    public static BossFightInfo bossFightInfo;
 }

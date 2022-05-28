@@ -663,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2f2e94d1e8e6a45963fc9f74fef41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossFightID: 0
+  bossFightInfo: {fileID: 11400000, guid: eba2f42b0610e9c4fafda0c83c7e5b24, type: 2}
   SceneLoader: {fileID: 126431608}
 --- !u!4 &398317348
 Transform:
@@ -3107,7 +3107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 964010021}
   - component: {fileID: 964010022}
-  - component: {fileID: 964010024}
+  - component: {fileID: 964010023}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -3143,7 +3143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 11400000, guid: 82f92fb69c92063e8a7bcd8710e0b8e3, type: 2}
+  unit: {fileID: 11400000, guid: 8124c66b9f90a9643a5057bc17cd8c64, type: 2}
   health: 0
   mana: 0
   cooldown: 0
@@ -3161,7 +3161,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   manaBar: {fileID: 0}
---- !u!114 &964010024
+--- !u!114 &964010023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3170,7 +3170,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 964010020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d688e859e5eca05d1ba346c1d0fd5c0b, type: 3}
+  m_Script: {fileID: 11500000, guid: d2d01f25cc2b96b459cdb7d5a92ce464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   raid: {fileID: 886765861}
@@ -5573,9 +5573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf71b4004254c648a98c5b165cd47e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: a6256291dd21074ae8b0e471af65b7a7, type: 2}
+  ability: {fileID: 11400000, guid: 111bce6ccfd121b4abdfe4f33185ca3b, type: 2}
   castBar: {fileID: 0}
-  StartingCooldown: 6
+  StartingCooldown: 2
   onStateChange:
     m_PersistentCalls:
       m_Calls: []

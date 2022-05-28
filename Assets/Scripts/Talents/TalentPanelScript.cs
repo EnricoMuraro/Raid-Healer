@@ -81,8 +81,8 @@ public class TalentPanelScript : MonoBehaviour
         {
             if (talentSlot.previousTalentSlot == null || talentSlot.previousTalentSlot.IsActive())
             {
-                talentSlot.Activate();
                 AvailableTalents -= 1;
+                talentSlot.Activate();
             }
         }
     }
@@ -91,8 +91,8 @@ public class TalentPanelScript : MonoBehaviour
     {
         if (talentSlot.nextTalentSlot == null || !talentSlot.nextTalentSlot.IsActive())
         {
-            talentSlot.Deactivate();
             AvailableTalents += 1;
+            talentSlot.Deactivate();
         }
     }
 
