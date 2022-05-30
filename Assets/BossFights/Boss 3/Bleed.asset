@@ -16,6 +16,8 @@ MonoBehaviour:
   Name: Bleed
   Icon: {fileID: 21300000, guid: 1e01585c56a34504a96ac0ae986904dd, type: 3}
   activationMode: 0
+  type: 1
+  onEndAbility: {fileID: 0}
   duration:
     baseValue: 18
   tickRate:

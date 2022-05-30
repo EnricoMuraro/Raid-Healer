@@ -8,6 +8,7 @@ public class Ability : ScriptableObject
 {
     public int ID;
     public new string name;
+    [TextArea]
     public string description;
     public Sprite icon;
 
@@ -30,7 +31,10 @@ public class Ability : ScriptableObject
     }
 
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
-    public virtual void Activate(GameUnit caster, int targetIndex, Raid raid) {}
+    public virtual void Activate(GameUnit caster, int targetIndex, Raid raid) 
+    {
+        caster.Mana -= ManaCost;
+    }
 }
 
 /*

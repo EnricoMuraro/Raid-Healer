@@ -9,6 +9,7 @@ public class Potion : Ability
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
+        base.Activate(caster, targetIndex, raid);
         caster.Mana += (int)manaRestored.Value;
     }
 }

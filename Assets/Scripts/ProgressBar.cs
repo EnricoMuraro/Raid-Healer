@@ -7,7 +7,7 @@ using TMPro;
 public class ProgressBar : MonoBehaviour
 {
 
-    private Slider progressBar;
+    private Slider[] progressBars;
     private TextMeshProUGUI progressBarText;
     private Transform statusEffectsBar;
     private Object StatusEffectFrameIcon;
@@ -16,8 +16,7 @@ public class ProgressBar : MonoBehaviour
 
     private void Awake() 
     {
-        
-        progressBar = GetComponent<Slider>();
+        progressBars = GetComponentsInChildren<Slider>();
         progressBarText = GetComponentInChildren<TextMeshProUGUI>();
         statusEffectsBar = transform.Find("StatusEffectBar");
         StatusEffectFrameIcon = Resources.Load("StatusEffectFrameIcon");
@@ -25,8 +24,6 @@ public class ProgressBar : MonoBehaviour
 
     void Start()
     {
-        progressBar.maxValue = 100;
-        progressBar.value = 0;
     }
     
     public void AddStatusEffectFrameIcon(StatusEffectSlot statusEffectSlot)
@@ -35,17 +32,17 @@ public class ProgressBar : MonoBehaviour
         icon.GetComponent<StatusEffectIcon>().statusEffectSlot = statusEffectSlot;
     }
 
-    public void SetMaxValue(float maxValue) 
+    public void SetMaxValue(float maxValue, int progressBarIndex = 0) 
     {
-        progressBar.maxValue = maxValue;
+        progressBars[progressBarIndex].maxValue = maxValue;
     }
 
-    public void SetValue(float value)
+    public void SetValue(float value, int progressBarIndex = 0)
     {
-        progressBar.value = value;
+        progressBars[progressBarIndex].value = value;
     }
 
-    public void SetText(string text)
+    public void SetText(string text, int progressBarIndex = 0)
     {
         progressBarText.text = text;
     }
@@ -55,7 +52,7 @@ public class ProgressBar : MonoBehaviour
     {
         if(displayValues)
         {
-            progressBarText.text = progressBar.value + "/" + progressBar.maxValue;
+            progressBarText.text = progressBars[0].value + "/" + progressBars[0].maxValue;
         }
     }
 }

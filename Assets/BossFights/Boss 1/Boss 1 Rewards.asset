@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf589a11e6ae1d742b8ccd857046eedb, type: 3}
   m_Name: Boss 1 Rewards
   m_EditorClassIdentifier: 
-  claimed: 1
   talentPointRewards:
   - talentPanel: 0
     talentPoints: 1

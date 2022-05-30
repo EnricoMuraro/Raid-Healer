@@ -15,4 +15,9 @@ MonoBehaviour:
   ID: 3
   Name: Wild bear
   Description: Just kill random animals at this point idc
+  BossUnit: {fileID: 11400000, guid: 88b8d8f1d58529a48996d8a7b1336bce, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: 3ef0673aaf84402468739cfca9721ca0, type: 2}
+  BossBehaviour: {fileID: 11400000, guid: 1b847e41320b0f44eaa16acda0aa659e, type: 2}
   Reward: {fileID: 11400000, guid: 6528cfa33ea1e234da8cc25f8ef05673, type: 2}
+  raidSize: 0

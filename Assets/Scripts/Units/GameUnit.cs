@@ -11,6 +11,7 @@ public class GameUnit : MonoBehaviour
 
     [SerializeField] private int health = 1;
     [SerializeField] private float mana = 0;
+    [SerializeField] private int shield;
     [SerializeField] private float cooldown = 0;
     [SerializeField] private bool dead = false;
 
@@ -24,6 +25,7 @@ public class GameUnit : MonoBehaviour
     public int MaxHealth { get => (int)unit.maxHealth.Value; }
     public int MaxMana { get => (int)unit.maxMana.Value; }
     public float ManaRegenRate { get => unit.manaRegenRate.Value; }
+    public int Shield { get => shield; }
     public int Damage { get => (int)unit.damage.Value; }
     public float AttackFrequency { get => unit.attackFrequency.Value; }
 
@@ -32,6 +34,11 @@ public class GameUnit : MonoBehaviour
     public Stat ManaRegenRateStat { get => unit.manaRegenRate; }
     public Stat DamageStat { get => unit.damage; }
     public Stat AttackFrequencyStat { get => unit.attackFrequency; }
+
+    public void InitUnit(Unit unit)
+    {
+        this.unit = unit;
+    }
 
     public int Health
     {
@@ -113,14 +120,38 @@ public class GameUnit : MonoBehaviour
             Destroy(statusEffectSlot);
     }
 
+    public void RemoveStatusEffectByType(StatusEffect.Type type, bool all = false)
+    {
+        foreach(StatusEffectSlot statusEffectSlot in GetComponents<StatusEffectSlot>())
+        {
+            if (statusEffectSlot.GetStatusEffect().type == type)
+                Destroy(statusEffectSlot);
+
+            if (all == false)
+                break;
+        }
+    }
+
     public void ReceiveHeal(int amount)
     {
         Health += amount;       
     }
 
-    public void ReceiveDamage(int amount)
+    public int ReceiveDamage(int amount)
     {
-        Health -= amount;
+        int oldHealh = Health;
+        shield -= amount;
+        if(shield < 0)
+        {
+            Health += shield;
+            shield = 0;
+        }
+        return (oldHealh - Health);
+    }
+
+    public void ReceiveShield(int amount)
+    {
+        shield += amount;
     }
 
     public void Attack(GameUnit target)

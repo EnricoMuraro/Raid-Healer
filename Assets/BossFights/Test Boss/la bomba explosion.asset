@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5026d2d4e09037f47a1168841b3f6747, type: 3}
+  m_Name: la bomba explosion
+  m_EditorClassIdentifier: 
+  ID: 9001
+  name: bomba explosion
+  description: 
+  icon: {fileID: 21300000, guid: fdbc649bc0f53764190017e798a002f4, type: 3}
+  cooldown:
+    baseValue: 0
+  castTime:
+    baseValue: 0
+  manaCost:
+    baseValue: 0
+  attackPattern: 0
+  size: 1
+  damage:
+    baseValue: 0
+  appliedStatusEffect: {fileID: 11400000, guid: aaf9a385c3f887044a5178e48bb4d235, type: 2}

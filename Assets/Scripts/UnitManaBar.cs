@@ -17,9 +17,14 @@ public class UnitManaBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        unit.OnManaChange.AddListener(UpdateManaBar);
-        progressBar.SetMaxValue(unit.MaxMana);
-        progressBar.SetValue(unit.Mana);
+        if (unit.MaxMana > 0)
+        {
+            unit.OnManaChange.AddListener(UpdateManaBar);
+            progressBar.SetMaxValue(unit.MaxMana);
+            progressBar.SetValue(unit.Mana);
+        }
+        else
+            gameObject.SetActive(false);
     }
 
     private void Update()

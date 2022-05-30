@@ -15,4 +15,10 @@ MonoBehaviour:
   ID: 2
   Name: Angry Old Goblin
   Description: Now he has a torch!
+  BossUnit: {fileID: 11400000, guid: 508b4f5bad440f54e8f4246ace010ee4, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: eab6b130724e0c84db58f8a51da8d2b8, type: 2}
+  - {fileID: 11400000, guid: 089dc653be347c546834f8273d6dc746, type: 2}
+  BossBehaviour: {fileID: 11400000, guid: 9c4426377ce784146ace9014b3698758, type: 2}
   Reward: {fileID: 11400000, guid: c1254988637c1734dbd3638620f6166d, type: 2}
+  raidSize: 0

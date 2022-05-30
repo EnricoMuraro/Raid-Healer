@@ -20,7 +20,7 @@ public class AbilitySlot : MonoBehaviour
 
     private AbilityState state = AbilityState.ready;
 
-    private void OnEnable()
+    private void Start()
     {
         if(StartingCooldown > 0)
         {
@@ -28,6 +28,9 @@ public class AbilitySlot : MonoBehaviour
             state = AbilityState.cooldown;
             onCooldownStart.Invoke(this);
         }
+
+        if (castBar != null && state != AbilityState.casting)
+            castBar.gameObject.SetActive(false);
     }
 
     public float CurrentCooldown {get => currentCooldown;}

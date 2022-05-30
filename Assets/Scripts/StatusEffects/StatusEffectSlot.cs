@@ -6,12 +6,20 @@ using UnityEngine.Events;
 [RequireComponent(typeof(GameUnit))]
 public class StatusEffectSlot : MonoBehaviour
 {
+    private Raid raid;
+    private GameUnit target;
     private StatusEffect statusEffect;
 
     private float currentTick = 0;
     public float currentDuration = 0;
 
     public UnityEvent<StatusEffectSlot> OnStatusEffectFinished = new UnityEvent<StatusEffectSlot>();
+
+    private void Awake()
+    {
+        raid = FindObjectOfType<Raid>();
+        target = GetComponent<GameUnit>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +46,7 @@ public class StatusEffectSlot : MonoBehaviour
 
         if (currentDuration >= statusEffect.Duration)
         {
+            statusEffect.OnStatusEffectEnd(target, raid);
             OnStatusEffectFinished.Invoke(this);
             Destroy(this);
         }
@@ -46,7 +55,7 @@ public class StatusEffectSlot : MonoBehaviour
         {
             if (currentTick >= statusEffect.TickRate)
             {
-                statusEffect.Activate(GetComponent<GameUnit>());
+                statusEffect.Activate(target);
                 currentTick = 0;
             }
         }

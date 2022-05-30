@@ -2,29 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BearBehaviour : MonoBehaviour
+[CreateAssetMenu(menuName = "Boss Behaviour/Bear")]
+public class BearBehaviour : BossBehaviour
 {
 
-    public Raid raid;
-    public AbilityBar bossAbilityBar;
-    public float waitTime;
-
     // Update is called once per frame
-    void Update()
+    public override void OnUpdate()
     {
-        if (waitTime <= 0)
+        if (raid.Boss.isDead() == false)
         {
-            if (raid.Boss.isDead() == false)
-            {
-                GameUnit target = raid.GetFirstRaider();
-                raid.Boss.Attack(target);
-                bossAbilityBar.Activate(0, raid.Boss, raid.GetFirstRaiderIndex(), raid);
-            }
+            GameUnit target = raid.GetFirstRaider();
+            raid.Boss.Attack(target);
+            bossAbilityBar.Activate(0, raid.Boss, raid.GetFirstRaiderIndex(), raid);
         }
-        else
-        {
-            waitTime -= Time.deltaTime;
-        }
-
     }
 }

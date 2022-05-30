@@ -16,6 +16,8 @@ MonoBehaviour:
   Name: Deep Bleed
   Icon: {fileID: 21300000, guid: da29040d01fc94e41b3038ca506cb212, type: 3}
   activationMode: 1
+  type: 1
+  onEndAbility: {fileID: 0}
   duration:
     baseValue: 32
   tickRate:

@@ -22,6 +22,7 @@ public class LineAttack : Ability
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
+        base.Activate(caster, targetIndex, raid);
         List<GameUnit> targets = new();
 
         if(randomRow)

@@ -9,7 +9,8 @@ public class StatusEffect : ScriptableObject
     public string Name;
     public Sprite Icon;
     public ActivationMode activationMode;
-
+    public Type type;
+    public Ability onEndAbility;
     public Stat duration;
     public Stat tickRate;
 
@@ -30,8 +31,18 @@ public class StatusEffect : ScriptableObject
         damage,
     }
 
+    public enum Type
+    {
+        elemental,
+        physical,
+        curse,
+    }
 
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
     public virtual void Activate(GameUnit gameUnit) { }
-
+    public virtual void OnStatusEffectEnd(GameUnit gameUnit, Raid raid) 
+    {
+        if(onEndAbility != null)
+            onEndAbility.Activate(gameUnit, raid.GetRaiderIndex(gameUnit), raid);
+    }
 }

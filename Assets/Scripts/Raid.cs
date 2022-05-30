@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Linq;
 
 public class Raid : MonoBehaviour
 {
@@ -52,6 +53,16 @@ public class Raid : MonoBehaviour
                 raidersMatrix[i,j] = raiders[(j + (i*raidColumns))];
             }
         return raidersMatrix;
+    }
+
+    public int GetRaiderIndex(GameUnit unit)
+    {
+        if(unit != null)
+            for(int i = 0; i < raiders.Length; i++)
+                if(raiders[i] != null && raiders[i] == unit)
+                    return i;
+
+        return -1;
     }
 
     public List<GameUnit> GetRaidersByRow(int row)
@@ -158,6 +169,22 @@ public class Raid : MonoBehaviour
         }
 
         return targets;
+    }
+
+    public int GetRandomRaiderIndex(bool aliveOnly = true)
+    {
+        if (raiders.All(x => x.isDead()))
+            return 0;
+
+        int randomIndex;
+        do
+        {
+            randomIndex = UnityEngine.Random.Range(0, raiders.Length);
+
+        }
+        while (raiders[randomIndex].isDead());
+
+        return randomIndex;
     }
 
     public int GetFirstRaiderIndex(bool aliveOnly = true)

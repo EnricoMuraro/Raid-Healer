@@ -15,6 +15,7 @@ public class BossFightPanel : MonoBehaviour
 
     public void SetFightInfo(BossFightInfo fightInfo)
     {
+        BossFightContainer.BossFightInfo = fightInfo;
         fightID = fightInfo.ID;
         title.text = fightInfo.Name;
         description.text = fightInfo.Description;
@@ -22,11 +23,13 @@ public class BossFightPanel : MonoBehaviour
 
     public void StartFight()
     {
-        string sceneName;
-        bool found = BossFightProgress.fightSceneNames.TryGetValue(fightID, out sceneName);
-        if (found)
-            sceneLoader.LoadScene(sceneName);
-        else
-            Debug.LogWarning("Boss fight ID '" + fightID + "' is not assigned to any boss fight scene");
+        string sceneName = "";
+        switch(BossFightContainer.BossFightInfo.raidSize)
+        {
+            case BossFightInfo.RaidSize.size3x3:
+                sceneName = "MainScene";
+                break;
+        }
+        sceneLoader.LoadScene(sceneName);
     }
 }
