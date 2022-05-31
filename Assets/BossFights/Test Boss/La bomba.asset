@@ -19,7 +19,7 @@ MonoBehaviour:
   cooldown:
     baseValue: 20
   castTime:
-    baseValue: 0
+    baseValue: 3
   manaCost:
-    baseValue: 0
+    baseValue: 200
   effect: {fileID: 11400000, guid: be93206ea6c452a4fb41c2496b131ba1, type: 2}

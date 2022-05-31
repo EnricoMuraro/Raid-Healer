@@ -458,8 +458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: 00ca80e0d0173c17b9031256750d54aa, type: 2}
   health: 0
+  currentShield: 0
   mana: 0
-  shield: 0
   cooldown: 0
   dead: 0
   OnHealthChange:
@@ -895,8 +895,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: 00ca80e0d0173c17b9031256750d54aa, type: 2}
   health: 0
+  currentShield: 0
   mana: 0
-  shield: 0
   cooldown: 0
   dead: 0
   OnHealthChange:
@@ -958,6 +958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Boss: {fileID: 964010022}
   abilityBar: {fileID: 438033076}
+  BossCastBar: {fileID: 1101585288}
 --- !u!4 &391780728
 Transform:
   m_ObjectHideFlags: 0
@@ -1635,8 +1636,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
   health: 0
+  currentShield: 0
   mana: 0
-  shield: 0
   cooldown: 0
   dead: 0
   OnHealthChange:
@@ -2517,8 +2518,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: 00ca80e0d0173c17b9031256750d54aa, type: 2}
   health: 0
+  currentShield: 0
   mana: 0
-  shield: 0
   cooldown: 0
   dead: 0
   OnHealthChange:
@@ -2585,8 +2586,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
   health: 0
+  currentShield: 0
   mana: 0
-  shield: 0
   cooldown: 0
   dead: 0
   OnHealthChange:
@@ -3122,8 +3123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
   health: 0
+  currentShield: 0
   mana: 0
-  shield: 0
   cooldown: 0
   dead: 0
   OnHealthChange:
@@ -3788,8 +3789,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: facb5ceb7b6d435468b0fcb4d9c8fcaa, type: 2}
   health: 0
+  currentShield: 0
   mana: 0
-  shield: 0
   cooldown: 0
   dead: 0
   OnHealthChange:
@@ -5213,8 +5214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: 8254f60a5cb252840a110f7e3dfb9749, type: 2}
   health: 0
+  currentShield: 0
   mana: 0
-  shield: 0
   cooldown: 0
   dead: 0
   OnHealthChange:
@@ -6602,8 +6603,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
   health: 0
+  currentShield: 0
   mana: 0
-  shield: 0
   cooldown: 0
   dead: 0
   OnHealthChange:
@@ -6688,8 +6689,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
   health: 0
+  currentShield: 0
   mana: 0
-  shield: 0
   cooldown: 0
   dead: 0
   OnHealthChange:
@@ -8694,10 +8695,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17c00b0fdefa4bd498a73a99de2420f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
+  unit: {fileID: 11400000, guid: 24887936b05357443ab074182906cd82, type: 2}
   health: 0
+  currentShield: 0
   mana: 0
-  shield: 0
   cooldown: 0
   dead: 0
   OnHealthChange:

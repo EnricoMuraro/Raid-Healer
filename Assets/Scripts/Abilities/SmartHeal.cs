@@ -18,12 +18,15 @@ public class SmartHeal : Ability
     {
         base.Activate(caster, targetIndex, raid);
 
-        GameUnit[] sortedRaiders = raid.raiders.OrderBy(raider => raider.Health/raider.MaxHealth).ToArray();
-        for (int i = 0; i < sortedRaiders.Length && i < NumberOfTargets; i++)
-        {
+        GameUnit[] sortedRaiders = raid.raiders.OrderBy(raider => (float)raider.Health/(float)raider.MaxHealth).ToArray();
+
+        int healCount = NumberOfTargets;
+        for (int i = 0; i < sortedRaiders.Length && healCount > 0; i++)
+        {   
             if(!sortedRaiders[i].isDead())
             {
                 sortedRaiders[i].ReceiveHeal(Heal);
+                healCount--;
                 if (statusEffect != null)
                     sortedRaiders[i].AddStatusEffect(statusEffect);
             }

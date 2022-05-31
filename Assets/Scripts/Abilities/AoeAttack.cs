@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [CreateAssetMenu(menuName = "Ability/Aoe Attack")]
 public class AoeAttack : Ability
 {
-    public Pattern attackPattern;
-    public int size;
     public Stat damage;
     public int Damage { get => (int)damage.Value; }
 
+
+    public Pattern attackPattern;
+    public int size;
     public StatusEffect appliedStatusEffect;
 
     public enum Pattern

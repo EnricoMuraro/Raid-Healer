@@ -36,9 +36,9 @@ public class TalentTree : ScriptableObject
     public void AddMaximumPoints(int panel, int points)
     {
         if (panel >= maximumPointsPerPanel.Length)
-            SetMaximumPoints(0, points);
+            SetMaximumPoints(panel, points);
         else
-            SetMaximumPoints(0, maximumPointsPerPanel[panel] + points);
+            SetMaximumPoints(panel, maximumPointsPerPanel[panel] + points);
     }
 
     public void SetMaximumPoints(int panel, int points)

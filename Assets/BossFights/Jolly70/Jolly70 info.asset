@@ -15,4 +15,9 @@ MonoBehaviour:
   ID: 5
   Name: Er Jolly
   Description: The best
-  Reward: {fileID: 0}
+  BossUnit: {fileID: 11400000, guid: 4b23b910b47317d439cfe76f6a4b9e60, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: 7f730199db2b51244abfac7f6ab7c99a, type: 2}
+  BossBehaviour: {fileID: 11400000, guid: 8b8fa9a88b7236343b9d33774e784db8, type: 2}
+  Reward: {fileID: 11400000, guid: aac296ce54428d944a007557312b888b, type: 2}
+  raidSize: 0

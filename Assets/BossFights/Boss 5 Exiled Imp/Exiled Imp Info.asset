@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba43613b534a6142bee9338db5aa854, type: 3}
+  m_Name: Exiled Imp Info
+  m_EditorClassIdentifier: 
+  ID: 5
+  Name: Exiled Imp
+  Description: This imp is wounded but still has some energy left. Pray you can survive
+    the initial barrage of fireballs.
+  BossUnit: {fileID: 11400000, guid: 2a45474ed84467749b4dc7bfd5c1a622, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: a314a8361381b8a43b005cefe85148e4, type: 2}
+  BossBehaviour: {fileID: 11400000, guid: a649ae7732dbaf244950bca53a2b2c41, type: 2}
+  Reward: {fileID: 11400000, guid: 3a3797eb157682f4d8d8e5edacf028d7, type: 2}
+  raidSize: 0

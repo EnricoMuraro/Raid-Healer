@@ -10,8 +10,8 @@ public class GameUnit : MonoBehaviour
     [SerializeField] private Unit unit;
 
     [SerializeField] private int health = 1;
+    [SerializeField] private int currentShield;
     [SerializeField] private float mana = 0;
-    [SerializeField] private int shield;
     [SerializeField] private float cooldown = 0;
     [SerializeField] private bool dead = false;
 
@@ -25,7 +25,7 @@ public class GameUnit : MonoBehaviour
     public int MaxHealth { get => (int)unit.maxHealth.Value; }
     public int MaxMana { get => (int)unit.maxMana.Value; }
     public float ManaRegenRate { get => unit.manaRegenRate.Value; }
-    public int Shield { get => shield; }
+    public int Shield { get => currentShield; private set => currentShield = value; }
     public int Damage { get => (int)unit.damage.Value; }
     public float AttackFrequency { get => unit.attackFrequency.Value; }
 
@@ -92,6 +92,7 @@ public class GameUnit : MonoBehaviour
 
         Health = MaxHealth;
         Mana = MaxMana;
+        Shield = (int)unit.shield.Value;
     }
 
     public void AddStatusEffect(StatusEffect statusEffect)
@@ -140,18 +141,18 @@ public class GameUnit : MonoBehaviour
     public int ReceiveDamage(int amount)
     {
         int oldHealh = Health;
-        shield -= amount;
-        if(shield < 0)
+        Shield -= amount;
+        if(Shield < 0)
         {
-            Health += shield;
-            shield = 0;
+            Health += Shield;
+            Shield = 0;
         }
         return (oldHealh - Health);
     }
 
     public void ReceiveShield(int amount)
     {
-        shield += amount;
+        Shield += amount;
     }
 
     public void Attack(GameUnit target)

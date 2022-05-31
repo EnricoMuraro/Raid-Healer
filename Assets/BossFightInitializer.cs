@@ -9,6 +9,7 @@ public class BossFightInitializer : MonoBehaviour
     public static BossFightInfo BossFightInfo;
     public GameUnit Boss;
     public AbilityBar abilityBar;
+    public ProgressBar BossCastBar;
 
     private void Awake()
     {
@@ -18,9 +19,13 @@ public class BossFightInitializer : MonoBehaviour
 
         foreach (Ability ability in BossFightInfo.Abilities)
         {
-            GameObject abilitySlot = new GameObject("Ability Slot");
-            abilitySlot.transform.parent = abilityBar.transform;
-            abilitySlot.AddComponent<AbilitySlot>().ability = ability;
+            GameObject abilitySlotParent = new GameObject("Ability Slot");
+            abilitySlotParent.transform.parent = abilityBar.transform;
+            AbilitySlot abilitySlot = abilitySlotParent.AddComponent<AbilitySlot>();
+            abilitySlot.ability = ability;
+            abilitySlot.castBar = BossCastBar;
+
+
         }
     }
 }

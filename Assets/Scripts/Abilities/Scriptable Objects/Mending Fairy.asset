@@ -19,7 +19,7 @@ MonoBehaviour:
   cooldown:
     baseValue: 0
   castTime:
-    baseValue: 2
+    baseValue: 2.5
   manaCost:
     baseValue: 40
   heal:

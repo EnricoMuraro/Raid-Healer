@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b252d76c826766540b78ab3a0483d92d, type: 3}
   m_Name: Bear Swipe
   m_EditorClassIdentifier: 
-  ID: 2002
+  ID: 2301
   name: Bear Swipe
   description: 
   icon: {fileID: 21300000, guid: cb8cde1a82067f34eb2e9a8a42bd2919, type: 3}
