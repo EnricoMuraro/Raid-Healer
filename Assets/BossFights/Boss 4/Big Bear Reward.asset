@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Big Bear Reward
   m_EditorClassIdentifier: 
   talentPointRewards:
+  - talentPanel: 0
+    talentPoints: 1
   - talentPanel: 1
-    talentPoints: 2
+    talentPoints: 1
   abilityRewards: []

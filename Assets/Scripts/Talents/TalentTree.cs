@@ -28,7 +28,11 @@ public class TalentTree : ScriptableObject
 
         if (activeTalentsIDs != null)
             foreach (int ID in activeTalentsIDs)
-                activeTalents.Add(GetTalentByID(ID));
+            {
+                Talent t = GetTalentByID(ID);
+                if (t != null)
+                    activeTalents.Add(t);
+            }
 
         ActiveTalents = activeTalents;
     }

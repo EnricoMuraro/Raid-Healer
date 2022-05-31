@@ -18,7 +18,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 72bf8ebc2079d3243bcffb7c12227bf1, type: 3}
   unitStatModifiers:
   - unit: {fileID: 11400000, guid: f8bfcaff1c76f80f6b4075f50954d5ad, type: 2}
-    statName: 3
+    statName: 4
     modifier:
       type: 0
       source: 0

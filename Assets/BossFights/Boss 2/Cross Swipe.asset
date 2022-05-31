@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2202
   name: Cross Swipe
-  description: 
+  description: 'Double swipe attack that damages the second row and second column
+    of the raid '
   icon: {fileID: 21300000, guid: a3e9295dfa5753b419971f3b92db6019, type: 3}
   cooldown:
     baseValue: 16

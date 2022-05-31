@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2301
   name: Bear Swipe
-  description: 
+  description: Damages a random row of the raid and leaves a stacking physical bleed
+    status effect
   icon: {fileID: 21300000, guid: cb8cde1a82067f34eb2e9a8a42bd2919, type: 3}
   cooldown:
     baseValue: 6

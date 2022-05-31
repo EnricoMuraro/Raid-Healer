@@ -28,7 +28,6 @@ public class TalentPanelScript : MonoBehaviour
         set
         {
             maximumTalents = startingPoints + value;
-            AvailableTalents = maximumTalents;
             Debug.Log("Maximum talents: " + maximumTalents);
         }
     }

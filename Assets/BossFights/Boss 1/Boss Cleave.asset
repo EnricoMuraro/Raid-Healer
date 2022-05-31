@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2101
   name: Cleave
-  description: 
+  description: Cleave attack that damages the first 3 raiders
   icon: {fileID: 21300000, guid: 50ff33c5312bed342a913f69ac9f35bb, type: 3}
   cooldown:
     baseValue: 6

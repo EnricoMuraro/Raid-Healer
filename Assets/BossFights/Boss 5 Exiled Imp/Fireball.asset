@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2501
   name: Fireball
-  description: 
+  description: Fast cast fireball that leaves a short elemental burning status effect
   icon: {fileID: 21300000, guid: cde97bd79abaed94c8ee709fa28a4984, type: 3}
   cooldown:
     baseValue: 0
