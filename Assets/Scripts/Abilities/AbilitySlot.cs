@@ -20,6 +20,9 @@ public class AbilitySlot : MonoBehaviour
 
     private AbilityState state = AbilityState.ready;
 
+    public int TargetIndex => targetIndex;
+    public Raid Raid => raid;
+
     private void Start()
     {
         if(StartingCooldown > 0)

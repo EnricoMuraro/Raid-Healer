@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1193f836c9e57ce49a79fdcd36105772, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f758b72c3714a043a126fa7dce1523a, type: 3}
   m_Name: Exiled Imp Behaviour
   m_EditorClassIdentifier: 
-  raid: {fileID: 0}
-  bossAbilityBar: {fileID: 0}
+  attackTargeting:
+    strategy: 0
+    RolesBlacklist: 
+  abilitiesTargeting:
+  - strategy: 5
+    RolesBlacklist: 

@@ -18,6 +18,6 @@ MonoBehaviour:
   BossUnit: {fileID: 11400000, guid: 8124c66b9f90a9643a5057bc17cd8c64, type: 2}
   Abilities:
   - {fileID: 11400000, guid: 111bce6ccfd121b4abdfe4f33185ca3b, type: 2}
-  BossBehaviour: {fileID: 11400000, guid: 1024458a5423f69468a251b0b6d386d5, type: 2}
+  BossBehaviour: {fileID: 11400000, guid: 655f9a8f09ecfc34582eae66224d4fd7, type: 2}
   Reward: {fileID: 11400000, guid: 1dbbd6434c1ac5f4d8131e7febab3853, type: 2}
   raidSize: 0

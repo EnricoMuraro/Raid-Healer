@@ -11,13 +11,13 @@ public class Pierce : Ability
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
         base.Activate(caster, targetIndex, raid);
-        (int row, int col) = raid.ArrayIndexToMatrixCoords(targetIndex);
-
-        int damageReceived = raid.raiders[targetIndex].ReceiveDamage(Damage);
+        (_, int col) = raid.ArrayIndexToMatrixCoords(targetIndex);
         GameUnit[,] raidMatrix = raid.GetRaidersAsMatrix();
-        for (int i = 1; i+row < raid.raidRows; i++)
+
+        int damageReceived = Damage;
+        for (int i = 0; i < raid.raidRows; i++)
         {
-            damageReceived = raidMatrix[row+i, col].ReceiveDamage(damageReceived);
+            damageReceived = raidMatrix[i, col].ReceiveDamage(damageReceived);
         }
     }
 }

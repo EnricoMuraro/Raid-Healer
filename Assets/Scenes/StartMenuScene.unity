@@ -3839,6 +3839,10 @@ PrefabInstance:
       propertyPath: bossFightInfo
       value: 
       objectReference: {fileID: 11400000, guid: 9c89d6bc7dcbc054b9f39513d66615ce, type: 2}
+    - target: {fileID: 8169385983706655624, guid: 4393c0a2fd7ca28468c07345e92e558e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1094182946}
     - target: {fileID: 8463771649336984388, guid: 4393c0a2fd7ca28468c07345e92e558e, type: 3}
       propertyPath: bossFightInfo
       value: 

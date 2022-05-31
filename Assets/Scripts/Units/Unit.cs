@@ -14,6 +14,8 @@ public class Unit : ScriptableObject
     public Stat damage;
     public Stat attackFrequency;
 
+    public Role role;
+
     public enum Stats
     {
         maxHealth,
@@ -22,6 +24,15 @@ public class Unit : ScriptableObject
         manaRegenRate,
         damage,
         attackFrequency,
+    }
+
+    public enum Role
+    {
+        Tank,
+        Dps,
+        Healer,
+        Player,
+        Boss,
     }
         
 

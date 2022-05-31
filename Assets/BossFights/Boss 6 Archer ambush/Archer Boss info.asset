@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba43613b534a6142bee9338db5aa854, type: 3}
+  m_Name: Archer Boss info
+  m_EditorClassIdentifier: 
+  ID: 6
+  Name: Archer Ambush
+  Description: THEY HIDE IN THE TREES!
+  BossUnit: {fileID: 11400000, guid: 900725fb0e866af45b30326add081a66, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: 65d037ffe1f99614592cafcd837916c3, type: 2}
+  - {fileID: 11400000, guid: 4bea1a9b3e982e844b28997f71ad5182, type: 2}
+  BossBehaviour: {fileID: 11400000, guid: 1007e0f80d953b042a7794753a6b095a, type: 2}
+  Reward: {fileID: 11400000, guid: c7dcbe23ac9087b40b2ae4c966cb7554, type: 2}
+  raidSize: 0

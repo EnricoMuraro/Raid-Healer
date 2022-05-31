@@ -12,8 +12,7 @@ public class BossBehaviourScript : MonoBehaviour
 
     private void Start()
     {
-        bossBehaviour.raid = raid;
-        bossBehaviour.bossAbilityBar = bossAbilityBar;
+        bossBehaviour.Init(raid, bossAbilityBar);
     }
 
     // Update is called once per frame

@@ -35,6 +35,8 @@ public class GameUnit : MonoBehaviour
     public Stat DamageStat { get => unit.damage; }
     public Stat AttackFrequencyStat { get => unit.attackFrequency; }
 
+    public Unit.Role Role { get => unit.role; }
+
     public void InitUnit(Unit unit)
     {
         this.unit = unit;

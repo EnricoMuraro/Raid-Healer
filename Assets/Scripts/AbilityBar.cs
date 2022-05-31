@@ -39,8 +39,13 @@ public class AbilityBar : MonoBehaviour
         return "";
     }
 
-    public AbilitySlot[] GetAbilitySlots()
+    public int AbilitySlotsLength()
     {
-        return abilitySlots;
+        return abilitySlots.Length;
     }
+
+    //public AbilitySlot[] GetAbilitySlots()
+    //{
+    //    return abilitySlots;
+    //}
 }

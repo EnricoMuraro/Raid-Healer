@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "5f80de50",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "5f80de50",
+        "name": "com.DefaultCompany.RaidHealer",
+        "processId": 8900,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -37,6 +37,12 @@
             "name": "com.DefaultCompany.RaidHealer",
             "processId": 8899,
             "exited": true
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 8900,
+            "exited": false
         }
     ],
     "m_Tags": {
@@ -89,7 +95,7 @@
         "MemoryGroup": 2,
         "Behavior": 0
     },
-    "m_Filter": "Talent",
+    "m_Filter": "",
     "m_FilterIsRegularExpression": false,
     "m_SymbolPaths": []
 }

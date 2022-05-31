@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d688e859e5eca05d1ba346c1d0fd5c0b, type: 3}
-  m_Name: boss 1 behaviour
+  m_Script: {fileID: 11500000, guid: 7f758b72c3714a043a126fa7dce1523a, type: 3}
+  m_Name: Boss 1 Behaviour
   m_EditorClassIdentifier: 
-  raid: {fileID: 0}
-  bossAbilityBar: {fileID: 0}
+  attackTargeting:
+    strategy: 0
+    RolesBlacklist: 
+  abilitiesTargeting:
+  - strategy: 0
+    RolesBlacklist: 
