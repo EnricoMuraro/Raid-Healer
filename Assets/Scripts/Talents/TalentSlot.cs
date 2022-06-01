@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class TalentSlot : MonoBehaviour
 {
     public Talent talent;
-    public TalentSlot previousTalentSlot;
-    public TalentSlot nextTalentSlot;
+    public List<TalentSlot> previousTalentSlots;
+    public List<TalentSlot> nextTalentSlots;
     public Image border;
     public Image nextTalentArrow;
 

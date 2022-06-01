@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class TalentPanelScript : MonoBehaviour
 {
@@ -78,7 +79,7 @@ public class TalentPanelScript : MonoBehaviour
 
         if (AvailableTalents > 0 )
         {
-            if (talentSlot.previousTalentSlot == null || talentSlot.previousTalentSlot.IsActive())
+            if (talentSlot.previousTalentSlots.Count == 0 || talentSlot.previousTalentSlots.All(x => x.IsActive()))
             {
                 AvailableTalents -= 1;
                 talentSlot.Activate();
@@ -88,7 +89,7 @@ public class TalentPanelScript : MonoBehaviour
 
     public void DeactivateTalentSlot(TalentSlot talentSlot)
     {
-        if (talentSlot.nextTalentSlot == null || !talentSlot.nextTalentSlot.IsActive())
+        if (talentSlot.nextTalentSlots.Count == 0 || talentSlot.nextTalentSlots.All(x => !x.IsActive()))
         {
             AvailableTalents += 1;
             talentSlot.Deactivate();

@@ -17,6 +17,8 @@ public class CleaveAbility : Ability
         foreach (GameUnit target in targets)
         {
             target.ReceiveDamage(Damage);
+            if (nextAbility != null)
+                nextAbility.Activate(caster, raid.GetRaiderIndex(target), raid);
         }
     }
 }

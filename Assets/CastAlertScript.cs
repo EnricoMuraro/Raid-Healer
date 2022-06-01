@@ -42,14 +42,14 @@ public class CastAlertScript : MonoBehaviour
     {
         Image arrow = alertArrows[col];
         arrow.canvasRenderer.SetAlpha(1);
+        arrow.gameObject.transform.localScale = Vector3.one;
         arrow.color = Color.red;
 
-        Debug.Log("Animating arrow");
         var seq = LeanTween.sequence();
 
-        seq.append(LeanTween.color(arrow.gameObject, Color.yellow, time / 2));
-        seq.append(LeanTween.scale(arrow.gameObject, new Vector3(1.2f, 1.2f, 1.2f), time/2).setEaseInBounce());
-        seq.append(LeanTween.color(arrow.gameObject, Color.white, time / 2)
+        seq.insert(LeanTween.moveLocalY(arrow.gameObject, 30, time/2).setEasePunch());
+        seq.insert(LeanTween.value(arrow.gameObject, Color.red, Color.yellow, time/2)
+            .setOnUpdate((value) => arrow.color = value)
             .setOnComplete(() => arrow.canvasRenderer.SetAlpha(0)));
     }
 }

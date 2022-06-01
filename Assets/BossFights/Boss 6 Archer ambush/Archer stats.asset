@@ -23,5 +23,5 @@ MonoBehaviour:
   damage:
     baseValue: 15
   attackFrequency:
-    baseValue: 0.5
+    baseValue: 0.3
   role: 4

@@ -17,8 +17,6 @@ public class LineAttack : Ability
 
     public int Damage { get => (int)damage.Value; }
 
-    public StatusEffect appliedStatusEffect;
-
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
@@ -40,8 +38,8 @@ public class LineAttack : Ability
         foreach (GameUnit target in targets)
         {
             target.ReceiveDamage(Damage);
-            if (appliedStatusEffect != null)
-                target.AddStatusEffect(appliedStatusEffect);
+            if (nextAbility != null)
+                nextAbility.Activate(caster, raid.GetRaiderIndex(target), raid);
         }
     }
 }

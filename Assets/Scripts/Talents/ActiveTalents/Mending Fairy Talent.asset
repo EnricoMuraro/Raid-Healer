@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f05c404480278f4f978379ccc73fc25, type: 3}
   m_Name: Mending Fairy Talent
   m_EditorClassIdentifier: 
-  ID: 0
-  name: 
-  description: 
-  sprite: {fileID: 0}
-  ability: {fileID: 0}
+  ID: 12
+  name: Mending Fairy
+  description: Grants the ability Mending Fairy
+  sprite: {fileID: 21300000, guid: deb804a98f777b54499b9b8e91aa4803, type: 3}
+  ability: {fileID: 11400000, guid: 289d3c21bed85694589e17ae0d569f6a, type: 2}

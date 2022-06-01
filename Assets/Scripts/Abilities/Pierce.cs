@@ -17,7 +17,11 @@ public class Pierce : Ability
         int damageReceived = Damage;
         for (int i = 0; i < raid.raidRows; i++)
         {
-            damageReceived = raidMatrix[i, col].ReceiveDamage(damageReceived);
+            if(!raidMatrix[i, col].isDead())
+                damageReceived = raidMatrix[i, col].ReceiveDamage(damageReceived);
+
+            if (nextAbility != null)
+                nextAbility.Activate(caster, raid.MatrixCoordsToArrayIndex(i,col), raid);
         }
     }
 }

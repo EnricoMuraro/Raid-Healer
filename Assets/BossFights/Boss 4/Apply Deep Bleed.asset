@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cee6182792b18f4c95f308656a398e2, type: 3}
-  m_Name: Volley
+  m_Script: {fileID: 11500000, guid: 679232fb226fd6c44b7cf8452c611ca5, type: 3}
+  m_Name: Apply Deep Bleed
   m_EditorClassIdentifier: 
-  ID: 2602
-  name: Volley
-  description: A volley of arrows that damages the first 3 targets
-  icon: {fileID: 21300000, guid: 516539e5acd13ba4dade46c53302b37c, type: 3}
+  ID: 2402
+  name: apply deep bleed
+  description: 
+  icon: {fileID: 21300000, guid: da29040d01fc94e41b3038ca506cb212, type: 3}
   cooldown:
-    baseValue: 11
+    baseValue: 0
   castTime:
     baseValue: 0
   manaCost:
     baseValue: 0
-  damage:
-    baseValue: 100
+  nextAbility: {fileID: 0}
+  effect: {fileID: 11400000, guid: 03d08595278a2444c8135d355e7dfaa1, type: 2}

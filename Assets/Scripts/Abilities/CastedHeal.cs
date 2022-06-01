@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Ability/Casted Heal")]
 public class CastedHeal : Ability
 {
-    public StatusEffect statusEffect;
     public TargetType targetType;
     public Stat heal;
 
@@ -49,8 +48,8 @@ public class CastedHeal : Ability
         foreach (GameUnit target in targets)
         {
             target.ReceiveHeal(Heal);
-            if (statusEffect != null)
-                target.AddStatusEffect(statusEffect);
+            if (nextAbility != null)
+                nextAbility.Activate(caster, raid.GetRaiderIndex(target), raid);
         }
     }
 }

@@ -12,7 +12,6 @@ public class AoeAttack : Ability
 
     public Pattern attackPattern;
     public int size;
-    public StatusEffect appliedStatusEffect;
 
     public enum Pattern
     {
@@ -44,8 +43,8 @@ public class AoeAttack : Ability
         foreach(GameUnit target in targets)
         {
             target.ReceiveDamage(Damage);
-            if(appliedStatusEffect != null)
-                target.AddStatusEffect(appliedStatusEffect);
+            if (nextAbility != null)
+                nextAbility.Activate(caster, raid.GetRaiderIndex(target), raid);
         }
     }
 }

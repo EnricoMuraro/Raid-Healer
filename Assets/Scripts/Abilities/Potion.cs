@@ -11,5 +11,7 @@ public class Potion : Ability
     {
         base.Activate(caster, targetIndex, raid);
         caster.Mana += (int)manaRestored.Value;
+        if (nextAbility != null)
+            nextAbility.Activate(caster, targetIndex, raid);
     }
 }

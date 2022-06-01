@@ -13,8 +13,10 @@ public class Dispel : Ability
     {
         base.Activate(caster, targetIndex, raid);
         foreach(var type in dispelTypes)
+        {
             raid.raiders[targetIndex].RemoveStatusEffectByType(type, dispelAll);
-
-        caster.Mana -= ManaCost;
+            if (nextAbility != null)
+                nextAbility.Activate(caster, targetIndex, raid);
+        }    
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2601
   name: Piercing Arrow
-  description: Damages the first raider of a column, any unmitigated damage also
+  description: Damages the first raider of a column, any non absorbed damage also
     hits the next raiders in the column
   icon: {fileID: 21300000, guid: 01a9b1c5627815548b3c53c8d7582ce9, type: 3}
   cooldown:

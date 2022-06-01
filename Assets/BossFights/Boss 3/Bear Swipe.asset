@@ -23,10 +23,10 @@ MonoBehaviour:
     baseValue: 0
   manaCost:
     baseValue: 0
+  nextAbility: {fileID: 11400000, guid: 409715b20f860094a82471c1a86cd6e9, type: 2}
   randomRow: 1
   rows: 000000000100000002000000
   randomColumn: 0
   columns: 
   damage:
     baseValue: 30
-  appliedStatusEffect: {fileID: 11400000, guid: 7e2bbf62c8bd7b144ab20f54451f17f3, type: 2}

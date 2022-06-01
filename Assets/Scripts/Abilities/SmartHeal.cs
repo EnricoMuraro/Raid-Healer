@@ -8,8 +8,6 @@ public class SmartHeal : Ability
 {
     public Stat heal;
     public Stat numberOfTargets;
-    public StatusEffect statusEffect;
-
     public int NumberOfTargets => (int)numberOfTargets.Value;
     public int Heal => (int)heal.Value;
 
@@ -27,8 +25,8 @@ public class SmartHeal : Ability
             {
                 sortedRaiders[i].ReceiveHeal(Heal);
                 healCount--;
-                if (statusEffect != null)
-                    sortedRaiders[i].AddStatusEffect(statusEffect);
+                if (nextAbility != null)
+                    nextAbility.Activate(caster, targetIndex, raid);
             }
         }
     }

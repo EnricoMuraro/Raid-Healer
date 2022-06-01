@@ -12,5 +12,7 @@ public class Shield : Ability
     {
         base.Activate(caster, targetIndex, raid);
         raid.raiders[targetIndex].ReceiveShield(ShieldAmount);
+        if (nextAbility != null)
+            nextAbility.Activate(caster, targetIndex, raid);
     }
 }

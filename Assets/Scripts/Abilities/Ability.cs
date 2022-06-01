@@ -16,6 +16,8 @@ public class Ability : ScriptableObject
     public Stat castTime;
     public Stat manaCost;
 
+    public Ability nextAbility; 
+
     public float Cooldown { get => cooldown.Value; }
     public float CastTime { get => castTime.Value; }
     public int ManaCost { get => (int)manaCost.Value; }

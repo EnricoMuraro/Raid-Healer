@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2048
     height: 1068.8
   m_ShowMode: 4
-  m_Title: Simulator
+  m_Title: Inspector
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -39,9 +39,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1253.6
+    x: 1264.8
     y: 0
-    width: 435.20007
+    width: 368.79993
     height: 1018.80005
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -67,7 +67,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 654.4
-    width: 800.8
+    width: 812.00006
     height: 364.40002
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
@@ -96,12 +96,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 452.8
     y: 0
-    width: 800.8
+    width: 812.00006
     height: 1018.80005
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 24
+  controlID: 20
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 35
+  controlID: 56
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,8 +172,8 @@ MonoBehaviour:
     y: 0
     width: 452.8
     height: 621.6
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 34
+  controlID: 109
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -294,7 +294,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 800.8
+    width: 812.00006
     height: 654.4
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
@@ -319,12 +319,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1688.8
+    x: 1633.6
     y: 0
-    width: 359.19995
+    width: 414.40002
     height: 1018.80005
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -424,7 +424,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -142746
+  m_LastSelectedObjectID: 42022
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -447,7 +447,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 452.80002
     y: 73.6
-    width: 798.8
+    width: 810.00006
     height: 633.4
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -672,9 +672,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.92959917, y: -2.3467913, z: 38.87038}
+    m_Target: {x: 0.83460337, y: -2.812406, z: 42.288544}
     speed: 2
-    m_Value: {x: 0.92959917, y: -2.3467913, z: 38.87038}
+    m_Value: {x: 0.83460337, y: -2.812406, z: 42.288544}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -725,9 +725,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.4449692
+    m_Target: 3.368102
     speed: 2
-    m_Value: 3.4449692
+    m_Value: 3.368102
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -783,20 +783,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 20eefcff
+      m_SelectedIDs: 1e580000
       m_LastClickedID: 0
-      m_ExpandedIDs: 8cc0fcff0cc5fcffecc6fcffa6c9fcff44ccfcff82d9fcff24dffcff2ce9fcff320bfdff460dfdffc20efdffc0cafdffdacafdff28cefdff68d2fdffccd7fdffaaaefeffc4aefeff12b4feff1cdcfeff64e1feffbae8fefff4f0feff38fdfeff8e03fffffa14ffffe41bffff2220fffffc45ffff3c4affff7a4bffffaa50ffffbe84ffff36ddffff3addffff2ee0ffff24fbffff285b0000305b00003e5b00005e5b0000765b0000bc5b0000c65b0000d45b0000e65b0000ea5b0000045c0000465c00005a5c0000b0ed0000d0ed00003aee00004aee0000d6f20000e8f20000acf40000bcf40000d8f40000e2f80000f4f800001af900006ef9000080f9000094f900002a090100ba090100ca090100e6090100321b0100ee310100143201007e3201008e320100aa320100c4320100063501002c350100a4350100ca350100ae9a01003e9b01006a9b0100ca9d0100f09d0100689e01008e9e010068e50100dae501001ce601004ce6010054e601006ae601009ce601000ee701001ce7010050e701004ef00100fcf201009af30100aef30100ba0202004c0302009003020066060200f80602003c070200120a0200a40a0200e80a0200840c0200de0c0200260d0200700d02007e0d0200b40d0200
+      m_ExpandedIDs: 0250ffff2a53ffffd864ffff0c6dffffb072ffffdc8effffac97ffffe099ffffdaa0ffff22a2ffff3ca7ffffbcbfffffb0c7ffffcac7ffff4cf0fffff2f2ffffe4f6ffff24fbffff8e5500009c5500002c56000058560000f45e00001a5f0000525f0000925f0000b85f0000a67a0000d07a0000fc7c0000187e0000427e0000da7e0000ea7e0000ee8c000040910000aca30000d6a3000026a4000064a400006ea400009aa400008cb4000094b40000eeb4000036b5000080b500008eb50000c4b50000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: TalentSlot
-        m_OriginalName: TalentSlot
+        m_Name: Boss6
+        m_OriginalName: Boss6
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -193698
+        m_UserData: -16452
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -850,36 +850,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Talents/PassiveTalents
+    - Assets/Scripts/Abilities/Scriptable Objects
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Talents/PassiveTalents
+  - Assets/Scripts/Abilities/Scriptable Objects
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Users\enric\Documenti\UnityProjects\Raid-Healer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 283}
-    m_SelectedIDs: 7c5a0000
-    m_LastClickedID: 23164
-    m_ExpandedIDs: 00000000f6580000f8580000fa580000fc580000fe58000000590000025900000459000006590000085900000a5900000c5900000e5900001059000012590000145900004a59000000ca9a3b
+    scrollPos: {x: 0, y: 123.79993}
+    m_SelectedIDs: 105a0000
+    m_LastClickedID: 23056
+    m_ExpandedIDs: 00000000c8590000ca590000cc590000ce590000d0590000d2590000d4590000d6590000d8590000da590000dc590000de590000e0590000e2590000e4590000e6590000e859000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Abilities
+      m_OriginalName: Abilities
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 23014
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -893,7 +893,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f6580000f8580000fa580000fc580000fe58000000590000025900000459000006590000085900000a5900000c5900000e590000105900001259000014590000
+    m_ExpandedIDs: 00000000c8590000ca590000cc590000ce590000d0590000d2590000d4590000d6590000d8590000da590000dc590000de590000e0590000e2590000e4590000e6590000e8590000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -924,18 +924,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000025d0000ee55000040560000000000001e750000e6550000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Archer Boss Reward
+      m_OriginalName: Archer Boss Reward
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -28068
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
@@ -971,7 +971,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 452.80002
     y: 728
-    width: 798.8
+    width: 810.00006
     height: 343.40002
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -997,9 +997,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1688.8
+    x: 1633.6
     y: 73.6
-    width: 358.19995
+    width: 413.40002
     height: 997.80005
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -1038,9 +1038,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1253.6
+    x: 1264.8
     y: 73.6
-    width: 433.20007
+    width: 366.79993
     height: 997.80005
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_SerializedViewNames:
   - UnityEditor.GameView
   m_SerializedViewValues:
-  - D:\Users\enric\Documenti\UnityProjects\Raid-Healer\Library\PlayModeViewStates\3fde64b5f47b0fb4eb342fe43a826f3c
+  - D:\Users\enric\Documenti\UnityProjects\Raid-Healer\Library\PlayModeViewStates\795ac52b84954204eb29c73e7dd49ab4
   m_PlayModeViewName: Device Simulator
   m_ShowGizmos: 0
   m_TargetDisplay: 0
@@ -1072,7 +1072,7 @@ MonoBehaviour:
     pluginStates:
     - '{}'
     - '{}'
-    scale: 28
+    scale: 24
     fitToScreenEnabled: 1
     rotationDegree: 0
     highlightSafeAreaEnabled: 0

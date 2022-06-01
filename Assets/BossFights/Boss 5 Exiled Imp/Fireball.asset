@@ -22,8 +22,8 @@ MonoBehaviour:
     baseValue: 0.5
   manaCost:
     baseValue: 50
+  nextAbility: {fileID: 11400000, guid: d505e1cbcbaf78d49a517078da7c5b51, type: 2}
   damage:
     baseValue: 30
   attackPattern: 0
   size: 0
-  appliedStatusEffect: {fileID: 11400000, guid: 4607e6de44c3be749a72a2526264a90b, type: 2}

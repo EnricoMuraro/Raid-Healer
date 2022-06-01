@@ -21,9 +21,9 @@ MonoBehaviour:
   castTime:
     baseValue: 2.5
   manaCost:
-    baseValue: 40
+    baseValue: 45
   heal:
-    baseValue: 50
+    baseValue: 35
   numberOfTargets:
     baseValue: 3
   statusEffect: {fileID: 0}

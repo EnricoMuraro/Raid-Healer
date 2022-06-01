@@ -44,6 +44,11 @@ public class Raid : MonoBehaviour
         return(row, column);
     }
 
+    public int MatrixCoordsToArrayIndex(int row, int column)
+    {
+        return row * column + column;
+    }
+
     public GameUnit[,] GetRaidersAsMatrix()
     {
         GameUnit[,] raidersMatrix = new GameUnit[raidRows,raidColumns];
