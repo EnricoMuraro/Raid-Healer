@@ -7,8 +7,9 @@ public class DotStatusEffect : StatusEffect
 {
     public Stat damage;
 
+    public int Damage => (int)damage.Value + effectPower;
     public override void Activate(GameUnit gameUnit)
     {
-        gameUnit.ReceiveDamage((int)damage.Value);
+        gameUnit.ReceiveDamage(Damage);
     }
 }

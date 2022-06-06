@@ -13,6 +13,7 @@ public class BossFightInfo : ScriptableObject
     public List<Ability> Abilities;
     public BossBehaviour BossBehaviour;
     public BossReward Reward;
+    public List<Aura> Auras;
     public RaidSize raidSize;
 
     public enum RaidSize

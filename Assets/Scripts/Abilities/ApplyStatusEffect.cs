@@ -10,6 +10,7 @@ public class ApplyStatusEffect : Ability
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
         base.Activate(caster, targetIndex, raid);
+        effect.effectPower = caster.AbilityPower;
         raid.raiders[targetIndex].AddStatusEffect(effect);
     }
 }

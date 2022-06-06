@@ -15,6 +15,7 @@ public class Ability : ScriptableObject
     public Stat cooldown;
     public Stat castTime;
     public Stat manaCost;
+    protected int abilityPower;
 
     public Ability nextAbility; 
 
@@ -36,6 +37,7 @@ public class Ability : ScriptableObject
     public virtual void Activate(GameUnit caster, int targetIndex, Raid raid) 
     {
         caster.Mana -= ManaCost;
+        abilityPower = caster.AbilityPower;
     }
 }
 

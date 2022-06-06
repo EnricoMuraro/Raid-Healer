@@ -24,3 +24,4 @@ MonoBehaviour:
     baseValue: 5
   attackFrequency:
     baseValue: 1
+  role: 4

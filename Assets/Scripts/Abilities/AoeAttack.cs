@@ -7,7 +7,7 @@ using System.Linq;
 public class AoeAttack : Ability
 {
     public Stat damage;
-    public int Damage { get => (int)damage.Value; }
+    public int Damage { get => (int)damage.Value + abilityPower; }
 
 
     public Pattern attackPattern;

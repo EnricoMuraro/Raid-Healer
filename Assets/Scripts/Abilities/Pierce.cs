@@ -6,7 +6,7 @@ using UnityEngine;
 public class Pierce : Ability
 {
     public Stat damage;
-    public int Damage => (int)damage.Value;
+    public int Damage => (int)damage.Value + abilityPower;
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
@@ -17,7 +17,7 @@ public class Pierce : Ability
         int damageReceived = Damage;
         for (int i = 0; i < raid.raidRows; i++)
         {
-            if(!raidMatrix[i, col].isDead())
+            if(!raidMatrix[i, col].IsDead())
                 damageReceived = raidMatrix[i, col].ReceiveDamage(damageReceived);
 
             if (nextAbility != null)

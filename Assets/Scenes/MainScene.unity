@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0.000015258789}
   m_SizeDelta: {x: 1257.48, y: 804.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &40816623
@@ -1072,6 +1072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1bb76d609d59c2438078dd2ee766fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 1117777414}
   Boss: {fileID: 964010022}
   abilityBar: {fileID: 438033076}
   BossCastBar: {fileID: 1101585288}
@@ -1119,6 +1120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2f2e94d1e8e6a45963fc9f74fef41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 1117777414}
   SceneLoader: {fileID: 126431608}
 --- !u!4 &398317348
 Transform:

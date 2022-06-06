@@ -33,7 +33,7 @@ public class UnitHealthBar : MonoBehaviour
         progressBar.SetMaxValue(unit.MaxHealth, 1);
         progressBar.SetValue(Mathf.Clamp(unit.Shield, 0, unit.MaxHealth), 1);
 
-        if (unit.isDead())
+        if (unit.IsDead())
         {
             progressBar.displayValues = false;
             progressBar.SetText("DEAD");

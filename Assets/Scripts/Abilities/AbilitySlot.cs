@@ -64,10 +64,10 @@ public class AbilitySlot : MonoBehaviour
     {
         if (ability != null && caster.Mana < ability.ManaCost)
             return "Not enough mana";
-        if (raid.raiders[targetIndex].isDead())
+        if (raid.raiders[targetIndex].IsDead())
             return "You can't cast on a dead target";
 
-        if(ability != null && State == AbilityState.ready && !caster.isDead())
+        if(ability != null && State == AbilityState.ready && !caster.IsDead())
         {
             this.caster = caster;
             this.targetIndex = targetIndex;

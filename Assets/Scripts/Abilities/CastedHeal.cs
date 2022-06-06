@@ -8,7 +8,7 @@ public class CastedHeal : Ability
     public TargetType targetType;
     public Stat heal;
 
-    public int Heal => (int)heal.Value;
+    public int Heal => (int)heal.Value + abilityPower;
 
     public enum TargetType
     {

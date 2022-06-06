@@ -15,7 +15,7 @@ public class LineAttack : Ability
 
     public Stat damage;
 
-    public int Damage { get => (int)damage.Value; }
+    public int Damage { get => (int)damage.Value + abilityPower; }
 
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)

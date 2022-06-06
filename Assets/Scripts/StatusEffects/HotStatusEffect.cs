@@ -6,9 +6,9 @@ using UnityEngine;
 public class HotStatusEffect : StatusEffect
 {
     public Stat heal;
-
+    public int Heal => (int)heal.Value + effectPower;
     public override void Activate(GameUnit gameUnit)
     {
-        gameUnit.ReceiveHeal((int)heal.Value);
+        gameUnit.ReceiveHeal(Heal);
     }
 }

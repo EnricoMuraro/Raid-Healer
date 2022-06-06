@@ -31,6 +31,7 @@ public class StatusEffectSlot : MonoBehaviour
     public void InitStatusEffect(StatusEffect statusEffect)
     {
         this.statusEffect = statusEffect;
+        this.statusEffect.OnStatusEffectStart(target, raid);
     }    
 
     public StatusEffect GetStatusEffect()

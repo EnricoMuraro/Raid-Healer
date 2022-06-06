@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private BossFightInfo bossFightInfo;
+    public PlayerController playerController;
     public SceneLoaderScript SceneLoader;
 
     private void Start()
     {
         bossFightInfo = BossFightInitializer.BossFightInfo;    
     }
+
 
     public void EndGame(bool result)
     {

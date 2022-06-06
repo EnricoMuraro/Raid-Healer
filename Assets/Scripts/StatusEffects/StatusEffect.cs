@@ -10,9 +10,12 @@ public class StatusEffect : ScriptableObject
     public Sprite Icon;
     public ActivationMode activationMode;
     public Type type;
+    public List<Status> statuses;
     public Ability onEndAbility;
     public Stat duration;
     public Stat tickRate;
+    [HideInInspector]
+    public int effectPower;
 
     public float Duration { get => duration.Value; }
     public float TickRate { get => tickRate.Value; }
@@ -38,8 +41,14 @@ public class StatusEffect : ScriptableObject
         curse,
     }
 
+    public enum Status
+    {
+        stun
+    }
+
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
     public virtual void Activate(GameUnit gameUnit) { }
+    public virtual void OnStatusEffectStart(GameUnit gameUnit, Raid raid) { }
     public virtual void OnStatusEffectEnd(GameUnit gameUnit, Raid raid) 
     {
         if(onEndAbility != null)

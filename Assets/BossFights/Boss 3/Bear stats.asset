@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth:
     baseValue: 15000
+  shield:
+    baseValue: 0
   maxMana:
     baseValue: 0
   manaRegenRate:
@@ -22,3 +24,4 @@ MonoBehaviour:
     baseValue: 125
   attackFrequency:
     baseValue: 3
+  role: 4

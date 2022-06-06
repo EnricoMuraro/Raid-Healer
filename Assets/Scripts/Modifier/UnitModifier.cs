@@ -10,6 +10,14 @@ public class UnitModifier
     public Unit unit;
     public Unit.Stats statName;
     public Modifier modifier;
+
+    public UnitModifier(Unit unit, Unit.Stats statName, Modifier modifier)
+    {
+        this.unit = unit;
+        this.statName = statName;
+        this.modifier = modifier;
+    }
+
     private Stat GetStat(string name)
     {
         Type objType = unit.GetType();
@@ -32,5 +40,6 @@ public class UnitModifier
         if (stat != null)
             stat.RemoveModifier(modifier);
     }
+
 }
 

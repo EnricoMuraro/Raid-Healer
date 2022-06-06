@@ -21,7 +21,7 @@ public class BossBehaviour : ScriptableObject
 
     public virtual void OnUpdate() 
     {
-        if(raid.Boss.isDead() == false)
+        if(raid.Boss.IsDead() == false)
         {
             //attack
             GameUnit targetUnit = attackTargeting.GetTarget(raid);
@@ -68,7 +68,7 @@ public class TargetStrategy
     public GameUnit GetTarget(Raid raid)
     {
         //todo filter by role using blacklist
-        bool filter(GameUnit x) => !x.isDead();
+        bool filter(GameUnit x) => !x.IsDead();
         
         switch (strategy)
         {

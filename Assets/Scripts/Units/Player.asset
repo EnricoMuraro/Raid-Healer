@@ -14,16 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth:
     baseValue: 1
-    modifiers: []
+  shield:
+    baseValue: 0
   maxMana:
     baseValue: 2000
-    modifiers: []
   manaRegenRate:
     baseValue: 5
-    modifiers: []
   damage:
     baseValue: 0
-    modifiers: []
   attackFrequency:
     baseValue: 0
-    modifiers: []
+  role: 3

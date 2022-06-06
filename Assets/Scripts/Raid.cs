@@ -22,13 +22,13 @@ public class Raid : MonoBehaviour
             raider.Attack(Boss);
         }
 
-        if (Boss.isDead())
+        if (Boss.IsDead())
             onGameEnd.Invoke(true);
 
         //if all raiders are dead finish the game
         bool wipe = true;
         foreach (GameUnit raider in raiders)
-            if (!raider.isDead())
+            if (!raider.IsDead())
                 wipe = false;
 
         if (wipe)
@@ -132,7 +132,7 @@ public class Raid : MonoBehaviour
                 lines.RemoveAt(index);
 
                 foreach (GameUnit raider in raiders)
-                    if(!raider.isDead())
+                    if(!raider.IsDead())
                         allDead = false;
 
             } while (allDead && lines.Count > 0);
@@ -160,7 +160,7 @@ public class Raid : MonoBehaviour
         {
             if (aliveOnly)
             {
-                if (!raiders[i].isDead())
+                if (!raiders[i].IsDead())
                 {
                     targets.Add(i);
                     count++;
@@ -178,7 +178,7 @@ public class Raid : MonoBehaviour
 
     public int GetRandomRaiderIndex(bool aliveOnly = true)
     {
-        if (raiders.All(x => x.isDead()))
+        if (raiders.All(x => x.IsDead()))
             return 0;
 
         int randomIndex;
@@ -187,7 +187,7 @@ public class Raid : MonoBehaviour
             randomIndex = UnityEngine.Random.Range(0, raiders.Length);
 
         }
-        while (raiders[randomIndex].isDead());
+        while (raiders[randomIndex].IsDead());
 
         return randomIndex;
     }

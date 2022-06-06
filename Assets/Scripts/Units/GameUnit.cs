@@ -15,6 +15,8 @@ public class GameUnit : MonoBehaviour
     [SerializeField] private float cooldown = 0;
     [SerializeField] private bool dead = false;
 
+    private Dictionary<StatusEffect.Status, List<int>> statusCache = new ();
+
     public UnityEvent<int> OnHealthChange;
     public UnityEvent<int> OnManaChange;
     public UnityEvent OnDeath;
@@ -28,6 +30,7 @@ public class GameUnit : MonoBehaviour
     public int Shield { get => currentShield; private set => currentShield = value; }
     public int Damage { get => (int)unit.damage.Value; }
     public float AttackFrequency { get => unit.attackFrequency.Value; }
+    public int AbilityPower { get => (int)unit.abilityPower.Value;}
 
     public Stat MaxHealthStat { get => unit.maxHealth; }
     public Stat MaxManaStat { get => unit.maxMana; }
@@ -40,6 +43,11 @@ public class GameUnit : MonoBehaviour
     public void InitUnit(Unit unit)
     {
         this.unit = unit;
+    }
+
+    public Unit GetUnit()
+    {
+        return unit;
     }
 
     public int Health
@@ -99,10 +107,13 @@ public class GameUnit : MonoBehaviour
 
     public void AddStatusEffect(StatusEffect statusEffect)
     {
-        if(!isDead())
+        if(!IsDead())
         {
             if (statusEffect.activationMode == StatusEffect.ActivationMode.replace)
                 RemoveStatusEffect(statusEffect);
+
+            foreach (StatusEffect.Status status in statusEffect.statuses)
+                statusCache[status].Remove(statusEffect.ID);
 
             StatusEffectSlot statusEffectSlot = gameObject.AddComponent<StatusEffectSlot>();
             statusEffectSlot.InitStatusEffect(statusEffect);
@@ -114,13 +125,13 @@ public class GameUnit : MonoBehaviour
     {
         foreach(StatusEffectSlot statusEffectSlot in GetComponents<StatusEffectSlot>())
             if (statusEffectSlot.GetStatusEffect().ID == statusEffect.ID)
-                Destroy(statusEffectSlot);
+                RemoveStatusEffectSlot(statusEffectSlot);
     }
 
     public void RemoveAllStatusEffects()
     {
         foreach (StatusEffectSlot statusEffectSlot in GetComponents<StatusEffectSlot>())
-            Destroy(statusEffectSlot);
+            RemoveStatusEffectSlot(statusEffectSlot);
     }
 
     public void RemoveStatusEffectByType(StatusEffect.Type type, bool all = false)
@@ -128,11 +139,19 @@ public class GameUnit : MonoBehaviour
         foreach(StatusEffectSlot statusEffectSlot in GetComponents<StatusEffectSlot>())
         {
             if (statusEffectSlot.GetStatusEffect().type == type)
-                Destroy(statusEffectSlot);
+                RemoveStatusEffectSlot(statusEffectSlot);
 
             if (all == false)
                 break;
         }
+    }
+
+    private void RemoveStatusEffectSlot(StatusEffectSlot statusEffectSlot)
+    {
+        StatusEffect statusEffect = statusEffectSlot.GetStatusEffect();
+        foreach(StatusEffect.Status status in statusEffect.statuses)
+            statusCache[status].Remove(statusEffect.ID);
+        Destroy(statusEffectSlot);
     }
 
     public void ReceiveHeal(int amount)
@@ -159,7 +178,7 @@ public class GameUnit : MonoBehaviour
 
     public void Attack(GameUnit target)
     {
-        if (!dead && target!=null)
+        if (!IsDead() && target!=null && !IsStunned())
         {
             if (Cooldown <= 0)
             {
@@ -169,10 +188,25 @@ public class GameUnit : MonoBehaviour
         }
     }
 
-    public bool isDead() 
+    public bool IsDead() 
     {
         return dead;
     }
+
+    public bool IsStunned()
+    {
+        return HasStatus(StatusEffect.Status.stun);
+    }
+
+    public bool HasStatus(StatusEffect.Status status)
+    {
+        bool found = statusCache.TryGetValue(status, out List<int> statusIDs);
+        if (found)
+            return statusIDs.Count > 0;
+        else
+            return false;
+    }
+        
 
     private void Start()
     {
