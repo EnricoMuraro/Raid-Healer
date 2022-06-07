@@ -9,6 +9,12 @@ public class Modifier
     public Source source;
     public float value;
 
+    public Modifier(Type type, Source source, float value)
+    {
+        this.type = type;
+        this.source = source;
+        this.value = value;
+    }
 
     public enum Type
     {

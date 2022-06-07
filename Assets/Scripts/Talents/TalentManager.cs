@@ -13,7 +13,7 @@ public class TalentManager : MonoBehaviour
         talentPanels = GetComponentsInChildren<TalentPanelScript>();
     }
 
-    public void OnEnable()
+    public void Start()
     {
         LoadTalents();
     }

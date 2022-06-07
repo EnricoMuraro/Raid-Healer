@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Status Effect/Status Effect")]
 public class StatusEffect : ScriptableObject
 {
 
@@ -32,6 +33,7 @@ public class StatusEffect : ScriptableObject
         tickRate,
         heal,
         damage,
+        shield,
     }
 
     public enum Type

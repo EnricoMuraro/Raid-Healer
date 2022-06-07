@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class TalentSlot : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class TalentSlot : MonoBehaviour
     public List<TalentSlot> previousTalentSlots;
     public List<TalentSlot> nextTalentSlots;
     public Image border;
-    public Image nextTalentArrow;
+    private List<Image> nextTalentArrows = new();
 
     private bool isActive;
 
@@ -19,6 +20,8 @@ public class TalentSlot : MonoBehaviour
         {
             GetComponent<Image>().sprite = talent.sprite;
         }
+        nextTalentArrows = GetComponentsInChildren<Image>().Where(x => x.gameObject.transform.parent != transform.parent).ToList();
+        nextTalentArrows.Remove(border);
     }
 
     public bool IsActive()
@@ -30,7 +33,8 @@ public class TalentSlot : MonoBehaviour
     {
         isActive = true;
         border.color = Color.green;
-        nextTalentArrow.color = Color.cyan;
+        foreach(Image nextTalentArrow in nextTalentArrows)
+            nextTalentArrow.color = Color.cyan;
     }
 
     public void Deactivate()
@@ -38,7 +42,8 @@ public class TalentSlot : MonoBehaviour
         isActive = false;
         Color color = Color.gray;
         border.color = color;
-        nextTalentArrow.color = color;
+        foreach (Image nextTalentArrow in nextTalentArrows)
+            nextTalentArrow.color = color;
     }
 
 

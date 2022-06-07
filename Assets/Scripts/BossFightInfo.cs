@@ -9,6 +9,8 @@ public class BossFightInfo : ScriptableObject
     public string Name;
     [TextArea]
     public string Description;
+    [HideInInspector]
+    public int Difficulty;
     public Unit BossUnit;
     public List<Ability> Abilities;
     public BossBehaviour BossBehaviour;

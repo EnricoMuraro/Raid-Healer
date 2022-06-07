@@ -11,8 +11,15 @@ public class AbilityModifier
     public Ability.Stats statName;
     public Modifier modifier;
     public Ability newNextAbility;
+    [SerializeField]
+    private Ability oldNextAbility = null;
 
-    private Ability oldNextAbility;
+    public AbilityModifier(Ability ability, Ability.Stats statName, Modifier modifier)
+    {
+        this.ability = ability;
+        this.statName = statName;
+        this.modifier = modifier;
+    }
 
     private Stat GetStat(string name)
     {
@@ -40,9 +47,8 @@ public class AbilityModifier
         Stat stat = GetStat(statName.ToString());
         if (stat != null)
             stat.RemoveModifier(modifier);
-        if(oldNextAbility != null)
-        {
+
+        if (newNextAbility != null)
             ability.nextAbility = oldNextAbility;
-        }
     }
 }

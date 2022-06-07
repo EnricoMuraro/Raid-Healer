@@ -11,6 +11,13 @@ public class StatusEffectModifier
     public StatusEffect.Stats statName;
     public Modifier modifier;
 
+    public StatusEffectModifier(StatusEffect statusEffect, StatusEffect.Stats statName, Modifier modifier)
+    {
+        this.statusEffect = statusEffect;
+        this.statName = statName;
+        this.modifier = modifier;
+    }
+
     private Stat GetStat(string name)
     {
         Type objType = statusEffect.GetType();

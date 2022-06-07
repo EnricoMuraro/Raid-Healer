@@ -27,7 +27,6 @@ public class GameUnit : MonoBehaviour
     public int MaxHealth { get => (int)unit.maxHealth.Value; }
     public int MaxMana { get => (int)unit.maxMana.Value; }
     public float ManaRegenRate { get => unit.manaRegenRate.Value; }
-    public int Shield { get => currentShield; private set => currentShield = value; }
     public int Damage { get => (int)unit.damage.Value; }
     public float AttackFrequency { get => unit.attackFrequency.Value; }
     public int AbilityPower { get => (int)unit.abilityPower.Value;}
@@ -92,6 +91,15 @@ public class GameUnit : MonoBehaviour
             cooldown = value;
             if (cooldown < 0)
                 cooldown = 0;
+        }
+    }
+
+    public int Shield 
+    { 
+        get => currentShield;
+        private set
+        {
+            currentShield = Mathf.Clamp(value, 0, int.MaxValue);
         }
     }
 
@@ -162,18 +170,22 @@ public class GameUnit : MonoBehaviour
     public int ReceiveDamage(int amount)
     {
         int oldHealh = Health;
+        int shieldDiff = Shield - amount;
         Shield -= amount;
-        if(Shield < 0)
-        {
-            Health += Shield;
-            Shield = 0;
-        }
+        if(shieldDiff < 0)
+            Health += shieldDiff;
+
         return (oldHealh - Health);
     }
 
     public void ReceiveShield(int amount)
     {
         Shield += amount;
+    }
+
+    public void RemoveShield(int amount)
+    {
+        Shield -= amount;
     }
 
     public void Attack(GameUnit target)

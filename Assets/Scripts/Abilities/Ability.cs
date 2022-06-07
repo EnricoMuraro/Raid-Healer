@@ -29,8 +29,10 @@ public class Ability : ScriptableObject
         castTime,
         manaCost,
         heal,
+        shield,
         damage,
         manaRestored,
+        numberOfTargets,
     }
 
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;

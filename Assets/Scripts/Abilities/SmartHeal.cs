@@ -7,9 +7,11 @@ using UnityEngine;
 public class SmartHeal : Ability
 {
     public Stat heal;
+    public Stat shield;
     public Stat numberOfTargets;
-    public int NumberOfTargets => (int)numberOfTargets.Value;
     public int Heal => (int)heal.Value + abilityPower;
+    public int Shield => (int)shield.Value;
+    public int NumberOfTargets => (int)numberOfTargets.Value;
 
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
@@ -24,9 +26,10 @@ public class SmartHeal : Ability
             if(!sortedRaiders[i].IsDead())
             {
                 sortedRaiders[i].ReceiveHeal(Heal);
+                sortedRaiders[i].ReceiveShield(Shield);
                 healCount--;
                 if (nextAbility != null)
-                    nextAbility.Activate(caster, targetIndex, raid);
+                    nextAbility.Activate(caster, raid.GetRaiderIndex(sortedRaiders[i]), raid);
             }
         }
     }
