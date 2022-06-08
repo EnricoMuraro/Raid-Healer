@@ -9,11 +9,18 @@ public class BossFightIcon : MonoBehaviour
     public BossFightIcon[] previousBosses;
 
     public Image BossIcon;
+    public Image StarsImage;
     private bool completedFlag = false;
 
     public Color LockedColor;
     public Color UncompletedColor;
     public Color CompletedColor;
+
+    public Sprite OneStar;
+    public Sprite TwoStars;
+    public Sprite ThreeStars;
+    public Sprite FourStars;
+    public Sprite FiveStars;
 
     private Button IconButton;
 
@@ -38,13 +45,51 @@ public class BossFightIcon : MonoBehaviour
         return locked;
     }
 
-    public void SetCompletedFlag(bool completed)
+    public void SetCompletedFlag(bool completed, int stars = 0)
     {
         completedFlag = completed;
-        if(completedFlag)
+        SetStarsIcon(stars);
+        if (completedFlag)
+        {
             BossIcon.color = CompletedColor;
+        }
         else
+        {
             BossIcon.color = UncompletedColor;
+        }
+
+
+    }
+
+    private void SetStarsIcon(int stars)
+    {
+        if(stars > 0)
+        {
+            StarsImage.gameObject.SetActive(true);
+            switch (stars)
+            {
+                case 1:
+                    StarsImage.sprite = OneStar;
+                    break;
+                case 2:
+                    StarsImage.sprite = TwoStars;
+                    break;
+                case 3:
+                    StarsImage.sprite = ThreeStars;
+                    break;
+                case 4:
+                    StarsImage.sprite = FourStars;
+                    break;
+                default:
+                    StarsImage.sprite = FiveStars;
+                    break;
+            }
+        }
+        else
+        {
+            StarsImage.gameObject.SetActive(false);
+        }
+
     }
 
     public bool GetCompletedFlag()

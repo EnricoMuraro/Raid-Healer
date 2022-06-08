@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2048
     height: 1068.8
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Inspector
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 82
+  controlID: 53
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 97
+  controlID: 129
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 146
+  controlID: 128
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -424,7 +424,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 23964
+  m_LastSelectedObjectID: 135576
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -672,9 +672,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.6259845, y: -2.8520184, z: 308.56296}
+    m_Target: {x: -0.0001770258, y: -0.054314137, z: 90}
     speed: 2
-    m_Value: {x: 0.6259845, y: -2.8520184, z: 308.56296}
+    m_Value: {x: -0.0001770258, y: -0.054314137, z: 90}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -725,9 +725,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.3387427
+    m_Target: 4.8254933
     speed: 2
-    m_Value: 2.3387427
+    m_Value: 4.8254933
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -783,23 +783,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 5a590000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 04a1ffff3aa6ffff18c6ffff54c8ffff3acfffff50d4ffff76d9ffff98e6ffff24fbffff705d00009c5d0000
+      m_SelectedIDs: 98110200
+      m_LastClickedID: 135576
+      m_ExpandedIDs: 1cbafdff12c5fdff76c5fdffe0c6fdffacc8fdff86cdfdff86cefdff4e42feff4a46feffa057feff96d4feffa651ffffa654ffff1e89ffffb28effff54a3ffff14b0ffff86d2ffffece0ffff06f1ffff04f2ffff24fbffff567100005e71000074710000b8710000ea710000007200004e7200005c7200006e720000947200008c9400000c960000f8960000a89c0000289e0000149f0000dc190100621a0100c21a01001a1b01002c1b0100e21b0100361c0100ce1c0100e0c2010018c301007ec30100a2060200c6060200e806020024070200080802007e0802008e110200f0110200aa120200ba120200fc120200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: BossFightPanel
+        m_OriginalName: BossFightPanel
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 115480
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 
@@ -850,22 +850,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/BossFights/Boss 4
+    - Assets/Scripts/Talents
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/BossFights/Boss 4
+  - Assets/Scripts/Talents
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Users\enric\Documenti\UnityProjects\Raid-Healer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: 88580000
-    m_LastClickedID: 22664
-    m_ExpandedIDs: 00000000525800005458000056580000585800005a5800005c5800005e58000060580000625800006458000066580000685800006a5800006c5800006e5800007058000000ca9a3b
+    scrollPos: {x: 0, y: 319.79993}
+    m_SelectedIDs: 2c5a0000
+    m_LastClickedID: 23084
+    m_ExpandedIDs: 00000000d4590000d6590000d8590000da590000dc590000de590000e0590000e2590000e4590000e6590000e8590000ea590000ec590000ee590000f0590000f25900002c5a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -893,7 +893,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000525800005458000056580000585800005a5800005c5800005e58000060580000625800006458000066580000685800006a5800006c5800006e5800007058000072580000
+    m_ExpandedIDs: 00000000d4590000d6590000d8590000da590000dc590000de590000e0590000e2590000e4590000e6590000e8590000ea590000ec590000ee590000f0590000f2590000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -924,15 +924,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000025d0000ee55000040560000000000001e750000e6550000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Bleed
-      m_OriginalName: Bleed
+      m_Name: Blessing of Spring
+      m_OriginalName: Blessing of Spring
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 22858
+      m_UserData: -17528
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BossFightPanel : MonoBehaviour
 {
-    private int fightID;
+    public int SelectedDifficulty = 5;
     public TextMeshProUGUI title;
     public TextMeshProUGUI description;
 
@@ -16,13 +16,13 @@ public class BossFightPanel : MonoBehaviour
     public void SetFightInfo(BossFightInfo fightInfo)
     {
         BossFightContainer.BossFightInfo = fightInfo;
-        fightID = fightInfo.ID;
         title.text = fightInfo.Name;
         description.text = fightInfo.Description;
     }
 
     public void StartFight()
     {
+        BossFightContainer.BossFightInfo.Difficulty = SelectedDifficulty;
         string sceneName = "";
         switch(BossFightContainer.BossFightInfo.raidSize)
         {

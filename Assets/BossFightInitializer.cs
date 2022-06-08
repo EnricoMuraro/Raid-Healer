@@ -98,8 +98,8 @@ public class BossFightInitializer : MonoBehaviour
     private void AddDifficultyModifiers(int difficulty, GameUnit boss)
     {
         //percentage boss damage/health increase for every level
-        int difficultyStep = 10;
-        int startingDifficulty = -50;
+        int difficultyStep = 20;
+        int startingDifficulty = -60;
         int difficultyIncrease = startingDifficulty + difficultyStep * difficulty;
 
         Modifier difficultyModifier = new(Modifier.Type.Percentage, Modifier.Source.Aura, difficultyIncrease);

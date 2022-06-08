@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossFightProgress : MonoBehaviour
 {
     private static BossFightIcon[] bossFightIcons;
-    public static Dictionary<int, string> fightSceneNames = new ();
+    public static Dictionary<int, string> fightSceneNames = new();
 
     private void Awake()
     {
@@ -24,12 +24,11 @@ public class BossFightProgress : MonoBehaviour
         return null;
     }
 
-    public static void SetFightCompleted(int fightID)
+    public static void SetFightCompleted(int fightID, int stars)
     {
         foreach (BossFightIcon bossFightIcon in bossFightIcons)
             if (bossFightIcon.bossFightInfo.ID == fightID)
-                bossFightIcon.SetCompletedFlag(true);
-        SaveProgress();
+                bossFightIcon.SetCompletedFlag(true, stars);
     }
 
     public static BossFightInfo GetBossFightInfo(int fightID)
@@ -37,21 +36,22 @@ public class BossFightProgress : MonoBehaviour
         return GetBossFightByID(fightID).bossFightInfo;
     }
 
-    public void SetProgress(int[] completedFightIDs)
+    public void SetProgress(BossFightEntry[] completedFights)
     {
-        foreach (int completedFightID in completedFightIDs)
-            GetBossFightByID(completedFightID).SetCompletedFlag(true);
+        foreach (BossFightEntry completedFight in completedFights)
+            GetBossFightByID(completedFight.ID).SetCompletedFlag(true, completedFight.stars);
     }
 
     public static List<BossReward> GetCompletedFightsRewards()
     {
         List<BossReward> result = new List<BossReward>();
         foreach (BossFightIcon bossFight in bossFightIcons)
-            if(bossFight.GetCompletedFlag())
+            if (bossFight.GetCompletedFlag())
                 result.Add(bossFight.bossFightInfo.Reward);
         return result;
     }
 
+    /*
     public static void SaveProgress()
     {
         List<int> progress = new ();
@@ -61,9 +61,6 @@ public class BossFightProgress : MonoBehaviour
 
         Persistance.SaveBossProgress(progress.ToArray());
     }
+    */
 
-    private void OnDisable()
-    {
-        SaveProgress();
-    }
 }

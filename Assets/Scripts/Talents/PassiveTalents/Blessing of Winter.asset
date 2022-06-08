@@ -12,10 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4a5df12777e25468e3b0008572ab3d, type: 3}
   m_Name: Blessing of Winter
   m_EditorClassIdentifier: 
-  ID: 0
-  name: 
-  description: 
-  sprite: {fileID: 0}
+  ID: 17
+  name: Blessing of Winter
+  description: Mending Fairy now also adds a small shield
+  sprite: {fileID: 21300000, guid: ac74e50f871e1964db5436092303c29d, type: 3}
   unitStatModifiers: []
-  abilityModifiers: []
+  abilityModifiers:
+  - ability: {fileID: 11400000, guid: 289d3c21bed85694589e17ae0d569f6a, type: 2}
+    statName: 4
+    modifier:
+      type: 1
+      source: 0
+      value: 20
+    newNextAbility: {fileID: 0}
+    oldNextAbility: {fileID: 0}
   statusEffectModifiers: []

@@ -12,8 +12,7 @@ public class LoadPlayerPrefs : MonoBehaviour
     {
 
         //Load boss fights progress
-        int[] bossProgress = Persistance.LoadBossProgress();
-        bossFightProgress.SetProgress(bossProgress);
+        bossFightProgress.SetProgress(Persistance.LoadBossProgress());
         //Load boss rewards
         List<BossReward> bossRewards = BossFightProgress.GetCompletedFightsRewards();
         spellBook.RewardAbilities = new();

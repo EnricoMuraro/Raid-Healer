@@ -14,8 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 16
   name: Efficient Fairy Keeping
-  description: 
-  sprite: {fileID: 0}
+  description: Reduces the mana cost of Mending Fairy by 15
+  sprite: {fileID: 21300000, guid: aac6c98778bb59a4b94e4c821e324e55, type: 3}
   unitStatModifiers: []
-  abilityModifiers: []
+  abilityModifiers:
+  - ability: {fileID: 11400000, guid: 289d3c21bed85694589e17ae0d569f6a, type: 2}
+    statName: 2
+    modifier:
+      type: 1
+      source: 0
+      value: -15
+    newNextAbility: {fileID: 0}
+    oldNextAbility: {fileID: 0}
   statusEffectModifiers: []

@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: Lingering Magic Dust
   m_EditorClassIdentifier: 
   ID: 14
-  name: Lingering Magic Dust
-  description: Mending Fairy leaves a short healing over time buff for 30 health
-  sprite: {fileID: 0}
+  name: Lingering Fairy Dust
+  description: Mending Fairy leaves a short healing over time effect
+  sprite: {fileID: 21300000, guid: deac309e420248742ac2f0b192eab0f9, type: 3}
   unitStatModifiers: []
   abilityModifiers:
-  - ability: {fileID: 0}
+  - ability: {fileID: 11400000, guid: 289d3c21bed85694589e17ae0d569f6a, type: 2}
     statName: 0
     modifier:
-      type: 0
+      type: 1
       source: 0
       value: 0
-    newNextAbility: {fileID: 0}
+    newNextAbility: {fileID: 11400000, guid: 6deab77aea6fb3a45a4cb477a5d35802, type: 2}
+    oldNextAbility: {fileID: 0}
   statusEffectModifiers: []

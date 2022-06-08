@@ -23,5 +23,6 @@ MonoBehaviour:
     baseValue: 1.5
   manaCost:
     baseValue: 85
-  shieldAmount:
+  nextAbility: {fileID: 0}
+  shield:
     baseValue: 200

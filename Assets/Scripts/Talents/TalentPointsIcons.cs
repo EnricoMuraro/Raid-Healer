@@ -10,18 +10,21 @@ public class TalentPointsIcons : MonoBehaviour
 
     public Image[] talentPointIcons;
 
-    private void Start()
+    private GameObject icon;
+
+    private void Awake()
     {
-        int maxtalents = GetComponentInParent<TalentPanelScript>().MaximumTalents;
-        var icon = Resources.Load<GameObject>("TalentPointIcon");
-        talentPointIcons = new Image[maxtalents];
-        for (int i = 0; i < maxtalents; i++)
+        icon = Resources.Load<GameObject>("TalentPointIcon");
+    }
+
+    public void SetMaximumTalents(int maxTalents)
+    {
+        talentPointIcons = new Image[maxTalents];
+        for (int i = 0; i < maxTalents; i++)
         {
             GameObject IconObject = Instantiate(icon, transform);
             talentPointIcons[i] = IconObject.GetComponent<Image>();
         }
-
-        SetAvailableTalents(GetComponentInParent<TalentPanelScript>().AvailableTalents);
     }
 
     public void SetAvailableTalents(int n)

@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 6
   Name: Archer Ambush
-  Description: THEY HIDE IN THE TREES!
+  Description: Is something moving in the trees?
+  Difficulty: 0
   BossUnit: {fileID: 11400000, guid: 900725fb0e866af45b30326add081a66, type: 2}
   Abilities:
   - {fileID: 11400000, guid: 65d037ffe1f99614592cafcd837916c3, type: 2}
   - {fileID: 11400000, guid: 4bea1a9b3e982e844b28997f71ad5182, type: 2}
   BossBehaviour: {fileID: 11400000, guid: 1007e0f80d953b042a7794753a6b095a, type: 2}
   Reward: {fileID: 11400000, guid: c7dcbe23ac9087b40b2ae4c966cb7554, type: 2}
+  Auras: []
   raidSize: 0

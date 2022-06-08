@@ -20,7 +20,6 @@ public class TalentPanelScript : MonoBehaviour
         {
             availableTalents = value;
             talentPointsIcons.SetAvailableTalents(availableTalents);
-            Debug.Log("available talents: " + availableTalents);
         } 
     }
     public int MaximumTalents
@@ -29,7 +28,7 @@ public class TalentPanelScript : MonoBehaviour
         set
         {
             maximumTalents = startingPoints + value;
-            Debug.Log("Maximum talents: " + maximumTalents);
+            talentPointsIcons.SetMaximumTalents(maximumTalents);
         }
     }
 

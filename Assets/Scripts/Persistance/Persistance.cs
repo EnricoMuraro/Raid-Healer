@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public static class Persistance
 {
@@ -44,27 +45,41 @@ public static class Persistance
         return Load<IDStorage>("SelectedAbilities").IDs;
     }
 
-    public static void SaveBossProgress(int[] bossFightIDs)
+    public static void SaveBossProgress(BossFightEntry[] bossFights)
     {
-        Save(new IDStorage(bossFightIDs), "BossProgress");
+        Save(new BossFightStorage(bossFights), "BossProgress");
     }
 
-    public static  bool SaveBossWin(int bossFightID)
+    public static BossFightEntry[] LoadBossProgress()
     {
-        List<int> newProgress = new(LoadBossProgress());
-        if (!newProgress.Contains(bossFightID))
+        return Load<BossFightStorage>("BossProgress").bossFightEntries;
+    }
+
+    //returns true if it's the first save for that bossFightID, false otherwise
+    public static bool SaveBossWin(int bossFightID, int starsEarned, bool keepHighestStars = true)
+    {
+        bool newEntry = false;
+        BossFightEntry[] currentProgress = LoadBossProgress();
+        BossFightEntry bossEntry = currentProgress.FirstOrDefault(x => x.ID == bossFightID);
+        if(bossEntry == null)
         {
-            newProgress.Add(bossFightID);
-            SaveBossProgress(newProgress.ToArray());
-            return true;
+            newEntry = true;
+            bossEntry = new BossFightEntry(bossFightID, starsEarned);
         }
-        return false;
+        else
+        {
+            if (keepHighestStars)
+                bossEntry.stars = Mathf.Max(bossEntry.stars, starsEarned);
+            else
+                bossEntry.stars = starsEarned;
+        }
+
+        currentProgress = currentProgress.Append(bossEntry).ToArray();
+        SaveBossProgress(currentProgress);
+        return newEntry;
     }
 
-    public static int[] LoadBossProgress()
-    {
-        return Load<IDStorage>("BossProgress").IDs;
-    }
+
 }
 
 [System.Serializable]
@@ -76,11 +91,39 @@ public class IDStorage
     {
         IDs = new int[0];
     }
-
-
     public IDStorage(int[] IDs)
     {
         this.IDs = IDs;
+    }
+}
+
+[System.Serializable]
+public class BossFightStorage
+{
+    public BossFightEntry[] bossFightEntries;
+
+    public BossFightStorage()
+    {
+        bossFightEntries = new BossFightEntry[0];
+    }
+
+    public BossFightStorage(BossFightEntry[] bossFightEntries)
+    {
+        this.bossFightEntries = bossFightEntries;
+    }
+}
+
+[System.Serializable]
+public class BossFightEntry
+{
+    public int ID;
+    public int stars;
+
+
+    public BossFightEntry(int ID, int stars)
+    {
+        this.ID = ID;
+        this.stars = stars;
     }
 }
 

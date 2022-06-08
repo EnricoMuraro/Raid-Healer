@@ -11,21 +11,44 @@ public class EndSceneManager : MonoBehaviour
     public Sprite lossSprite;
     public SceneLoaderScript sceneLoader;
 
+    private EndScreenStars endScreenStars;
+
+    private void Awake()
+    {
+        endScreenStars = FindObjectOfType<EndScreenStars>();
+    }
+
     private void Start()
     {
         Debug.Log("end scene data " + EndSceneData.result + " " + EndSceneData.previousSceneIndex);
 
         RewardPanelScript.DisplayNoRewards();
+        
 
         if (EndSceneData.result)
         {
-            if (Persistance.SaveBossWin(EndSceneData.bossFightInfo.ID))
+
+
+            //1 star of each level of difficulty up to 4
+            int earnedStars = Mathf.Clamp(EndSceneData.bossFightInfo.Difficulty, 1, 4);
+            
+            //1 bonus star if all raiders all still alive
+            if(EndSceneData.allAlive)
+                earnedStars++;
+
+            endScreenStars.SetEarnedStars(earnedStars);
+
+            //Show rewards only if it's the first win
+            if (Persistance.SaveBossWin(EndSceneData.bossFightInfo.ID, earnedStars))
                 RewardPanelScript.DispalyRewards(EndSceneData.bossFightInfo.Reward);
 
             resultSplashImage.sprite = winSprite;
         }
         else
+        {
+            endScreenStars.SetEarnedStars(0);
             resultSplashImage.sprite = lossSprite;
+        }
     }
 
     public void Retry()

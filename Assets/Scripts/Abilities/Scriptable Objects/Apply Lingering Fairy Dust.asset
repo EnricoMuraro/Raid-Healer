@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679232fb226fd6c44b7cf8452c611ca5, type: 3}
   m_Name: Apply Lingering Fairy Dust
   m_EditorClassIdentifier: 
-  ID: 0
-  name: 
-  description: 
+  ID: 1010
+  name: Apply Lingering Fairy Dust
+  description: Apply Lingering Fairy Dust
   icon: {fileID: 0}
   cooldown:
     baseValue: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   manaCost:
     baseValue: 0
   nextAbility: {fileID: 0}
-  effect: {fileID: 0}
+  effect: {fileID: 11400000, guid: 3787ed287cc3720418f4d920ec99861f, type: 2}

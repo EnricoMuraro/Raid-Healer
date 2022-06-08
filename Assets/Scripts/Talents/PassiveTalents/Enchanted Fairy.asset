@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 13
   name: Enchanted Fairy
-  description: Increases the healing done by Mending Fairy by 15%
-  sprite: {fileID: 21300000, guid: deac309e420248742ac2f0b192eab0f9, type: 3}
+  description: Increases the healing done by Mending Fairy by 20
+  sprite: {fileID: 21300000, guid: 49b0aec4596477548a95750eb508f828, type: 3}
   unitStatModifiers: []
   abilityModifiers:
   - ability: {fileID: 11400000, guid: 289d3c21bed85694589e17ae0d569f6a, type: 2}
     statName: 3
     modifier:
-      type: 0
+      type: 1
       source: 0
-      value: 15
+      value: 20
     newNextAbility: {fileID: 0}
+    oldNextAbility: {fileID: 0}
   statusEffectModifiers: []

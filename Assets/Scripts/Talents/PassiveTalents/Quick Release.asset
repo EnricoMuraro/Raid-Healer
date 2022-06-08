@@ -12,10 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4a5df12777e25468e3b0008572ab3d, type: 3}
   m_Name: Quick Release
   m_EditorClassIdentifier: 
-  ID: 0
-  name: 
-  description: 
-  sprite: {fileID: 0}
+  ID: 18
+  name: Quck Release
+  description: Reduces the cast time of Mending Fairy by 2 seconds but increases
+    the mana cost by 100%
+  sprite: {fileID: 21300000, guid: d0abecede0bfca447ba1eca4e3435290, type: 3}
   unitStatModifiers: []
-  abilityModifiers: []
+  abilityModifiers:
+  - ability: {fileID: 11400000, guid: 289d3c21bed85694589e17ae0d569f6a, type: 2}
+    statName: 1
+    modifier:
+      type: 1
+      source: 0
+      value: -2
+    newNextAbility: {fileID: 0}
+    oldNextAbility: {fileID: 0}
+  - ability: {fileID: 11400000, guid: 289d3c21bed85694589e17ae0d569f6a, type: 2}
+    statName: 2
+    modifier:
+      type: 0
+      source: 0
+      value: 100
+    newNextAbility: {fileID: 0}
+    oldNextAbility: {fileID: 0}
   statusEffectModifiers: []

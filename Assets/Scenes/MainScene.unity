@@ -1121,6 +1121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1117777414}
+  raid: {fileID: 886765861}
   SceneLoader: {fileID: 126431608}
 --- !u!4 &398317348
 Transform:
