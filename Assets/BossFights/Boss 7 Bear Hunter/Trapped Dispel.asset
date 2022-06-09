@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5026d2d4e09037f47a1168841b3f6747, type: 3}
   m_Name: Trapped Dispel
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 2703
   name: 
   description: 
   icon: {fileID: 0}
@@ -24,6 +24,6 @@ MonoBehaviour:
     baseValue: 0
   nextAbility: {fileID: 0}
   damage:
-    baseValue: 0
+    baseValue: 60
   attackPattern: 0
   size: 0

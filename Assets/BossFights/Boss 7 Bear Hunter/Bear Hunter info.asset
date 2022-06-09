@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba43613b534a6142bee9338db5aa854, type: 3}
   m_Name: Bear Hunter info
   m_EditorClassIdentifier: 
-  ID: 0
-  Name: 
-  Description: 
-  Difficulty: 0
-  BossUnit: {fileID: 0}
-  Abilities: []
-  BossBehaviour: {fileID: 0}
-  Reward: {fileID: 0}
+  ID: 7
+  Name: Bear Hunter
+  Description: You killed all the bears he was hunting and now he is angry
+  Difficulty: 3
+  BossUnit: {fileID: 11400000, guid: ace5e1c9f29d6fb4baf82b0da13bf7f6, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: 5dc5be107f373d6498867e1fd537e5db, type: 2}
+  - {fileID: 11400000, guid: af9dffd299a465d4ab31e71b0edc0d47, type: 2}
+  BossBehaviour: {fileID: 11400000, guid: 4473939812a7fd141a8d20a456e568dd, type: 2}
+  Reward: {fileID: 11400000, guid: 631137cba66bbe14ba225587ba342a28, type: 2}
   Auras: []
   raidSize: 0

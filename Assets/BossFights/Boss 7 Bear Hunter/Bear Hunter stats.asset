@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bear Hunter stats
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 0
+    baseValue: 14000
   shield:
     baseValue: 0
   maxMana:
@@ -21,9 +21,9 @@ MonoBehaviour:
   manaRegenRate:
     baseValue: 0
   damage:
-    baseValue: 0
+    baseValue: 80
   attackFrequency:
-    baseValue: 0
+    baseValue: 2
   abilityPower:
     baseValue: 0
-  role: 0
+  role: 4

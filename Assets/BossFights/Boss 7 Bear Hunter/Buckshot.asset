@@ -25,3 +25,5 @@ MonoBehaviour:
   nextAbility: {fileID: 0}
   damage:
     baseValue: 20
+  numberOfTargets:
+    baseValue: 9

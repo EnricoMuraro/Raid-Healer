@@ -15,4 +15,8 @@ MonoBehaviour:
   attackTargeting:
     strategy: 0
     RolesBlacklist: 
-  abilitiesTargeting: []
+  abilitiesTargeting:
+  - strategy: 0
+    RolesBlacklist: 
+  - strategy: 6
+    RolesBlacklist: 

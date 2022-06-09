@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a062f5fc61aa745b3ce7411f038c58, type: 3}
   m_Name: Trapped
   m_EditorClassIdentifier: 
-  ID: 0
-  Name: 
-  Icon: {fileID: 0}
-  activationMode: 0
-  type: 0
-  statuses: 
+  ID: 3701
+  Name: Trapped
+  Icon: {fileID: 21300000, guid: 33073a1e7819f854b82f13cb8325c539, type: 3}
+  activationMode: 1
+  type: 1
+  statuses: 00000000
   onEndAbility: {fileID: 0}
+  OnDispelAbility: {fileID: 11400000, guid: a4ee7feb7f1acfd47b6d19e17655dd0f, type: 2}
   duration:
-    baseValue: 0
+    baseValue: 120
   tickRate:
-    baseValue: 0
+    baseValue: 1
   effectPower: 0
   damage:
-    baseValue: 0
+    baseValue: 8

@@ -22,5 +22,8 @@ MonoBehaviour:
     baseValue: 0
   manaCost:
     baseValue: 0
+  nextAbility: {fileID: 0}
   damage:
     baseValue: 100
+  numberOfTargets:
+    baseValue: 3
