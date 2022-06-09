@@ -1,37 +1,13 @@
 {
     "m_SelectedDeviceId": "5f80de50",
     "m_SelectedPackage": {
-        "deviceId": "5f80de50",
-        "name": "com.DefaultCompany.RaidHealer",
-        "processId": 8910,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 4653,
-            "exited": true
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 4651,
-            "exited": true
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 10966,
-            "exited": true
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 8898,
-            "exited": true
-        },
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
@@ -42,19 +18,25 @@
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
             "processId": 8900,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
             "processId": 8907,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
             "processId": 8910,
-            "exited": false
+            "exited": true
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 8911,
+            "exited": true
         }
     ],
     "m_Tags": {

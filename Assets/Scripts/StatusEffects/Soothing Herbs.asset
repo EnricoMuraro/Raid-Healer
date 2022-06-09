@@ -16,9 +16,32 @@ MonoBehaviour:
   Name: Soothing Herbs
   Icon: {fileID: 21300000, guid: 3160131abfa3d6b49bbf9a36aed17322, type: 3}
   activationMode: 0
+  type: 0
+  statuses: 
+  onEndAbility: {fileID: 0}
+  OnDispelAbility: {fileID: 0}
   duration:
-    baseValue: 8
+    baseValue: 10
+    modifiers: []
   tickRate:
     baseValue: 1
+    modifiers: []
+  effectPower: 0
   heal:
-    baseValue: 30
+    baseValue: 10
+    modifiers:
+    - type: 0
+      source: 0
+      value: 50
+    - type: 0
+      source: 0
+      value: 50
+    - type: 0
+      source: 0
+      value: 50
+    - type: 0
+      source: 0
+      value: 50
+    - type: 0
+      source: 0
+      value: 50

@@ -27,6 +27,8 @@ public class TalentManager : MonoBehaviour
         {
             talentPanels[i].MaximumTalents = MaxPoints[i];
             talentPanels[i].SetActiveTalents(talentTree.ActiveTalents);
+            if (MaxPoints[i] == 0)
+                talentPanels[i].LockOverlay.SetActive(true);
         }
     }
 

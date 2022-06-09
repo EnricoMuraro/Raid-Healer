@@ -7,7 +7,7 @@ public class Stat
 {
     [SerializeField]
     private float baseValue;
-
+    [SerializeField]
     private List<Modifier> modifiers = new ();
     private bool changed = true;
     private float modifiedValue;

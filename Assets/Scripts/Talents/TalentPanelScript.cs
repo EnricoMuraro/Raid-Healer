@@ -12,7 +12,7 @@ public class TalentPanelScript : MonoBehaviour
     [SerializeField]
     private int startingPoints;
     public TalentPointsIcons talentPointsIcons;
-
+    public GameObject LockOverlay;
     public int AvailableTalents 
     { 
         get => availableTalents; 

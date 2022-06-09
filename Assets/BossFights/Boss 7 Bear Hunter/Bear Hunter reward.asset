@@ -15,4 +15,5 @@ MonoBehaviour:
   talentPointRewards:
   - talentPanel: 1
     talentPoints: 1
-  abilityRewards: []
+  abilityRewards:
+  - {fileID: 11400000, guid: bb30591416c25bf4ab642acaab0dc61d, type: 2}

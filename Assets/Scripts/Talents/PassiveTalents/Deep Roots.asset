@@ -10,20 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce4a5df12777e25468e3b0008572ab3d, type: 3}
-  m_Name: Anatomy Studies
+  m_Name: Deep Roots
   m_EditorClassIdentifier: 
-  ID: 1
-  name: Anatomy studies
-  description: Increases the healing done by Light Heal by 25%
-  sprite: {fileID: 21300000, guid: 904891b185fae1d4b8d5eddf58174e2e, type: 3}
+  ID: 19
+  name: Deep Roots
+  description: Increase the healing done by Soothing Herbs' status effect by 50%
+  sprite: {fileID: 21300000, guid: cd5e7e6ea75b6c74fb46ddfaa2b26501, type: 3}
   unitStatModifiers: []
-  abilityModifiers:
-  - ability: {fileID: 11400000, guid: 81f00a1dc3a58af4894bde16775a639d, type: 2}
-    statName: 3
+  abilityModifiers: []
+  statusEffectModifiers:
+  - statusEffect: {fileID: 11400000, guid: e305a919da056ed428492aee6b410783, type: 2}
+    statName: 2
     modifier:
       type: 0
       source: 0
-      value: 25
-    newNextAbility: {fileID: 0}
-    oldNextAbility: {fileID: 0}
-  statusEffectModifiers: []
+      value: 50

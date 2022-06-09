@@ -154,10 +154,10 @@ public class GameUnit : MonoBehaviour
             {
                 statusEffectSlot.Dispelled();
                 RemoveStatusEffectSlot(statusEffectSlot);
-            }
 
-            if (all == false)
-                break;
+                if (all == false)
+                    break;
+            }
         }
     }
 
