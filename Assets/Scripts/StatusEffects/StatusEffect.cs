@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "Status Effect/Status Effect")]
 public class StatusEffect : ScriptableObject
@@ -13,6 +14,7 @@ public class StatusEffect : ScriptableObject
     public Type type;
     public List<Status> statuses;
     public Ability onEndAbility;
+    public Ability OnDispelAbility;
     public Stat duration;
     public Stat tickRate;
     [HideInInspector]
@@ -50,6 +52,13 @@ public class StatusEffect : ScriptableObject
 
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
     public virtual void Activate(GameUnit gameUnit) { }
+
+    public virtual void OnDispel(GameUnit gameUnit, Raid raid) 
+    {
+        if (OnDispelAbility != null)
+            OnDispelAbility.Activate(gameUnit, raid.GetRaiderIndex(gameUnit), raid);
+    }
+
     public virtual void OnStatusEffectStart(GameUnit gameUnit, Raid raid) { }
     public virtual void OnStatusEffectEnd(GameUnit gameUnit, Raid raid) 
     {

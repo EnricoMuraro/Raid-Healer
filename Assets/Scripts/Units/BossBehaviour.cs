@@ -55,6 +55,8 @@ public class TargetStrategy
     public Strategy strategy;
     public List<Unit.Role> RolesBlacklist;
 
+    private List<GameUnit> possibleTargets = new();
+
     public enum Strategy
     {
         first,
@@ -63,6 +65,7 @@ public class TargetStrategy
         lowestHealth,
         highestHealth,
         random,
+        randomAvoidRepeat,
     }
 
     public GameUnit GetTarget(Raid raid)
@@ -90,9 +93,24 @@ public class TargetStrategy
                     else
                         return null;
                 }
+            case Strategy.randomAvoidRepeat:
+                {
+                    GameUnit target = null;
+                    if(possibleTargets.Count == 0)
+                        possibleTargets = raid.raiders.Where(filter).ToList();
+
+                    if(possibleTargets.Count > 0)
+                    {
+                        target = possibleTargets.ElementAt(UnityEngine.Random.Range(0, possibleTargets.Count));
+                        possibleTargets.Remove(target);
+                    }
+
+                    return target;
+                }
         }
         return null;
     }
+
 
     public int GetTargetIndex(Raid raid)
     {

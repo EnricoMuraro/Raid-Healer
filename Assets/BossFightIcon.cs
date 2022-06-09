@@ -11,6 +11,7 @@ public class BossFightIcon : MonoBehaviour
     public Image BossIcon;
     public Image StarsImage;
     private bool completedFlag = false;
+    private int stars;
 
     public Color LockedColor;
     public Color UncompletedColor;
@@ -23,17 +24,19 @@ public class BossFightIcon : MonoBehaviour
     public Sprite FiveStars;
 
     private Button IconButton;
+    private BossFightPanel bossFightPanel;
 
     private void Awake()
     {
-        IconButton = GetComponent<Button>();
+        bossFightPanel = FindObjectOfType<BossFightPanel>(includeInactive: true);
+        IconButton = GetComponentInChildren<Button>();
+        IconButton.onClick.AddListener(() => ShowBossFightPanel(bossFightPanel));
     }
 
     public void ShowBossFightPanel(BossFightPanel bossFightPanel)
     {
         bossFightPanel.gameObject.SetActive(true);
-        bossFightPanel.SetFightInfo(bossFightInfo); 
-        
+        bossFightPanel.SetFightInfo(bossFightInfo, stars); 
     }
 
     public bool IsLocked()
@@ -63,7 +66,8 @@ public class BossFightIcon : MonoBehaviour
 
     private void SetStarsIcon(int stars)
     {
-        if(stars > 0)
+        this.stars = stars;
+        if (stars > 0)
         {
             StarsImage.gameObject.SetActive(true);
             switch (stars)

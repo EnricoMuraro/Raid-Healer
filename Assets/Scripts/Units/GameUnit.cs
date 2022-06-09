@@ -121,7 +121,11 @@ public class GameUnit : MonoBehaviour
                 RemoveStatusEffect(statusEffect);
 
             foreach (StatusEffect.Status status in statusEffect.statuses)
-                statusCache[status].Remove(statusEffect.ID);
+            {
+                if (!statusCache.ContainsKey(status))
+                    statusCache.Add(status, new List<int>());
+                statusCache[status].Add(statusEffect.ID);
+            }
 
             StatusEffectSlot statusEffectSlot = gameObject.AddComponent<StatusEffectSlot>();
             statusEffectSlot.InitStatusEffect(statusEffect);
@@ -142,12 +146,15 @@ public class GameUnit : MonoBehaviour
             RemoveStatusEffectSlot(statusEffectSlot);
     }
 
-    public void RemoveStatusEffectByType(StatusEffect.Type type, bool all = false)
+    public void DispelStatusEffectByType(StatusEffect.Type type, bool all = false)
     {
         foreach(StatusEffectSlot statusEffectSlot in GetComponents<StatusEffectSlot>())
         {
             if (statusEffectSlot.GetStatusEffect().type == type)
+            {
+                statusEffectSlot.Dispelled();
                 RemoveStatusEffectSlot(statusEffectSlot);
+            }
 
             if (all == false)
                 break;

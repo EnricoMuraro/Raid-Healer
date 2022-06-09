@@ -39,6 +39,11 @@ public class StatusEffectSlot : MonoBehaviour
         return statusEffect;
     }    
 
+    public void Dispelled()
+    {
+        statusEffect.OnDispel(target, raid);
+    }
+
     // Update is called once per frame
     void Update()
     {

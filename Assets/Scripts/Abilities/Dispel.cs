@@ -14,7 +14,7 @@ public class Dispel : Ability
         base.Activate(caster, targetIndex, raid);
         foreach(var type in dispelTypes)
         {
-            raid.raiders[targetIndex].RemoveStatusEffectByType(type, dispelAll);
+            raid.raiders[targetIndex].DispelStatusEffectByType(type, dispelAll);
             if (nextAbility != null)
                 nextAbility.Activate(caster, targetIndex, raid);
         }    
