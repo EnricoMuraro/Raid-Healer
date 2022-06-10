@@ -8,15 +8,15 @@ public class TemporaryShield : StatusEffect
 
     public int Shield => (int)shield.Value;
 
-    public override void OnStatusEffectStart(GameUnit gameUnit, Raid raid)
+    public override void StatusEffectStart(GameUnit gameUnit, Raid raid)
     {
-        base.OnStatusEffectStart(gameUnit, raid);
+        base.StatusEffectStart(gameUnit, raid);
         gameUnit.ReceiveShield(Shield);
     }
 
-    public override void OnStatusEffectEnd(GameUnit gameUnit, Raid raid)
+    public override void StatusEffectEnd(GameUnit gameUnit, Raid raid)
     {
-        base.OnStatusEffectEnd(gameUnit, raid);
+        base.StatusEffectEnd(gameUnit, raid);
         gameUnit.RemoveShield(Shield);
     }
 }

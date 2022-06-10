@@ -18,7 +18,9 @@ public class StatusEffect : ScriptableObject
     public Stat duration;
     public Stat tickRate;
     [HideInInspector]
-    public int effectPower;
+    public GameUnit caster;
+    public UnityEvent OnStatusEffectStart = new();
+    public UnityEvent OnStatusEffectEnd = new();
 
     public float Duration { get => duration.Value; }
     public float TickRate { get => tickRate.Value; }
@@ -59,9 +61,13 @@ public class StatusEffect : ScriptableObject
             OnDispelAbility.Activate(gameUnit, raid.GetRaiderIndex(gameUnit), raid);
     }
 
-    public virtual void OnStatusEffectStart(GameUnit gameUnit, Raid raid) { }
-    public virtual void OnStatusEffectEnd(GameUnit gameUnit, Raid raid) 
+    public virtual void StatusEffectStart(GameUnit gameUnit, Raid raid) 
     {
+        OnStatusEffectStart.Invoke();
+    }
+    public virtual void StatusEffectEnd(GameUnit gameUnit, Raid raid) 
+    {
+        OnStatusEffectEnd.Invoke();
         if(onEndAbility != null)
             onEndAbility.Activate(gameUnit, raid.GetRaiderIndex(gameUnit), raid);
     }

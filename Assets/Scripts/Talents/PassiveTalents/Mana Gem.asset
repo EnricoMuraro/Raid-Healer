@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4a5df12777e25468e3b0008572ab3d, type: 3}
+  m_Name: Mana Gem
+  m_EditorClassIdentifier: 
+  ID: 25
+  name: Mana Gem
+  description: Increase your maximum mana by 200
+  sprite: {fileID: 21300000, guid: 3d135d9be3f13e7479df4a186fcfaaea, type: 3}
+  unitStatModifiers:
+  - unit: {fileID: 11400000, guid: 8254f60a5cb252840a110f7e3dfb9749, type: 2}
+    statName: 2
+    modifier:
+      type: 1
+      source: 0
+      value: 200
+  abilityModifiers: []
+  statusEffectModifiers: []

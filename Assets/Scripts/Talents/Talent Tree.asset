@@ -32,6 +32,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ba2945fb3e6036444adf6cd56792d4fd, type: 2}
   - {fileID: 11400000, guid: c7afd95bee0d0e54dbaf3348c1b755b1, type: 2}
   - {fileID: 11400000, guid: 6827b6f71de4d2442b443609a70e7532, type: 2}
+  - {fileID: 11400000, guid: 47cec49cd59f6e74089dfdecfaec72ba, type: 2}
+  - {fileID: 11400000, guid: 47760d0e30cdc574ab1c2cfc5d5280b9, type: 2}
+  - {fileID: 11400000, guid: 5c5c56ed7abf83d4ab6c975e66b3baff, type: 2}
+  - {fileID: 11400000, guid: cfd6d3ecd4a8d1c4fa8b61c350c078ca, type: 2}
+  - {fileID: 11400000, guid: 27555181e34d1454fb52386e0205144a, type: 2}
+  - {fileID: 11400000, guid: 8476ef5ddba9e5a44a73aaf946540d8c, type: 2}
+  - {fileID: 11400000, guid: 76e10634592becd46806e0227b2116fb, type: 2}
+  - {fileID: 11400000, guid: 63547899c014f3549871da33dbf2807a, type: 2}
+  - {fileID: 11400000, guid: 839e5de2344176540a449acebc2a9408, type: 2}
   ActiveTalents:
   - {fileID: 11400000, guid: ffa7717bbff5c844795c9cb587ec1654, type: 2}
   - {fileID: 11400000, guid: a9e9d66ce0810704383e2428818d770a, type: 2}
@@ -40,7 +49,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6827b6f71de4d2442b443609a70e7532, type: 2}
   - {fileID: 11400000, guid: 0bd6bdf4a17a5154d84c8e55e1519f4c, type: 2}
   - {fileID: 11400000, guid: a49d4fe6489a8554c8969b6aa777f8a7, type: 2}
-  - {fileID: 11400000, guid: d66eabe39a8519542abfffb0f7ca5bc8, type: 2}
-  - {fileID: 11400000, guid: ddf59e2efdbcee74e8288e1f2431241b, type: 2}
   - {fileID: 11400000, guid: ad1cd25f7e3425f4581828ac85e87f37, type: 2}
-  maximumPointsPerPanel: 0400000004000000
+  - {fileID: 11400000, guid: ba2945fb3e6036444adf6cd56792d4fd, type: 2}
+  - {fileID: 11400000, guid: c7afd95bee0d0e54dbaf3348c1b755b1, type: 2}
+  - {fileID: 11400000, guid: 47cec49cd59f6e74089dfdecfaec72ba, type: 2}
+  - {fileID: 11400000, guid: cfd6d3ecd4a8d1c4fa8b61c350c078ca, type: 2}
+  - {fileID: 11400000, guid: 27555181e34d1454fb52386e0205144a, type: 2}
+  - {fileID: 11400000, guid: 76e10634592becd46806e0227b2116fb, type: 2}
+  - {fileID: 11400000, guid: 839e5de2344176540a449acebc2a9408, type: 2}
+  maximumPointsPerPanel: 04000000040000000100000003000000

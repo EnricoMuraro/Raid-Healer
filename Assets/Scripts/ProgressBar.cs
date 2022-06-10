@@ -26,9 +26,10 @@ public class ProgressBar : MonoBehaviour
     {
     }
     
-    public void AddStatusEffectFrameIcon(StatusEffectSlot statusEffectSlot)
+    public void AddStatusEffectFrameIcon(StatusEffectSlot statusEffectSlot, float scale = 1)
     {
         GameObject icon = Instantiate(StatusEffectFrameIcon, statusEffectsBar) as GameObject;
+        icon.transform.localScale = Vector3.one * scale;
         icon.GetComponent<StatusEffectIcon>().statusEffectSlot = statusEffectSlot;
     }
 

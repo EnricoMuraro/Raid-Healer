@@ -31,7 +31,7 @@ public class StatusEffectSlot : MonoBehaviour
     public void InitStatusEffect(StatusEffect statusEffect)
     {
         this.statusEffect = statusEffect;
-        this.statusEffect.OnStatusEffectStart(target, raid);
+        this.statusEffect.StatusEffectStart(target, raid);
     }    
 
     public StatusEffect GetStatusEffect()
@@ -52,7 +52,7 @@ public class StatusEffectSlot : MonoBehaviour
 
         if (currentDuration >= statusEffect.Duration)
         {
-            statusEffect.OnStatusEffectEnd(target, raid);
+            statusEffect.StatusEffectEnd(target, raid);
             OnStatusEffectFinished.Invoke(this);
             Destroy(this);
         }

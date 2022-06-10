@@ -26,16 +26,16 @@ MonoBehaviour:
   tickRate:
     baseValue: 1
     modifiers: []
-  effectPower: 0
+  caster: {fileID: 0}
+  OnStatusEffectStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStatusEffectEnd:
+    m_PersistentCalls:
+      m_Calls: []
   heal:
     baseValue: 10
     modifiers:
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
     - type: 0
       source: 0
       value: 50

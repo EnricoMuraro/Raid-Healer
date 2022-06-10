@@ -9,7 +9,7 @@ public class SmartHeal : Ability
     public Stat heal;
     public Stat shield;
     public Stat numberOfTargets;
-    public int Heal => (int)heal.Value + abilityPower;
+    public int Heal => (int)heal.Value;
     public int Shield => (int)shield.Value;
     public int NumberOfTargets => (int)numberOfTargets.Value;
 
@@ -25,7 +25,7 @@ public class SmartHeal : Ability
         {   
             if(!sortedRaiders[i].IsDead())
             {
-                sortedRaiders[i].ReceiveHeal(Heal);
+                caster.Heal(sortedRaiders[i], Heal);
                 sortedRaiders[i].ReceiveShield(Shield);
                 healCount--;
                 if (nextAbility != null)

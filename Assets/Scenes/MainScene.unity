@@ -588,6 +588,12 @@ MonoBehaviour:
   OnStatusEffectAdded:
     m_PersistentCalls:
       m_Calls: []
+  OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingDone:
+    m_PersistentCalls:
+      m_Calls: []
   manaBar: {fileID: 0}
 --- !u!1 &115120312 stripped
 GameObject:
@@ -1025,6 +1031,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnStatusEffectAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingDone:
     m_PersistentCalls:
       m_Calls: []
   manaBar: {fileID: 0}
@@ -1849,6 +1861,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnStatusEffectAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingDone:
     m_PersistentCalls:
       m_Calls: []
   manaBar: {fileID: 0}
@@ -2733,6 +2751,12 @@ MonoBehaviour:
   OnStatusEffectAdded:
     m_PersistentCalls:
       m_Calls: []
+  OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingDone:
+    m_PersistentCalls:
+      m_Calls: []
   manaBar: {fileID: 0}
 --- !u!224 &846522803 stripped
 RectTransform:
@@ -2799,6 +2823,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnStatusEffectAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingDone:
     m_PersistentCalls:
       m_Calls: []
   manaBar: {fileID: 0}
@@ -3336,6 +3366,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnStatusEffectAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingDone:
     m_PersistentCalls:
       m_Calls: []
   manaBar: {fileID: 0}
@@ -4002,6 +4038,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnStatusEffectAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingDone:
     m_PersistentCalls:
       m_Calls: []
   manaBar: {fileID: 0}
@@ -5429,6 +5471,12 @@ MonoBehaviour:
   OnStatusEffectAdded:
     m_PersistentCalls:
       m_Calls: []
+  OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingDone:
+    m_PersistentCalls:
+      m_Calls: []
   manaBar: {fileID: 1522305229}
 --- !u!114 &1117777419
 MonoBehaviour:
@@ -6662,6 +6710,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2512122799483431972, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512122799483431972, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 77
+      objectReference: {fileID: 0}
     - target: {fileID: 2695345929984924422, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6697,6 +6753,38 @@ PrefabInstance:
     - target: {fileID: 4554992353759259403, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255768012163964161, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
+      propertyPath: m_Spacing
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255768012163964161, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255768012163964161, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255768012163964161, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255768012163964161, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
+      propertyPath: m_ChildScaleHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255768012163964161, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255768012163964161, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
+      propertyPath: m_ChildControlHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255768012163964161, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
+      propertyPath: m_ChildForceExpandHeight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5466235904442352964, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6816,6 +6904,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnStatusEffectAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingDone:
     m_PersistentCalls:
       m_Calls: []
   manaBar: {fileID: 0}
@@ -7129,6 +7223,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnStatusEffectAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingDone:
     m_PersistentCalls:
       m_Calls: []
   manaBar: {fileID: 0}
@@ -8078,7 +8178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 550
+      value: 621
       objectReference: {fileID: 0}
     - target: {fileID: 924378333590680734, guid: b6941ef0ce58443028711a66027e34c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9428,6 +9528,12 @@ MonoBehaviour:
   OnStatusEffectAdded:
     m_PersistentCalls:
       m_Calls: []
+  OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealingDone:
+    m_PersistentCalls:
+      m_Calls: []
   manaBar: {fileID: 0}
 --- !u!1 &1932645321 stripped
 GameObject:
@@ -9447,6 +9553,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 1117777418}
+--- !u!114 &1932645324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932645321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e342370d4b36a4a9ad0037a11bc8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showStatusEffects: 1
+  player: {fileID: 1117777418}
 --- !u!1 &1949281216
 GameObject:
   m_ObjectHideFlags: 0

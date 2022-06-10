@@ -8,7 +8,7 @@ public class CastedHeal : Ability
     public TargetType targetType;
     public Stat heal;
 
-    public int Heal => (int)heal.Value + abilityPower;
+    public int Heal => (int)heal.Value;
 
     public enum TargetType
     {
@@ -47,7 +47,7 @@ public class CastedHeal : Ability
 
         foreach (GameUnit target in targets)
         {
-            target.ReceiveHeal(Heal);
+            caster.Heal(target, Heal);
             if (nextAbility != null)
                 nextAbility.Activate(caster, raid.GetRaiderIndex(target), raid);
         }

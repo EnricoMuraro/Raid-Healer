@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "5f80de50",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "5f80de50",
+        "name": "com.DefaultCompany.RaidHealer",
+        "processId": 1267,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -37,6 +37,24 @@
             "name": "com.DefaultCompany.RaidHealer",
             "processId": 8911,
             "exited": true
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 2372,
+            "exited": false
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 1265,
+            "exited": false
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 1267,
+            "exited": false
         }
     ],
     "m_Tags": {

@@ -11,15 +11,17 @@ public class TalentSlot : MonoBehaviour
     public List<TalentSlot> nextTalentSlots;
     public Image border;
     private List<Image> nextTalentArrows = new();
-
+    private TalentManager talentManager;
     private bool isActive;
-
     private void Awake()
     {
         if (talent != null)
-        {
             GetComponent<Image>().sprite = talent.sprite;
-        }
+
+        talentManager = GetComponentInParent<TalentManager>();
+        if(!talentManager.talentTree.AllTalents.Contains(talent))
+            talentManager.talentTree.AllTalents.Add(talent);
+        GetComponent<Button>().onClick.AddListener(() => talentManager.DisplayTalent(talent));
         nextTalentArrows = GetComponentsInChildren<Image>().Where(x => x.gameObject.transform.parent != transform.parent).ToList();
         nextTalentArrows.Remove(border);
     }

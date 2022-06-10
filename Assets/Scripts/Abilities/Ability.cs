@@ -38,7 +38,7 @@ public class Ability : ScriptableObject
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
     public virtual void Activate(GameUnit caster, int targetIndex, Raid raid) 
     {
-        caster.Mana -= ManaCost;
+        caster.Mana -= Mathf.Max(0, ManaCost - caster.ManaEfficiency);
         abilityPower = caster.AbilityPower;
     }
 }

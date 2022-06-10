@@ -21,6 +21,8 @@ public class GameUnit : MonoBehaviour
     public UnityEvent<int> OnManaChange;
     public UnityEvent OnDeath;
     public UnityEvent<StatusEffectSlot> OnStatusEffectAdded;
+    public UnityEvent<int, int> OnHealingReceived;
+    public UnityEvent<GameUnit, int, int> OnHealingDone;
 
     public ProgressBar manaBar;
 
@@ -29,7 +31,8 @@ public class GameUnit : MonoBehaviour
     public float ManaRegenRate { get => unit.manaRegenRate.Value; }
     public int Damage { get => (int)unit.damage.Value; }
     public float AttackFrequency { get => unit.attackFrequency.Value; }
-    public int AbilityPower { get => (int)unit.abilityPower.Value;}
+    public int AbilityPower { get => (int)unit.abilityPower.Value; }
+    public int ManaEfficiency { get => (int)unit.manaEfficiency.Value; }
 
     public Stat MaxHealthStat { get => unit.maxHealth; }
     public Stat MaxManaStat { get => unit.maxMana; }
@@ -107,6 +110,7 @@ public class GameUnit : MonoBehaviour
     {
         OnHealthChange = new UnityEvent<int>();
         OnManaChange = new UnityEvent<int>();
+        OnHealingReceived = new();
 
         Health = MaxHealth;
         Mana = MaxMana;
@@ -169,9 +173,21 @@ public class GameUnit : MonoBehaviour
         Destroy(statusEffectSlot);
     }
 
-    public void ReceiveHeal(int amount)
+    public void Heal(GameUnit target, int amount)
     {
-        Health += amount;       
+        int newAmount = amount + AbilityPower;
+        int overheal = target.ReceiveHeal(newAmount);
+        OnHealingDone.Invoke(target, newAmount, overheal);
+    }
+
+    //returns overheal done
+    public int ReceiveHeal(int amount)
+    {
+        int oldHealth = Health;
+        Health += amount;
+        int overheal = oldHealth + amount - Health;
+        OnHealingReceived.Invoke(amount, overheal);
+        return overheal;
     }
 
     public int ReceiveDamage(int amount)

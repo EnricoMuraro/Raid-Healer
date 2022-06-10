@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc249f274e548f4ca0de10ec28834a1, type: 3}
+  m_Name: Solar Eclipse Status Effect
+  m_EditorClassIdentifier: 
+  ID: 3003
+  Name: Solar Eclipse
+  Icon: {fileID: 21300000, guid: f4ec79ec195684d43baa40fc84b87b55, type: 3}
+  activationMode: 1
+  type: 0
+  statuses: 
+  onEndAbility: {fileID: 0}
+  OnDispelAbility: {fileID: 0}
+  duration:
+    baseValue: 8
+    modifiers: []
+  tickRate:
+    baseValue: 0
+    modifiers: []
+  caster: {fileID: 0}
+  OnStatusEffectStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStatusEffectEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  UnitModifiers:
+  - unit: {fileID: 11400000, guid: 8254f60a5cb252840a110f7e3dfb9749, type: 2}
+    statName: 6
+    modifier:
+      type: 1
+      source: 0
+      value: 50
+  AbilityModifiers: []
+  StatusEffectModifiers: []

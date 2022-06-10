@@ -7,6 +7,7 @@ public class TalentManager : MonoBehaviour
     private TalentPanelScript[] talentPanels;
 
     public TalentTree talentTree;
+    public TalentView talentView;
 
     private void Awake()
     {
@@ -47,5 +48,10 @@ public class TalentManager : MonoBehaviour
         
         talentTree.ActiveTalents = talents;
         Persistance.SaveTalents(talentIDs.ToArray());
+    }
+
+    public void DisplayTalent(Talent talent)
+    {
+        talentView.showTalent(talent);
     }
 }
