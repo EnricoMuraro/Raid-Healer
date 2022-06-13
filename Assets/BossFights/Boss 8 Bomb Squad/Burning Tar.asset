@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a062f5fc61aa745b3ce7411f038c58, type: 3}
+  m_Name: Burning Tar
+  m_EditorClassIdentifier: 
+  ID: 3802
+  Name: Burning Tar
+  Icon: {fileID: 21300000, guid: 82fb6cb868124a54baf540069c48e626, type: 3}
+  activationMode: 0
+  type: 0
+  statuses: 
+  onEndAbility: {fileID: 0}
+  OnDispelAbility: {fileID: 0}
+  duration:
+    baseValue: 2
+    modifiers: []
+  tickRate:
+    baseValue: 0.2
+    modifiers: []
+  caster: {fileID: 0}
+  OnStatusEffectStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStatusEffectEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  damage:
+    baseValue: 5
+    modifiers: []

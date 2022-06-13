@@ -2606,7 +2606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e12683e944db440ae1680be8e06bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectedBoss: 0
+  talentTree: {fileID: 11400000, guid: f1bff6d87a2d2c84e9d25013fdb7943c, type: 2}
 --- !u!4 &1127727080
 Transform:
   m_ObjectHideFlags: 0

@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce4a5df12777e25468e3b0008572ab3d, type: 3}
-  m_Name: Compassion
+  m_Name: Boon of Ho
   m_EditorClassIdentifier: 
-  ID: 8
-  name: Compassion
-  description: Increases your mana regeneration rate by 10%
-  sprite: {fileID: 21300000, guid: ac09e713067b30c4fa98bb51439d5aea, type: 3}
-  unitStatModifiers:
-  - unit: {fileID: 11400000, guid: 8254f60a5cb252840a110f7e3dfb9749, type: 2}
-    statName: 3
+  ID: 20
+  name: Boon of Ho
+  description: The mana cost of Bandage is reduced by 50%
+  sprite: {fileID: 21300000, guid: bbe431f43f47f5041b3c17f6734081f5, type: 3}
+  unitStatModifiers: []
+  abilityModifiers:
+  - ability: {fileID: 11400000, guid: 7713ea3b44463e64fb79351d5d11737e, type: 2}
+    statName: 2
     modifier:
       type: 0
       source: 0
-      value: 10
-  abilityModifiers: []
+      value: -50
+    newNextAbility: {fileID: 0}
+    oldNextAbility: {fileID: 0}
   statusEffectModifiers: []

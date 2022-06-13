@@ -20,7 +20,7 @@ public class Pierce : Ability
             if(!raidMatrix[i, col].IsDead())
                 damageReceived = raidMatrix[i, col].ReceiveDamage(damageReceived);
 
-            if (nextAbility != null)
+            if (nextAbility != null && damageReceived > 0)
                 nextAbility.Activate(caster, raid.MatrixCoordsToArrayIndex(i,col), raid);
         }
     }

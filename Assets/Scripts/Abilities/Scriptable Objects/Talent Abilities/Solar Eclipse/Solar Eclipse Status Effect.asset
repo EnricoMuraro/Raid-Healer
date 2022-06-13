@@ -39,6 +39,6 @@ MonoBehaviour:
     modifier:
       type: 1
       source: 0
-      value: 50
+      value: 35
   AbilityModifiers: []
   StatusEffectModifiers: []

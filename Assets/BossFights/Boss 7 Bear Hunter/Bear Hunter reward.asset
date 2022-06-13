@@ -17,7 +17,5 @@ MonoBehaviour:
     talentPoints: 1
   - talentPanel: 2
     talentPoints: 1
-  - talentPanel: 3
-    talentPoints: 3
   abilityRewards:
   - {fileID: 11400000, guid: bb30591416c25bf4ab642acaab0dc61d, type: 2}

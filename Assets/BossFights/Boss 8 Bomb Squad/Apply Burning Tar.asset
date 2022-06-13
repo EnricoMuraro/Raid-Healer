@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679232fb226fd6c44b7cf8452c611ca5, type: 3}
+  m_Name: Apply Burning Tar
+  m_EditorClassIdentifier: 
+  ID: 2804
+  name: Apply Burning Tar
+  description: 
+  icon: {fileID: 21300000, guid: 82fb6cb868124a54baf540069c48e626, type: 3}
+  cooldown:
+    baseValue: 0
+    modifiers: []
+  castTime:
+    baseValue: 0
+    modifiers: []
+  manaCost:
+    baseValue: 0
+    modifiers: []
+  nextAbility: {fileID: 0}
+  SelfApply: 0
+  effect: {fileID: 11400000, guid: 3dffa6d9018a9e247b839ff3709c91f3, type: 2}

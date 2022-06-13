@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "5f80de50",
         "name": "com.DefaultCompany.RaidHealer",
-        "processId": 1267,
+        "processId": 1266,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -54,6 +54,18 @@
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
             "processId": 1267,
+            "exited": false
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 2376,
+            "exited": false
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 1266,
             "exited": false
         }
     ],

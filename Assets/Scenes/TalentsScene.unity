@@ -1594,6 +1594,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: 47760d0e30cdc574ab1c2cfc5d5280b9, type: 2}
+    - target: {fileID: 3926115545536191886, guid: 44fc6a31103058e4aa83e2217a358cd8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926115545536191886, guid: 44fc6a31103058e4aa83e2217a358cd8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926115545536191886, guid: 44fc6a31103058e4aa83e2217a358cd8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926115545536191886, guid: 44fc6a31103058e4aa83e2217a358cd8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926115545536191886, guid: 44fc6a31103058e4aa83e2217a358cd8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4623007937987795634, guid: 44fc6a31103058e4aa83e2217a358cd8, type: 3}
       propertyPath: startingPoints
       value: 1

@@ -92,6 +92,9 @@ public class TalentTree : ScriptableObject
 
                 foreach (var unitStatModifier in passiveTalent.unitStatModifiers)
                     unitStatModifier.RemoveModifier();
+
+                foreach (var statusEffectModifier in passiveTalent.statusEffectModifiers)
+                    statusEffectModifier.ApplyModifier();
             }
 
     }
@@ -106,6 +109,9 @@ public class TalentTree : ScriptableObject
 
                 foreach (var unitStatModifier in passiveTalent.unitStatModifiers)
                     unitStatModifier.RemoveModifier();
+
+                foreach (var statusEffectModifier in passiveTalent.statusEffectModifiers)
+                    statusEffectModifier.ApplyModifier();
             }
     }
 

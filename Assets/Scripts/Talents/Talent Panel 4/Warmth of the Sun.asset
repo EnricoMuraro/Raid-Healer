@@ -29,7 +29,7 @@ MonoBehaviour:
       type: 1
       source: 0
       value: 50
-  - unit: {fileID: 11400000, guid: 00ca80e0d0173c17b9031256750d54aa, type: 2}
+  - unit: {fileID: 11400000, guid: 24887936b05357443ab074182906cd82, type: 2}
     statName: 0
     modifier:
       type: 1

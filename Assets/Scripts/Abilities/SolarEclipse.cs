@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class SolarEclipse : Ability
 {
     public StatusEffect effect;
+    public float overhealConversionRate;
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {
         base.Activate(caster, targetIndex, raid);
@@ -23,6 +24,6 @@ public class SolarEclipse : Ability
 
     private void convertOverhealing(GameUnit target, int heal, int overheal)
     {
-        target.ReceiveShield(overheal/2);
+        target.ReceiveShield((int)(overheal*overhealConversionRate));
     }
 }

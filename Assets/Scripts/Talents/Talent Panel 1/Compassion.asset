@@ -10,20 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce4a5df12777e25468e3b0008572ab3d, type: 3}
-  m_Name: Boon of De
+  m_Name: Compassion
   m_EditorClassIdentifier: 
-  ID: 22
-  name: Boon of De
-  description: Elemental Dispel now costs 0 mana
-  sprite: {fileID: 21300000, guid: 5384a4f9146d5f64b8618ffe4618c5a8, type: 3}
-  unitStatModifiers: []
-  abilityModifiers:
-  - ability: {fileID: 11400000, guid: bb30591416c25bf4ab642acaab0dc61d, type: 2}
-    statName: 2
+  ID: 8
+  name: Compassion
+  description: Increases your mana regeneration rate by 10%
+  sprite: {fileID: 21300000, guid: a2cd8c315bd7903458af631b30d7bfbb, type: 3}
+  unitStatModifiers:
+  - unit: {fileID: 11400000, guid: 8254f60a5cb252840a110f7e3dfb9749, type: 2}
+    statName: 3
     modifier:
       type: 0
       source: 0
-      value: -100
-    newNextAbility: {fileID: 0}
-    oldNextAbility: {fileID: 0}
+      value: 10
+  abilityModifiers: []
   statusEffectModifiers: []
