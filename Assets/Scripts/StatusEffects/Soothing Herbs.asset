@@ -18,6 +18,7 @@ MonoBehaviour:
   activationMode: 0
   type: 0
   statuses: 
+  DispelImmune: 1
   onEndAbility: {fileID: 0}
   OnDispelAbility: {fileID: 0}
   duration:
@@ -33,48 +34,12 @@ MonoBehaviour:
   OnStatusEffectEnd:
     m_PersistentCalls:
       m_Calls: []
+  OnStatusEffectRemoved:
+    m_PersistentCalls:
+      m_Calls: []
   heal:
-    baseValue: 10
+    baseValue: 15
     modifiers:
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
-    - type: 0
-      source: 0
-      value: 50
     - type: 0
       source: 0
       value: 50

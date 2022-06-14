@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc43016dd832e24d809785a2b3ecd2f, type: 3}
+  m_Name: Shattering Blow
+  m_EditorClassIdentifier: 
+  ID: 2901
+  name: Shattering Blow
+  description: Damages everyone for 75% of their current health, 20% chance to stun
+    for 8 seconds
+  icon: {fileID: 21300000, guid: 26de34c01ad89c2468d357ea88fc3c1a, type: 3}
+  cooldown:
+    baseValue: 6
+    modifiers: []
+  castTime:
+    baseValue: 0
+    modifiers: []
+  manaCost:
+    baseValue: 0
+    modifiers: []
+  nextAbility: {fileID: 0}
+  damage:
+    baseValue: 0
+    modifiers: []
+  percentageDamage: 0.75
+  statusEffect: {fileID: 11400000, guid: 6370790a29dcb6d4db501574d168b0ca, type: 2}
+  statusApplicationChance: 0.2

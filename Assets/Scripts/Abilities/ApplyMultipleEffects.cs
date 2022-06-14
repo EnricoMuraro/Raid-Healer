@@ -14,7 +14,7 @@ public class ApplyMultipleEffects : Ability
         base.Activate(caster, targetIndex, raid);
         statusEffect.caster = caster;
 
-        List<GameUnit> raiders = new List<GameUnit>(raid.raiders);
+        List<GameUnit> raiders = raid.raiders.Where(x => !x.IsDead()).ToList();
         List<GameUnit> targets = new();
         for (int i = 0; i < numberOfTargets; i++)
         {

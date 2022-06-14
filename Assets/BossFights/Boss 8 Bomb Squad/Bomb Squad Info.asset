@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 8
   Name: Bomb Squad
-  Description: those bombs seem very deadly if not removed
-  Difficulty: 0
+  Description: Does he have a cannon for a hand?
+  Difficulty: 3
   BossUnit: {fileID: 11400000, guid: e1c0ee2be0f2b514c986e9692e9efa91, type: 2}
   Abilities:
   - {fileID: 11400000, guid: 30e57fd41008ae04f89b7bd1ea78115a, type: 2}
   - {fileID: 11400000, guid: 3565c2052db3c744db477c8c802bb23d, type: 2}
   BossBehaviour: {fileID: 11400000, guid: b5c1da20ff5c4a046aaaffcbf28bed15, type: 2}
-  Reward: {fileID: 0}
+  Reward: {fileID: 11400000, guid: 3e23432bdfb42304aa9f404db6647f3e, type: 2}
   Auras: []
   raidSize: 0

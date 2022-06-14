@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba43613b534a6142bee9338db5aa854, type: 3}
+  m_Name: Angry Blacksmith Info
+  m_EditorClassIdentifier: 
+  ID: 9
+  Name: Angry Blacksmith
+  Description: Someone in your raid forgot to pay the repair bill...
+  Difficulty: 0
+  BossUnit: {fileID: 11400000, guid: f2727a0eb4cdf9849b8ee50a34181849, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: de86e8eecb77c1b489a156d519916536, type: 2}
+  - {fileID: 11400000, guid: de86e8eecb77c1b489a156d519916536, type: 2}
+  BossBehaviour: {fileID: 11400000, guid: d5f33eedce551544da04b3dda4cbbcd0, type: 2}
+  Reward: {fileID: 11400000, guid: 163b5b06d81899841a9c86c4e6ba1a05, type: 2}
+  Auras: []
+  raidSize: 0

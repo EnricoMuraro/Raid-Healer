@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4765b9e123b50f845912aeb20671a1d9, type: 3}
-  m_Name: Bomb Squad Stats
+  m_Name: Angry Blacksmith Stats
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 18000
+    baseValue: 15000
     modifiers: []
   shield:
-    baseValue: 0
+    baseValue: 3000
     modifiers: []
   maxMana:
-    baseValue: 0
+    baseValue: 3000
     modifiers: []
   manaRegenRate:
-    baseValue: 0
+    baseValue: 100
     modifiers: []
   damage:
-    baseValue: 50
+    baseValue: 30
     modifiers: []
   attackFrequency:
     baseValue: 1
@@ -36,4 +36,4 @@ MonoBehaviour:
   manaEfficiency:
     baseValue: 0
     modifiers: []
-  role: 4
+  role: 0

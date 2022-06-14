@@ -15,7 +15,7 @@ public class SolarEclipse : Ability
         effect.caster = caster;
 
         effect.OnStatusEffectStart.AddListener(() => caster.OnHealingDone.AddListener(convertOverhealing));
-        effect.OnStatusEffectEnd.AddListener(() => caster.OnHealingDone.RemoveListener(convertOverhealing));
+        effect.OnStatusEffectRemoved.AddListener(() => caster.OnHealingDone.RemoveListener(convertOverhealing));
 
 
         caster.AddStatusEffect(effect);

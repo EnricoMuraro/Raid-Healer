@@ -16,6 +16,7 @@ public class AoeAttack : Ability
     public enum Pattern
     {
         plus,
+        all,
     }
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
@@ -37,6 +38,10 @@ public class AoeAttack : Ability
                     if(newCol >= 0 && newCol < raiders.GetLength(1))
                         targets.Add(raiders[targetRow, newCol]);
                 }
+                break;
+
+            case Pattern.all:
+                targets = new List<GameUnit>(raid.raiders);
                 break;
         }
 

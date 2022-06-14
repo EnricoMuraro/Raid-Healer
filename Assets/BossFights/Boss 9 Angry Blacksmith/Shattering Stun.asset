@@ -9,22 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9a062f5fc61aa745b3ce7411f038c58, type: 3}
-  m_Name: Burning Tar
+  m_Script: {fileID: 11500000, guid: 54e7447b2bff45644994567ba37cb55b, type: 3}
+  m_Name: Shattering Stun
   m_EditorClassIdentifier: 
-  ID: 3802
-  Name: Burning Tar
-  Icon: {fileID: 21300000, guid: 82fb6cb868124a54baf540069c48e626, type: 3}
-  activationMode: 0
-  type: 0
-  statuses: 
+  ID: 3901
+  Name: Shattering Stun
+  Icon: {fileID: 21300000, guid: f05b9cff6b704f84c969a88707142d9a, type: 3}
+  activationMode: 1
+  type: 1
+  statuses: 00000000
+  DispelImmune: 0
   onEndAbility: {fileID: 0}
   OnDispelAbility: {fileID: 0}
   duration:
-    baseValue: 2
+    baseValue: 8
     modifiers: []
   tickRate:
-    baseValue: 0.2
+    baseValue: 0
     modifiers: []
   caster: {fileID: 0}
   OnStatusEffectStart:
@@ -36,6 +37,3 @@ MonoBehaviour:
   OnStatusEffectRemoved:
     m_PersistentCalls:
       m_Calls: []
-  damage:
-    baseValue: 3
-    modifiers: []

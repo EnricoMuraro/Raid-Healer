@@ -46,7 +46,7 @@ public class StatusEffectSlot : MonoBehaviour
 
     private void OnDisable()
     {
-        statusEffect.StatusEffectEnd(target, raid);
+        statusEffect.StatusEffectRemoved(target, raid);
     }
 
     // Update is called once per frame

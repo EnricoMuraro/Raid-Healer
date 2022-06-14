@@ -1616,7 +1616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4623007937987795634, guid: 44fc6a31103058e4aa83e2217a358cd8, type: 3}
       propertyPath: startingPoints
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5429840905236690110, guid: 44fc6a31103058e4aa83e2217a358cd8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target

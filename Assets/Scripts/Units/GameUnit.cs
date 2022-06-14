@@ -124,16 +124,12 @@ public class GameUnit : MonoBehaviour
             if (statusEffect.activationMode == StatusEffect.ActivationMode.replace)
                 RemoveStatusEffect(statusEffect);
 
-            foreach (StatusEffect.Status status in statusEffect.statuses)
-            {
-                if (!statusCache.ContainsKey(status))
-                    statusCache.Add(status, new List<int>());
-                statusCache[status].Add(statusEffect.ID);
-            }
+            AddToCache(statusEffect);
 
             StatusEffectSlot statusEffectSlot = gameObject.AddComponent<StatusEffectSlot>();
             statusEffectSlot.InitStatusEffect(statusEffect);
             OnStatusEffectAdded?.Invoke(statusEffectSlot);
+            statusEffectSlot.OnStatusEffectFinished.AddListener(statusSlot => RemoveFromCache(statusSlot.GetStatusEffect()));
         }
     }
 
@@ -154,7 +150,7 @@ public class GameUnit : MonoBehaviour
     {
         foreach(StatusEffectSlot statusEffectSlot in GetComponents<StatusEffectSlot>())
         {
-            if (statusEffectSlot.GetStatusEffect().type == type)
+            if (statusEffectSlot.GetStatusEffect().type == type && !statusEffectSlot.GetStatusEffect().DispelImmune)
             {
                 statusEffectSlot.Dispelled();
                 RemoveStatusEffectSlot(statusEffectSlot);
@@ -168,9 +164,24 @@ public class GameUnit : MonoBehaviour
     private void RemoveStatusEffectSlot(StatusEffectSlot statusEffectSlot)
     {
         StatusEffect statusEffect = statusEffectSlot.GetStatusEffect();
-        foreach(StatusEffect.Status status in statusEffect.statuses)
-            statusCache[status].Remove(statusEffect.ID);
+        RemoveFromCache(statusEffect);
         Destroy(statusEffectSlot);
+    }
+
+    private void AddToCache(StatusEffect statusEffect)
+    {
+        foreach (StatusEffect.Status status in statusEffect.statuses)
+        {
+            if (!statusCache.ContainsKey(status))
+                statusCache.Add(status, new List<int>());
+            statusCache[status].Add(statusEffect.ID);
+        }
+    }
+
+    private void RemoveFromCache(StatusEffect statusEffect)
+    {
+        foreach (StatusEffect.Status status in statusEffect.statuses)
+            statusCache[status].Remove(statusEffect.ID);
     }
 
     public void Heal(GameUnit target, int amount)
