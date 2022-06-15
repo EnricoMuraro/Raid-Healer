@@ -22,6 +22,7 @@ public class GameUnit : MonoBehaviour
     public UnityEvent OnDeath;
     public UnityEvent<StatusEffectSlot> OnStatusEffectAdded;
     public UnityEvent<int, int> OnHealingReceived;
+    public UnityEvent<int, int> OnDamageReceived;
     public UnityEvent<GameUnit, int, int> OnHealingDone;
 
     public ProgressBar manaBar;
@@ -39,6 +40,7 @@ public class GameUnit : MonoBehaviour
     public Stat ManaRegenRateStat { get => unit.manaRegenRate; }
     public Stat DamageStat { get => unit.damage; }
     public Stat AttackFrequencyStat { get => unit.attackFrequency; }
+    public Stat DamageReceived { get => new Stat(unit.damageReceived); }
 
     public Unit.Role Role { get => unit.role; }
 
@@ -115,6 +117,14 @@ public class GameUnit : MonoBehaviour
         Health = MaxHealth;
         Mana = MaxMana;
         Shield = (int)unit.shield.Value;
+    }
+
+    public List<StatusEffect> GetStatusEffects()
+    {
+        List<StatusEffect> effects = new List<StatusEffect>();
+        foreach(StatusEffectSlot statusEffectSlot in GetComponents<StatusEffectSlot>())
+            effects.Add(statusEffectSlot.GetStatusEffect());
+        return effects;
     }
 
     public void AddStatusEffect(StatusEffect statusEffect)
@@ -203,13 +213,17 @@ public class GameUnit : MonoBehaviour
 
     public int ReceiveDamage(int amount)
     {
+        DamageReceived.BaseValue = amount;
+        int modifiedAmount = (int)DamageReceived.Value;
         int oldHealh = Health;
-        int shieldDiff = Shield - amount;
-        Shield -= amount;
+        int shieldDiff = Shield - modifiedAmount;
+        Shield -= modifiedAmount;
         if(shieldDiff < 0)
             Health += shieldDiff;
 
-        return (oldHealh - Health);
+        int damageReceived = oldHealh - Health;
+        OnDamageReceived.Invoke(amount, damageReceived);
+        return (damageReceived);
     }
 
     public void ReceiveShield(int amount)

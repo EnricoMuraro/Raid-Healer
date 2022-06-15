@@ -15,11 +15,11 @@ MonoBehaviour:
   ID: 9
   Name: Angry Blacksmith
   Description: Someone in your raid forgot to pay the repair bill...
-  Difficulty: 0
+  Difficulty: 3
   BossUnit: {fileID: 11400000, guid: f2727a0eb4cdf9849b8ee50a34181849, type: 2}
   Abilities:
   - {fileID: 11400000, guid: de86e8eecb77c1b489a156d519916536, type: 2}
-  - {fileID: 11400000, guid: de86e8eecb77c1b489a156d519916536, type: 2}
+  - {fileID: 11400000, guid: d410020b0dbc93d4cb5a1a7d038d7917, type: 2}
   BossBehaviour: {fileID: 11400000, guid: d5f33eedce551544da04b3dda4cbbcd0, type: 2}
   Reward: {fileID: 11400000, guid: 163b5b06d81899841a9c86c4e6ba1a05, type: 2}
   Auras: []

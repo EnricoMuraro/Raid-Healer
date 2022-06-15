@@ -22,7 +22,7 @@ MonoBehaviour:
   onEndAbility: {fileID: 0}
   OnDispelAbility: {fileID: 0}
   duration:
-    baseValue: 8
+    baseValue: 4
     modifiers: []
   tickRate:
     baseValue: 0

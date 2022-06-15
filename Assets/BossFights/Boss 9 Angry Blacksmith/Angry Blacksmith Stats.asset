@@ -25,7 +25,7 @@ MonoBehaviour:
     baseValue: 100
     modifiers: []
   damage:
-    baseValue: 30
+    baseValue: 15
     modifiers: []
   attackFrequency:
     baseValue: 1
@@ -36,4 +36,4 @@ MonoBehaviour:
   manaEfficiency:
     baseValue: 0
     modifiers: []
-  role: 0
+  role: 4

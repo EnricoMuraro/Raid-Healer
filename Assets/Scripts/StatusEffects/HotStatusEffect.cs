@@ -8,7 +8,7 @@ public class HotStatusEffect : StatusEffect
     public Stat heal;
     public int Heal => (int) heal.Value;
 
-    public override void Activate(GameUnit gameUnit)
+    public override void Activate(GameUnit gameUnit, Raid raid)
     {
         int newHeal = Heal;
         if(caster != null)

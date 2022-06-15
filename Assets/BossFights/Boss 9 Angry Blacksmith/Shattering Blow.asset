@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 2901
   name: Shattering Blow
   description: Damages everyone for 75% of their current health, 20% chance to stun
-    for 8 seconds
+    for 4 seconds
   icon: {fileID: 21300000, guid: 26de34c01ad89c2468d357ea88fc3c1a, type: 3}
   cooldown:
     baseValue: 6
@@ -28,7 +28,7 @@ MonoBehaviour:
     modifiers: []
   nextAbility: {fileID: 0}
   damage:
-    baseValue: 0
+    baseValue: 1
     modifiers: []
   percentageDamage: 0.75
   statusEffect: {fileID: 11400000, guid: 6370790a29dcb6d4db501574d168b0ca, type: 2}

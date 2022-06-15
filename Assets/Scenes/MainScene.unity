@@ -591,6 +591,9 @@ MonoBehaviour:
   OnHealingReceived:
     m_PersistentCalls:
       m_Calls: []
+  OnDamageReceived:
+    m_PersistentCalls:
+      m_Calls: []
   OnHealingDone:
     m_PersistentCalls:
       m_Calls: []
@@ -1034,6 +1037,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDamageReceived:
     m_PersistentCalls:
       m_Calls: []
   OnHealingDone:
@@ -1864,6 +1870,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDamageReceived:
     m_PersistentCalls:
       m_Calls: []
   OnHealingDone:
@@ -2754,6 +2763,9 @@ MonoBehaviour:
   OnHealingReceived:
     m_PersistentCalls:
       m_Calls: []
+  OnDamageReceived:
+    m_PersistentCalls:
+      m_Calls: []
   OnHealingDone:
     m_PersistentCalls:
       m_Calls: []
@@ -2826,6 +2838,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDamageReceived:
     m_PersistentCalls:
       m_Calls: []
   OnHealingDone:
@@ -2991,6 +3006,7 @@ MonoBehaviour:
   - {fileID: 1910209840}
   - {fileID: 1336087979}
   Boss: {fileID: 964010022}
+  Player: {fileID: 1117777418}
   raidRows: 3
   raidColumns: 3
   onGameEnd:
@@ -3369,6 +3385,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDamageReceived:
     m_PersistentCalls:
       m_Calls: []
   OnHealingDone:
@@ -4041,6 +4060,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDamageReceived:
     m_PersistentCalls:
       m_Calls: []
   OnHealingDone:
@@ -5472,6 +5494,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDamageReceived:
     m_PersistentCalls:
       m_Calls: []
   OnHealingDone:
@@ -6909,6 +6934,9 @@ MonoBehaviour:
   OnHealingReceived:
     m_PersistentCalls:
       m_Calls: []
+  OnDamageReceived:
+    m_PersistentCalls:
+      m_Calls: []
   OnHealingDone:
     m_PersistentCalls:
       m_Calls: []
@@ -7226,6 +7254,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDamageReceived:
     m_PersistentCalls:
       m_Calls: []
   OnHealingDone:
@@ -9529,6 +9560,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnHealingReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDamageReceived:
     m_PersistentCalls:
       m_Calls: []
   OnHealingDone:

@@ -10,6 +10,7 @@ public class Raid : MonoBehaviour
 
     [SerializeField] public GameUnit[] raiders;
     public GameUnit Boss;
+    public GameUnit Player;
     public int raidRows;
     public int raidColumns;
 

@@ -12,6 +12,14 @@ public class Stat
     private bool changed = true;
     private float modifiedValue;
     
+    public Stat(Stat stat)
+    {
+        baseValue = stat.baseValue;
+        modifiers = new List<Modifier>(stat.modifiers);
+        changed = true;
+        modifiedValue = stat.modifiedValue;
+    }
+
     public float Value 
     { 
         get
@@ -59,6 +67,7 @@ public class Stat
 
     public void RemoveModifiersFromSource(Modifier.Source source)
     {
+        changed = true;
         modifiers.RemoveAll(mod => mod.source == source);
     }
 

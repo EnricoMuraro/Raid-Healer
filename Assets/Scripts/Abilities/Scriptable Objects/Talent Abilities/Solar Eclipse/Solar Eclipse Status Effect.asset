@@ -18,6 +18,7 @@ MonoBehaviour:
   activationMode: 1
   type: 0
   statuses: 
+  DispelImmune: 0
   onEndAbility: {fileID: 0}
   OnDispelAbility: {fileID: 0}
   duration:
@@ -31,6 +32,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnStatusEffectEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStatusEffectRemoved:
     m_PersistentCalls:
       m_Calls: []
   UnitModifiers:

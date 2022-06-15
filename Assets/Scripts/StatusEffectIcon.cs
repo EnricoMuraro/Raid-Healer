@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class StatusEffectIcon : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public class StatusEffectIcon : MonoBehaviour
     public StatusEffectSlot statusEffectSlot;
     private Image durationImage;
     private Image abilityImage;
+    private TextMeshProUGUI centerText;
 
     private void Awake()
     {
         durationImage = transform.Find("StatusEffectImageDuration").GetComponent<Image>();
         abilityImage = transform.Find("StatusEffectImage").GetComponent<Image>();
+        centerText = GetComponentInChildren<TextMeshProUGUI>();
     }
 
 
@@ -37,6 +40,11 @@ public class StatusEffectIcon : MonoBehaviour
             {
                 durationImage.fillAmount = (statusEffectSlot.currentDuration / statusEffect.Duration);
             }
+
+            if (statusEffect.Stacks > 0)
+                centerText.text = statusEffect.Stacks.ToString();
+            else
+                centerText.text = "";
         }
         else
         {

@@ -66,7 +66,7 @@ public class StatusEffectSlot : MonoBehaviour
         {
             if (currentTick >= statusEffect.TickRate)
             {
-                statusEffect.Activate(target);
+                statusEffect.Activate(target, raid);
                 currentTick = 0;
             }
         }

@@ -42,6 +42,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 76e10634592becd46806e0227b2116fb, type: 2}
   - {fileID: 11400000, guid: 63547899c014f3549871da33dbf2807a, type: 2}
   - {fileID: 11400000, guid: 839e5de2344176540a449acebc2a9408, type: 2}
+  - {fileID: 11400000, guid: bc1298d08b2f535409fb8dd511f8077e, type: 2}
+  - {fileID: 11400000, guid: d5600c0def24c2a4ca76130cf9eca307, type: 2}
+  - {fileID: 11400000, guid: 205dca0e8c0dbc449afd1de53e521dd9, type: 2}
   ActiveTalents:
   - {fileID: 11400000, guid: ffa7717bbff5c844795c9cb587ec1654, type: 2}
   - {fileID: 11400000, guid: a9e9d66ce0810704383e2428818d770a, type: 2}
@@ -55,8 +58,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ad1cd25f7e3425f4581828ac85e87f37, type: 2}
   - {fileID: 11400000, guid: 47cec49cd59f6e74089dfdecfaec72ba, type: 2}
   - {fileID: 11400000, guid: cfd6d3ecd4a8d1c4fa8b61c350c078ca, type: 2}
-  - {fileID: 11400000, guid: 8476ef5ddba9e5a44a73aaf946540d8c, type: 2}
-  - {fileID: 11400000, guid: 63547899c014f3549871da33dbf2807a, type: 2}
   - {fileID: 11400000, guid: 27555181e34d1454fb52386e0205144a, type: 2}
-  - {fileID: 11400000, guid: 47cec49cd59f6e74089dfdecfaec72ba, type: 2}
-  maximumPointsPerPanel: 04000000040000000100000003000000
+  maximumPointsPerPanel: 04000000040000000100000002000000

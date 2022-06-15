@@ -15,6 +15,7 @@ public class Unit : ScriptableObject
     public Stat attackFrequency;
     public Stat abilityPower;
     public Stat manaEfficiency;
+    public Stat damageReceived;
 
     public Role role;
 
@@ -28,6 +29,7 @@ public class Unit : ScriptableObject
         attackFrequency,
         abilityPower,
         manaEfficiency,
+        damageReceived,
     }
 
     public enum Role

@@ -14,10 +14,11 @@ public class StatusEffect : ScriptableObject
     public Type type;
     public List<Status> statuses;
     public bool DispelImmune;
-    public Ability onEndAbility;
-    public Ability OnDispelAbility;
+    public int Stacks;
     public Stat duration;
     public Stat tickRate;
+    public Ability onEndAbility;
+    public Ability OnDispelAbility;
     
     [HideInInspector]
     public GameUnit caster;
@@ -56,7 +57,7 @@ public class StatusEffect : ScriptableObject
     }
 
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
-    public virtual void Activate(GameUnit gameUnit) { }
+    public virtual void Activate(GameUnit gameUnit, Raid raid) { }
 
     public virtual void OnDispel(GameUnit gameUnit, Raid raid) 
     {

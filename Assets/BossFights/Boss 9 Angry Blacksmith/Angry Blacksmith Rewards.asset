@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Angry Blacksmith Rewards
   m_EditorClassIdentifier: 
   talentPointRewards:
-  - talentPanel: 4
+  - talentPanel: 3
     talentPoints: 1
   abilityRewards: []

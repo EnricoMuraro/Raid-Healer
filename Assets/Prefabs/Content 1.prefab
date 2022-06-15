@@ -1952,7 +1952,7 @@ PrefabInstance:
     - target: {fileID: 3393864032096057270, guid: 78992956d118fd04899eb4fb53d67ef6, type: 3}
       propertyPath: talent
       value: 
-      objectReference: {fileID: 11400000, guid: 47cec49cd59f6e74089dfdecfaec72ba, type: 2}
+      objectReference: {fileID: 11400000, guid: bc1298d08b2f535409fb8dd511f8077e, type: 2}
     - target: {fileID: 3393864032096057270, guid: 78992956d118fd04899eb4fb53d67ef6, type: 3}
       propertyPath: nextTalentSlot
       value: 
@@ -3010,7 +3010,7 @@ PrefabInstance:
     - target: {fileID: 3393864032096057270, guid: 78992956d118fd04899eb4fb53d67ef6, type: 3}
       propertyPath: talent
       value: 
-      objectReference: {fileID: 11400000, guid: 47760d0e30cdc574ab1c2cfc5d5280b9, type: 2}
+      objectReference: {fileID: 11400000, guid: d5600c0def24c2a4ca76130cf9eca307, type: 2}
     - target: {fileID: 3393864032096057270, guid: 78992956d118fd04899eb4fb53d67ef6, type: 3}
       propertyPath: nextTalentSlot
       value: 
@@ -7981,7 +7981,7 @@ PrefabInstance:
     - target: {fileID: 3393864032096057270, guid: 78992956d118fd04899eb4fb53d67ef6, type: 3}
       propertyPath: talent
       value: 
-      objectReference: {fileID: 11400000, guid: 5c5c56ed7abf83d4ab6c975e66b3baff, type: 2}
+      objectReference: {fileID: 11400000, guid: 205dca0e8c0dbc449afd1de53e521dd9, type: 2}
     - target: {fileID: 3393864032096057270, guid: 78992956d118fd04899eb4fb53d67ef6, type: 3}
       propertyPath: nextTalentSlot
       value: 
