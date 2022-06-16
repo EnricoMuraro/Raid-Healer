@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ef3d792e982e04aa4034046cbde674, type: 3}
+  m_Name: Ancient Curse
+  m_EditorClassIdentifier: 
+  ID: 0
+  Name: 
+  Icon: {fileID: 0}
+  activationMode: 0
+  type: 0
+  statuses: 
+  DispelImmune: 0
+  showStacks: 0
+  duration:
+    baseValue: 0
+    modifiers: []
+  tickRate:
+    baseValue: 0
+    modifiers: []
+  onEndAbility: {fileID: 0}
+  OnDispelAbility: {fileID: 0}
+  caster: {fileID: 0}
+  OnStatusEffectStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStatusEffectEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStatusEffectRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  conversionRate: 0

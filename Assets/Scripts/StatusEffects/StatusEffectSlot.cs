@@ -12,6 +12,9 @@ public class StatusEffectSlot : MonoBehaviour
 
     private float currentTick = 0;
     public float currentDuration = 0;
+    private int currentStacks = 0;
+
+    public int Stacks { get => currentStacks; }
 
     public UnityEvent<StatusEffectSlot> OnStatusEffectFinished = new UnityEvent<StatusEffectSlot>();
 
@@ -68,6 +71,7 @@ public class StatusEffectSlot : MonoBehaviour
             {
                 statusEffect.Activate(target, raid);
                 currentTick = 0;
+                currentStacks++;
             }
         }
 

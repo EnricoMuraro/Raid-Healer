@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf589a11e6ae1d742b8ccd857046eedb, type: 3}
-  m_Name: Bomb Squad Reward
+  m_Script: {fileID: 11500000, guid: 7f758b72c3714a043a126fa7dce1523a, type: 3}
+  m_Name: Plagued Rat Behaviour
   m_EditorClassIdentifier: 
-  talentPointRewards:
-  - talentPanel: 3
-    talentPoints: 1
-  abilityRewards:
-  - {fileID: 11400000, guid: 960a52c8d80b2f44b8400a5b75e912b7, type: 2}
+  attackTargeting:
+    strategy: 0
+    RolesBlacklist: 
+  abilitiesTargeting:
+  - strategy: 0
+    RolesBlacklist: 
+  - strategy: 2
+    RolesBlacklist: 

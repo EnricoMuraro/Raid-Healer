@@ -26,6 +26,7 @@ public class Modifier
     {
         Talent,
         Aura,
+        Temporary,
     }
 
     public override bool Equals(object obj)

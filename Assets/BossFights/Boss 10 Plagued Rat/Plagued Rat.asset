@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba43613b534a6142bee9338db5aa854, type: 3}
   m_Name: Plagued Rat
   m_EditorClassIdentifier: 
-  ID: 0
-  Name: 
-  Description: 
-  Difficulty: 0
-  BossUnit: {fileID: 0}
-  Abilities: []
-  BossBehaviour: {fileID: 0}
+  ID: 10
+  Name: Plagued Rat
+  Description: "Don't let the plague get out of control\t"
+  Difficulty: 3
+  BossUnit: {fileID: 11400000, guid: e7f3fe1366a782a46938088c26987118, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: 910d5634ac941fd438c6d043fb9d8b91, type: 2}
+  - {fileID: 11400000, guid: ac17801204206b2488a8912b9094d31e, type: 2}
+  BossBehaviour: {fileID: 11400000, guid: c1b26040d2a318f4ab23121731ecf976, type: 2}
   Reward: {fileID: 0}
   Auras: []
   raidSize: 0

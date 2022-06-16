@@ -40,7 +40,7 @@ public class GameUnit : MonoBehaviour
     public Stat ManaRegenRateStat { get => unit.manaRegenRate; }
     public Stat DamageStat { get => unit.damage; }
     public Stat AttackFrequencyStat { get => unit.attackFrequency; }
-    public Stat DamageReceived { get => new Stat(unit.damageReceived); }
+    public Stat DamageReceived;
 
     public Unit.Role Role { get => unit.role; }
 
@@ -114,9 +114,12 @@ public class GameUnit : MonoBehaviour
         OnManaChange = new UnityEvent<int>();
         OnHealingReceived = new();
 
+        
+
         Health = MaxHealth;
         Mana = MaxMana;
         Shield = (int)unit.shield.Value;
+        DamageReceived = new Stat(unit.damageReceived);
     }
 
     public List<StatusEffect> GetStatusEffects()
@@ -211,15 +214,22 @@ public class GameUnit : MonoBehaviour
         return overheal;
     }
 
-    public int ReceiveDamage(int amount)
+    public int ReceiveDamage(int amount, bool trueDamage = false)
     {
-        DamageReceived.BaseValue = amount;
-        int modifiedAmount = (int)DamageReceived.Value;
+
         int oldHealh = Health;
-        int shieldDiff = Shield - modifiedAmount;
-        Shield -= modifiedAmount;
-        if(shieldDiff < 0)
-            Health += shieldDiff;
+
+        if(trueDamage)
+            Health -= amount;
+        else
+        {
+            DamageReceived.BaseValue = amount;
+            int modifiedAmount = (int)DamageReceived.Value;
+            int shieldDiff = Shield - modifiedAmount;
+            Shield -= modifiedAmount;
+            if (shieldDiff < 0)
+                Health += shieldDiff;
+        }
 
         int damageReceived = oldHealh - Health;
         OnDamageReceived.Invoke(amount, damageReceived);
@@ -266,7 +276,14 @@ public class GameUnit : MonoBehaviour
         else
             return false;
     }
-        
+    
+    public bool HasStatusEffect(StatusEffect statusEffect)
+    {
+        foreach(StatusEffect status in GetStatusEffects())
+            if(statusEffect.ID == status.ID)
+                return true;
+        return false;
+    }
 
     private void Start()
     {

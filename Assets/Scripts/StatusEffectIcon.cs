@@ -41,8 +41,8 @@ public class StatusEffectIcon : MonoBehaviour
                 durationImage.fillAmount = (statusEffectSlot.currentDuration / statusEffect.Duration);
             }
 
-            if (statusEffect.Stacks > 0)
-                centerText.text = statusEffect.Stacks.ToString();
+            if (statusEffect.showStacks)
+                centerText.text = statusEffectSlot.Stacks.ToString();
             else
                 centerText.text = "";
         }

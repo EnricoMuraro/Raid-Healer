@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "5f80de50",
         "name": "com.DefaultCompany.RaidHealer",
-        "processId": 1266,
+        "processId": 4603,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,61 +11,43 @@
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
-            "processId": 8899,
-            "exited": true
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 8900,
-            "exited": true
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 8907,
-            "exited": true
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 8910,
-            "exited": true
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 8911,
-            "exited": true
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
-            "processId": 2372,
-            "exited": false
-        },
-        {
-            "deviceId": "5f80de50",
-            "name": "com.DefaultCompany.RaidHealer",
             "processId": 1265,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
             "processId": 1267,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
             "processId": 2376,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "5f80de50",
             "name": "com.DefaultCompany.RaidHealer",
             "processId": 1266,
+            "exited": true
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 4602,
+            "exited": true
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.teslacoilsw.launcher",
+            "processId": 13586,
+            "exited": false
+        },
+        {
+            "deviceId": "5f80de50",
+            "name": "com.DefaultCompany.RaidHealer",
+            "processId": 4603,
             "exited": false
         }
     ],

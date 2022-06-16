@@ -14,7 +14,7 @@ public class StatusEffect : ScriptableObject
     public Type type;
     public List<Status> statuses;
     public bool DispelImmune;
-    public int Stacks;
+    public bool showStacks;
     public Stat duration;
     public Stat tickRate;
     public Ability onEndAbility;

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5161effd809d904894676e8bcbbff3e, type: 3}
+  m_Name: Apply Ancient Curse
+  m_EditorClassIdentifier: 
+  ID: 21102
+  name: Ancient Curse
+  description: All healing is absorbed and converted into damage on the boss. Cannot
+    be removed
+  icon: {fileID: 0}
+  cooldown:
+    baseValue: 0
+    modifiers: []
+  castTime:
+    baseValue: 0
+    modifiers: []
+  manaCost:
+    baseValue: 0
+    modifiers: []
+  nextAbility: {fileID: 0}
+  statusEffect: {fileID: 11400000, guid: 4d8396cf6abba5a4c89c6a98641f9430, type: 2}
+  numberOfTargets: 99
+  avoidAlreadyAffectedTargets: 0
