@@ -16,9 +16,9 @@ MonoBehaviour:
   name: Ancient Curse
   description: All healing is absorbed and converted into damage on the boss. Cannot
     be removed
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 032fe8e98c39d0141b2e916a6effc5bc, type: 3}
   cooldown:
-    baseValue: 0
+    baseValue: 600
     modifiers: []
   castTime:
     baseValue: 0

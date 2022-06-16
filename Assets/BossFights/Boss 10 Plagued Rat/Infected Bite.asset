@@ -28,7 +28,7 @@ MonoBehaviour:
     modifiers: []
   nextAbility: {fileID: 11400000, guid: e8e0d1a66836e7c41aa6d45942f07cbc, type: 2}
   damage:
-    baseValue: 40
+    baseValue: 30
     modifiers: []
   attackPattern: 0
   size: 0

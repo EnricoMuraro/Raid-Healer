@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ef3d792e982e04aa4034046cbde674, type: 3}
   m_Name: Ancient Curse
   m_EditorClassIdentifier: 
-  ID: 0
-  Name: 
-  Icon: {fileID: 0}
+  ID: 31101
+  Name: Ancient Curse
+  Icon: {fileID: 21300000, guid: 032fe8e98c39d0141b2e916a6effc5bc, type: 3}
   activationMode: 0
-  type: 0
+  type: 2
   statuses: 
-  DispelImmune: 0
+  DispelImmune: 1
   showStacks: 0
   duration:
-    baseValue: 0
+    baseValue: 600
     modifiers: []
   tickRate:
     baseValue: 0
@@ -38,4 +38,4 @@ MonoBehaviour:
   OnStatusEffectRemoved:
     m_PersistentCalls:
       m_Calls: []
-  conversionRate: 0
+  conversionRate: 1

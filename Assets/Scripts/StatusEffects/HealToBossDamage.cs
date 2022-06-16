@@ -24,6 +24,6 @@ public class HealToBossDamage : StatusEffect
         int healingReceived = healAmount - overheal;
         gameUnit.ReceiveDamage(healingReceived, true);
 
-        raid.Boss.ReceiveDamage((int)(healingReceived * conversionRate));
+        raid.Boss.ReceiveDamage((int)(healAmount * conversionRate));
     }    
 }

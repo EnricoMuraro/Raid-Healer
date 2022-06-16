@@ -16,12 +16,12 @@ MonoBehaviour:
   name: Cave Collapse
   description: The entrance is blocked, break through the other way in time or the
     raid will die
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 115962986f9cc97409e19f44c2991498, type: 3}
   cooldown:
     baseValue: 1
     modifiers: []
   castTime:
-    baseValue: 30
+    baseValue: 45
     modifiers: []
   manaCost:
     baseValue: 0

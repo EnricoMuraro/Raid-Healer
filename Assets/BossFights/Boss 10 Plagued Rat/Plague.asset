@@ -39,6 +39,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   damage:
-    baseValue: 5
+    baseValue: 3
     modifiers: []
-  DmgIncreasePerStack: 10
+  DmgIncreasePerStack: 50

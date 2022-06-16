@@ -25,7 +25,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: []
   damage:
-    baseValue: 50
+    baseValue: 35
     modifiers: []
   attackFrequency:
     baseValue: 1
