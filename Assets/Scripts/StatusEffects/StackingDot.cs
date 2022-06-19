@@ -11,16 +11,9 @@ public class StackingDot : StatusEffect
 
     public int DmgIncreasePerStack;
 
-    public override void Activate(GameUnit gameUnit, Raid raid)
+    public override void Activate(GameUnit gameUnit, Raid raid, int stacks)
     {
-        base.Activate(gameUnit, raid);
-        gameUnit.ReceiveDamage(Damage);
-        damage.AddModifier(new Modifier(Modifier.Type.Percentage, Modifier.Source.Temporary, DmgIncreasePerStack));
-    }
-
-    public override void StatusEffectRemoved(GameUnit gameUnit, Raid raid)
-    {
-        base.StatusEffectRemoved(gameUnit, raid);
-        damage.RemoveModifiersFromSource(Modifier.Source.Temporary);
+        base.Activate(gameUnit, raid, stacks);
+        gameUnit.ReceiveDamage(Damage * DmgIncreasePerStack * stacks);
     }
 }

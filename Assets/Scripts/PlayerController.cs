@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     }
 
     public void SetTargetPlayer(int index) {
-        Debug.Log(index);
         targetIndex = index;
     }
 

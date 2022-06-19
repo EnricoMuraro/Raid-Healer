@@ -15,6 +15,16 @@ public class GameUnit : MonoBehaviour
     [SerializeField] private float cooldown = 0;
     [SerializeField] private bool dead = false;
 
+    private Stat maxHealth = new();
+    private Stat shield = new();
+    private Stat maxMana = new();
+    private Stat manaRegenRate = new();
+    private Stat damage = new();
+    private Stat attackFrequency = new();
+    private Stat abilityPower = new();
+    private Stat manaEfficiency = new();
+    private Stat damageReceived = new();
+
     private Dictionary<StatusEffect.Status, List<int>> statusCache = new ();
 
     public UnityEvent<int> OnHealthChange;
@@ -27,20 +37,13 @@ public class GameUnit : MonoBehaviour
 
     public ProgressBar manaBar;
 
-    public int MaxHealth { get => (int)unit.maxHealth.Value; }
-    public int MaxMana { get => (int)unit.maxMana.Value; }
-    public float ManaRegenRate { get => unit.manaRegenRate.Value; }
-    public int Damage { get => (int)unit.damage.Value; }
-    public float AttackFrequency { get => unit.attackFrequency.Value; }
-    public int AbilityPower { get => (int)unit.abilityPower.Value; }
-    public int ManaEfficiency { get => (int)unit.manaEfficiency.Value; }
-
-    public Stat MaxHealthStat { get => unit.maxHealth; }
-    public Stat MaxManaStat { get => unit.maxMana; }
-    public Stat ManaRegenRateStat { get => unit.manaRegenRate; }
-    public Stat DamageStat { get => unit.damage; }
-    public Stat AttackFrequencyStat { get => unit.attackFrequency; }
-    public Stat DamageReceived;
+    public int MaxHealth => (int)maxHealth.Value;
+    public int MaxMana => (int)maxMana.Value;
+    public float ManaRegenRate => manaRegenRate.Value;
+    public int Damage => (int)damage.Value;
+    public float AttackFrequency => attackFrequency.Value;
+    public int AbilityPower => (int)abilityPower.Value;
+    public int ManaEfficiency => (int)manaEfficiency.Value;
 
     public Unit.Role Role { get => unit.role; }
 
@@ -70,6 +73,7 @@ public class GameUnit : MonoBehaviour
                 {
                     dead = true;
                     RemoveAllStatusEffects();
+                    Shield = 0;
                     OnDeath?.Invoke();
                 }
             }
@@ -104,7 +108,8 @@ public class GameUnit : MonoBehaviour
         get => currentShield;
         private set
         {
-            currentShield = Mathf.Clamp(value, 0, int.MaxValue);
+            if(!dead)
+                currentShield = Mathf.Clamp(value, 0, int.MaxValue);
         }
     }
 
@@ -114,12 +119,19 @@ public class GameUnit : MonoBehaviour
         OnManaChange = new UnityEvent<int>();
         OnHealingReceived = new();
 
-        
+        maxHealth.BaseValue = unit.maxHealth.Value;
+        shield.BaseValue = unit.shield.Value;
+        maxMana.BaseValue = unit.maxMana.Value;
+        manaRegenRate.BaseValue = unit.manaRegenRate.Value;
+        damage.BaseValue = unit.damage.Value;
+        attackFrequency.BaseValue = unit.attackFrequency.Value;
+        abilityPower.BaseValue = unit.abilityPower.Value;
+        manaEfficiency.BaseValue = unit.manaEfficiency.Value;
+        damageReceived = new Stat(unit.damageReceived);
 
         Health = MaxHealth;
         Mana = MaxMana;
         Shield = (int)unit.shield.Value;
-        DamageReceived = new Stat(unit.damageReceived);
     }
 
     public List<StatusEffect> GetStatusEffects()
@@ -138,7 +150,7 @@ public class GameUnit : MonoBehaviour
                 RemoveStatusEffect(statusEffect);
 
             AddToCache(statusEffect);
-
+            
             StatusEffectSlot statusEffectSlot = gameObject.AddComponent<StatusEffectSlot>();
             statusEffectSlot.InitStatusEffect(statusEffect);
             OnStatusEffectAdded?.Invoke(statusEffectSlot);
@@ -223,17 +235,17 @@ public class GameUnit : MonoBehaviour
             Health -= amount;
         else
         {
-            DamageReceived.BaseValue = amount;
-            int modifiedAmount = (int)DamageReceived.Value;
+            damageReceived.BaseValue = amount;
+            int modifiedAmount = (int)damageReceived.Value;
             int shieldDiff = Shield - modifiedAmount;
             Shield -= modifiedAmount;
             if (shieldDiff < 0)
                 Health += shieldDiff;
         }
 
-        int damageReceived = oldHealh - Health;
-        OnDamageReceived.Invoke(amount, damageReceived);
-        return (damageReceived);
+        int totalDamageReceived = oldHealh - Health;
+        OnDamageReceived.Invoke(amount, totalDamageReceived);
+        return (totalDamageReceived);
     }
 
     public void ReceiveShield(int amount)

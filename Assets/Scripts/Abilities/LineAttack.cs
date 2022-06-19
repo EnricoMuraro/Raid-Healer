@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Ability/Line Attack")]
-public class LineAttack : Ability
+[CreateAssetMenu(menuName = "Active Ability/Line Attack")]
+public class LineAttack : ActiveAbility
 {
     public bool randomRow;
     [SerializeField]

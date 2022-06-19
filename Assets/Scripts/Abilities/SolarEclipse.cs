@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(menuName = "Ability/Solar Eclipse")]
-public class SolarEclipse : Ability
+[CreateAssetMenu(menuName = "Active Ability/Solar Eclipse")]
+public class SolarEclipse : ActiveAbility
 {
     public StatusEffect effect;
     public float overhealConversionRate;

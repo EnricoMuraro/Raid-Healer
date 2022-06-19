@@ -13,7 +13,7 @@ public class BossFightInitializer : MonoBehaviour
     public ProgressBar BossCastBar;
 
     private List<UnitModifier> auraModifiers = new();
-    private List<Ability> allBossAbilities = new List<Ability>();
+    private List<ActiveAbility> allBossActiveAbilities = new List<ActiveAbility>();
     private List<StatusEffect> allBossStatusEffects = new List<StatusEffect>();
     private List<AbilityModifier> abilityModifiers = new();
     private List<StatusEffectModifier> statusEffectModifiers = new();
@@ -50,15 +50,16 @@ public class BossFightInitializer : MonoBehaviour
     private void ExploreAllBossAbilities(List<Ability> startAbilities)
     {
         foreach (Ability ability in startAbilities)
-            RecursiveExplore(ability);
+            if (ability is ActiveAbility activeAbility)
+                RecursiveExplore(activeAbility);
     }
-    private void RecursiveExplore(Ability ability)
+    private void RecursiveExplore(ActiveAbility ability)
     {
-        if (ability == null || allBossAbilities.Contains(ability))
+        if (ability == null || allBossActiveAbilities.Contains(ability))
             return;
         else
         {
-            allBossAbilities.Add(ability);
+            allBossActiveAbilities.Add(ability);
             if (ability is ApplyStatusEffect statusEffectAbility)
                 allBossStatusEffects.Add(statusEffectAbility.effect);
             RecursiveExplore(ability.nextAbility);
@@ -104,7 +105,7 @@ public class BossFightInitializer : MonoBehaviour
 
         Modifier difficultyModifier = new(Modifier.Type.Percentage, Modifier.Source.Aura, difficultyIncrease);
 
-        foreach(Ability ability in allBossAbilities)
+        foreach(ActiveAbility ability in allBossActiveAbilities)
             abilityModifiers.Add(new AbilityModifier(ability, Ability.Stats.damage, difficultyModifier));
 
         foreach (StatusEffect statusEffect in allBossStatusEffects)

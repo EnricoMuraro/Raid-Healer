@@ -31,19 +31,22 @@ public class BossBehaviour : ScriptableObject
                 Debug.LogWarning("No valid target for boss attack");
 
             //use abilities
-            for(int i = 0; i < bossAbilityBar.AbilitySlotsLength(); i++)
+            for(int i = 0, j = 0; i < bossAbilityBar.AbilitySlotsLength(); i++, j++)
             {
-                if (i < abilitiesTargeting.Length)
+                if(bossAbilityBar.isActiveAbility(i))
                 {
-                    int target = abilitiesTargeting[i].GetTargetIndex(raid);
-                    if (target != -1)
-                        bossAbilityBar.Activate(i, raid.Boss, target, raid);
+                    if (j < abilitiesTargeting.Length)
+                    {
+                        int target = abilitiesTargeting[j].GetTargetIndex(raid);
+                        if (target != -1)
+                            bossAbilityBar.Activate(i, raid.Boss, target, raid);
+                        else
+                            Debug.Log("No valid targets for boss ability " + i);
+                    }
                     else
-                        Debug.Log("No valid targets for boss ability " + i);
+                        Debug.LogWarning("Ability " + i + " has no target strategy");
                 }
-                else
-                    Debug.LogWarning("Ability " + i + " has no target strategy");
-                    
+                j--;
             }
         }
     }

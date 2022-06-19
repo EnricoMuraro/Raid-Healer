@@ -5,20 +5,21 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Status Effect/Ward/Demonic Ward")]
 public class DemonicWard : Ward
 {
-    public Modifier damageModifier;
+    public GameunitModifier damageModifier;
     public float manaConversionRate;
 
-    public override void StatusEffectStart(GameUnit caster, Raid raid)
+    public override void StatusEffectStart(GameUnit caster, Raid raid, int stacks)
     {
-        base.StatusEffectStart(caster, raid);
-        caster.DamageReceived.AddModifier(damageModifier);
+        base.StatusEffectStart(caster, raid, stacks);
+        damageModifier.gameUnit = caster;
+        damageModifier.ApplyModifier();
         caster.OnDamageReceived.AddListener((int damage, int damageReceived) => RestoreMana(damageReceived, raid.Player));
     }
 
-    public override void StatusEffectRemoved(GameUnit caster, Raid raid)
+    public override void StatusEffectRemoved(GameUnit caster, Raid raid, int stacks)
     {
-        base.StatusEffectEnd(caster, raid);
-        caster.DamageReceived.AddModifier(damageModifier);
+        base.StatusEffectRemoved(caster, raid, stacks);
+        damageModifier.RemoveModifier();
         caster.OnDamageReceived.RemoveListener((int damage, int damageReceived) => RestoreMana(damageReceived, raid.Player));
     }
 

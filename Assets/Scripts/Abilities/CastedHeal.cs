@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Ability/Casted Heal")]
-public class CastedHeal : Ability
+[CreateAssetMenu(menuName = "Active Ability/Casted Heal")]
+public class CastedHeal : ActiveAbility
 {
     public TargetType targetType;
     public Stat heal;

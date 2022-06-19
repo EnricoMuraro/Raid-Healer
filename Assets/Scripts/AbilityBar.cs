@@ -7,10 +7,13 @@ public class AbilityBar : MonoBehaviour
 {
     public SpellBook spellBook;
     private AbilitySlot[] abilitySlots;
-
+    private GameUnit caster;
+    private Raid raid;
     private void Awake()
     {
-        //TODO SEEK GOD
+
+        caster = GetComponentInParent<GameUnit>();
+        raid = FindObjectOfType<Raid>();
         abilitySlots = GetComponentsInChildren<AbilitySlot>();
         if (spellBook != null)
             for (int i = 0; i < abilitySlots.Length && i < spellBook.SelectedAbilities.Length; i++)
@@ -24,13 +27,20 @@ public class AbilityBar : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        foreach (AbilitySlot abilitySlot in abilitySlots)
+            if (abilitySlot.ability is PassiveAbility passiveAbility)
+                passiveAbility.Activate(caster, 0, raid);
+    }
+
     public string Activate(int slotIndex, GameUnit caster, int targetIndex, Raid raid)
     {
         if (slotIndex < abilitySlots.Length)
         {
             foreach (AbilitySlot slot in abilitySlots)
             {
-                if (slot.IsCasting())
+                if (slot.IsCastingOrChanneling())
                     return "";
             }
 
@@ -39,9 +49,20 @@ public class AbilityBar : MonoBehaviour
         return "";
     }
 
+    public void InterruptCast()
+    {
+        foreach(AbilitySlot abilitySlot in abilitySlots)
+            abilitySlot.InterruptCast();
+    }
+
     public int AbilitySlotsLength()
     {
         return abilitySlots.Length;
+    }
+
+    public bool isActiveAbility(int slotIndex)
+    {
+        return abilitySlots[slotIndex].ability is ActiveAbility;
     }
 
     //public AbilitySlot[] GetAbilitySlots()

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Ability/Smart Heal")]
-public class SmartHeal : Ability
+[CreateAssetMenu(menuName = "Active Ability/Smart Heal")]
+public class SmartHeal : ActiveAbility
 {
     public Stat heal;
     public Stat shield;

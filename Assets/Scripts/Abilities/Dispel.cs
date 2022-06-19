@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Ability/Dispel")]
-public class Dispel : Ability
+[CreateAssetMenu(menuName = "Active Ability/Dispel")]
+public class Dispel : ActiveAbility
 {
     public List<StatusEffect.Type> dispelTypes;
 

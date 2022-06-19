@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Ability/Potion")]
-public class Potion : Ability
+[CreateAssetMenu(menuName = "Active Ability/Potion")]
+public class Potion : ActiveAbility
 {
     public Stat manaRestored;
 

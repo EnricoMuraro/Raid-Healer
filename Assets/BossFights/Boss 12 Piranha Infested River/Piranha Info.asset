@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba43613b534a6142bee9338db5aa854, type: 3}
+  m_Name: Piranha Info
+  m_EditorClassIdentifier: 
+  ID: 12
+  Name: Piranha Infested River
+  Description: In hindsight you souldn't have tried crossing the river without a
+    raft
+  Difficulty: 1
+  BossUnit: {fileID: 11400000, guid: d34468a3d4403ca4c91c33f8d789ea3c, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: 55f368ab2882175459db0cd0a45e34af, type: 2}
+  BossBehaviour: {fileID: 11400000, guid: a552c783480b9bb469a94dcac2511203, type: 2}
+  Reward: {fileID: 11400000, guid: c9092d154afd2684f9f50c2265b37fcc, type: 2}
+  Auras:
+  - AffectedRole: 4
+    UnitStat: 0
+    UnitModifier:
+      type: 0
+      source: 0
+      value: 0
+  raidSize: 0

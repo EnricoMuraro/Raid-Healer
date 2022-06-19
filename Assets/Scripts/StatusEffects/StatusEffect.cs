@@ -57,29 +57,29 @@ public class StatusEffect : ScriptableObject
     }
 
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
-    public virtual void Activate(GameUnit gameUnit, Raid raid) { }
+    public virtual void Activate(GameUnit gameUnit, Raid raid, int stacks) { }
 
-    public virtual void OnDispel(GameUnit gameUnit, Raid raid) 
+    public virtual void OnDispel(GameUnit gameUnit, Raid raid, int stacks) 
     {
         if (OnDispelAbility != null)
             OnDispelAbility.Activate(gameUnit, raid.GetRaiderIndex(gameUnit), raid);
 
-        StatusEffectRemoved(gameUnit, raid);
+        StatusEffectRemoved(gameUnit, raid, stacks);
     }
 
-    public virtual void StatusEffectStart(GameUnit gameUnit, Raid raid) 
+    public virtual void StatusEffectStart(GameUnit gameUnit, Raid raid, int stacks) 
     {
         OnStatusEffectStart.Invoke();
     }
-    public virtual void StatusEffectEnd(GameUnit gameUnit, Raid raid) 
+    public virtual void StatusEffectEnd(GameUnit gameUnit, Raid raid, int stacks) 
     {
         OnStatusEffectEnd.Invoke();
         if(onEndAbility != null)
             onEndAbility.Activate(gameUnit, raid.GetRaiderIndex(gameUnit), raid);
 
-        StatusEffectRemoved(gameUnit, raid);
+        StatusEffectRemoved(gameUnit, raid, stacks);
     }
-    public virtual void StatusEffectRemoved(GameUnit gameUnit, Raid raid)
+    public virtual void StatusEffectRemoved(GameUnit gameUnit, Raid raid, int stacks)
     {
         OnStatusEffectRemoved.Invoke();
     }

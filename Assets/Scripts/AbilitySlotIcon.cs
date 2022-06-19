@@ -34,11 +34,15 @@ public class AbilitySlotIcon : MonoBehaviour
         {
             cooldownImage.sprite = abilitySlot.ability.icon;
             abilityImage.sprite = abilitySlot.ability.icon;
-            manaText.text = abilitySlot.ability.ManaCost.ToString();
-            if (abilitySlot.ability.Cooldown > 0 && abilitySlot.CurrentCooldown >= 0)
+            if (abilitySlot.ability is ActiveAbility activeAbility)
             {
-                cooldownImage.fillAmount = (abilitySlot.CurrentCooldown/abilitySlot.ability.Cooldown);
+                manaText.text = activeAbility.ManaCost.ToString();
+                if (activeAbility.Cooldown > 0 && abilitySlot.CurrentCooldown >= 0)
+                {
+                    cooldownImage.fillAmount = (abilitySlot.CurrentCooldown / activeAbility.Cooldown);
+                }
             }
+
         }
     }
 }

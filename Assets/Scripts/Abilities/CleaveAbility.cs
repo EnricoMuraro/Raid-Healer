@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "Ability/Cleave")]
-public class CleaveAbility : Ability
+[CreateAssetMenu(menuName = "Active Ability/Cleave")]
+public class CleaveAbility : ActiveAbility
 {
     public Stat damage;
     public Stat numberOfTargets;

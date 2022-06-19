@@ -12,6 +12,13 @@ public class Stat
     private bool changed = true;
     private float modifiedValue;
     
+    public Stat()
+    {
+        baseValue = 0f;
+        modifiers = new List<Modifier>();
+        changed = true;
+    }
+
     public Stat(Stat stat)
     {
         baseValue = stat.baseValue;

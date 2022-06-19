@@ -5,17 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Status Effect/Ward/Damage Reduction Ward")]
 public class DamageReductionWard : Ward
 {
-    public Modifier damageModifier;
+    public GameunitModifier damageModifier;
 
-    public override void StatusEffectStart(GameUnit caster, Raid raid)
+    public override void StatusEffectStart(GameUnit caster, Raid raid, int stacks)
     {
-        base.StatusEffectStart(caster, raid);
-        caster.DamageReceived.AddModifier(damageModifier);
+        base.StatusEffectStart(caster, raid, stacks);
+        damageModifier.gameUnit = caster;
+        damageModifier.ApplyModifier();
     }
 
-    public override void StatusEffectRemoved(GameUnit caster, Raid raid)
+    public override void StatusEffectRemoved(GameUnit caster, Raid raid, int stacks)
     {
-        base.StatusEffectEnd(caster, raid);
-        caster.DamageReceived.AddModifier(damageModifier);
+        base.StatusEffectRemoved(caster, raid, stacks);
+        damageModifier.RemoveModifier();
     }
 }

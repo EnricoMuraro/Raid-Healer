@@ -34,7 +34,7 @@ public class StatusEffectSlot : MonoBehaviour
     public void InitStatusEffect(StatusEffect statusEffect)
     {
         this.statusEffect = statusEffect;
-        this.statusEffect.StatusEffectStart(target, raid);
+        this.statusEffect.StatusEffectStart(target, raid, currentStacks);
     }    
 
     public StatusEffect GetStatusEffect()
@@ -44,12 +44,12 @@ public class StatusEffectSlot : MonoBehaviour
 
     public void Dispelled()
     {
-        statusEffect.OnDispel(target, raid);
+        statusEffect.OnDispel(target, raid, currentStacks);
     }
 
     private void OnDisable()
     {
-        statusEffect.StatusEffectRemoved(target, raid);
+        statusEffect.StatusEffectRemoved(target, raid, currentStacks);
     }
 
     // Update is called once per frame
@@ -60,7 +60,7 @@ public class StatusEffectSlot : MonoBehaviour
 
         if (currentDuration >= statusEffect.Duration)
         {
-            statusEffect.StatusEffectEnd(target, raid);
+            statusEffect.StatusEffectEnd(target, raid, currentStacks);
             OnStatusEffectFinished.Invoke(this);
             Destroy(this);
         }
@@ -69,7 +69,7 @@ public class StatusEffectSlot : MonoBehaviour
         {
             if (currentTick >= statusEffect.TickRate)
             {
-                statusEffect.Activate(target, raid);
+                statusEffect.Activate(target, raid, currentStacks);
                 currentTick = 0;
                 currentStacks++;
             }

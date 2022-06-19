@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Ability/Pierce")]
-public class Pierce : Ability
+[CreateAssetMenu(menuName = "Active Ability/Pierce")]
+public class Pierce : ActiveAbility
 {
     public Stat damage;
     public int Damage => (int)damage.Value + abilityPower;

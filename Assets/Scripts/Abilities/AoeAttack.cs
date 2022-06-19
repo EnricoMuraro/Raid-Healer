@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-[CreateAssetMenu(menuName = "Ability/Aoe Attack")]
-public class AoeAttack : Ability
+[CreateAssetMenu(menuName = "Active Ability/Aoe Attack")]
+public class AoeAttack : ActiveAbility
 {
     public Stat damage;
     public int Damage { get => (int)damage.Value + abilityPower; }

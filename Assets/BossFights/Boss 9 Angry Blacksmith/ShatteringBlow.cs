@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Ability/Bosses/Boss 9/Shattering Blow")]
-public class ShatteringBlow : Ability
+[CreateAssetMenu(menuName = "Active Ability/Bosses/Boss 9/Shattering Blow")]
+public class ShatteringBlow : ActiveAbility
 {
     public Stat damage;
     public float percentageDamage;

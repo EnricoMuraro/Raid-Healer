@@ -7,15 +7,15 @@ public class HealToBossDamage : StatusEffect
 {
     public float conversionRate;
 
-    public override void StatusEffectStart(GameUnit gameUnit, Raid raid)
+    public override void StatusEffectStart(GameUnit gameUnit, Raid raid, int stacks)
     {
-        base.StatusEffectStart(gameUnit, raid);
+        base.StatusEffectStart(gameUnit, raid, stacks);
         gameUnit.OnHealingReceived.AddListener((int heal, int overheal) => ConvertHeal(heal, overheal, gameUnit, raid));
     }
 
-    public override void StatusEffectRemoved(GameUnit gameUnit, Raid raid)
+    public override void StatusEffectRemoved(GameUnit gameUnit, Raid raid, int stacks)
     {
-        base.StatusEffectRemoved(gameUnit, raid);
+        base.StatusEffectRemoved(gameUnit, raid, stacks);
         gameUnit.OnDamageReceived.RemoveListener((int heal, int overheal) => ConvertHeal(heal, overheal, gameUnit, raid));
     }
 

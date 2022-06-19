@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-[CreateAssetMenu(menuName = "Ability/Apply Multiple Effects")]
-public class ApplyMultipleEffects : Ability
+[CreateAssetMenu(menuName = "Active Ability/Apply Multiple Effects")]
+public class ApplyMultipleEffects : ActiveAbility
 {
     public StatusEffect statusEffect;
     public int numberOfTargets;

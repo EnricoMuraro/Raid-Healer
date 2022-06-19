@@ -7,14 +7,13 @@ using System;
 [System.Serializable]
 public class AbilityModifier
 {
-    public Ability ability;
+    public ActiveAbility ability;
     public Ability.Stats statName;
     public Modifier modifier;
-    public Ability newNextAbility;
-    [SerializeField]
-    private Ability oldNextAbility = null;
+    public ActiveAbility newNextAbility;
+    private ActiveAbility oldNextAbility = null;
 
-    public AbilityModifier(Ability ability, Ability.Stats statName, Modifier modifier)
+    public AbilityModifier(ActiveAbility ability, Ability.Stats statName, Modifier modifier)
     {
         this.ability = ability;
         this.statName = statName;

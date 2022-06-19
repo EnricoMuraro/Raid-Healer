@@ -32,8 +32,8 @@ public class CastAlertScript : MonoBehaviour
         {
             (_, int col) = abilitySlot.Raid.ArrayIndexToMatrixCoords(abilitySlot.TargetIndex);
 
-            if (abilitySlot.ability is Pierce)
-                AnimateAlert(col, abilitySlot.ability.CastTime);
+            if (abilitySlot.ability is Pierce pierceAbility)
+                AnimateAlert(col, pierceAbility.CastTime);
         }
 
     }

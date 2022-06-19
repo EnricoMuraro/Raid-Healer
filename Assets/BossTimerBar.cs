@@ -22,9 +22,10 @@ public class BossTimerBar : MonoBehaviour
 
         abilitySlots = abilityBar.GetComponentsInChildren<AbilitySlot>();
         for (int i = 0; i < abilitySlots.Length; i++)
-        {   
-            if(abilitySlots[i].ability.Cooldown > 0)
-                abilitySlots[i].onCooldownStart.AddListener(AbilityTimerAnimation);
+        {
+            if (abilitySlots[i].ability is ActiveAbility activeAbility)
+                if(activeAbility.Cooldown > 0)
+                    abilitySlots[i].onCooldownStart.AddListener(AbilityTimerAnimation);
         }
     }
 

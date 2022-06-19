@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Ability/Shield")]
-public class ShieldAbility : Ability
+[CreateAssetMenu(menuName = "Active Ability/Shield")]
+public class ShieldAbility : ActiveAbility
 {
     public Stat shield;
     public int Shield => (int)shield.Value;

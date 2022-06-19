@@ -5,13 +5,9 @@ using UnityEngine;
 public class Ward : StatusEffect
 {
 
-    public override void Activate(GameUnit gameUnit, Raid raid)
+    public override void StatusEffectStart(GameUnit gameUnit, Raid raid, int stacks)
     {
-        base.Activate(gameUnit, raid);
-        //Remove any other ward currently active in the raid
-        foreach(GameUnit raider in raid.raiders)
-            foreach(StatusEffect statusEffect in raider.GetStatusEffects())
-                if(statusEffect is Ward)
-                    raider.RemoveStatusEffect(statusEffect);
+        base.StatusEffectStart(gameUnit, raid, stacks);
+
     }
 }

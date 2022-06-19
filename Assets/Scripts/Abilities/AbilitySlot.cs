@@ -17,6 +17,8 @@ public class AbilitySlot : MonoBehaviour
 
     private float currentCooldown;
     private float currentCastTime;
+    private float currentChannelDuration;
+    private float currentTick;
 
     private AbilityState state = AbilityState.ready;
 
@@ -51,44 +53,61 @@ public class AbilitySlot : MonoBehaviour
     {
         ready,
         casting,
+        channeling,
         cooldown
     }
 
 
-    public bool IsCasting()
+    public bool IsCastingOrChanneling()
     {
-        return State == AbilityState.casting;
+        return (State == AbilityState.casting || State == AbilityState.channeling);
     }
 
     public string Activate(GameUnit caster, int targetIndex, Raid raid)
     {
-        if (ability != null && caster.Mana < ability.ManaCost)
-            return "Not enough mana";
-        if (raid.raiders[targetIndex].IsDead())
-            return "You can't cast on a dead target";
-
-        if(ability != null && State == AbilityState.ready && !caster.IsDead())
+        if (ability != null)
         {
-            this.caster = caster;
-            this.targetIndex = targetIndex;
-            this.raid = raid;
-            State = AbilityState.casting;
-            currentCastTime = 0;
-
-            if(castBar != null)
+            if (ability is ActiveAbility activeAbility)
             {
-                castBar.displayValues = false;
-                castBar.SetText(ability.name);
+                if (caster.Mana < activeAbility.ManaCost)
+                    return "Not enough mana";
+                if (raid.raiders[targetIndex].IsDead())
+                    return "You can't cast on a dead target";
+
+                if (State == AbilityState.ready && !caster.IsDead())
+                {
+                    this.caster = caster;
+                    this.targetIndex = targetIndex;
+                    this.raid = raid;
+                    State = AbilityState.casting;
+                    currentCastTime = 0;
+
+                    if (castBar != null)
+                    {
+                        castBar.displayValues = false;
+                        castBar.SetText(ability.name);
+                    }
+                }
             }
         }
+
         return "";
     }
 
     public void InterruptCast()
     {
-        if(State == AbilityState.casting)
+        if(ability is ActiveAbility activeAbility)
         {
-            State = AbilityState.ready;
+            if(State == AbilityState.casting)
+                State = AbilityState.ready;
+
+            if(State == AbilityState.channeling)
+            {
+                State = AbilityState.cooldown;
+                currentCooldown = activeAbility.Cooldown;
+                onCooldownStart.Invoke(this);
+            }
+
             if (castBar != null)
                 castBar.gameObject.SetActive(false);
         }
@@ -97,42 +116,82 @@ public class AbilitySlot : MonoBehaviour
 
     private void Update()
     {
-        switch (State)
-        {
-            case AbilityState.casting:
-                if (currentCastTime <= ability.CastTime)
-                {
-                    currentCastTime += Time.deltaTime;
-                    if(castBar != null && ability.CastTime > 0) 
+        if(ability is ActiveAbility activeAbility)
+            switch (State)
+            {
+                case AbilityState.casting:
+                    if (currentCastTime <= activeAbility.CastTime)
                     {
-                        castBar.gameObject.SetActive(true);
-                        castBar.SetMaxValue(ability.CastTime);
-                        castBar.SetValue(currentCastTime);
+                        currentCastTime += Time.deltaTime;
+                        if(castBar != null && activeAbility.CastTime > 0) 
+                        {
+                            castBar.gameObject.SetActive(true);
+                            castBar.SetMaxValue(activeAbility.CastTime);
+                            castBar.SetValue(currentCastTime);
+                        }
                     }
-                }
-                else
-                {
-                    ability.Activate(caster, targetIndex, raid);
-                    State = AbilityState.cooldown;
-                    currentCooldown = ability.Cooldown;
-                    onCooldownStart.Invoke(this);
+                    else
+                    {
+                        ability.Activate(caster, targetIndex, raid);
+                        if (ability is Channel)
+                        {
+                            State = AbilityState.channeling;
+                            currentChannelDuration = 0;
+                            currentTick = 0;
 
-                    if (castBar != null)
-                        castBar.gameObject.SetActive(false);
-                }
-                break;
+                        }    
+                        else
+                        {
+                            State = AbilityState.cooldown;
+                            currentCooldown = activeAbility.Cooldown;
+                            onCooldownStart.Invoke(this);
 
-            case AbilityState.cooldown: 
-                if (currentCooldown > 0)
-                {
-                    currentCooldown -= Time.deltaTime;
-                }
-                else
-                {
-                    State = AbilityState.ready;
-                    currentCooldown = 0;
-                }
-                break;
-        }
+                            if (castBar != null)
+                                castBar.gameObject.SetActive(false);
+                        }
+
+                    }
+                    break;
+
+                case AbilityState.channeling:
+                    Channel channeledAbility = ability as Channel;
+                    currentChannelDuration += Time.deltaTime;
+                    currentTick += Time.deltaTime;
+
+                    castBar.gameObject.SetActive(true);
+                    castBar.SetMaxValue(channeledAbility.Duration);
+                    castBar.SetValue(channeledAbility.Duration - currentChannelDuration);
+
+                    if (currentChannelDuration >= channeledAbility.Duration)
+                    {
+                        State = AbilityState.cooldown;
+                        currentCooldown = activeAbility.Cooldown;
+                        onCooldownStart.Invoke(this);
+                        if (castBar != null)
+                            castBar.gameObject.SetActive(false);
+                    }
+
+                    if (channeledAbility.TickRate > 0)
+                    {
+                        if (currentTick >= channeledAbility.TickRate)
+                        {
+                            channeledAbility.Tick(caster, targetIndex, raid);
+                            currentTick = 0;
+                        }
+                    }
+                    break;
+
+                case AbilityState.cooldown: 
+                    if (currentCooldown > 0)
+                    {
+                        currentCooldown -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        State = AbilityState.ready;
+                        currentCooldown = 0;
+                    }
+                    break;
+            }
     }
 }
