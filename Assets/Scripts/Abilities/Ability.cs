@@ -12,7 +12,9 @@ public class Ability : ScriptableObject
     public string description;
     public Sprite icon;
 
+    public float abilityScaling;
     protected int abilityPower;
+
 
     public enum Stats
     {

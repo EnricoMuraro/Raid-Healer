@@ -23,7 +23,10 @@ MonoBehaviour:
     modifiers: []
   manaRegenRate:
     baseValue: 5
-    modifiers: []
+    modifiers:
+    - type: 0
+      source: 0
+      value: 10
   damage:
     baseValue: 0
     modifiers: []
@@ -31,6 +34,15 @@ MonoBehaviour:
     baseValue: 0
     modifiers: []
   abilityPower:
+    baseValue: 0
+    modifiers:
+    - type: 1
+      source: 0
+      value: 5
+  manaEfficiency:
+    baseValue: 0
+    modifiers: []
+  damageReceived:
     baseValue: 0
     modifiers: []
   role: 3

@@ -6,9 +6,6 @@ using UnityEngine;
 public class ChanneledAttack : Channel
 {
 
-    public Stat damage;
-    public int Damage => (int)damage.Value;
-
     public Pattern targetPattern;
     public int size;
 

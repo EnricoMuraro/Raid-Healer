@@ -6,9 +6,6 @@ using System.Linq;
 [CreateAssetMenu(menuName = "Active Ability/Aoe Attack")]
 public class AoeAttack : ActiveAbility
 {
-    public Stat damage;
-    public int Damage { get => (int)damage.Value + abilityPower; }
-
 
     public Pattern attackPattern;
     public int size;

@@ -6,10 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Active Ability/Smart Heal")]
 public class SmartHeal : ActiveAbility
 {
-    public Stat heal;
     public Stat shield;
     public Stat numberOfTargets;
-    public int Heal => (int)heal.Value;
     public int Shield => (int)shield.Value;
     public int NumberOfTargets => (int)numberOfTargets.Value;
 

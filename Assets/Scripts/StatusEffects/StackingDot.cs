@@ -5,15 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Status Effect/Stacking Dot")]
 public class StackingDot : StatusEffect
 {
-    public Stat damage;
-
-    public int Damage { get => (int)damage.Value; }
 
     public int DmgIncreasePerStack;
 
-    public override void Activate(GameUnit gameUnit, Raid raid, int stacks)
+    public override void Activate(GameUnit caster, GameUnit gameUnit, Raid raid, int stacks)
     {
-        base.Activate(gameUnit, raid, stacks);
+        base.Activate(caster, gameUnit, raid, stacks);
         gameUnit.ReceiveDamage(Damage * DmgIncreasePerStack * stacks);
     }
 }

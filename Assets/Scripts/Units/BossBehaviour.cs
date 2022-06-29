@@ -18,7 +18,7 @@ public class BossBehaviour : ScriptableObject
         this.raid = raid;
         this.bossAbilityBar = abilityBar;
     }
-
+    
     public virtual void OnUpdate() 
     {
         if(raid.Boss.IsDead() == false)
@@ -39,14 +39,19 @@ public class BossBehaviour : ScriptableObject
                     {
                         int target = abilitiesTargeting[j].GetTargetIndex(raid);
                         if (target != -1)
-                            bossAbilityBar.Activate(i, raid.Boss, target, raid);
+                        {
+                            string result = bossAbilityBar.Activate(i, raid.Boss, target, raid);
+                            if (result == "")
+                                abilitiesTargeting[j].lastTargets.Add(target);
+                        }
                         else
                             Debug.Log("No valid targets for boss ability " + i);
                     }
                     else
                         Debug.LogWarning("Ability " + i + " has no target strategy");
                 }
-                j--;
+                else
+                    j--;
             }
         }
     }
@@ -58,6 +63,8 @@ public class TargetStrategy
     public Strategy strategy;
     public List<Unit.Role> RolesBlacklist;
 
+    [HideInInspector]
+    public List<int> lastTargets = new();
     private List<GameUnit> possibleTargets = new();
 
     public enum Strategy
@@ -99,8 +106,8 @@ public class TargetStrategy
             case Strategy.randomAvoidRepeat:
                 {
                     GameUnit target = null;
-                    if(possibleTargets.Count == 0)
-                        possibleTargets = raid.raiders.Where(filter).ToList();
+                    //make sure the target is not one of the last (raiders.length/2) targets
+                    possibleTargets = raid.raiders.Where(x => filter(x) && !lastTargets.TakeLast(raid.raiders.Length / 2).Contains(raid.GetRaiderIndex(x))).ToList();
 
                     if(possibleTargets.Count > 0)
                     {

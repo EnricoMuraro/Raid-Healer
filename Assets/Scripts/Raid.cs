@@ -89,6 +89,8 @@ public class Raid : MonoBehaviour
         return targets;
     }
 
+
+
     public List<GameUnit> GetRandomRow(bool atLeastOneAlive = true)
     {
         List<int> rows = new();

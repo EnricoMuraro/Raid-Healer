@@ -16,11 +16,22 @@ MonoBehaviour:
   name: Bandage
   description: Remove one physical status effect on the target
   icon: {fileID: 21300000, guid: 4d0d2d65686866548942e8ab85646a6e, type: 3}
+  abilityScaling: 1
   cooldown:
     baseValue: 8
+    modifiers: []
   castTime:
     baseValue: 0
+    modifiers: []
   manaCost:
     baseValue: 150
+    modifiers: []
+  heal:
+    baseValue: 0
+    modifiers: []
+  damage:
+    baseValue: 0
+    modifiers: []
+  nextAbility: {fileID: 0}
   dispelTypes: 01000000
   dispelAll: 0

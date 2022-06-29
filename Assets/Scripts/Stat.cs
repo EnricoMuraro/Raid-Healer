@@ -31,8 +31,8 @@ public class Stat
     { 
         get
         {
-            //if (changed)
-            modifiedValue = CalculateModifiedValue();
+            if (changed)
+                modifiedValue = CalculateModifiedValue();
             
             return modifiedValue;
         }

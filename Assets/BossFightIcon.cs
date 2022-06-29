@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BossFightIcon : MonoBehaviour
 {
     public BossFightInfo bossFightInfo;
+    public BossStarLock RequiredStarsLock;
     public BossFightIcon[] previousBosses;
 
     public Image BossIcon;
@@ -42,6 +43,9 @@ public class BossFightIcon : MonoBehaviour
     public bool IsLocked()
     {
         bool locked = false;
+        if (RequiredStarsLock != null && !RequiredStarsLock.Unlocked)
+            locked = true;
+
         foreach(BossFightIcon boss in previousBosses)
             if (boss.GetCompletedFlag() == false)
                 locked = true;
@@ -52,14 +56,7 @@ public class BossFightIcon : MonoBehaviour
     {
         completedFlag = completed;
         SetStarsIcon(stars);
-        if (completedFlag)
-        {
-            BossIcon.color = CompletedColor;
-        }
-        else
-        {
-            BossIcon.color = UncompletedColor;
-        }
+
 
 
     }
@@ -110,6 +107,11 @@ public class BossFightIcon : MonoBehaviour
         }
         else
         {
+            if (completedFlag)
+                BossIcon.color = CompletedColor;
+            else
+                BossIcon.color = UncompletedColor;
+
             IconButton.enabled = true;
         }
     }

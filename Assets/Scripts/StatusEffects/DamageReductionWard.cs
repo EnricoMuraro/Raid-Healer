@@ -7,16 +7,16 @@ public class DamageReductionWard : Ward
 {
     public GameunitModifier damageModifier;
 
-    public override void StatusEffectStart(GameUnit caster, Raid raid, int stacks)
+    public override void StatusEffectStart(GameUnit caster, GameUnit target, Raid raid, int stacks)
     {
-        base.StatusEffectStart(caster, raid, stacks);
-        damageModifier.gameUnit = caster;
+        base.StatusEffectStart(caster, target, raid, stacks);
+        damageModifier.gameUnit = target;
         damageModifier.ApplyModifier();
     }
 
-    public override void StatusEffectRemoved(GameUnit caster, Raid raid, int stacks)
+    public override void StatusEffectRemoved(GameUnit caster, GameUnit target, Raid raid, int stacks)
     {
-        base.StatusEffectRemoved(caster, raid, stacks);
+        base.StatusEffectRemoved(caster, target, raid, stacks);
         damageModifier.RemoveModifier();
     }
 }

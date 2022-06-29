@@ -15,7 +15,7 @@ public class ApplyStatusEffect : ActiveAbility
         effect.caster = caster;
 
         if (SelfApply)
-            caster.AddStatusEffect(effect);
+            caster.AddStatusEffect(effect, caster);
         else
         {
 
@@ -26,7 +26,7 @@ public class ApplyStatusEffect : ActiveAbility
                         if (statusEffect is Ward)
                             raider.RemoveStatusEffect(statusEffect);
 
-            raid.raiders[targetIndex].AddStatusEffect(effect);
+            raid.raiders[targetIndex].AddStatusEffect(effect, caster);
         }
     }
 }

@@ -5,8 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Active Ability/Pierce")]
 public class Pierce : ActiveAbility
 {
-    public Stat damage;
-    public int Damage => (int)damage.Value + abilityPower;
 
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {

@@ -17,6 +17,7 @@ MonoBehaviour:
   description: Instant cast spell that heals all the raiders in the same column of
     the target, fairly expensive
   icon: {fileID: 21300000, guid: 8fe5efa8cdd999644a20bdc6b77d1d36, type: 3}
+  abilityScaling: 1
   cooldown:
     baseValue: 6
     modifiers: []
@@ -32,5 +33,5 @@ MonoBehaviour:
   damage:
     baseValue: 0
     modifiers: []
-  statusEffect: {fileID: 0}
+  nextAbility: {fileID: 0}
   targetType: 2

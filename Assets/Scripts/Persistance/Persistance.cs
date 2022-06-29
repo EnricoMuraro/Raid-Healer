@@ -65,6 +65,7 @@ public static class Persistance
         {
             newEntry = true;
             bossEntry = new BossFightEntry(bossFightID, starsEarned);
+            currentProgress = currentProgress.Append(bossEntry).ToArray();
         }
         else
         {
@@ -72,9 +73,9 @@ public static class Persistance
                 bossEntry.stars = Mathf.Max(bossEntry.stars, starsEarned);
             else
                 bossEntry.stars = starsEarned;
+
         }
 
-        currentProgress = currentProgress.Append(bossEntry).ToArray();
         SaveBossProgress(currentProgress);
         return newEntry;
     }

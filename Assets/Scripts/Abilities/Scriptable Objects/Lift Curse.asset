@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Lift Curse
   description: Remove one curse status effect on the target
   icon: {fileID: 21300000, guid: 52abad5c81dda7c41901e01e4e7ad720, type: 3}
+  abilityScaling: 1
   cooldown:
     baseValue: 8
     modifiers: []
@@ -24,6 +25,12 @@ MonoBehaviour:
     modifiers: []
   manaCost:
     baseValue: 75
+    modifiers: []
+  heal:
+    baseValue: 0
+    modifiers: []
+  damage:
+    baseValue: 0
     modifiers: []
   nextAbility: {fileID: 0}
   dispelTypes: 02000000

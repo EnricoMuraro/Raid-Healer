@@ -17,6 +17,12 @@ public class StatusEffect : ScriptableObject
     public bool showStacks;
     public Stat duration;
     public Stat tickRate;
+
+    public Stat heal;
+    public Stat damage;
+
+    public float abilityScaling;
+
     public Ability onEndAbility;
     public Ability OnDispelAbility;
     
@@ -28,6 +34,25 @@ public class StatusEffect : ScriptableObject
 
     public float Duration { get => duration.Value; }
     public float TickRate { get => tickRate.Value; }
+    public int Heal
+    {
+        get
+        {
+            if (abilityScaling <= 0)
+                abilityScaling = 1;
+            return (int)(heal.Value + caster.AbilityPower * abilityScaling);
+        }
+    }
+
+    public int Damage
+    {
+        get
+        {
+            if (abilityScaling <= 0)
+                abilityScaling = 1;
+            return (int)(damage.Value + caster.AbilityPower * abilityScaling);
+        }
+    }
 
     public enum ActivationMode
     {
@@ -57,29 +82,29 @@ public class StatusEffect : ScriptableObject
     }
 
     private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
-    public virtual void Activate(GameUnit gameUnit, Raid raid, int stacks) { }
+    public virtual void Activate(GameUnit caster, GameUnit gameUnit, Raid raid, int stacks) { }
 
-    public virtual void OnDispel(GameUnit gameUnit, Raid raid, int stacks) 
+    public virtual void OnDispel(GameUnit caster, GameUnit gameUnit, Raid raid, int stacks) 
     {
         if (OnDispelAbility != null)
             OnDispelAbility.Activate(gameUnit, raid.GetRaiderIndex(gameUnit), raid);
 
-        StatusEffectRemoved(gameUnit, raid, stacks);
+        StatusEffectRemoved(caster, gameUnit, raid, stacks);
     }
 
-    public virtual void StatusEffectStart(GameUnit gameUnit, Raid raid, int stacks) 
+    public virtual void StatusEffectStart(GameUnit caster, GameUnit gameUnit, Raid raid, int stacks) 
     {
         OnStatusEffectStart.Invoke();
     }
-    public virtual void StatusEffectEnd(GameUnit gameUnit, Raid raid, int stacks) 
+    public virtual void StatusEffectEnd(GameUnit caster, GameUnit gameUnit, Raid raid, int stacks) 
     {
         OnStatusEffectEnd.Invoke();
         if(onEndAbility != null)
             onEndAbility.Activate(gameUnit, raid.GetRaiderIndex(gameUnit), raid);
 
-        StatusEffectRemoved(gameUnit, raid, stacks);
+        StatusEffectRemoved(caster, gameUnit, raid, stacks);
     }
-    public virtual void StatusEffectRemoved(GameUnit gameUnit, Raid raid, int stacks)
+    public virtual void StatusEffectRemoved(GameUnit caster, GameUnit gameUnit, Raid raid, int stacks)
     {
         OnStatusEffectRemoved.Invoke();
     }

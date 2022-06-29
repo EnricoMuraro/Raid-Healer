@@ -25,7 +25,7 @@ public class ApplyMultipleEffects : ActiveAbility
         }
 
         foreach(GameUnit target in targets)
-            target.AddStatusEffect(statusEffect);
+            target.AddStatusEffect(statusEffect, caster);
 
     }
 

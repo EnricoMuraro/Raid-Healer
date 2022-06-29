@@ -22,6 +22,7 @@ public class UnitHealthBar : MonoBehaviour
         unit.OnStatusEffectAdded.AddListener(AddStatusEffectIcon);
         progressBar.SetMaxValue(unit.MaxHealth);
         progressBar.SetValue(unit.Health);
+
     }
 
     private void Update()
@@ -40,6 +41,8 @@ public class UnitHealthBar : MonoBehaviour
         }
 
     }
+
+    
 
     private void UpdateHealthBar(int difference)
     {

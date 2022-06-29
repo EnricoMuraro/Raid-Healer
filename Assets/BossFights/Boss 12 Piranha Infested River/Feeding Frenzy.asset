@@ -34,7 +34,7 @@ MonoBehaviour:
     baseValue: 4
     modifiers: []
   damage:
-    baseValue: 20
+    baseValue: 10
     modifiers: []
   targetPattern: 0
   size: 0

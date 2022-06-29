@@ -5,8 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Active Ability/Channeled Heal")]
 public class ChanneledHeal : Channel
 {
-    public Stat heal;
-    public int Heal { get => (int)heal.Value + abilityPower; }
 
     public Pattern targetPattern;
     public int size;

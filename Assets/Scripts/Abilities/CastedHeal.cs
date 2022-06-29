@@ -6,10 +6,6 @@ using UnityEngine;
 public class CastedHeal : ActiveAbility
 {
     public TargetType targetType;
-    public Stat heal;
-
-    public int Heal => (int)heal.Value;
-
     public enum TargetType
     {
         single,

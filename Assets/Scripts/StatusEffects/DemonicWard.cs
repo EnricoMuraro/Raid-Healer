@@ -7,20 +7,20 @@ public class DemonicWard : Ward
 {
     public GameunitModifier damageModifier;
     public float manaConversionRate;
-
-    public override void StatusEffectStart(GameUnit caster, Raid raid, int stacks)
+    
+    public override void StatusEffectStart(GameUnit caster, GameUnit target, Raid raid, int stacks)
     {
-        base.StatusEffectStart(caster, raid, stacks);
-        damageModifier.gameUnit = caster;
+        base.StatusEffectStart(caster, target, raid, stacks);
+        damageModifier.gameUnit = target;
         damageModifier.ApplyModifier();
-        caster.OnDamageReceived.AddListener((int damage, int damageReceived) => RestoreMana(damageReceived, raid.Player));
+        target.OnDamageReceived.AddListener((int damage, int damageReceived) => RestoreMana(damageReceived, raid.Player));
     }
 
-    public override void StatusEffectRemoved(GameUnit caster, Raid raid, int stacks)
+    public override void StatusEffectRemoved(GameUnit caster, GameUnit target, Raid raid, int stacks)
     {
-        base.StatusEffectRemoved(caster, raid, stacks);
+        base.StatusEffectRemoved(caster, target, raid, stacks);
         damageModifier.RemoveModifier();
-        caster.OnDamageReceived.RemoveListener((int damage, int damageReceived) => RestoreMana(damageReceived, raid.Player));
+        target.OnDamageReceived.RemoveListener((int damage, int damageReceived) => RestoreMana(damageReceived, raid.Player));
     }
 
     private void RestoreMana(int damage, GameUnit target)

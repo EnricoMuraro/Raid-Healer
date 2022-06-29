@@ -41,12 +41,12 @@ public class AbilityBar : MonoBehaviour
             foreach (AbilitySlot slot in abilitySlots)
             {
                 if (slot.IsCastingOrChanneling())
-                    return "";
+                    return "Already casting or channeling";
             }
 
             return abilitySlots[slotIndex].Activate(caster, targetIndex, raid);
         }
-        return "";
+        return "Ability slot index " + slotIndex + " is out of range";
     }
 
     public void InterruptCast()
@@ -63,6 +63,11 @@ public class AbilityBar : MonoBehaviour
     public bool isActiveAbility(int slotIndex)
     {
         return abilitySlots[slotIndex].ability is ActiveAbility;
+    }
+
+    public bool isOnCooldown(int slotIndex)
+    {
+        return abilitySlots[slotIndex].CurrentCooldown > 0;
     }
 
     //public AbilitySlot[] GetAbilitySlots()

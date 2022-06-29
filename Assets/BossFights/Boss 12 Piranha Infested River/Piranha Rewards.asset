@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Piranha Rewards
   m_EditorClassIdentifier: 
   talentPointRewards:
-  - talentPanel: 3
+  - talentPanel: 4
     talentPoints: 1
   abilityRewards: []

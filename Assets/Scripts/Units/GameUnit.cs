@@ -142,17 +142,17 @@ public class GameUnit : MonoBehaviour
         return effects;
     }
 
-    public void AddStatusEffect(StatusEffect statusEffect)
+    public void AddStatusEffect(StatusEffect statusEffect, GameUnit caster)
     {
         if(!IsDead())
         {
             if (statusEffect.activationMode == StatusEffect.ActivationMode.replace)
                 RemoveStatusEffect(statusEffect);
-
+            
             AddToCache(statusEffect);
             
             StatusEffectSlot statusEffectSlot = gameObject.AddComponent<StatusEffectSlot>();
-            statusEffectSlot.InitStatusEffect(statusEffect);
+            statusEffectSlot.InitStatusEffect(statusEffect, caster);
             OnStatusEffectAdded?.Invoke(statusEffectSlot);
             statusEffectSlot.OnStatusEffectFinished.AddListener(statusSlot => RemoveFromCache(statusSlot.GetStatusEffect()));
         }
@@ -211,7 +211,7 @@ public class GameUnit : MonoBehaviour
 
     public void Heal(GameUnit target, int amount)
     {
-        int newAmount = amount + AbilityPower;
+        int newAmount = amount;
         int overheal = target.ReceiveHeal(newAmount);
         OnHealingDone.Invoke(target, newAmount, overheal);
     }

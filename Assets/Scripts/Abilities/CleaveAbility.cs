@@ -6,9 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Active Ability/Cleave")]
 public class CleaveAbility : ActiveAbility
 {
-    public Stat damage;
     public Stat numberOfTargets;
-    public int Damage { get => (int)damage.Value + abilityPower; }
     public int NumberOfTargets { get => (int)numberOfTargets.Value; }
     public override void Activate(GameUnit caster, int targetIndex, Raid raid)
     {

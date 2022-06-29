@@ -14,13 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultAbilities:
   - {fileID: 11400000, guid: 81f00a1dc3a58af4894bde16775a639d, type: 2}
-  - {fileID: 11400000, guid: 3a6cb141cda516d46a2b65c17eff145a, type: 2}
   selectedAbilities:
   - {fileID: 11400000, guid: 81f00a1dc3a58af4894bde16775a639d, type: 2}
-  - {fileID: 11400000, guid: 3a6cb141cda516d46a2b65c17eff145a, type: 2}
   - {fileID: 11400000, guid: 289d3c21bed85694589e17ae0d569f6a, type: 2}
-  - {fileID: 11400000, guid: 7f3f558721006f5528f16925fd696bb1, type: 2}
-  - {fileID: 11400000, guid: de4574c3cc49cb54690cc5fc4004cdce, type: 2}
+  - {fileID: 11400000, guid: 960a52c8d80b2f44b8400a5b75e912b7, type: 2}
+  - {fileID: 11400000, guid: 279c3cbf34578144294bfbb0da4e5b94, type: 2}
+  - {fileID: 11400000, guid: ec9f446e54596d74fa8c21b391ffa154, type: 2}
   onSelectedChange:
     m_PersistentCalls:
       m_Calls: []

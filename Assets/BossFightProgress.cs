@@ -6,6 +6,7 @@ public class BossFightProgress : MonoBehaviour
 {
     private static BossFightIcon[] bossFightIcons;
     public static Dictionary<int, string> fightSceneNames = new();
+    public static int TotalStars;
 
     private void Awake()
     {
@@ -38,8 +39,12 @@ public class BossFightProgress : MonoBehaviour
 
     public void SetProgress(BossFightEntry[] completedFights)
     {
+        TotalStars = 0;
         foreach (BossFightEntry completedFight in completedFights)
+        {
             GetBossFightByID(completedFight.ID).SetCompletedFlag(true, completedFight.stars);
+            TotalStars += completedFight.stars;
+        }
     }
 
     public static List<BossReward> GetCompletedFightsRewards()

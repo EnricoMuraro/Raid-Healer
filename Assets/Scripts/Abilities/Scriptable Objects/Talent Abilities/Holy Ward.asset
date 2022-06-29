@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1013
   name: Holy Ward
-  description: Gives the target a Holy Ward that reduces all damage taken by 15%,
+  description: Gives the target a Holy Ward that reduces all damage taken by 25%,
     lasts 2 minutes.
   icon: {fileID: 21300000, guid: 7810b34fe985d924c89eef0414190c0c, type: 3}
   cooldown:
-    baseValue: 0
+    baseValue: 1
     modifiers: []
   castTime:
     baseValue: 0

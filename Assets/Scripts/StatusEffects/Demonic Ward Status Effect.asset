@@ -19,14 +19,15 @@ MonoBehaviour:
   type: 0
   statuses: 
   DispelImmune: 1
-  onEndAbility: {fileID: 0}
-  OnDispelAbility: {fileID: 0}
+  showStacks: 0
   duration:
-    baseValue: 0
+    baseValue: 120
     modifiers: []
   tickRate:
     baseValue: 0
     modifiers: []
+  onEndAbility: {fileID: 0}
+  OnDispelAbility: {fileID: 0}
   caster: {fileID: 0}
   OnStatusEffectStart:
     m_PersistentCalls:
@@ -38,7 +39,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   damageModifier:
-    type: 0
-    source: 1
-    value: 15
-  manaConversionRate: 0.05
+    gameUnit: {fileID: 0}
+    statName: 8
+    modifier:
+      type: 0
+      source: 0
+      value: 20
+  manaConversionRate: 0.1

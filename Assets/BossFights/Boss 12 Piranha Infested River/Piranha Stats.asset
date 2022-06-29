@@ -25,10 +25,10 @@ MonoBehaviour:
     baseValue: 0
     modifiers: []
   damage:
-    baseValue: 5
+    baseValue: 10
     modifiers: []
   attackFrequency:
-    baseValue: 0.5
+    baseValue: 0.2
     modifiers: []
   abilityPower:
     baseValue: 0

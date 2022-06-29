@@ -17,12 +17,23 @@ MonoBehaviour:
   description: Shield the target from incoming damage. Absorbs a small amount of
     damage before breaking
   icon: {fileID: 21300000, guid: 59cda8be5c18b634e9a2ca3bbc60b622, type: 3}
+  abilityScaling: 1
   cooldown:
     baseValue: 12
+    modifiers: []
   castTime:
     baseValue: 1.5
+    modifiers: []
   manaCost:
     baseValue: 85
+    modifiers: []
+  heal:
+    baseValue: 0
+    modifiers: []
+  damage:
+    baseValue: 0
+    modifiers: []
   nextAbility: {fileID: 0}
   shield:
     baseValue: 200
+    modifiers: []
