@@ -21,6 +21,8 @@ public class BossStarLock : MonoBehaviour
         starText = GetComponentInChildren<TextMeshProUGUI>();
 
         starLockUnlocked = PlayerPrefs.HasKey("StarLock1");
+        if (starLockUnlocked)
+            gameObject.SetActive(false);
     }
 
     private void Start()

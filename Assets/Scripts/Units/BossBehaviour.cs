@@ -51,7 +51,9 @@ public class BossBehaviour : ScriptableObject
                         Debug.LogWarning("Ability " + i + " has no target strategy");
                 }
                 else
+                {
                     j--;
+                }
             }
         }
     }

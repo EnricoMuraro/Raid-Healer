@@ -75,6 +75,8 @@ public class PassiveAbility : Ability
         {
             float statValue = 0;
             float statValueMax = 1;
+            float compareValue = 0;
+            float percent = 1;
 
             switch(stat)
             {
@@ -84,19 +86,17 @@ public class PassiveAbility : Ability
             
             switch(valueType)
             {
-                case ValueType.percentage: statValue /= 100; break;
-                case ValueType.flat: statValueMax = 1; break;
+                case ValueType.percentage: compareValue = statValue/statValueMax; percent = 100; break;
+                case ValueType.flat: compareValue = statValue; break;
             }
-
-            if(valueType == ValueType.flat)
 
             switch(comparisonOperator)
             {
-                case Operator.less: return statValue/statValueMax < value;
-                case Operator.greater: return statValue/statValueMax > value;
-                case Operator.lessOrEqual: return statValue/statValueMax <= value;
-                case Operator.greaterOrEqual: return statValue/statValueMax >= value;
-                case Operator.equal: return statValue/statValueMax == value;
+                case Operator.less: return compareValue < value / percent;
+                case Operator.greater: return compareValue > value / percent;
+                case Operator.lessOrEqual: return compareValue <= value / percent;
+                case Operator.greaterOrEqual: return compareValue >= value / percent;
+                case Operator.equal: return compareValue == value / percent;
             }
 
             return false;
