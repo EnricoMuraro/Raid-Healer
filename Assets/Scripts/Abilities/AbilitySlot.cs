@@ -87,11 +87,13 @@ public class AbilitySlot : MonoBehaviour
                         castBar.displayValues = false;
                         castBar.SetText(ability.name);
                     }
+                    return "";
                 }
+                return "Ability is not ready";
             }
+            return "Ability is passive";
         }
-
-        return "";
+        return "Ability is null";
     }
 
     public void InterruptCast()

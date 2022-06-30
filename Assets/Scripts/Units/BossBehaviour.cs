@@ -17,6 +17,8 @@ public class BossBehaviour : ScriptableObject
     {
         this.raid = raid;
         this.bossAbilityBar = abilityBar;
+        foreach(TargetStrategy targeting in abilitiesTargeting)
+            targeting.lastTargets = new();
     }
     
     public virtual void OnUpdate() 
@@ -64,7 +66,6 @@ public class TargetStrategy
 {
     public Strategy strategy;
     public List<Unit.Role> RolesBlacklist;
-
     [HideInInspector]
     public List<int> lastTargets = new();
     private List<GameUnit> possibleTargets = new();
@@ -108,8 +109,8 @@ public class TargetStrategy
             case Strategy.randomAvoidRepeat:
                 {
                     GameUnit target = null;
-                    //make sure the target is not one of the last (raiders.length/2) targets
-                    possibleTargets = raid.raiders.Where(x => filter(x) && !lastTargets.TakeLast(raid.raiders.Length / 2).Contains(raid.GetRaiderIndex(x))).ToList();
+                    //make sure the target is not one of the last (raiders.length-1) targets
+                    possibleTargets = raid.raiders.Where(x => filter(x) && !lastTargets.TakeLast(raid.raiders.Length - 1).Contains(raid.GetRaiderIndex(x))).ToList();
 
                     if(possibleTargets.Count > 0)
                     {
