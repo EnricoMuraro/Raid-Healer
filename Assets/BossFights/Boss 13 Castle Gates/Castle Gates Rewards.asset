@@ -10,11 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf589a11e6ae1d742b8ccd857046eedb, type: 3}
-  m_Name: Piranha Rewards
+  m_Name: Castle Gates Rewards
   m_EditorClassIdentifier: 
-  talentPointRewards:
-  - talentPanel: 3
-    talentPoints: 1
-  - talentPanel: 4
-    talentPoints: 1
+  talentPointRewards: []
   abilityRewards: []

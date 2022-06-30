@@ -9,12 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf589a11e6ae1d742b8ccd857046eedb, type: 3}
-  m_Name: Piranha Rewards
+  m_Script: {fileID: 11500000, guid: 8ba43613b534a6142bee9338db5aa854, type: 3}
+  m_Name: Castle Gates Info
   m_EditorClassIdentifier: 
-  talentPointRewards:
-  - talentPanel: 3
-    talentPoints: 1
-  - talentPanel: 4
-    talentPoints: 1
-  abilityRewards: []
+  ID: 13
+  Name: 
+  Description: 
+  Difficulty: 0
+  BossUnit: {fileID: 0}
+  Abilities: []
+  BossBehaviour: {fileID: 0}
+  Reward: {fileID: 0}
+  Auras: []
+  raidSize: 0

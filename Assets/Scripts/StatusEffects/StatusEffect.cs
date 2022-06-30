@@ -40,7 +40,7 @@ public class StatusEffect : ScriptableObject
         {
             if (abilityScaling <= 0)
                 abilityScaling = 1;
-            return (int)(heal.Value + caster.AbilityPower * abilityScaling);
+            return (int)(heal.Value + Mathf.Ceil(caster.AbilityPower * abilityScaling));
         }
     }
 

@@ -19,14 +19,22 @@ MonoBehaviour:
   type: 0
   statuses: 
   DispelImmune: 1
-  onEndAbility: {fileID: 0}
-  OnDispelAbility: {fileID: 0}
+  showStacks: 0
   duration:
     baseValue: 2
     modifiers: []
   tickRate:
     baseValue: 0.5
     modifiers: []
+  heal:
+    baseValue: 6
+    modifiers: []
+  damage:
+    baseValue: 0
+    modifiers: []
+  abilityScaling: 0.2
+  onEndAbility: {fileID: 0}
+  OnDispelAbility: {fileID: 0}
   caster: {fileID: 0}
   OnStatusEffectStart:
     m_PersistentCalls:
@@ -37,6 +45,3 @@ MonoBehaviour:
   OnStatusEffectRemoved:
     m_PersistentCalls:
       m_Calls: []
-  heal:
-    baseValue: 6
-    modifiers: []

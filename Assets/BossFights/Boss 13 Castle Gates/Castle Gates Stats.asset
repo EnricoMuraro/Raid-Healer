@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 32
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4765b9e123b50f845912aeb20671a1d9, type: 3}
+  m_Name: Castle Gates Stats
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 10000
+    modifiers: []
+  shield:
+    baseValue: 10000
+    modifiers: []
+  maxMana:
+    baseValue: 0
+    modifiers: []
+  manaRegenRate:
+    baseValue: 0
+    modifiers: []
+  damage:
+    baseValue: 75
+    modifiers: []
+  attackFrequency:
+    baseValue: 1
+    modifiers: []
+  abilityPower:
+    baseValue: 0
+    modifiers: []
+  manaEfficiency:
+    baseValue: 0
+    modifiers: []
+  damageReceived:
+    baseValue: 0
+    modifiers: []
+  role: 4

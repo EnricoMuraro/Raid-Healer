@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 19
   name: Deep Roots
-  description: Increase the healing done by Soothing Herbs' status effect by 50%
+  description: Increase the healing and duration of Soothing Herbs' status effect
+    by 30%
   sprite: {fileID: 21300000, guid: cd5e7e6ea75b6c74fb46ddfaa2b26501, type: 3}
   unitStatModifiers: []
   abilityModifiers: []
@@ -24,4 +25,10 @@ MonoBehaviour:
     modifier:
       type: 0
       source: 0
-      value: 50
+      value: 30
+  - statusEffect: {fileID: 11400000, guid: e305a919da056ed428492aee6b410783, type: 2}
+    statName: 0
+    modifier:
+      type: 0
+      source: 0
+      value: 30

@@ -308,6 +308,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41089216}
   m_CullTransparentMesh: 1
+--- !u!114 &41735844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5970184357293165170, guid: 4393c0a2fd7ca28468c07345e92e558e, type: 3}
+  m_PrefabInstance: {fileID: 1178528926386072610}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a700302cf2cd0a41a61aa364dce74c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &96995177
 GameObject:
   m_ObjectHideFlags: 0
@@ -4815,6 +4826,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1094182946}
+    - target: {fileID: 5970184357293165170, guid: 4393c0a2fd7ca28468c07345e92e558e, type: 3}
+      propertyPath: RequiredStars
+      value: 33
+      objectReference: {fileID: 0}
     - target: {fileID: 6717619243473879949, guid: 4393c0a2fd7ca28468c07345e92e558e, type: 3}
       propertyPath: fightID
       value: 3
@@ -4823,6 +4838,14 @@ PrefabInstance:
       propertyPath: bossFightInfo
       value: 
       objectReference: {fileID: 11400000, guid: 55fcc067521e0a8408ba97b09b434c00, type: 2}
+    - target: {fileID: 7003638829490911804, guid: 4393c0a2fd7ca28468c07345e92e558e, type: 3}
+      propertyPath: RequiredStars
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003638829490911804, guid: 4393c0a2fd7ca28468c07345e92e558e, type: 3}
+      propertyPath: RequiredStarsLock
+      value: 
+      objectReference: {fileID: 41735844}
     - target: {fileID: 7064811840628560821, guid: 4393c0a2fd7ca28468c07345e92e558e, type: 3}
       propertyPath: fightID
       value: 2

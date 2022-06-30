@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Thinning The Swarm
   description: As you damage the boss his attack speed gets slower
   icon: {fileID: 21300000, guid: 6cd2b450e0ae9ca40b9003fe06e40001, type: 3}
+  abilityScaling: 0
   effects:
   - activationCondition:
       stat: 0
