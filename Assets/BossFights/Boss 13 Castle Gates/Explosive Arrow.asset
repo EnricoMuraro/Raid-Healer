@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679232fb226fd6c44b7cf8452c611ca5, type: 3}
   m_Name: Explosive Arrow
   m_EditorClassIdentifier: 
-  ID: 0
-  name: 
-  description: 
-  icon: {fileID: 0}
+  ID: 21304
+  name: Explosive Arrow
+  description: Deals a small amount of damage for 3 seconds. Explodes at the end
+    for heavy damage.
+  icon: {fileID: 21300000, guid: ad9535d4d2b8a194e92427ea6e793af2, type: 3}
   abilityScaling: 0
   cooldown:
-    baseValue: 0
+    baseValue: 20
     modifiers: []
   castTime:
-    baseValue: 0
+    baseValue: 1.5
     modifiers: []
   manaCost:
     baseValue: 0
@@ -34,4 +35,4 @@ MonoBehaviour:
     modifiers: []
   nextAbility: {fileID: 0}
   SelfApply: 0
-  effect: {fileID: 0}
+  effect: {fileID: 11400000, guid: 13f98a97010d82e43b28f9a5ece1d51f, type: 2}

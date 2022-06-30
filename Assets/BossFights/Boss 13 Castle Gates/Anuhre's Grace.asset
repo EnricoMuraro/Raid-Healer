@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5161effd809d904894676e8bcbbff3e, type: 3}
   m_Name: Anuhre's Grace
   m_EditorClassIdentifier: 
-  ID: 0
-  name: 
-  description: 
-  icon: {fileID: 0}
+  ID: 21305
+  name: Anuhre's Grace
+  description: Gives a large shield when dispelled
+  icon: {fileID: 21300000, guid: 45c328d37ce93814eae0ec298f2f3a9e, type: 3}
   abilityScaling: 0
   cooldown:
-    baseValue: 0
+    baseValue: 999
     modifiers: []
   castTime:
     baseValue: 0
@@ -33,6 +33,6 @@ MonoBehaviour:
     baseValue: 0
     modifiers: []
   nextAbility: {fileID: 0}
-  statusEffect: {fileID: 0}
-  numberOfTargets: 0
+  statusEffect: {fileID: 11400000, guid: 3bfe900bd24b5984f8b2b8a15091d98a, type: 2}
+  numberOfTargets: 9
   avoidAlreadyAffectedTargets: 0

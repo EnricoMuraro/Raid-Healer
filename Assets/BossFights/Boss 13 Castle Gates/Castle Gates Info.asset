@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: Castle Gates Info
   m_EditorClassIdentifier: 
   ID: 13
-  Name: 
-  Description: 
-  Difficulty: 0
-  BossUnit: {fileID: 0}
-  Abilities: []
-  BossBehaviour: {fileID: 0}
-  Reward: {fileID: 0}
+  Name: Castle Gates
+  Description: It's time to storm the main gates, you feel a divine presence in your
+    raid
+  Difficulty: 1
+  BossUnit: {fileID: 11400000, guid: 345676eca19b5d64f9ababc282871d9b, type: 2}
+  Abilities:
+  - {fileID: 11400000, guid: eedf2b814b2704a4b9f3c95cd91161d1, type: 2}
+  - {fileID: 11400000, guid: b332190cd405fc147963eea48b80bc21, type: 2}
+  - {fileID: 11400000, guid: cfef5e04ca97ef941b758cb905c65dcd, type: 2}
+  BossBehaviour: {fileID: 11400000, guid: 535527cf86c56904491000791d8ad1be, type: 2}
+  Reward: {fileID: 11400000, guid: 4e5c06d4eb204d24a8f42672c9b5afc9, type: 2}
   Auras: []
   raidSize: 0

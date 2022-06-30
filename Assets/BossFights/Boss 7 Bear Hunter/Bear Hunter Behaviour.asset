@@ -15,8 +15,11 @@ MonoBehaviour:
   attackTargeting:
     strategy: 0
     RolesBlacklist: 
+    lastTargets: 
   abilitiesTargeting:
   - strategy: 0
     RolesBlacklist: 
+    lastTargets: 00000000
   - strategy: 6
     RolesBlacklist: 
+    lastTargets: 03000000

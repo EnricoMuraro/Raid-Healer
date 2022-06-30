@@ -15,8 +15,8 @@ MonoBehaviour:
   ID: 21301
   name: Sweeping Strike
   description: Deals damage to the first 3 raiders
-  icon: {fileID: 0}
-  abilityScaling: 0
+  icon: {fileID: 21300000, guid: ad112a17f8a9956489ecedbebb6e25a6, type: 3}
+  abilityScaling: 1
   cooldown:
     baseValue: 13
     modifiers: []
@@ -30,7 +30,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: []
   damage:
-    baseValue: 200
+    baseValue: 150
     modifiers: []
   nextAbility: {fileID: 0}
   numberOfTargets:

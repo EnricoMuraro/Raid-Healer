@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Plauged Rat Stats
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 16000
+    baseValue: 18000
     modifiers: []
   shield:
     baseValue: 0

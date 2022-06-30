@@ -4843,6 +4843,10 @@ PrefabInstance:
       value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 7003638829490911804, guid: 4393c0a2fd7ca28468c07345e92e558e, type: 3}
+      propertyPath: bossFightInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b7c21e2b1121b40b66e2766b7ee5a7, type: 2}
+    - target: {fileID: 7003638829490911804, guid: 4393c0a2fd7ca28468c07345e92e558e, type: 3}
       propertyPath: RequiredStarsLock
       value: 
       objectReference: {fileID: 41735844}
